@@ -59,6 +59,24 @@
     <Compile Include="Componente.Designer.cs">
       <DependentUpon>Componente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Idioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Idioma.Designer.cs">
+      <DependentUpon>Idioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdiomaTitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdiomaTitulos.Designer.cs">
+      <DependentUpon>IdiomaTitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdiomaTraducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdiomaTraducciones.Designer.cs">
+      <DependentUpon>IdiomaTraducciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +124,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Componente.resx">
       <DependentUpon>Componente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Idioma.resx">
+      <DependentUpon>Idioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdiomaTItulos.resx">
+      <DependentUpon>IdiomaTitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdiomaTraducciones.resx">
+      <DependentUpon>IdiomaTraducciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservas.resx">
       <DependentUpon>Reservas.cs</DependentUpon>

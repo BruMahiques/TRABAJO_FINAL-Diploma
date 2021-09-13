@@ -35,6 +35,10 @@
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compositeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titulosDeIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.traduccionesDeIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +50,8 @@
             this.ReservasToolStripMenuItem,
             this.reporteToolStripMenuItem,
             this.salirToolStripMenuItem,
-            this.compositeToolStripMenuItem});
+            this.compositeToolStripMenuItem,
+            this.adminIdiomaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -95,6 +100,37 @@
             this.compositeToolStripMenuItem.Text = "Composite";
             this.compositeToolStripMenuItem.Click += new System.EventHandler(this.compositeToolStripMenuItem_Click);
             // 
+            // adminIdiomaToolStripMenuItem
+            // 
+            this.adminIdiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.idiomaToolStripMenuItem,
+            this.titulosDeIdiomaToolStripMenuItem,
+            this.traduccionesDeIdiomaToolStripMenuItem});
+            this.adminIdiomaToolStripMenuItem.Name = "adminIdiomaToolStripMenuItem";
+            this.adminIdiomaToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.adminIdiomaToolStripMenuItem.Text = "Admin Idioma";
+            // 
+            // idiomaToolStripMenuItem
+            // 
+            this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.idiomaToolStripMenuItem.Text = "Idioma";
+            this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
+            // 
+            // titulosDeIdiomaToolStripMenuItem
+            // 
+            this.titulosDeIdiomaToolStripMenuItem.Name = "titulosDeIdiomaToolStripMenuItem";
+            this.titulosDeIdiomaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.titulosDeIdiomaToolStripMenuItem.Text = "Titulos de Idioma";
+            this.titulosDeIdiomaToolStripMenuItem.Click += new System.EventHandler(this.titulosDeIdiomaToolStripMenuItem_Click);
+            // 
+            // traduccionesDeIdiomaToolStripMenuItem
+            // 
+            this.traduccionesDeIdiomaToolStripMenuItem.Name = "traduccionesDeIdiomaToolStripMenuItem";
+            this.traduccionesDeIdiomaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.traduccionesDeIdiomaToolStripMenuItem.Text = "Traducciones de Idioma";
+            this.traduccionesDeIdiomaToolStripMenuItem.Click += new System.EventHandler(this.traduccionesDeIdiomaToolStripMenuItem_Click);
+            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +157,9 @@
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compositeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titulosDeIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem traduccionesDeIdiomaToolStripMenuItem;
     }
 }

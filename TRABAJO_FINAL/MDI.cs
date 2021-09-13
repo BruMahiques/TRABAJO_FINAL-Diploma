@@ -58,5 +58,26 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Idioma F5 = new Idioma();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void titulosDeIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IdiomaTitulos F5 = new IdiomaTitulos();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void traduccionesDeIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IdiomaTraducciones F5 = new IdiomaTraducciones();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }
