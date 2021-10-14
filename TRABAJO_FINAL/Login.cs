@@ -13,24 +13,74 @@ using System.Resources;
 using System.Globalization;
 using System.Threading;
 using EE;
+using BLL;
 using System.Collections;
-using System.Data;
 using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class Login : Form
+    public partial class InicioSesion : Form, InterfazIdiomaObserver
     {
-        public Login()
+        public InicioSesion()
         {
             InitializeComponent();
-            radioButton1.Checked = true;
+            Traducir();
         }
-        
-       
-        
 
-        EEUsuario usuario = new EEUsuario();
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+
+        private SERVICIOS.Bitacora.BitacoraBLL bllAct = new SERVICIOS.Bitacora.BitacoraBLL();
+
+
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+               
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                foreach (Control x in this.Controls) // Todos los controles
+
+                {
+                    if (x.Tag != null && Traducciones.ContainsKey(x.Tag.ToString()))
+                        x.Text = Traducciones[x.Tag.ToString()].Texto;
+
+                    if (Sal.Tag != null && Traducciones.ContainsKey(Sal.Tag.ToString()))
+                        Sal.Text = Traducciones[Sal.Tag.ToString()].Texto;
+
+                    if (Usu.Tag != null && Traducciones.ContainsKey(Usu.Tag.ToString()))
+                        Usu.Text = Traducciones[Usu.Tag.ToString()].Texto;
+
+                    if (Clave.Tag != null && Traducciones.ContainsKey(Clave.Tag.ToString()))
+                        Clave.Text = Traducciones[Clave.Tag.ToString()].Texto;
+
+                    if (Entrar.Tag != null && Traducciones.ContainsKey(Entrar.Tag.ToString()))
+                        Entrar.Text = Traducciones[Entrar.Tag.ToString()].Texto;
+
+                    if (Sal.Tag != null && Traducciones.ContainsKey(Sal.Tag.ToString()))
+                        Sal.Text = Traducciones[Sal.Tag.ToString()].Texto;
+
+
+                }
+               
+
+            }
+
+        }
+
+        
         int count = 0;
         SqlConnection conexion = new SqlConnection();
 
@@ -42,118 +92,76 @@ namespace TRABAJO_FINAL
             
         }
 
-        void CambiarIdiomaEspañol(string Cultura)
-        {
-
-
-            Usu.Text = Resource1.Usu;
-            Clave.Text = Resource1.Clave;
-            Entrar.Text = Resource1.Entrar;
-            button5.Text = Resource1.Salir;
-            button1.Text = Resource1.Registrar;
-
-        }
-        void CambiarIdiomaIngles(string Cultura)
-        {
-
-
-            Usu.Text = Resource2.Usu;
-            Clave.Text = Resource2.Clave;
-            Entrar.Text = Resource2.Entrar;
-            button5.Text = Resource2.Salir;
-            button1.Text = Resource2.Registrar;
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
+            BLLUsuario bllUsuario = new BLLUsuario();
 
-            conexion.ConnectionString = @"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True";
 
-            SqlCommand cmd = new SqlCommand("Select Usuario, Clave from Usuarios where Usuario ='" + textBox1.Text + "' and Clave='" + textBox2.Text + "'", conexion);
-            conexion.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            count++;
-            if (count == 4)
+            try
             {
-                MessageBox.Show("Se bloqueó el programa por internar entrar 3 veces incorrectamente");
-                Entrar.Enabled = false;
-                return;
+                var Resultado = bllUsuario.Login(textBox1.Text.Trim(), textBox2.Text.Trim());
+                
+                SERVICIOS.Bitacora.BitacoraActividadTipoEE tipo = new SERVICIOS.Bitacora.BitacoraActividadTipoEE();
+                tipo = bllAct.ListarTipos().First(item => item.Tipo == "Mensaje");
+                RegistroBitacora("Acceso Exitoso", tipo);
+                
+                MDI F1 = new MDI();
+                F1.Show();
             }
-            if (dr.Read() == true)
+
+            catch (SERVICIOS.Inicio.ExceptionLogin Error)
+
             {
-                if (radioButton1.Checked == true)
+                switch (Error.Result)
                 {
-                    //Singleton
-                    SERVICIOS.Singleton s1 = SERVICIOS.Singleton.Instancia;
-                    //Singleton
-                    MessageBox.Show("Bienvenido " + textBox1.Text);
-                    MDI F1 = new MDI();
-                    F1.Show();
+                    case SERVICIOS.Inicio.ResultadoLogin.UsuarioInvalido:
+                        MessageBox.Show("Usuario Incorrecto");
+
+                        break;
+                    case SERVICIOS.Inicio.ResultadoLogin.PasswordInvalido:
+                        MessageBox.Show("El Password ingresado es Incorrecto");
+
+                        break;
+
+                    default:
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("Welcome " + textBox1.Text);
-                    MDI F1 = new MDI();
-                    F1.Show();
-                }
-
             }
-
-
-            textBox1.Text = null;
-            textBox2.Text = null;
-
-
-            conexion.Close();
-
-
-
-
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            CambiarIdiomaEspañol("Resource1");
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            CambiarIdiomaIngles("Resource2");
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            usuario.Usuario = textBox1.Text;
-            usuario.Clave = textBox2.Text;
-            if (textBox1.Text != null && textBox2.Text != null)
-            {
-                Alta_Usuario(usuario);
-            }
-
-        }
-        public bool Alta_Usuario(EEUsuario usu)
-        {
-
-
-            Acceso Datos = new Acceso();
-            Hashtable Hdatos = new Hashtable();
-            bool Resultado;
-            string consulta = "SP_Registrar";
-
-
-            Hdatos.Add("@Usuario", usu.Usuario);
-            Hdatos.Add("@Clave", usu.Clave);
            
 
-            Resultado = Datos.Escribir(consulta, Hdatos);
-            return Resultado;
+
+
         }
 
+   
+
+        public void RegistroBitacora(string Detalle, SERVICIOS.Bitacora.BitacoraActividadTipoEE Tipo)
+
+        {
+            SERVICIOS.Bitacora.BitacoraActividadEE nAct = new SERVICIOS.Bitacora.BitacoraActividadEE();
+
+            nAct.Detalle = Detalle;
+            nAct.SetTipo(Tipo);
+            bllAct.NuevaActividad(nAct);
+        }
+
+        
         private void button5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+            
+        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
     }
 }

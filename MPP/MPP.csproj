@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPPPerfilComponente.cs" />
+    <Compile Include="MPPPerfilFamilia.cs" />
+    <Compile Include="MPPPerfilPatente.cs" />
     <Compile Include="MPPReservas.cs" />
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
     <Compile Include="MPPReportes.cs" />
     <Compile Include="MPPTraductor.cs" />
+    <Compile Include="MPPUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

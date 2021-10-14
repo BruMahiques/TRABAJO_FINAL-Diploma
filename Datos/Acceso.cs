@@ -11,8 +11,8 @@ namespace Datos
 {
     public class Acceso
     {
-
-       
+        private SqlConnection Conexion;
+        private SqlCommand ComandoSQL;
         private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True");
         private SqlTransaction transaction;
         private SqlCommand cmd;
@@ -98,6 +98,75 @@ namespace Datos
             finally
             {
                 Cerrar();
+            }
+        }
+
+        public string EscribirUsu(string Consulta, Hashtable Parametros)
+        {
+            ComandoSQL = new SqlCommand();
+            ComandoSQL.Connection = con;
+
+            string Id = ""; // Valor que se capturará en el caso de insersiones
+
+            try
+            {
+
+                transaction = Conexion.BeginTransaction();
+                ComandoSQL.CommandText = Consulta;
+                ComandoSQL.CommandType = CommandType.StoredProcedure;
+                ComandoSQL.Transaction = transaction;
+
+
+                if ((Parametros != null))
+                {
+                    foreach (string dato in Parametros.Keys)
+                    {
+                        ComandoSQL.Parameters.AddWithValue(dato, Parametros[dato]);
+                    }
+                }
+                ComandoSQL.Parameters.Add("@Id_ins", SqlDbType.Int).Direction = ParameterDirection.Output; // Para inserción
+
+                int respuesta = ComandoSQL.ExecuteNonQuery();
+                transaction.Commit();
+                Id = ComandoSQL.Parameters["@Id_ins"].Value.ToString().Trim();
+            }
+
+            catch (Exception ex)
+            {
+
+                transaction.Rollback();
+                throw new Exception(ex.Message);
+            }
+
+            finally
+            {
+                Conexion.Close();
+            }
+            return Id;
+        }
+
+        public void EjecutarQuerysBackup(string Consulta) // Exclusivo para tareas de backup: se conecta a la base MASTER y no utiliza Transacciones
+        {
+            ComandoSQL = new SqlCommand();
+            Conexion = new SqlConnection(@"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True");
+            Conexion.Open();
+            ComandoSQL.Connection = Conexion;
+
+            try
+            {
+                ComandoSQL.CommandText = Consulta;
+                ComandoSQL.CommandTimeout = 600;
+                ComandoSQL.CommandType = CommandType.Text;
+                ComandoSQL.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Conexion.Close();
             }
         }
     }

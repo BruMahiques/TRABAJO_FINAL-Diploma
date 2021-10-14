@@ -43,10 +43,14 @@
   <ItemGroup>
     <Compile Include="BLLIdiomaTitulo.cs" />
     <Compile Include="BLLIdiomaTraductor.cs" />
+    <Compile Include="BLLPerfilComponente.cs" />
+    <Compile Include="BLLPerfilFamila.cs" />
+    <Compile Include="BLLPerfilPatente.cs" />
     <Compile Include="BLLReservas.cs" />
     <Compile Include="BLLCliente.cs" />
     <Compile Include="BLLProducto.cs" />
     <Compile Include="BLLReportes.cs" />
+    <Compile Include="BLLUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

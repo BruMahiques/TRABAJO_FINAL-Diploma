@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRABAJO_FINAL", "TRABAJO_FINAL\TRABAJO_FINAL.csproj", "{56B1EEE6-7B77-4555-9976-249989843FDE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,9 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRABAJO_FINAL", "TRABAJO_FI
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EE", "EE\EE.csproj", "{49BDACBB-A43B-4916-9E56-3B8EAD3CD98D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3DC7291C-629F-4F4A-8EED-59D131D0A4D5} = {3DC7291C-629F-4F4A-8EED-59D131D0A4D5}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8B803BAC-81E4-4480-90F9-008895ED1A14}"
 	ProjectSection(ProjectDependencies) = postProject

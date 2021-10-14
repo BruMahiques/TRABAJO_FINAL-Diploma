@@ -18,7 +18,7 @@ namespace EE
         }
     }
 
-    public interface IIdiomaObserver
+    public interface InterfazIdiomaObserver
     {
         void UpdateLanguage(EEIdioma idioma);
     }

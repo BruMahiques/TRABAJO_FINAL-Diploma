@@ -40,10 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Componente.cs" />
+    <Compile Include="BackUp\BackUp.cs" />
+    <Compile Include="Bitacora\BitacoraActividadEE.cs" />
+    <Compile Include="Bitacora\BitacoraActividadTipoEE.cs" />
+    <Compile Include="Bitacora\BitacoraBLL.cs" />
+    <Compile Include="Bitacora\BitacoraDAL.cs" />
+    <Compile Include="DV\DigitoVerificador.cs" />
+    <Compile Include="DV\DigitoVerificadorDAL.cs" />
+    <Compile Include="Inicio\Encriptador.cs" />
+    <Compile Include="Inicio\ExceptionLogin.cs" />
+    <Compile Include="Inicio\ResultadoLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
-    <Compile Include="Singleton.cs" />
+    <Compile Include="Inicio\Sesion.cs" />
+    <Compile Include="Inicio\Singleton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{2b50e58b-3276-40ab-a873-e4437efd0b5a}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EE\EE.csproj">
+      <Project>{49bdacbb-a43b-4916-9e56-3b8ead3cd98d}</Project>
+      <Name>EE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

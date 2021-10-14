@@ -168,6 +168,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "Idioma";
             this.Text = "Idioma";
+            this.Load += new System.EventHandler(this.Idioma_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

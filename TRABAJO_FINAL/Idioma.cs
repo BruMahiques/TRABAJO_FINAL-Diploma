@@ -93,5 +93,24 @@ namespace TRABAJO_FINAL
             LimpiarControles();
             TraerIdiomas();
         }
+
+        private void Idioma_Load(object sender, EventArgs e)
+        {
+            ObtenerIdiomas();
+        }
+        public void ObtenerIdiomas()
+        {
+            Idiomas = new List<EEIdioma>();
+            Idiomas = BLLIdiomaTraductor.ObtenerIdiomas();
+
+            foreach (var item in Idiomas)
+
+            {
+                if (item.Por_Defecto == true)
+                    IdiomaDefecto.Text = item.Idioma;
+            }
+
+            comboBox1.DataSource = Idiomas;
+        }
     }
 }
