@@ -21,7 +21,7 @@ namespace TRABAJO_FINAL
         public ProductoDesconectado()
         {
             InitializeComponent();
-            radioButton3.Checked = true;
+           
         }
 
         SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-M5FCUAS\BRUNO;Initial Catalog=JUEGOMES;Integrated Security=True");

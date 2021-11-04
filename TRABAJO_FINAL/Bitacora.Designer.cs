@@ -47,6 +47,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "Desde";
             this.label1.Text = "Desde";
             // 
             // label2
@@ -56,6 +57,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "Hasta";
             this.label2.Text = "Hasta";
             // 
             // dateTimePicker1
@@ -77,10 +79,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 13);
+            this.label3.Location = new System.Drawing.Point(315, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 4;
+            this.label3.Tag = "Usuario";
             this.label3.Text = "Usuario";
             // 
             // label4
@@ -90,6 +93,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 5;
+            this.label4.Tag = "Actividad";
             this.label4.Text = "Actividad";
             // 
             // comboUsuario

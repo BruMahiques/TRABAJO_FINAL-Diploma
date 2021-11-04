@@ -18,7 +18,7 @@ namespace SERVICIOS.DV
             Hashtable Parametros = new Hashtable();
             Parametros.Add("@Valor", dv);
             Acceso AccesoDB = new Acceso();
-            AccesoDB.Escribir("sp_ActualizarDvUsuario", Parametros);
+            AccesoDB.EscribirUsu("sp_ActualizarDvUsuario", Parametros);
         }
 
         public int ObtenerVertical()

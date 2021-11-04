@@ -56,6 +56,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "Codigo";
             this.label1.Text = "Codigo";
             // 
             // label2
@@ -65,6 +66,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "Nombre";
             this.label2.Text = "Nombre";
             // 
             // label3
@@ -74,6 +76,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "Apellido";
             this.label3.Text = "Apellido";
             // 
             // label4
@@ -83,6 +86,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 3;
+            this.label4.Tag = "Email";
             this.label4.Text = "Email";
             // 
             // label5
@@ -92,6 +96,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 4;
+            this.label5.Tag = "Clave";
             this.label5.Text = "Clave";
             // 
             // label6
@@ -101,6 +106,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 5;
+            this.label6.Tag = "Confirmar Clave";
             this.label6.Text = "Confirmar Clave";
             // 
             // label7
@@ -110,14 +116,17 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
+            this.label7.Tag = "Idioma";
             this.label7.Text = "Idioma";
             // 
             // textId
             // 
+            this.textId.Enabled = false;
             this.textId.Location = new System.Drawing.Point(93, 32);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
             this.textId.TabIndex = 7;
+            this.textId.Text = "-";
             // 
             // textNombre
             // 
@@ -168,6 +177,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
+            this.button1.Tag = "Crear";
             this.button1.Text = "Crear";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -178,6 +188,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 15;
+            this.button2.Tag = "Editar";
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -188,6 +199,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 16;
+            this.button3.Tag = "Borrar";
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -199,6 +211,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(440, 275);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Usuarios
             // 
@@ -225,6 +238,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

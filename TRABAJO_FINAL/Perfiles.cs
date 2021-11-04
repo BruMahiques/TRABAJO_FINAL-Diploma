@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EE;
 using BLL;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class Perfiles : Form
+    public partial class Perfiles : Form , InterfazIdiomaObserver
     {
         public BLL.BLLUsuario bllUsuario;
         public EE.EEUsuario EeUsuario;
@@ -24,6 +25,7 @@ namespace TRABAJO_FINAL
         public Perfiles()
         {
             InitializeComponent();
+            Traducir();
             bllComp = new BLLPerfilComponente();
             bllUsuario = new BLLUsuario();
             bllFam = new BLLPerfilFamila();
@@ -35,6 +37,57 @@ namespace TRABAJO_FINAL
 
         private void Perfiles_Load(object sender, EventArgs e)
         {
+
+        }
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
+                    button2.Text = Traducciones[button2.Tag.ToString()].Texto;
+
+                if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
+                    button3.Text = Traducciones[button3.Tag.ToString()].Texto;
+
+                if (button1.Tag != null && Traducciones.ContainsKey(button1.Tag.ToString()))
+                    button1.Text = Traducciones[button1.Tag.ToString()].Texto;
+
+                if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                    label1.Text = Traducciones[label1.Tag.ToString()].Texto;
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (button4.Tag != null && Traducciones.ContainsKey(button4.Tag.ToString()))
+                    button4.Text = Traducciones[button4.Tag.ToString()].Texto;
+
+                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
+                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+                if (button5.Tag != null && Traducciones.ContainsKey(button5.Tag.ToString()))
+                    button5.Text = Traducciones[button5.Tag.ToString()].Texto;
+
+                if (button6.Tag != null && Traducciones.ContainsKey(button6.Tag.ToString()))
+                    button6.Text = Traducciones[button6.Tag.ToString()].Texto;
+
+                
+            }
 
         }
 

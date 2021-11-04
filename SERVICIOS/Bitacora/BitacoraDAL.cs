@@ -23,7 +23,7 @@ namespace SERVICIOS.Bitacora
             Parametros.Add("@Detalle", nAct.Detalle);
 
             Acceso AccesoDB = new Acceso();
-            AccesoDB.Escribir("sp_InsertarActividadBitacora", Parametros);
+            AccesoDB.EscribirUsu("sp_InsertarActividadBitacora", Parametros);
         }
 
 

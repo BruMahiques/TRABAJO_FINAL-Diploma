@@ -26,7 +26,7 @@ namespace MPP
 
             else Parametros.Add("Permiso", Comp.Permiso.ToString()); ;
 
-            nAcceso.Escribir(Consulta, Parametros);
+            nAcceso.EscribirUsu(Consulta, Parametros);
 
         }
 

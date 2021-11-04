@@ -16,7 +16,7 @@ namespace BLL
             return dPatente.ObtenerPatentes();
         }
 
-        public Array ObtenerPatentesAtomicas() // Traigo las Patentes Atómicas
+        public Array ObtenerPatentesAtomicas() // Traigo las Patentes 
         {
             return Enum.GetValues(typeof(EEPerfilTipoPermiso));
         }

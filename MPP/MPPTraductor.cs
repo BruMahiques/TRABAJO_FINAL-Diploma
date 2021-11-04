@@ -150,7 +150,7 @@ namespace MPP
             }
             Acceso nDatos = new Acceso();
 
-            nDatos.Escribir(Consulta, Parametros);
+            nDatos.EscribirUsu(Consulta, Parametros);
 
         }
 
@@ -175,7 +175,7 @@ namespace MPP
             }
 
             Acceso Datos = new Acceso();
-            Datos.Escribir(Consulta, Parametros);
+            Datos.EscribirUsu(Consulta, Parametros);
 
         }
 
@@ -186,7 +186,7 @@ namespace MPP
             Parametros.Add("@Idioma", Idioma.Idioma);
             Parametros.Add("@Por_Defecto", SetDefault);
             Acceso Datos = new Acceso();
-            Datos.Escribir("sp_InsertarIdioma", Parametros);
+            Datos.EscribirUsu("sp_InsertarIdioma", Parametros);
         }
 
         public void EditarIdioma(EEIdioma Idioma, bool SetDefault)
@@ -200,16 +200,16 @@ namespace MPP
             if (SetDefault == true)
 
             {
-                Datos.Escribir("sp_CambiarIdiomaDefecto", Parametros);
+                Datos.EscribirUsu("sp_CambiarIdiomaDefecto", Parametros);
 
                 Parametros.Add("@Idioma", Idioma.Idioma);
-                Datos.Escribir("sp_EditarIdioma", Parametros);
+                Datos.EscribirUsu("sp_EditarIdioma", Parametros);
             }
 
             else
             {
                 Parametros.Add("@Idioma", Idioma.Idioma);
-                Datos.Escribir("sp_EditarIdioma", Parametros);
+                Datos.EscribirUsu("sp_EditarIdioma", Parametros);
 
             }
         }
@@ -219,7 +219,7 @@ namespace MPP
             Hashtable Parametros = new Hashtable();
             Parametros.Add("@Cod_Idioma", Idioma.Cod_Idioma);
             Acceso Datos = new Acceso();
-            Datos.Escribir("sp_BorrarIdioma", Parametros);
+            Datos.EscribirUsu("sp_BorrarIdioma", Parametros);
 
         }
 

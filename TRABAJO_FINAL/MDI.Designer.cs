@@ -33,19 +33,20 @@
             this.aBMProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compositeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titulosDeIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traduccionesDeIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.idiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idiomas1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BitalStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,11 +57,11 @@
             this.aBMProductosToolStripMenuItem,
             this.ReservasToolStripMenuItem,
             this.reporteToolStripMenuItem,
-            this.salirToolStripMenuItem,
             this.compositeToolStripMenuItem,
+            this.adminToolStripMenuItem,
             this.adminIdiomaToolStripMenuItem,
             this.idiomasToolStripMenuItem1,
-            this.adminToolStripMenuItem});
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -99,18 +100,11 @@
             this.reporteToolStripMenuItem.Text = "Reporte";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.reporteToolStripMenuItem_Click);
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Tag = "Salir";
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // compositeToolStripMenuItem
             // 
             this.compositeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.perfilesToolStripMenuItem});
+            this.perfilesToolStripMenuItem,
+            this.rolesToolStripMenuItem});
             this.compositeToolStripMenuItem.Name = "compositeToolStripMenuItem";
             this.compositeToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.compositeToolStripMenuItem.Tag = "Roles";
@@ -120,9 +114,18 @@
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.perfilesToolStripMenuItem.Text = "Perfiles";
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perfilesToolStripMenuItem.Tag = "Perfiles Usuario";
+            this.perfilesToolStripMenuItem.Text = "Perfiles Usuario";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
+            // 
+            // rolesToolStripMenuItem
+            // 
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rolesToolStripMenuItem.Tag = "Roles";
+            this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // adminIdiomaToolStripMenuItem
             // 
@@ -162,23 +165,24 @@
             // idiomasToolStripMenuItem1
             // 
             this.idiomasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.idiomasToolStripMenuItem});
+            this.idiomas1ToolStripMenuItem});
             this.idiomasToolStripMenuItem1.Name = "idiomasToolStripMenuItem1";
             this.idiomasToolStripMenuItem1.Size = new System.Drawing.Size(120, 20);
             this.idiomasToolStripMenuItem1.Tag = "Seleccionas Idioma";
             this.idiomasToolStripMenuItem1.Text = "Seleccionas Idioma";
             // 
-            // idiomasToolStripMenuItem
+            // idiomas1ToolStripMenuItem
             // 
-            this.idiomasToolStripMenuItem.Name = "idiomasToolStripMenuItem";
-            this.idiomasToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.idiomasToolStripMenuItem.Text = "Idiomas";
+            this.idiomas1ToolStripMenuItem.Name = "idiomas1ToolStripMenuItem";
+            this.idiomas1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.idiomas1ToolStripMenuItem.Tag = "Idiomas";
+            this.idiomas1ToolStripMenuItem.Text = "Idiomas";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backUpToolStripMenuItem,
-            this.toolStripMenuItem1,
+            this.BitalStripMenuItem1,
             this.usuariosToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -191,19 +195,29 @@
             this.backUpToolStripMenuItem.Text = "Back up";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // BitalStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "Bitacora";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.BitalStripMenuItem1.Name = "BitalStripMenuItem1";
+            this.BitalStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.BitalStripMenuItem1.Tag = "Bitacora";
+            this.BitalStripMenuItem1.Text = "Bitacora";
+            this.BitalStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Tag = "Usuarios";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Tag = "Salir";
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -237,11 +251,12 @@
         private System.Windows.Forms.ToolStripMenuItem titulosDeIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traduccionesDeIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem idiomasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem idiomasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem idiomas1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem BitalStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
     }
 }

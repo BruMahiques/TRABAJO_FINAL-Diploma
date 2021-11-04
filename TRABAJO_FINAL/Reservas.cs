@@ -18,7 +18,7 @@ namespace TRABAJO_FINAL
         public Reservas()
         {
             InitializeComponent();
-            radioButton1.Checked = true;
+            
         }
 
         

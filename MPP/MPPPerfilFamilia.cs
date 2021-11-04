@@ -48,7 +48,7 @@ namespace MPP
             string ConsultaDel = "sp_BorrarFamilia"; // Primero borro la Familia
             Hashtable ParametrosDel = new Hashtable();
             ParametrosDel.Add("Id", Fam.Id);
-            nAcceso.Escribir(ConsultaDel, ParametrosDel);
+            nAcceso.EscribirUsu(ConsultaDel, ParametrosDel);
 
             string ConsultaAdd = "sp_GuardarFamilia"; // Luego guardo la familia actualizada
             Hashtable ParametrosAdd = new Hashtable();
@@ -58,7 +58,7 @@ namespace MPP
             {
 
                 ParametrosAdd.Add("Cod_Hijo", item.Id);
-                nAcceso.Escribir(ConsultaAdd, ParametrosAdd);
+                nAcceso.EscribirUsu(ConsultaAdd, ParametrosAdd);
                 ParametrosAdd.Remove("Cod_Hijo");
             }
         }

@@ -146,7 +146,7 @@ namespace MPP
 
             Acceso nAcceso = new Acceso();
 
-            nAcceso.Escribir(Consulta, Parametros);
+            nAcceso.EscribirUsu(Consulta, Parametros);
         }
 
         public void Eliminar(EEUsuario Usuario)
@@ -158,7 +158,7 @@ namespace MPP
 
             Acceso nAcceso = new Acceso();
 
-            nAcceso.Escribir(Consulta, Parametros);
+            nAcceso.EscribirUsu(Consulta, Parametros);
         }
 
 
@@ -169,7 +169,7 @@ namespace MPP
             string ConsultaDel = "sp_BorrarPermisosUsuario"; // Primero borro los permisos que tenía el usuario
             Hashtable ParametrosDel = new Hashtable();
             ParametrosDel.Add("Cod_Usuario", Usuario.Id);
-            nAcceso.Escribir(ConsultaDel, ParametrosDel);
+            nAcceso.EscribirUsu(ConsultaDel, ParametrosDel);
 
             string ConsultaAdd = "sp_GuardarPermisosUsuario"; // Luego guardo los nuevos permisos
             Hashtable ParametrosAdd = new Hashtable();
@@ -179,7 +179,7 @@ namespace MPP
             {
 
                 ParametrosAdd.Add("Cod_Permiso", item.Id);
-                nAcceso.Escribir(ConsultaAdd, ParametrosAdd);
+                nAcceso.EscribirUsu(ConsultaAdd, ParametrosAdd);
                 ParametrosAdd.Remove("Cod_Permiso");
 
             }

@@ -57,6 +57,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "Idiomas";
             this.label1.Text = "Idioma";
             // 
             // button1
@@ -65,6 +66,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
+            this.button1.Tag = "Editar";
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -75,16 +77,19 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
+            this.button2.Tag = "Borrar";
             this.button2.Text = "Borrar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textcodIdioma
             // 
+            this.textcodIdioma.Enabled = false;
             this.textcodIdioma.Location = new System.Drawing.Point(40, 171);
             this.textcodIdioma.Name = "textcodIdioma";
             this.textcodIdioma.Size = new System.Drawing.Size(100, 20);
             this.textcodIdioma.TabIndex = 4;
+            this.textcodIdioma.Text = "[...]";
             // 
             // textDescripIdioma
             // 
@@ -100,6 +105,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 6;
+            this.label2.Tag = "Codigo";
             this.label2.Text = "Codigo";
             // 
             // label3
@@ -109,6 +115,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 7;
+            this.label3.Tag = "Descripcion";
             this.label3.Text = "Descripción";
             // 
             // checkBoxDefault
@@ -118,6 +125,7 @@
             this.checkBoxDefault.Name = "checkBoxDefault";
             this.checkBoxDefault.Size = new System.Drawing.Size(83, 17);
             this.checkBoxDefault.TabIndex = 8;
+            this.checkBoxDefault.Tag = "Por defecto";
             this.checkBoxDefault.Text = "Por Defecto";
             this.checkBoxDefault.UseVisualStyleBackColor = true;
             // 
@@ -127,6 +135,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 9;
+            this.button3.Tag = "Crear";
             this.button3.Text = "Crear";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -138,6 +147,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 10;
+            this.label4.Tag = "Idioma Principal";
             this.label4.Text = "Idioma Principal:";
             // 
             // IdiomaDefecto

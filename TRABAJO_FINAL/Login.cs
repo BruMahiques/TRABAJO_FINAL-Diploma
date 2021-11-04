@@ -21,10 +21,12 @@ namespace TRABAJO_FINAL
 {
     public partial class InicioSesion : Form, InterfazIdiomaObserver
     {
+        
         public InicioSesion()
         {
             InitializeComponent();
             Traducir();
+            textBox1.Text = "Bru@gmail.com";
         }
 
         public void UpdateLanguage(EEIdioma idioma)

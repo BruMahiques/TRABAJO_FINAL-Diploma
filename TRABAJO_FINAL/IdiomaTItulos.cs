@@ -9,18 +9,66 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EE;
 using BLL;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class IdiomaTitulos : Form
+    public partial class IdiomaTitulos : Form , InterfazIdiomaObserver
     {
         public IdiomaTitulos()
         {
             InitializeComponent();
+            Traducir();
         }
 
         private BLL.BLLIdiomaTitulo BLLIdiomaTitu = new BLLIdiomaTitulo();
         private EE.EEIdiomaTitulo EEIdiomaTitu = new EEIdiomaTitulo();
+
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                foreach (Control x in this.Controls) // Todos los controles
+
+                {
+
+                    if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
+                        button2.Text = Traducciones[button2.Tag.ToString()].Texto;
+
+                    if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
+                        button3.Text = Traducciones[button3.Tag.ToString()].Texto;
+
+                    if (button1.Tag != null && Traducciones.ContainsKey(button1.Tag.ToString()))
+                        button1.Text = Traducciones[button1.Tag.ToString()].Texto;
+
+                    if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                        label1.Text = Traducciones[label1.Tag.ToString()].Texto;
+
+                    if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                        label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                   
+                }
+
+            }
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

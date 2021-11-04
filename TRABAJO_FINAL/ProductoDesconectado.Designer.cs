@@ -44,8 +44,6 @@
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -208,30 +206,6 @@
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(548, 12);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(53, 17);
-            this.radioButton2.TabIndex = 126;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Ingles";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(479, 12);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(63, 17);
-            this.radioButton3.TabIndex = 125;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Español";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(72, 223);
@@ -296,8 +270,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.btnDescartar);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnGrabar);
@@ -340,8 +312,6 @@
         internal System.Windows.Forms.Button btnCargar;
         internal System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;

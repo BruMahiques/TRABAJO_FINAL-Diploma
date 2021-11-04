@@ -15,7 +15,9 @@ namespace Datos
         private SqlCommand ComandoSQL;
         private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True");
         private SqlTransaction transaction;
+        private SqlTransaction Transaction;
         private SqlCommand cmd;
+        private string CadenaConexion = @"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True";
 
         public void Abrir()
         {
@@ -30,6 +32,14 @@ namespace Datos
             con.Dispose();
             con = null;
             GC.Collect();
+        }
+
+        private SqlConnection AbrirConexion()
+
+        {
+            Conexion = new SqlConnection(CadenaConexion);
+            Conexion.Open();
+            return Conexion;
         }
 
         public DataSet Leer(string consulta, Hashtable Hdatos)
@@ -104,17 +114,17 @@ namespace Datos
         public string EscribirUsu(string Consulta, Hashtable Parametros)
         {
             ComandoSQL = new SqlCommand();
-            ComandoSQL.Connection = con;
+            ComandoSQL.Connection = AbrirConexion();
 
             string Id = ""; // Valor que se capturará en el caso de insersiones
 
             try
             {
 
-                transaction = Conexion.BeginTransaction();
+                Transaction = Conexion.BeginTransaction();
                 ComandoSQL.CommandText = Consulta;
                 ComandoSQL.CommandType = CommandType.StoredProcedure;
-                ComandoSQL.Transaction = transaction;
+                ComandoSQL.Transaction = Transaction;
 
 
                 if ((Parametros != null))
@@ -127,14 +137,14 @@ namespace Datos
                 ComandoSQL.Parameters.Add("@Id_ins", SqlDbType.Int).Direction = ParameterDirection.Output; // Para inserción
 
                 int respuesta = ComandoSQL.ExecuteNonQuery();
-                transaction.Commit();
+                Transaction.Commit();
                 Id = ComandoSQL.Parameters["@Id_ins"].Value.ToString().Trim();
             }
 
             catch (Exception ex)
             {
 
-                transaction.Rollback();
+                Transaction.Rollback();
                 throw new Exception(ex.Message);
             }
 

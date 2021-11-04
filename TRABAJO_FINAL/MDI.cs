@@ -71,12 +71,27 @@ namespace TRABAJO_FINAL
                     if (traduccionesDeIdiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()))
                         traduccionesDeIdiomaToolStripMenuItem.Text = Traducciones[traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()].Texto;
 
-                    if (idiomasToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomasToolStripMenuItem.Tag.ToString()))
-                        idiomasToolStripMenuItem.Text = Traducciones[idiomasToolStripMenuItem.Tag.ToString()].Texto;
+                    if (idiomas1ToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomas1ToolStripMenuItem.Tag.ToString()))
+                        idiomas1ToolStripMenuItem.Text = Traducciones[idiomas1ToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (BitalStripMenuItem1.Tag != null && Traducciones.ContainsKey(BitalStripMenuItem1.Tag.ToString()))
+                        BitalStripMenuItem1.Text = Traducciones[BitalStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (usuariosToolStripMenuItem.Tag != null && Traducciones.ContainsKey(usuariosToolStripMenuItem.Tag.ToString()))
+                        usuariosToolStripMenuItem.Text = Traducciones[usuariosToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (compositeToolStripMenuItem.Tag != null && Traducciones.ContainsKey(compositeToolStripMenuItem.Tag.ToString()))
+                        compositeToolStripMenuItem.Text = Traducciones[compositeToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (perfilesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(perfilesToolStripMenuItem.Tag.ToString()))
+                        perfilesToolStripMenuItem.Text = Traducciones[perfilesToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (rolesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(rolesToolStripMenuItem.Tag.ToString()))
+                        rolesToolStripMenuItem.Text = Traducciones[rolesToolStripMenuItem.Tag.ToString()].Texto;
 
                 }
 
-               
+
 
             }
 
@@ -92,7 +107,7 @@ namespace TRABAJO_FINAL
 
             if (!Singleton.Instancia.Estalogueado())
             {
-                foreach (var item in idiomasToolStripMenuItem.DropDownItems)
+                foreach (var item in idiomas1ToolStripMenuItem.DropDownItems)
                 {
 
                     var i = ((EEIdioma)((ToolStripMenuItem)item).Tag);
@@ -104,7 +119,7 @@ namespace TRABAJO_FINAL
             }
             else
             {
-                foreach (var item in idiomasToolStripMenuItem.DropDownItems)
+                foreach (var item in idiomas1ToolStripMenuItem.DropDownItems)
                 {
 
                     ((ToolStripMenuItem)item).Enabled = true;
@@ -146,7 +161,18 @@ namespace TRABAJO_FINAL
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Está seguro que desea cerrar la sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bllUsuario.Logut();
+                while (ActiveMdiChild != null)
+                {
+                    ActiveMdiChild.Close();
+                    
+                }
+                ValidarFormulario();
+                this.Close();
+            }
+            
         }
 
         private void compositeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,7 +205,18 @@ namespace TRABAJO_FINAL
         {
             Singleton.Instancia.SuscribirObs(this);
             IntegridadDB();
+            this.FormClosed += new FormClosedEventHandler(Cerrarform);
         }
+
+        private void Cerrarform(object sender, EventArgs e)
+        {
+            
+                bllUsuario.Logut();
+               
+            
+        }
+
+
         public void IntegridadDB()
 
         {
@@ -203,11 +240,12 @@ namespace TRABAJO_FINAL
         {
             
             this.adminIdiomaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Gestión de Idiomas y Traduciones
-            this.aBMProductosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // ABM Productos
-            this.aBMCLIENTEToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoK); // ABM Clientes
-            
-            
-            
+           // this.aBMProductosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // ABM Productos
+            this.compositeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a Usuarios
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Gestion de Backup
+
+
+
         }
         private void MostrarIdiomas()
 
@@ -220,7 +258,7 @@ namespace TRABAJO_FINAL
                 var t = new ToolStripMenuItem();
                 t.Text = item.Idioma;
                 t.Tag = item;
-                this.idiomasToolStripMenuItem.DropDownItems.Add(t);
+                this.idiomas1ToolStripMenuItem.DropDownItems.Add(t);
                 t.Click += idioma_Click;
 
             }
@@ -257,6 +295,13 @@ namespace TRABAJO_FINAL
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Usuarios F5 = new Usuarios();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Roles F5 = new Roles();
             F5.MdiParent = this;
             F5.Show();
         }
