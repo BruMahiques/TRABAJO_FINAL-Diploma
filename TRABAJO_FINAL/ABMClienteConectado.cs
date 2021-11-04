@@ -18,7 +18,7 @@ namespace TRABAJO_FINAL
         public ABMClienteConectado()
         {
             InitializeComponent();
-            radioButton1.Checked = true;
+           
         }
         BLLCliente BLLCliente = new BLLCliente();
 
