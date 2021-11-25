@@ -60,7 +60,7 @@ namespace TRABAJO_FINAL
                     if (x.Tag != null && Traducciones.ContainsKey(x.Tag.ToString()))
                         x.Text = Traducciones[x.Tag.ToString()].Texto;
 
-                    if (idiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomaToolStripMenuItem.Tag.ToString()))
+                   /* if (idiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomaToolStripMenuItem.Tag.ToString()))
                         idiomaToolStripMenuItem.Text = Traducciones[idiomaToolStripMenuItem.Tag.ToString()].Texto;
 
 
@@ -70,9 +70,9 @@ namespace TRABAJO_FINAL
                     
                     if (traduccionesDeIdiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()))
                         traduccionesDeIdiomaToolStripMenuItem.Text = Traducciones[traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()].Texto;
-
-                    if (idiomas1ToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomas1ToolStripMenuItem.Tag.ToString()))
-                        idiomas1ToolStripMenuItem.Text = Traducciones[idiomas1ToolStripMenuItem.Tag.ToString()].Texto;
+                        */
+                    /*if (idiomas1ToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomas1ToolStripMenuItem.Tag.ToString()))
+                        idiomas1ToolStripMenuItem.Text = Traducciones[idiomas1ToolStripMenuItem.Tag.ToString()].Texto;*/
 
                     if (BitalStripMenuItem1.Tag != null && Traducciones.ContainsKey(BitalStripMenuItem1.Tag.ToString()))
                         BitalStripMenuItem1.Text = Traducciones[BitalStripMenuItem1.Tag.ToString()].Texto;
@@ -88,6 +88,10 @@ namespace TRABAJO_FINAL
 
                     if (rolesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(rolesToolStripMenuItem.Tag.ToString()))
                         rolesToolStripMenuItem.Text = Traducciones[rolesToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (salirToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(salirToolStripMenuItem1.Tag.ToString()))
+                        salirToolStripMenuItem1.Text = Traducciones[salirToolStripMenuItem1.Tag.ToString()].Texto;
+                   
 
                 }
 
@@ -107,7 +111,7 @@ namespace TRABAJO_FINAL
 
             if (!Singleton.Instancia.Estalogueado())
             {
-                foreach (var item in idiomas1ToolStripMenuItem.DropDownItems)
+                foreach (var item in seleccionaIdiomaToolStripMenuItem.DropDownItems)
                 {
 
                     var i = ((EEIdioma)((ToolStripMenuItem)item).Tag);
@@ -119,7 +123,7 @@ namespace TRABAJO_FINAL
             }
             else
             {
-                foreach (var item in idiomas1ToolStripMenuItem.DropDownItems)
+                foreach (var item in seleccionaIdiomaToolStripMenuItem.DropDownItems)
                 {
 
                     ((ToolStripMenuItem)item).Enabled = true;
@@ -128,78 +132,16 @@ namespace TRABAJO_FINAL
             }
 
         }
-
-        private void aBMCLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ABMClienteConectado F1 = new ABMClienteConectado();
-            F1.MdiParent = this;
-            F1.Show();
-        }
-
-        private void aBMProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           /* ProductoDesconectado F2 = new ProductoDesconectado();
-            F2.MdiParent = this;
-            F2.Show();¨*/
-        }
-
-        private void ReservasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /*Reservas F3 = new Reservas();
-            F3.MdiParent = this;
-            F3.Show();*/
-        }
-
+                           
         
-
-        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Reporte_Consultas F5 = new Reporte_Consultas();
-            F5.MdiParent = this;
-            F5.Show();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Está seguro que desea cerrar la sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                bllUsuario.Logut();
-                while (ActiveMdiChild != null)
-                {
-                    ActiveMdiChild.Close();
-                    
-                }
-                ValidarFormulario();
-                this.Close();
-            }
-            
-        }
+       
 
         private void compositeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Idioma F5 = new Idioma();
-            F5.MdiParent = this;
-            F5.Show();
-        }
-
-        private void titulosDeIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IdiomaTitulos F5 = new IdiomaTitulos();
-            F5.MdiParent = this;
-            F5.Show();
-        }
-
-        private void traduccionesDeIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IdiomaTraducciones F5 = new IdiomaTraducciones();
-            F5.MdiParent = this;
-            F5.Show();
-        }
+        
 
         private void MDI_Load(object sender, EventArgs e)
         {
@@ -239,7 +181,7 @@ namespace TRABAJO_FINAL
 
         {
             
-            this.adminIdiomaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Gestión de Idiomas y Traduciones
+          //  this.adminIdiomaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Gestión de Idiomas y Traduciones
            // this.aBMProductosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // ABM Productos
             this.compositeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a Usuarios
             this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Gestion de Backup
@@ -258,19 +200,13 @@ namespace TRABAJO_FINAL
                 var t = new ToolStripMenuItem();
                 t.Text = item.Idioma;
                 t.Tag = item;
-                this.idiomas1ToolStripMenuItem.DropDownItems.Add(t);
-                t.Click += idioma_Click;
+                this.seleccionaIdiomaToolStripMenuItem.DropDownItems.Add(t);
+                t.Click += seleccionaIdiomaToolStripMenuItem_Click;
 
             }
 
         }
-        private void idioma_Click(object sender, EventArgs e)
-        {
-            Singleton.Instancia.CambiarIdioma((EEIdioma)((ToolStripMenuItem)sender).Tag);
-
-            MarcarIdioma();
-        }
-
+        
         private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Perfiles F5 = new Perfiles();
@@ -304,6 +240,63 @@ namespace TRABAJO_FINAL
             Roles F5 = new Roles();
             F5.MdiParent = this;
             F5.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMClienteConectado F1 = new ABMClienteConectado();
+            F1.MdiParent = this;
+            F1.Show();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMProductos F1 = new ABMProductos();
+            F1.MdiParent = this;
+            F1.Show();
+        }
+
+        private void idiomaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Idioma F5 = new Idioma();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void titulosDeIdiomaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IdiomaTitulos F5 = new IdiomaTitulos();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void traduccionesDeIdiomaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IdiomaTraducciones F5 = new IdiomaTraducciones();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está seguro que desea cerrar la sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bllUsuario.Logut();
+                while (ActiveMdiChild != null)
+                {
+                    ActiveMdiChild.Close();
+
+                }
+                ValidarFormulario();
+                this.Close();
+            }
+        }
+
+        private void seleccionaIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Singleton.Instancia.CambiarIdioma((EEIdioma)((ToolStripMenuItem)sender).Tag);
+
+            MarcarIdioma();
         }
     }
 }
