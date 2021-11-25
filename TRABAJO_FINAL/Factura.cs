@@ -22,7 +22,7 @@ namespace TRABAJO_FINAL
             try
             {
 
-                CrearGrid();
+                //CrearGrid();
                 ContarItems();
                // txtCodUsuario.Text = us.Codigo_Usuario;
                 CargarSerie_correlativo();
@@ -51,7 +51,7 @@ namespace TRABAJO_FINAL
                 throw;
             }
         }
-        private void CrearGrid()
+       /* private void CrearGrid()
         {
             try
             {
@@ -93,6 +93,7 @@ namespace TRABAJO_FINAL
                 throw;
             }
         }
+        */
         private void CargarSerie_correlativo()
         {
            

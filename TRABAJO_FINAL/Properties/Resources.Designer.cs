@@ -193,6 +193,26 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compras__1_ {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compras (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compras__2_ {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compras (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion {
             get {
                 object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
@@ -256,6 +276,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap eliminar__1_ {
             get {
                 object obj = ResourceManager.GetObject("eliminar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filtrar {
+            get {
+                object obj = ResourceManager.GetObject("filtrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

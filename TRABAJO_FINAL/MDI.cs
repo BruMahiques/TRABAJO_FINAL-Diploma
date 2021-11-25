@@ -300,5 +300,26 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Factura F5 = new Factura();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BuscarCliente F5 = new BuscarCliente();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarProducto F5 = new BuscarProducto();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

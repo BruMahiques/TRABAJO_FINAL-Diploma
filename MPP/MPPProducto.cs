@@ -81,5 +81,37 @@ namespace MPP
             return LProducto;
 
         }
+
+        public DataTable ListarProductosFiltrado(string textbox, int num)
+        {
+            Acceso Datos = new Acceso();
+            DataTable ds = new DataTable();
+
+            string query;
+
+            switch (num)
+            {
+                case 1:
+                    query = "SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')";
+                    break;
+                case 2:
+                    query = "SELECT * FROM Productos where Categoria like ('" + textbox + "%')";
+                    break;
+                case 3:
+                    query = "SELECT * FROM Productos where Precio_Venta like ('" + textbox + "%')";
+                    break;
+                default:
+                    query = "SELECT * FROM Productos where Cant_Jugadores like ('" + textbox + "%')";
+                    break;
+            }
+
+            // ds = Datos.EjecutarCualquierQuerys("SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')");
+
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+
+            return ds;
+
+        }
     }
 }

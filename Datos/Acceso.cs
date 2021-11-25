@@ -179,5 +179,41 @@ namespace Datos
                 Conexion.Close();
             }
         }
+
+        public DataTable EjecutarCualquierQuerys(string Consulta) 
+        {
+            
+            ComandoSQL = new SqlCommand();
+            Conexion = new SqlConnection(@"Data Source=DESKTOP-DVP7934\SQLEXPRESS;Initial Catalog=JUEGOMES;Integrated Security=True");
+            Conexion.Open();
+            ComandoSQL.Connection = Conexion;
+
+            try
+            {
+                ComandoSQL.CommandText = Consulta;
+                ComandoSQL.CommandTimeout = 600;
+                ComandoSQL.CommandType = CommandType.Text;
+                ComandoSQL.ExecuteNonQuery();
+
+             
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Conexion.Close();
+                                                
+            }
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapter = new SqlDataAdapter(ComandoSQL);
+            Adapter.Fill(dt);
+
+            return dt;
+        }
+
+
     }
 }

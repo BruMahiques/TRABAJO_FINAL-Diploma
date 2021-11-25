@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblMontoEnletras = new System.Windows.Forms.Label();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnQuitarItem = new System.Windows.Forms.Button();
+            this.btnAgregarItem = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.lblNumItems = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvDetalleBoleta = new System.Windows.Forms.DataGridView();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +56,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,14 +65,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnQuitarItem = new System.Windows.Forms.Button();
-            this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -92,6 +97,18 @@
             this.panel1.Size = new System.Drawing.Size(603, 292);
             this.panel1.TabIndex = 13;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
+            this.button1.Location = new System.Drawing.Point(322, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 40);
+            this.button1.TabIndex = 24;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // lblMontoEnletras
             // 
             this.lblMontoEnletras.BackColor = System.Drawing.SystemColors.Control;
@@ -102,6 +119,56 @@
             this.lblMontoEnletras.Size = new System.Drawing.Size(297, 23);
             this.lblMontoEnletras.TabIndex = 23;
             this.lblMontoEnletras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
+            this.btnAnular.Location = new System.Drawing.Point(266, 244);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(50, 40);
+            this.btnAnular.TabIndex = 22;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Image = global::TRABAJO_FINAL.Properties.Resources.flecha_hacia_atras;
+            this.btnSalir.Location = new System.Drawing.Point(15, 245);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(51, 40);
+            this.btnSalir.TabIndex = 21;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            // 
+            // btnQuitarItem
+            // 
+            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
+            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
+            this.btnQuitarItem.Name = "btnQuitarItem";
+            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
+            this.btnQuitarItem.TabIndex = 20;
+            this.btnQuitarItem.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarItem
+            // 
+            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
+            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
+            this.btnAgregarItem.Name = "btnAgregarItem";
+            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarItem.TabIndex = 19;
+            this.btnAgregarItem.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
+            this.btnGuardar.Location = new System.Drawing.Point(214, 244);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // lblNumItems
             // 
@@ -136,12 +203,33 @@
             this.txtTotal.TabIndex = 8;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = global::TRABAJO_FINAL.Properties.Resources.adicional;
+            this.btnNuevo.Location = new System.Drawing.Point(161, 244);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(51, 40);
+            this.btnNuevo.TabIndex = 3;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
             // dgvDetalleBoleta
             // 
+            this.dgvDetalleBoleta.AllowUserToAddRows = false;
+            this.dgvDetalleBoleta.AllowUserToDeleteRows = false;
             this.dgvDetalleBoleta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleBoleta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dgvDetalleBoleta.Location = new System.Drawing.Point(15, 27);
             this.dgvDetalleBoleta.Name = "dgvDetalleBoleta";
-            this.dgvDetalleBoleta.Size = new System.Drawing.Size(572, 182);
+            this.dgvDetalleBoleta.ReadOnly = true;
+            this.dgvDetalleBoleta.RowHeadersVisible = false;
+            this.dgvDetalleBoleta.Size = new System.Drawing.Size(586, 182);
             this.dgvDetalleBoleta.TabIndex = 4;
             // 
             // gbCliente
@@ -311,6 +399,16 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "Operativo";
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.LightCyan;
+            this.btnBuscarCliente.Image = global::TRABAJO_FINAL.Properties.Resources.lupa__1_;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(482, 62);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(38, 39);
+            this.btnBuscarCliente.TabIndex = 5;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            // 
             // txtCodUsuario
             // 
             this.txtCodUsuario.Enabled = false;
@@ -393,88 +491,35 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "CUIT";
             // 
-            // btnAnular
+            // Column1
             // 
-            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
-            this.btnAnular.Location = new System.Drawing.Point(266, 244);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(50, 40);
-            this.btnAnular.TabIndex = 22;
-            this.btnAnular.UseVisualStyleBackColor = true;
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // btnSalir
+            // Column2
             // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Image = global::TRABAJO_FINAL.Properties.Resources.flecha_hacia_atras;
-            this.btnSalir.Location = new System.Drawing.Point(15, 245);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(51, 40);
-            this.btnSalir.TabIndex = 21;
-            this.btnSalir.UseVisualStyleBackColor = false;
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // btnQuitarItem
+            // Column3
             // 
-            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
-            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
-            this.btnQuitarItem.Name = "btnQuitarItem";
-            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
-            this.btnQuitarItem.TabIndex = 20;
-            this.btnQuitarItem.UseVisualStyleBackColor = false;
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // btnAgregarItem
+            // Column4
             // 
-            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
-            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
-            this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
-            this.btnAgregarItem.TabIndex = 19;
-            this.btnAgregarItem.UseVisualStyleBackColor = false;
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
-            // btnGuardar
+            // Column5
             // 
-            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
-            this.btnGuardar.Location = new System.Drawing.Point(214, 244);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = global::TRABAJO_FINAL.Properties.Resources.adicional;
-            this.btnNuevo.Location = new System.Drawing.Point(161, 244);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(51, 40);
-            this.btnNuevo.TabIndex = 3;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.LightCyan;
-            this.btnBuscarCliente.Image = global::TRABAJO_FINAL.Properties.Resources.lupa__1_;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(482, 62);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(38, 39);
-            this.btnBuscarCliente.TabIndex = 5;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
-            this.button1.Location = new System.Drawing.Point(322, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 40);
-            this.button1.TabIndex = 24;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Column5.HeaderText = "Total";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Factura
             // 
@@ -539,5 +584,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
