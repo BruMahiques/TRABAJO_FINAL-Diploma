@@ -80,14 +80,14 @@ namespace TRABAJO_FINAL
                     if (usuariosToolStripMenuItem.Tag != null && Traducciones.ContainsKey(usuariosToolStripMenuItem.Tag.ToString()))
                         usuariosToolStripMenuItem.Text = Traducciones[usuariosToolStripMenuItem.Tag.ToString()].Texto;
 
-                    if (compositeToolStripMenuItem.Tag != null && Traducciones.ContainsKey(compositeToolStripMenuItem.Tag.ToString()))
+                    /*if (compositeToolStripMenuItem.Tag != null && Traducciones.ContainsKey(compositeToolStripMenuItem.Tag.ToString()))
                         compositeToolStripMenuItem.Text = Traducciones[compositeToolStripMenuItem.Tag.ToString()].Texto;
 
                     if (perfilesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(perfilesToolStripMenuItem.Tag.ToString()))
                         perfilesToolStripMenuItem.Text = Traducciones[perfilesToolStripMenuItem.Tag.ToString()].Texto;
 
                     if (rolesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(rolesToolStripMenuItem.Tag.ToString()))
-                        rolesToolStripMenuItem.Text = Traducciones[rolesToolStripMenuItem.Tag.ToString()].Texto;
+                        rolesToolStripMenuItem.Text = Traducciones[rolesToolStripMenuItem.Tag.ToString()].Texto; */
 
                     if (salirToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(salirToolStripMenuItem1.Tag.ToString()))
                         salirToolStripMenuItem1.Text = Traducciones[salirToolStripMenuItem1.Tag.ToString()].Texto;
@@ -183,7 +183,7 @@ namespace TRABAJO_FINAL
             
           //  this.adminIdiomaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Gestión de Idiomas y Traduciones
            // this.aBMProductosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // ABM Productos
-            this.compositeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a Usuarios
+           // this.compositeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a Usuarios
             this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Gestion de Backup
 
 
@@ -207,13 +207,6 @@ namespace TRABAJO_FINAL
 
         }
         
-        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Perfiles F5 = new Perfiles();
-            F5.MdiParent = this;
-            F5.Show();
-        }
-
         private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BackUp F5 = new BackUp();
@@ -235,12 +228,7 @@ namespace TRABAJO_FINAL
             F5.Show();
         }
 
-        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Roles F5 = new Roles();
-            F5.MdiParent = this;
-            F5.Show();
-        }
+        
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -297,6 +285,20 @@ namespace TRABAJO_FINAL
             Singleton.Instancia.CambiarIdioma((EEIdioma)((ToolStripMenuItem)sender).Tag);
 
             MarcarIdioma();
+        }
+
+        private void perfilesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Perfiles F5 = new Perfiles();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void rolesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Roles F5 = new Roles();
+            F5.MdiParent = this;
+            F5.Show();
         }
     }
 }
