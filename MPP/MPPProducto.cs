@@ -12,17 +12,49 @@ namespace MPP
 {
     public class MPPProducto
     {
-        public DataSet Listar()
+        public bool Alta_Mod_Producto(EEProducto EEProducto)
         {
             Acceso Datos = new Acceso();
-            return Datos.Leer("SP_Producto_Listar", null);
+            Hashtable Hdatos = new Hashtable();
+            bool Resultado;
+            string consulta = "SP_Producto_Alta";
+
+            if (EEProducto.Cod_Producto != 0)
+            {
+                consulta = "SP_Producto_Modificar";
+                Hdatos.Add("@Cod_Producto", EEProducto.Cod_Producto);
+
+            }
+            Hdatos.Add("@Nombre_Producto", EEProducto.Nombre_Producto);
+            Hdatos.Add("@Duracion", EEProducto.Duracion);
+            Hdatos.Add("@Edad_Producto", EEProducto.Edad_Producto);
+            Hdatos.Add("@Precio_Compra", EEProducto.Precio_Compra);
+            Hdatos.Add("@Precio_Venta", EEProducto.Precio_Venta);
+            Hdatos.Add("@Categoria", EEProducto.Categoria);
+            Hdatos.Add("@Stock", EEProducto.Stock);
+            Hdatos.Add("@Cant_Jugadores", EEProducto.Cant_Jugadores);
+
+            Resultado = Datos.Escribir(consulta, Hdatos);
+            return Resultado;
         }
+
+        public bool BajaProducto(EEProducto EEProducto)
+        {
+            Acceso Datos = new Acceso();
+            Hashtable Hdatos = new Hashtable();
+            bool Resultado;
+            Hdatos.Add("@Cod_Producto", EEProducto.Cod_Producto);
+            string consulta = "SP_Producto_Baja";
+            return Resultado = Datos.Escribir(consulta, Hdatos);
+
+        }
+
         public List<EEProducto> ListarProductos()
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
 
-            List<EEProducto> LProductos = new List<EEProducto>();
+            List<EEProducto> LProducto = new List<EEProducto>();
 
             ds = Datos.Leer("SP_Producto_Listar", null);
 
@@ -31,27 +63,22 @@ namespace MPP
                 foreach (DataRow fila in ds.Tables[0].Rows)
                 {
                     EEProducto EEProducto = new EEProducto();
-                    EEProducto.Cod_Producto = Convert.ToInt16(fila["Cod_Producto"]);
-                    EEProducto.Tipo_Poducto = fila["Tipo_Producto"].ToString();
+                    EEProducto.Cod_Producto = Convert.ToInt32(fila["Cod_Producto"]);
                     EEProducto.Nombre_Producto = fila["Nombre_Producto"].ToString();
-                     EEProducto.Genero =fila["Genero"].ToString();
+                    EEProducto.Duracion = fila["Duracion"].ToString();
                     EEProducto.Edad_Producto = fila["Edad_Producto"].ToString();
-                    EEProducto.Nacionalidad_Producto = fila["Nacionalidad_Producto"].ToString();
-                    EEProducto.Empresa = fila["Empresa"].ToString();
+                    EEProducto.Precio_Compra = Convert.ToDouble(fila["Precio_Compra"]);
+                    EEProducto.Precio_Venta = Convert.ToDouble(fila["Precio_Venta"]);
+                    EEProducto.Categoria = fila["Categoria"].ToString();
+                    EEProducto.Stock = Convert.ToInt32(fila["Stock"]);
+                    EEProducto.Cant_Jugadores = fila["Cant_Jugadores"].ToString();
 
-                    LProductos.Add(EEProducto);
+                    LProducto.Add(EEProducto);
 
                 }
             }
 
-            return LProductos;
-
-        }
-        public DataSet ListarAlquilados()
-        {
-
-            Acceso Datos = new Acceso();
-            return Datos.Leer("SP_Producto_Listar_Alquilados", null);
+            return LProducto;
 
         }
     }

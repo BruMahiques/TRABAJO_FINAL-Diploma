@@ -9,23 +9,20 @@ namespace EE
      public class EEProducto
     {
         public int Cod_Producto { get; set; }
-        public string Tipo_Poducto { get; set; }
+        public string Duracion { get; set; }
         public string Nombre_Producto { get; set; }
-        public string Genero { get; set; }
+        public string Categoria { get; set; }
 
         public string Edad_Producto { get; set; }
 
-        public string Nacionalidad_Producto { get; set; }
+        public double Precio_Compra { get; set; }
 
-        public string Empresa { get; set; }
-        public double Importe { get; set; }
-        public bool Alquilado { get; set; }
+        public double Precio_Venta { get; set; }
+        public int Stock { get; set; }
+        public string Cant_Jugadores { get; set; }
 
         public EEProducto() { }
 
-        public override string ToString()
-        {
-            return Tipo_Poducto + " - " + Nombre_Producto + " - " + Genero + " - " + Edad_Producto + " - " + Nacionalidad_Producto + " - " + Empresa + " - " + Importe;
-        }
+        
     }
 }

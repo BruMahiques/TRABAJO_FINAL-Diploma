@@ -17,7 +17,7 @@ namespace TRABAJO_FINAL
         public Reporte_Consultas()
         {
             InitializeComponent();
-            radioButton1.Checked = true;
+            
         }
 
         DataSet ds = new DataSet();
@@ -43,7 +43,7 @@ namespace TRABAJO_FINAL
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds.Tables[0];
         }
-        void CambiarIdiomaEspañol(string Cultura)
+        /*void CambiarIdiomaEspañol(string Cultura)
         {
 
             label1.Text = Resource1.Consultas;
@@ -81,7 +81,7 @@ namespace TRABAJO_FINAL
         {
             CambiarIdiomaIngles("Resource2");
         }
-
+        */
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();

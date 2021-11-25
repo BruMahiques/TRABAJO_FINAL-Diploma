@@ -10,14 +10,16 @@ using System.Windows.Forms;
 using BLL;
 using EE;
 using System.Text.RegularExpressions;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class ABMClienteConectado : Form
+    public partial class ABMClienteConectado : Form, InterfazIdiomaObserver
     {
         public ABMClienteConectado()
         {
             InitializeComponent();
+            Traducir();
            
         }
         BLLCliente BLLCliente = new BLLCliente();
@@ -30,51 +32,66 @@ namespace TRABAJO_FINAL
             dataGridView1.DataSource = clientes;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        public void UpdateLanguage(EEIdioma idioma)
         {
-            try
-            {
-                if (ValidarCampos())
-                {
-                    EECliente Cliente = new EECliente();
-                    Cliente.Nombre = textBox1.Text;
-                    Cliente.Apellido = textBox2.Text;
-                    Cliente.DNI = Convert.ToInt32(textBox3.Text);
-                    Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
-                    Cliente.Correo = textBox4.Text;
-
-                    BLLCliente.ALta_Mod_Cliente(Cliente);
-
-                    ObtenerClientes();
-                }
-                else
-                {
-                    MessageBox.Show("Datos mal ingresados");
-                    return;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocurrido un error");
-                return;
-            }
+            Traducir();
         }
+
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                /*if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
+                    button2.Text = Traducciones[button2.Tag.ToString()].Texto;
+
+                if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
+                    button3.Text = Traducciones[button3.Tag.ToString()].Texto;
+
+                if (button1.Tag != null && Traducciones.ContainsKey(button1.Tag.ToString()))
+                    button1.Text = Traducciones[button1.Tag.ToString()].Texto;*/
+
+                if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                    label1.Text = Traducciones[label1.Tag.ToString()].Texto;
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (button4.Tag != null && Traducciones.ContainsKey(button4.Tag.ToString()))
+                    button4.Text = Traducciones[button4.Tag.ToString()].Texto;
+
+                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
+                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+               
+                if (label4.Tag != null && Traducciones.ContainsKey(label4.Tag.ToString()))
+                    label4.Text = Traducciones[label4.Tag.ToString()].Texto;
+
+                if (label5.Tag != null && Traducciones.ContainsKey(label5.Tag.ToString()))
+                    label5.Text = Traducciones[label5.Tag.ToString()].Texto;
+
+                
+
+            }
+
+        }
+
+        
 
         private bool ValidarCampos()
         {
             
-                string Cod = textBox5.Text;
-
-                bool respuesta = Regex.IsMatch(Cod, "^([0-9]+$)");
-                if (respuesta == false)
-                {
-                    MessageBox.Show("No escribio un número en Cod_Cliente", "ERROR");
-                    return respuesta;
-                }
-            
-            
-         
                 string DNI = textBox3.Text;
 
                 bool respuesta3 = Regex.IsMatch(DNI, "^([0-9]+$)");
@@ -87,12 +104,12 @@ namespace TRABAJO_FINAL
 
 
                 string Nombre = textBox1.Text;
-                bool respuesta1 = false;
-                respuesta1 = Regex.IsMatch(Nombre, "^([a-zA-Z]+$)");
-                if (respuesta1 == false)
+                bool respuesta = false;
+                respuesta = Regex.IsMatch(Nombre, "^([a-zA-Z]+$)");
+                if (respuesta == false)
                 {
                     MessageBox.Show("No escribio solo letras en Nombre", "ERROR");
-                    return respuesta1;
+                    return respuesta;
                 }
 
 
@@ -133,7 +150,62 @@ namespace TRABAJO_FINAL
             ObtenerClientes();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+      
+
+        
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            dateTimePicker1.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            textBox5.Text = string.Empty;
+        }
+
+        private void btnNuevoP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidarCampos())
+                {
+                    EECliente Cliente = new EECliente();
+                    Cliente.Nombre = textBox1.Text;
+                    Cliente.Apellido = textBox2.Text;
+                    Cliente.DNI = Convert.ToInt32(textBox3.Text);
+                    Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
+                    Cliente.Correo = textBox4.Text;
+
+                    BLLCliente.ALta_Mod_Cliente(Cliente);
+
+                    ObtenerClientes();
+                }
+                else
+                {
+                    MessageBox.Show("Datos mal ingresados");
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error");
+                return;
+            }
+        }
+
+        private void btnEliminarP_Click(object sender, EventArgs e)
         {
             try
             {
@@ -165,7 +237,7 @@ namespace TRABAJO_FINAL
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEditarP_Click(object sender, EventArgs e)
         {
             try
             {
@@ -195,81 +267,6 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("Ha ocurrido un error");
                 return;
             }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = string.Empty;
-            textBox2.Text = string.Empty;
-            textBox3.Text = string.Empty;
-            dateTimePicker1.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            textBox5.Text = string.Empty;
-        }
-
-        void CambiarIdiomaEspañol(string Cultura)
-        {
-
-
-            label1.Text = Resource1.Nombre;
-            label2.Text = Resource1.Apellido;
-            label3.Text = Resource1.DNI;
-            label4.Text = Resource1.Fecha_de_Nacimiento;
-            label5.Text = Resource1.Correo;
-            label6.Text = Resource1.Codigo_del_Cliente;
-            label7.Text = Resource1.ModoBaja;
-            button1.Text = Resource1.btnAlta;
-            button2.Text = Resource1.btnBaja;
-            button3.Text = Resource1.btnModificar;
-            button4.Text = Resource1.btnLimpiar;
-            button5.Text = Resource1.Salir;
-
-        }
-        void CambiarIdiomaIngles(string Cultura)
-        {
-
-
-
-            label1.Text = Resource2.Nombre;
-            label2.Text = Resource2.Apellido;
-            label3.Text = Resource2.DNI;
-            label4.Text = Resource2.Fecha_de_Nacimiento;
-            label5.Text = Resource2.Correo;
-            label6.Text = Resource2.Codigo_del_Cliente;
-            label7.Text = Resource2.ModoBaja;
-            button1.Text = Resource2.btnAlta;
-            button2.Text = Resource2.btnBaja;
-            button3.Text = Resource2.btnModificar;
-            button4.Text = Resource2.btnLimpiar;
-            button5.Text = Resource2.Salir;
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            CambiarIdiomaEspañol("Resource1");
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            CambiarIdiomaIngles("Resource2");
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-           
-            
         }
     }
 }

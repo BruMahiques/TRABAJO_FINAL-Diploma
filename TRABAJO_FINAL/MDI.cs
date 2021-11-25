@@ -138,16 +138,16 @@ namespace TRABAJO_FINAL
 
         private void aBMProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductoDesconectado F2 = new ProductoDesconectado();
+           /* ProductoDesconectado F2 = new ProductoDesconectado();
             F2.MdiParent = this;
-            F2.Show();
+            F2.Show();¨*/
         }
 
         private void ReservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reservas F3 = new Reservas();
+            /*Reservas F3 = new Reservas();
             F3.MdiParent = this;
-            F3.Show();
+            F3.Show();*/
         }
 
         
