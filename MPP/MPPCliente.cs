@@ -74,5 +74,35 @@ namespace MPP
             return LClientes;
 
         }
+
+        public DataTable ListarClientesFiltrado(string textbox, string textbox2, int num)
+        {
+            Acceso Datos = new Acceso();
+            DataTable ds = new DataTable();
+
+            string query;
+
+            switch (num)
+            {
+                case 1:
+                    query = "SELECT * FROM Cliente where DNI like ('" + textbox + "%') and Nombre like ('" + textbox2 + "%')";
+                    break;
+                case 2:
+                    query = "SELECT * FROM Cliente where Nombre like ('" + textbox2 + "%')";
+                    break;
+
+                default:
+                    query = "SELECT * FROM Cliente where DNI like ('" + textbox + "%')";
+                    break;
+            }
+
+            // ds = Datos.EjecutarCualquierQuerys("SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')");
+
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+
+            return ds;
+
+        }
     }
 }

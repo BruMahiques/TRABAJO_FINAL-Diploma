@@ -31,12 +31,12 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rCant = new System.Windows.Forms.RadioButton();
             this.rbPrecio = new System.Windows.Forms.RadioButton();
             this.rbCategoria = new System.Windows.Forms.RadioButton();
             this.rbNombreProd = new System.Windows.Forms.RadioButton();
             this.txtBusqProd = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.rCant = new System.Windows.Forms.RadioButton();
             this.Filtrar = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -48,13 +48,11 @@
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.LightCoral;
             this.btnSalir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.Location = new System.Drawing.Point(969, 98);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 40);
             this.btnSalir.TabIndex = 56;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -85,6 +83,17 @@
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
+            // 
+            // rCant
+            // 
+            this.rCant.AutoSize = true;
+            this.rCant.Location = new System.Drawing.Point(354, 65);
+            this.rCant.Name = "rCant";
+            this.rCant.Size = new System.Drawing.Size(131, 17);
+            this.rCant.TabIndex = 4;
+            this.rCant.TabStop = true;
+            this.rCant.Text = "Cantidad de jugadores";
+            this.rCant.UseVisualStyleBackColor = true;
             // 
             // rbPrecio
             // 
@@ -138,17 +147,6 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(1029, 361);
             this.dgvProductos.TabIndex = 52;
-            // 
-            // rCant
-            // 
-            this.rCant.AutoSize = true;
-            this.rCant.Location = new System.Drawing.Point(354, 65);
-            this.rCant.Name = "rCant";
-            this.rCant.Size = new System.Drawing.Size(131, 17);
-            this.rCant.TabIndex = 4;
-            this.rCant.TabStop = true;
-            this.rCant.Text = "Cantidad de jugadores";
-            this.rCant.UseVisualStyleBackColor = true;
             // 
             // Filtrar
             // 

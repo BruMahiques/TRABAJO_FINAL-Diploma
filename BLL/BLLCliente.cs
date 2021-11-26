@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EE;
 using MPP;
+using System.Data;
 
 namespace BLL
 {
@@ -26,6 +27,11 @@ namespace BLL
             return Map.ListarCliente();
         }
 
-        
+        public DataTable ListarClientesFiltrado(string textbox, string textbox2, int num)
+        {
+            return Map.ListarClientesFiltrado(textbox, textbox2, num);
+        }
+
+
     }
 }

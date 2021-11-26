@@ -42,34 +42,34 @@ namespace TRABAJO_FINAL
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
+            DataTable productos;
+
             if (rbNombreProd.Checked == true)
             {
-                DataTable productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 1);
-                dgvProductos.DataSource = null;
-                dgvProductos.DataSource = productos;
+                productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 1);
+                
             }
             else {
                 if (rbCategoria.Checked == true)
                 {
-                    DataTable productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 2);
-                    dgvProductos.DataSource = null;
-                    dgvProductos.DataSource = productos;
+                    productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 2);
+                    
                 }
                 else {
                     if (rbPrecio.Checked == true)
                     {
-                        DataTable productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 3);
-                        dgvProductos.DataSource = null;
-                        dgvProductos.DataSource = productos;
+                        productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 3);
+                        
                     }
                     else
                     {
-                        DataTable productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 4);
-                        dgvProductos.DataSource = null;
-                        dgvProductos.DataSource = productos;
+                        productos = BLLProducto.ListarProductosFiltrado(txtBusqProd.Text, 4);
+                        
                     }
                      }
                 }
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = productos;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

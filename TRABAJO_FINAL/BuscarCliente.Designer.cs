@@ -28,44 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnVender = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkBuscar = new System.Windows.Forms.CheckBox();
+            this.Filtrar = new System.Windows.Forms.Button();
             this.txtNomRazSocial = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnVender = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(910, 131);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(87, 46);
-            this.btnActualizar.TabIndex = 51;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // btnVender
-            // 
-            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVender.Image = global::TRABAJO_FINAL.Properties.Resources.carrito_de_compras__2_;
-            this.btnVender.Location = new System.Drawing.Point(823, 132);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(82, 46);
-            this.btnVender.TabIndex = 50;
-            this.btnVender.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -92,10 +69,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.chkBuscar);
+            this.groupBox4.Controls.Add(this.Filtrar);
             this.groupBox4.Controls.Add(this.txtNomRazSocial);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.btnBuscar);
             this.groupBox4.Controls.Add(this.txtNroDoc);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,14 +82,21 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Buscar";
             // 
-            // chkBuscar
+            // Filtrar
             // 
-            this.chkBuscar.AutoSize = true;
-            this.chkBuscar.Location = new System.Drawing.Point(448, 69);
-            this.chkBuscar.Name = "chkBuscar";
-            this.chkBuscar.Size = new System.Drawing.Size(15, 14);
-            this.chkBuscar.TabIndex = 30;
-            this.chkBuscar.UseVisualStyleBackColor = true;
+            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
+            this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
+            this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Filtrar.Location = new System.Drawing.Point(460, 56);
+            this.Filtrar.Name = "Filtrar";
+            this.Filtrar.Size = new System.Drawing.Size(90, 37);
+            this.Filtrar.TabIndex = 74;
+            this.Filtrar.Tag = "Filtrar";
+            this.Filtrar.Text = "Filtrar";
+            this.Filtrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Filtrar.UseVisualStyleBackColor = false;
+            this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
             // txtNomRazSocial
             // 
@@ -131,14 +114,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Nombre/Raz. Social:";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(61, 40);
-            this.btnBuscar.TabIndex = 27;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // txtNroDoc
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(183, 32);
@@ -155,14 +130,54 @@
             this.label15.TabIndex = 9;
             this.label15.Text = "Nº Documento:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.LightCoral;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Location = new System.Drawing.Point(912, 138);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 40);
+            this.btnSalir.TabIndex = 59;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCargar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnCargar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCargar.Location = new System.Drawing.Point(826, 138);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(80, 40);
+            this.btnCargar.TabIndex = 58;
+            this.btnCargar.Text = "Actualizar";
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnVender
+            // 
+            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVender.BackColor = System.Drawing.Color.Bisque;
+            this.btnVender.Image = global::TRABAJO_FINAL.Properties.Resources.carrito_de_compras__2_;
+            this.btnVender.Location = new System.Drawing.Point(740, 138);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(80, 40);
+            this.btnVender.TabIndex = 57;
+            this.btnVender.UseVisualStyleBackColor = false;
+            // 
             // BuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 537);
-            this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.btnVender);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnVender);
             this.Controls.Add(this.groupBox4);
             this.Name = "BuscarCliente";
             this.Text = "BuscarCliente";
@@ -176,17 +191,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox chkBuscar;
         private System.Windows.Forms.TextBox txtNomRazSocial;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNroDoc;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnVender;
+        private System.Windows.Forms.Button Filtrar;
     }
 }

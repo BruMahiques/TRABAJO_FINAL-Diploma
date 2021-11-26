@@ -34,5 +34,41 @@ namespace TRABAJO_FINAL
             dgvCliente.DataSource = null;
             dgvCliente.DataSource = clientes;
         }
+
+        private void Filtrar_Click(object sender, EventArgs e)
+        {
+            DataTable clientes;
+
+            if (txtNroDoc.Text != null && txtNomRazSocial.Text != null)
+            {
+                clientes = BLLCliente.ListarClientesFiltrado(txtNroDoc.Text, txtNomRazSocial.Text, 1);
+
+            }
+            else
+            {
+                if (txtNomRazSocial.Text != null)
+                {
+                    clientes = BLLCliente.ListarClientesFiltrado(txtNomRazSocial.Text,null, 2);
+
+                }
+                else
+                {
+                    clientes = BLLCliente.ListarClientesFiltrado(txtNroDoc.Text,null, 3);
+
+                }
+            }
+            dgvCliente.DataSource = null;
+            dgvCliente.DataSource = clientes;
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            ObtenerClientes();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
