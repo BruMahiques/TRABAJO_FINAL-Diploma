@@ -35,6 +35,8 @@ namespace TRABAJO_FINAL
             dgvCliente.DataSource = clientes;
         }
 
+        public List<EEProducto> lista3 = new List<EEProducto>();
+
         private void Filtrar_Click(object sender, EventArgs e)
         {
             DataTable clientes;
@@ -69,6 +71,35 @@ namespace TRABAJO_FINAL
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            Factura bus = new Factura();
+
+
+
+            bus.lista = lista3;
+
+            foreach (DataGridViewRow fila in dgvCliente.Rows)
+            {
+                EECliente dt = new EECliente();
+                if (fila.Selected)
+                {
+                    dt.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 0].Value);
+                    dt.Nombre = fila.Cells[index: 1].Value.ToString();
+                    dt.DNI = Convert.ToInt32(fila.Cells[index: 3].Value.ToString());
+                    // dt.Categoria = fila.Cells[index: 3].Value.ToString();
+                    dt.Correo = fila.Cells[index: 5].Value.ToString();
+                    bus.Clien = dt;
+                    
+
+
+                }
+            }
+
+            this.Close();
+            bus.Show();
         }
     }
 }

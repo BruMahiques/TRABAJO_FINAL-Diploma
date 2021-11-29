@@ -283,6 +283,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("eliminar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filtrar {
             get {
                 object obj = ResourceManager.GetObject("filtrar", resourceCulture);

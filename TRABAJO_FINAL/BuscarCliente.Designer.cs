@@ -168,6 +168,7 @@
             this.btnVender.Size = new System.Drawing.Size(80, 40);
             this.btnVender.TabIndex = 57;
             this.btnVender.UseVisualStyleBackColor = false;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // BuscarCliente
             // 

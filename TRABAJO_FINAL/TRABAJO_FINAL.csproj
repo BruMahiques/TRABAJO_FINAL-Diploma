@@ -354,5 +354,8 @@
   <ItemGroup>
     <None Include="Resources\filtrar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar-usuario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
