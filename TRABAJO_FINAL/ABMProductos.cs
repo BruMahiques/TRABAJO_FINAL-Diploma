@@ -237,12 +237,12 @@ namespace TRABAJO_FINAL
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigoP.Text = dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtDuracion.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtNombre.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textCategoria.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textEdad.Text = dgvProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtPrecioCompra.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtDuracion.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtNombre.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textCategoria.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
+            textEdad.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtPrecioCompra.Text = dgvProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
             txtStock.Text = dgvProductos.Rows[e.RowIndex].Cells[7].Value.ToString();
             textCant.Text = dgvProductos.Rows[e.RowIndex].Cells[8].Value.ToString();
 

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLEnum.cs" />
     <Compile Include="BLLIdiomaTitulo.cs" />
     <Compile Include="BLLIdiomaTraductor.cs" />
     <Compile Include="BLLPerfilComponente.cs" />
@@ -51,6 +52,8 @@
     <Compile Include="BLLProducto.cs" />
     <Compile Include="BLLReportes.cs" />
     <Compile Include="BLLUsuario.cs" />
+    <Compile Include="BLLVenta.cs" />
+    <Compile Include="BLLVentaDet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

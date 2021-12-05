@@ -157,8 +157,8 @@ namespace TRABAJO_FINAL
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();

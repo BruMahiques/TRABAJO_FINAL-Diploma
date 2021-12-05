@@ -87,7 +87,7 @@ namespace TRABAJO_FINAL
                 if (fila.Selected)
                 {
                     dt.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 0].Value);
-                    dt.Nombre = fila.Cells[index: 1].Value.ToString();
+                    dt.Nombre = fila.Cells[index: 2].Value.ToString();
                     dt.DNI = Convert.ToInt32(fila.Cells[index: 3].Value.ToString());
                     // dt.Categoria = fila.Cells[index: 3].Value.ToString();
                     dt.Correo = fila.Cells[index: 5].Value.ToString();

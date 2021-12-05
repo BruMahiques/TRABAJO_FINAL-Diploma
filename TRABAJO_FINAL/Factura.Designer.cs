@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtdesc = new System.Windows.Forms.TextBox();
             this.lbleliminar = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblMontoEnletras = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnQuitarItem = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblNumItems = new System.Windows.Forms.Label();
+            this.lblNumdesc = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -47,6 +47,8 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboComprobante = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -82,14 +84,14 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtdesc);
             this.panel1.Controls.Add(this.lbleliminar);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lblMontoEnletras);
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnAnular);
             this.panel1.Controls.Add(this.btnQuitarItem);
             this.panel1.Controls.Add(this.btnAgregarItem);
             this.panel1.Controls.Add(this.btnGuardar);
-            this.panel1.Controls.Add(this.lblNumItems);
+            this.panel1.Controls.Add(this.lblNumdesc);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.btnNuevo);
@@ -98,6 +100,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 292);
             this.panel1.TabIndex = 13;
+            // 
+            // txtdesc
+            // 
+            this.txtdesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdesc.Location = new System.Drawing.Point(93, 216);
+            this.txtdesc.MaxLength = 15;
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.Size = new System.Drawing.Size(123, 21);
+            this.txtdesc.TabIndex = 27;
+            this.txtdesc.Text = "-";
+            this.txtdesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtdesc.Enter += new System.EventHandler(this.txtdesc_Enter);
+            this.txtdesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdesc_KeyPress);
             // 
             // lbleliminar
             // 
@@ -108,28 +123,18 @@
             this.lbleliminar.TabIndex = 25;
             this.lbleliminar.Text = "-";
             // 
-            // button1
+            // btnImprimir
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
-            this.button1.Location = new System.Drawing.Point(322, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 40);
-            this.button1.TabIndex = 24;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lblMontoEnletras
-            // 
-            this.lblMontoEnletras.BackColor = System.Drawing.SystemColors.Control;
-            this.lblMontoEnletras.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoEnletras.ForeColor = System.Drawing.Color.Black;
-            this.lblMontoEnletras.Location = new System.Drawing.Point(93, 215);
-            this.lblMontoEnletras.Name = "lblMontoEnletras";
-            this.lblMontoEnletras.Size = new System.Drawing.Size(297, 23);
-            this.lblMontoEnletras.TabIndex = 23;
-            this.lblMontoEnletras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
+            this.btnImprimir.Location = new System.Drawing.Point(322, 244);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(51, 40);
+            this.btnImprimir.TabIndex = 24;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAnular
             // 
@@ -171,17 +176,19 @@
             this.btnGuardar.Size = new System.Drawing.Size(50, 40);
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lblNumItems
+            // lblNumdesc
             // 
-            this.lblNumItems.BackColor = System.Drawing.Color.Teal;
-            this.lblNumItems.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumItems.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNumItems.Location = new System.Drawing.Point(15, 215);
-            this.lblNumItems.Name = "lblNumItems";
-            this.lblNumItems.Size = new System.Drawing.Size(72, 23);
-            this.lblNumItems.TabIndex = 15;
-            this.lblNumItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNumdesc.BackColor = System.Drawing.Color.Teal;
+            this.lblNumdesc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumdesc.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNumdesc.Location = new System.Drawing.Point(15, 215);
+            this.lblNumdesc.Name = "lblNumdesc";
+            this.lblNumdesc.Size = new System.Drawing.Size(72, 25);
+            this.lblNumdesc.TabIndex = 15;
+            this.lblNumdesc.Text = "Descuento";
+            this.lblNumdesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
@@ -203,6 +210,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 25);
             this.txtTotal.TabIndex = 8;
+            this.txtTotal.Text = "-";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnNuevo
@@ -215,6 +223,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(51, 40);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // dgvDetalleBoleta
             // 
@@ -236,6 +245,7 @@
             this.dgvDetalleBoleta.TabIndex = 4;
             this.dgvDetalleBoleta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleBoleta_CellContentClick);
             this.dgvDetalleBoleta.SelectionChanged += new System.EventHandler(this.dgvDetalleBoleta_SelectionChanged);
+            this.dgvDetalleBoleta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvDetalleBoleta_KeyPress);
             // 
             // Codigo
             // 
@@ -265,6 +275,8 @@
             // gbCliente
             // 
             this.gbCliente.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gbCliente.Controls.Add(this.label3);
+            this.gbCliente.Controls.Add(this.cboComprobante);
             this.gbCliente.Controls.Add(this.button2);
             this.gbCliente.Controls.Add(this.label1);
             this.gbCliente.Controls.Add(this.txtDireccion);
@@ -290,6 +302,28 @@
             this.gbCliente.Size = new System.Drawing.Size(603, 145);
             this.gbCliente.TabIndex = 12;
             this.gbCliente.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(284, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 15);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Tip. Comprobante";
+            // 
+            // cboComprobante
+            // 
+            this.cboComprobante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboComprobante.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboComprobante.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cboComprobante.FormattingEnabled = true;
+            this.cboComprobante.Location = new System.Drawing.Point(284, 30);
+            this.cboComprobante.Name = "cboComprobante";
+            this.cboComprobante.Size = new System.Drawing.Size(145, 23);
+            this.cboComprobante.TabIndex = 25;
+            this.cboComprobante.SelectedValueChanged += new System.EventHandler(this.cboComprobante_SelectedValueChanged);
             // 
             // button2
             // 
@@ -317,9 +351,9 @@
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(293, 114);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(295, 21);
             this.txtDireccion.TabIndex = 22;
+            this.txtDireccion.Text = "-";
             // 
             // label7
             // 
@@ -471,6 +505,7 @@
             this.txtCodUsuario.ReadOnly = true;
             this.txtCodUsuario.Size = new System.Drawing.Size(67, 22);
             this.txtCodUsuario.TabIndex = 1;
+            this.txtCodUsuario.Text = "-";
             this.txtCodUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -503,6 +538,7 @@
             this.lblCorrelativo.Name = "lblCorrelativo";
             this.lblCorrelativo.Size = new System.Drawing.Size(91, 19);
             this.lblCorrelativo.TabIndex = 8;
+            this.lblCorrelativo.Text = "-";
             // 
             // lblSerie
             // 
@@ -511,7 +547,7 @@
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(50, 19);
             this.lblSerie.TabIndex = 7;
-            this.lblSerie.Text = "0001-";
+            this.lblSerie.Text = "-";
             // 
             // label6
             // 
@@ -522,7 +558,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 2;
-            this.label6.Text = "FACTURA";
+            this.label6.Text = "-";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -572,12 +608,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMontoEnletras;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Button btnQuitarItem;
         private System.Windows.Forms.Button btnAgregarItem;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label lblNumItems;
+        private System.Windows.Forms.Label lblNumdesc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button btnNuevo;
@@ -605,7 +640,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lbleliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
@@ -615,5 +650,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboComprobante;
+        private System.Windows.Forms.TextBox txtdesc;
     }
 }

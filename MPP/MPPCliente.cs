@@ -61,8 +61,8 @@ namespace MPP
                 {
                     EECliente EECliente = new EECliente();
                     EECliente.Cod_Cliente = Convert.ToInt16(fila["Cod_Cliente"]);
-                    EECliente.Nombre = fila["Nombre"].ToString();
                     EECliente.Apellido = fila["Apellido"].ToString();
+                    EECliente.Nombre = fila["Nombre"].ToString();
                     EECliente.DNI = Convert.ToInt32(fila["DNI"]);
                     EECliente.FechaNac = Convert.ToDateTime(fila["FechaNac"]);
                     EECliente.Correo = fila["Correo"].ToString();

@@ -91,7 +91,7 @@ namespace TRABAJO_FINAL
 
             int condicional = 0;
 
-            foreach (DataGridViewRow filas in dgvProductos.Rows)
+            foreach (DataGridViewRow filas in dgvProductos.Rows) //Para saber si un producto no tiene stock
             {
                 if (filas.Selected)
                 {
@@ -108,13 +108,32 @@ namespace TRABAJO_FINAL
 
             }
 
+            foreach (DataGridViewRow filas in dgvProductos.Rows) //Para saber si ya se eligió el mismo producto 
+            {
+                if (filas.Selected)
+                {
+                    string codigo = filas.Cells[index: 0].Value.ToString();
+                    string nombre = filas.Cells[index: 1].Value.ToString();
+
+                    foreach (var v in bus.lista)
+                    {
+                        if (v.Cod_Producto.ToString() == codigo)
+                        {
+                            condicional = 1;
+                            MessageBox.Show("El producto " + nombre + " ya fue elegido para agregar a la misma factura , código: " + codigo);
+                        }
+                    }
+
+                }
+
+            }
+
+
+            
 
             if (condicional == 0)
             {
 
-                //Factura bus = new Factura();
-
-                //bus.lista = lista2;
 
                 foreach (DataGridViewRow fila in dgvProductos.Rows)
                 {
@@ -124,8 +143,7 @@ namespace TRABAJO_FINAL
                         dt.Cod_Producto = Convert.ToInt32(fila.Cells[index: 0].Value);
                         dt.Nombre_Producto = fila.Cells[index: 1].Value.ToString();
                         dt.Precio_Venta = Convert.ToDouble(fila.Cells[index: 5].Value.ToString());
-                        // dt.Categoria = fila.Cells[index: 3].Value.ToString();
-                        dt.Stock = Convert.ToInt32(fila.Cells[index: 7].Value);
+                        dt.Stock = 1;//Convert.ToInt32(fila.Cells[index: 7].Value);
                         bus.lista.Add(dt);
 
 

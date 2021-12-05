@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPPEnum.cs" />
     <Compile Include="MPPPerfilComponente.cs" />
     <Compile Include="MPPPerfilFamilia.cs" />
     <Compile Include="MPPPerfilPatente.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="MPPReportes.cs" />
     <Compile Include="MPPTraductor.cs" />
     <Compile Include="MPPUsuario.cs" />
+    <Compile Include="MPPVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
