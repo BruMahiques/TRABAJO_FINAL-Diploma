@@ -12,65 +12,74 @@ namespace MPP
 {
     public class MPPVenta
     {
-        public List<EEVenta> ListarVenta()
+        
+        public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
 
-            List<EEVenta> LVenta = new List<EEVenta>();
+            string query;
 
-            ds = Datos.Leer("SP_Venta_Listar", null);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            switch (num)
             {
-                foreach (DataRow fila in ds.Tables[0].Rows)
-                {
-                    EEVenta EEVenta = new EEVenta();
-                    EEVenta.Id_Venta = Convert.ToInt32(fila["Id_Venta"]);
-                    EEVenta.Cod_Comprobante = fila["Cod_Comprobante"].ToString();
-                    EEVenta.Id_TipoDePago = Convert.ToInt32(fila["Id_TipoDePago"]);
-                    EEVenta.Id_TipoDeDoc = Convert.ToInt32(fila["Id_TipoDeDoc"]);
-                    EEVenta.Id_TipoDeComprobante = Convert.ToInt32(fila["Id_TipoDeComprobante"]);
-                    EEVenta.Fecha = Convert.ToDateTime(fila["Fecha"]);
-                    EEVenta.Estado = fila["Estado"].ToString();
-                    EEVenta.Id_Cliente_Venta = Convert.ToInt32(fila["Id_Cliente_Venta"]);
-                    EEVenta.Total_Venta = Convert.ToInt32(fila["Total_Venta"]);
-
-                    LVenta.Add(EEVenta);
-
-                }
+                case 1:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Id_Venta like('" + textbox + "') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 2:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Cod_Comprobante like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 3:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.DNI like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 4:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.Nombre like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 5:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Estado like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                default:
+                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente";
+                    break;
             }
 
-            return LVenta;
+            
 
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+            return ds;
         }
-        public List<EEVentaDet> ListarVentaDet()
+
+
+            
+        public DataTable ListarVentaDet(string codigo)
         {
             Acceso Datos = new Acceso();
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
 
-            List<EEVentaDet> LVentaDet = new List<EEVentaDet>();
+            string query;
 
-            ds = Datos.Leer("SP_VentaDet_Listar", null);
+            query = "Select  p.Cod_Producto as Codigo, p.Nombre_Producto as Producto, v.Precio_Prod_Det as Precio_Unitario, v.Cantidad_Det as Cantidad, v.Total_Det as Total " +
+                    "From Venta_Detalle v join Productos p on v.Id_Producto_Det = p.Cod_Producto where v.Id_Venta_Det = " + codigo;
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                foreach (DataRow fila in ds.Tables[0].Rows)
-                {
-                    EEVentaDet EEVentaDet = new EEVentaDet();
-                    EEVentaDet.Id_Det = Convert.ToInt32(fila["Id_Det"]);
-                    EEVentaDet.Id_Producto_Det = Convert.ToInt32(fila["Id_Producto_Det"]);
-                    EEVentaDet.Id_Venta_Det = Convert.ToInt32(fila["Id_Venta_Det"]);
-                    EEVentaDet.Precio_Prod_Det = Convert.ToInt32(fila["Precio_Prod_Det"]);
-                    EEVentaDet.Cantidad_Det = Convert.ToInt32(fila["Cantidad_Det"]);
-                    EEVentaDet.Total_Det = Convert.ToInt32(fila["Total_Det"]);
-         
-                    LVentaDet.Add(EEVentaDet);
 
-                }
-            }
 
-            return LVentaDet;
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+            return ds;
+
+
 
         }
 
@@ -95,6 +104,21 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
+        public bool Mod_Estado(EEVenta EEVenta)
+        {
+            Acceso Datos = new Acceso();
+            Hashtable Hdatos = new Hashtable();
+            bool Resultado;
+            string consulta = "SP_Venta_Cambiar_Estado";
+
+
+            Hdatos.Add("@Id_Venta", EEVenta.Id_Venta);
+            Hdatos.Add("@Estado", EEVenta.Estado);
+
+
+            Resultado = Datos.Escribir(consulta, Hdatos);
+            return Resultado;
+        }
         public bool Alta_Venta_Det(EEVentaDet EEVentaDet)
         {
             Acceso Datos = new Acceso();
@@ -103,7 +127,7 @@ namespace MPP
             string consulta = "SP_VentaDet_Alta";
 
 
-            //Hdatos.Add("@Id_Det", EEVentaDet.Id_Det);
+            
             Hdatos.Add("@Id_Producto_Det", EEVentaDet.Id_Producto_Det);
             Hdatos.Add("@Id_Venta_Det", EEVentaDet.Id_Venta_Det);
             Hdatos.Add("@Precio_Prod_Det", EEVentaDet.Precio_Prod_Det);
@@ -130,5 +154,6 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
+       
     }
 }

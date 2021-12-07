@@ -77,6 +77,12 @@
     <Compile Include="BuscarCliente.Designer.cs">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarComprobante.Designer.cs">
+      <DependentUpon>BuscarComprobante.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarCliente.resx">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarComprobante.resx">
+      <DependentUpon>BuscarComprobante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
@@ -356,6 +365,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seleccione.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paquete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copia-escrita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

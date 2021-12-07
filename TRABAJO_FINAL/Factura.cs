@@ -310,7 +310,10 @@ namespace TRABAJO_FINAL
                         Venta_Det.Cantidad_Det = Convert.ToInt32(r.Cells[3].Value);
                         Venta_Det.Total_Det = Convert.ToInt32(r.Cells[4].Value);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
-                        BLLVentaDet.Stock_Producto(Venta_Det);
+                        if (Venta.Id_TipoDeComprobante == 1) //Solo si es factura que reste el stock
+                        {
+                            BLLVentaDet.Stock_Producto(Venta_Det);
+                        }
                     }
 
                     btnBuscarCliente.Enabled = false;

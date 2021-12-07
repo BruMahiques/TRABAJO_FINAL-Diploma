@@ -105,7 +105,7 @@ namespace MPP
                     break;
             }
 
-            // ds = Datos.EjecutarCualquierQuerys("SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')");
+            
 
             ds = Datos.EjecutarCualquierQuerys(query);
 

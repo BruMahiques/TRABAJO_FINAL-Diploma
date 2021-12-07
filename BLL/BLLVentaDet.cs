@@ -18,9 +18,9 @@ namespace BLL
             Map.Alta_Venta_Det(VentaDet);
         }
 
-        public List<EEVentaDet> ListarVentaDet()
+        public DataTable ListarVentaDet(string codigo)
         {
-            return Map.ListarVentaDet();
+            return Map.ListarVentaDet(codigo);
         }
 
         public void Stock_Producto(EEVentaDet VentaDet)

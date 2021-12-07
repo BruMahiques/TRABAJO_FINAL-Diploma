@@ -321,5 +321,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void comprobantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnEntregado F5 = new btnEntregado();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }
