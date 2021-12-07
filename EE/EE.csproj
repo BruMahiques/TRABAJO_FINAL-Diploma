@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EEClienteVersionado.cs" />
     <Compile Include="EEIdioma.cs" />
     <Compile Include="EEIdiomaTraduccion.cs" />
     <Compile Include="EEPerfilComponente.cs" />

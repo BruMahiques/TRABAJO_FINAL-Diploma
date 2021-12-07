@@ -328,5 +328,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void versionadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Versionado F5 = new Versionado();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

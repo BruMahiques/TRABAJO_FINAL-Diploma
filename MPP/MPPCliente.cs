@@ -74,11 +74,41 @@ namespace MPP
             return LClientes;
 
         }
+        public List<EEClienteVersionado> ListarClienteVersionado()
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            List<EEClienteVersionado> LClientes = new List<EEClienteVersionado>();
+
+            ds = Datos.Leer("SP_ClienteVersionado_Listar", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    EEClienteVersionado EEClienteVersionado = new EEClienteVersionado();
+                    EEClienteVersionado.Cod_Cliente = Convert.ToInt16(fila["Cod_Cliente"]);
+                    EEClienteVersionado.Apellido = fila["Apellido"].ToString();
+                    EEClienteVersionado.Nombre = fila["Nombre"].ToString();
+                    EEClienteVersionado.DNI = Convert.ToInt32(fila["DNI"]);
+                    EEClienteVersionado.FechaNac = Convert.ToDateTime(fila["FechaNac"]);
+                    EEClienteVersionado.Correo = fila["Correo"].ToString();
+                    EEClienteVersionado.Start = Convert.ToDateTime(fila["SysStartTime"]);
+                    EEClienteVersionado.End = Convert.ToDateTime(fila["SysEndTime"]);
+                    LClientes.Add(EEClienteVersionado);
+
+                }
+            }
+
+            return LClientes;
+
+        }
 
         public DataTable ListarClientesFiltrado(string textbox, string textbox2, int num)
         {
             Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
+            DataTable dt = new DataTable();
 
             string query;
 
@@ -98,10 +128,84 @@ namespace MPP
 
             // ds = Datos.EjecutarCualquierQuerys("SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')");
 
-            ds = Datos.EjecutarCualquierQuerys(query);
+            dt = Datos.EjecutarCualquierQuerys(query);
 
 
-            return ds;
+            return dt;
+
+        }
+
+        public DataTable ListarClientesHistoricoFiltrado(string textbox, string desde, string hasta, int num)
+        {
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+            switch (num)
+            {
+                case 1:
+                    query = "SELECT * FROM ClienteHistory where Cod_Cliente like ('" + textbox + "%') and SysStartTime > ('" + desde + "') and SysEndTime < ('" + hasta + " 23:59:59')";
+                    break;
+                case 2:
+                    query = "SELECT * FROM ClienteHistory where Apellido like ('" + textbox + "%') and SysStartTime > ('" + desde + "') and SysEndTime < ('" + hasta + " 23:59:59')";
+                    break;
+                case 3:
+                    query = "SELECT * FROM ClienteHistory where Nombre like ('" + textbox + "%') and SysStartTime > ('" + desde + "') and SysEndTime < ('" + hasta + " 23:59:59')";
+                    break;
+                case 4:
+                    query = "SELECT * FROM ClienteHistory where DNI like ('" + textbox + "%') and SysStartTime > ('" + desde + "') and SysEndTime < ('" + hasta + " 23:59:59')";
+                    break;
+                case 5:
+                    query = "SELECT * FROM ClienteHistory where Correo like ('" + textbox + "%') and SysStartTime > ('" + desde + "') and SysEndTime < ('" + hasta + " 23:59:59')";
+                    break;
+                default:
+                    query = "SELECT * FROM ClienteHistory";
+                    break;
+            }
+
+
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+
+            return dt;
+
+        }
+        public int ExisteCliente(EECliente EECliente)
+        {
+
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+
+            query = "SELECT COUNT(1) FROM Cliente WHERE Cod_Cliente = '" + EECliente.Cod_Cliente + "'; ";
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            int num = Convert.ToInt32(dt.Rows[0][0]);
+
+            return num;
+
+        }
+
+        public void RecuperarClientePerdido(EECliente EECliente)
+        {
+
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+            
+            query = "SET IDENTITY_INSERT Cliente ON insert into Cliente(Cod_Cliente, Apellido, Nombre, DNI, FechaNac, Correo) values(" + EECliente.Cod_Cliente + ", '" + EECliente.Apellido + "', '" + EECliente.Nombre + "', " + EECliente.DNI + ", '" + EECliente.FechaNac + "', '" + EECliente.Correo + "') SET IDENTITY_INSERT Cliente OFF";
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            
+            
 
         }
     }

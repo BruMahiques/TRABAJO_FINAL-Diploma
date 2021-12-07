@@ -151,6 +151,12 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Versionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Versionado.Designer.cs">
+      <DependentUpon>Versionado.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ABMClienteConectado.resx">
       <DependentUpon>ABMClienteConectado.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Versionado.resx">
+      <DependentUpon>Versionado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -377,6 +386,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-management.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
