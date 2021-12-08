@@ -190,6 +190,24 @@ namespace MPP
             return num;
 
         }
+        public int ExisteClienteEnComprobante(EECliente EECliente)
+        {
+
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+
+            query = "SELECT COUNT(1) FROM Venta WHERE Id_Cliente_Venta = '" + EECliente.Cod_Cliente + "'; ";
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            int num = Convert.ToInt32(dt.Rows[0][0]);
+
+            return num;
+
+        }
 
         public void RecuperarClientePerdido(EECliente EECliente)
         {

@@ -113,5 +113,23 @@ namespace MPP
             return ds;
 
         }
+        public int ExisteProductoEnComprobante(EEProducto EEProducto)
+        {
+
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+
+            query = "SELECT COUNT(1) FROM Venta_Detalle WHERE Id_Producto_Det = '" + EEProducto.Cod_Producto + "'; ";
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            int num = Convert.ToInt32(dt.Rows[0][0]);
+
+            return num;
+
+        }
     }
 }

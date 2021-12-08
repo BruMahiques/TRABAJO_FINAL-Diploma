@@ -211,17 +211,25 @@ namespace TRABAJO_FINAL
             {
                 if (ValidarCampos())
                 {
-                    EECliente Cliente = new EECliente();
-                    Cliente.Cod_Cliente = Convert.ToInt32(textBox5.Text);
-                    Cliente.Nombre = textBox1.Text;
-                    Cliente.Apellido = textBox2.Text;
-                    Cliente.DNI = Convert.ToInt32(textBox3.Text);
-                    Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
-                    Cliente.Correo = textBox4.Text;
+                    if (ExisteClienteEnComprobante())
+                    {
+                        EECliente Cliente = new EECliente();
+                        Cliente.Cod_Cliente = Convert.ToInt32(textBox5.Text);
+                        Cliente.Nombre = textBox1.Text;
+                        Cliente.Apellido = textBox2.Text;
+                        Cliente.DNI = Convert.ToInt32(textBox3.Text);
+                        Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
+                        Cliente.Correo = textBox4.Text;
 
-                    BLLCliente.BAjaCliente(Cliente);
+                        BLLCliente.BAjaCliente(Cliente);
 
-                    ObtenerClientes();
+                        ObtenerClientes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede eliminar porque el cliente tiene comprobantes ya emitidos");
+                    }
+                   
                 }
                 else
                 {
@@ -267,6 +275,26 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("Ha ocurrido un error");
                 return;
             }
+        }
+        private bool ExisteClienteEnComprobante() //Validamos si el cliente tiene comprobantes asignados
+        {
+            bool respuesta3;
+
+            EECliente Cliente = new EECliente();
+            Cliente.Cod_Cliente = Convert.ToInt32(textBox5.Text);
+
+            if (BLLCliente.ExisteClienteEnComprobante(Cliente) == 0)
+            {
+                respuesta3 = true;
+            }
+            else
+            {
+                respuesta3 = false;
+            }
+
+
+
+            return respuesta3;
         }
     }
 }

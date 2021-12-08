@@ -32,6 +32,10 @@ namespace BLL
         {
             return Map.ListarProductosFiltrado(textbox, num);
         }
+        public int ExisteProductoEnComprobante(EEProducto producto)
+        {
+            return Map.ExisteProductoEnComprobante(producto);
+        }
 
     }
 }

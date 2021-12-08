@@ -161,7 +161,9 @@ namespace TRABAJO_FINAL
             {
                 if (ValidarCampos())
                 {
-                    EEProducto Producto = new EEProducto();
+                    if (ExisteClienteEnComprobante())
+                    {
+                        EEProducto Producto = new EEProducto();
                     Producto.Cod_Producto = Convert.ToInt32(txtCodigoP.Text);
                     Producto.Nombre_Producto = txtNombre.Text;
                     Producto.Duracion = txtDuracion.Text;
@@ -175,14 +177,19 @@ namespace TRABAJO_FINAL
                     BLLProducto.BAjaProducto(Producto);
 
                     ObtenerProductos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede eliminar porque el producto se encuentra en comprobantes ya emitidos");
+                    }
 
-                   
                 }
                 else
                 {
                     MessageBox.Show("Datos mal ingresados");
                     return;
                 }
+              
 
             }
             catch (Exception ex)
@@ -270,6 +277,26 @@ namespace TRABAJO_FINAL
         private void button2_Click(object sender, EventArgs e)
         {
             txtCodigoP.Text = string.Empty;
+        }
+        private bool ExisteClienteEnComprobante() //Validamos si el producto tiene comprobantes asignados
+        {
+            bool respuesta3;
+
+            EEProducto Producto = new EEProducto();
+            Producto.Cod_Producto = Convert.ToInt32(txtCodigoP.Text);
+
+            if (BLLProducto.ExisteProductoEnComprobante(Producto) == 0)
+            {
+                respuesta3 = true;
+            }
+            else
+            {
+                respuesta3 = false;
+            }
+
+
+
+            return respuesta3;
         }
     }
 }

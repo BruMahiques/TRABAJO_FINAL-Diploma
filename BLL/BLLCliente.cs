@@ -46,6 +46,10 @@ namespace BLL
         {
            return Map.ExisteCliente(Cliente);
         }
+        public int ExisteClienteEnComprobante(EECliente Cliente)
+        {
+            return Map.ExisteClienteEnComprobante(Cliente);
+        }
         public void RecuperarClientePerdido(EECliente EECliente)
         {
             Map.RecuperarClientePerdido(EECliente);

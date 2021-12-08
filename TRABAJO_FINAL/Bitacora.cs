@@ -126,5 +126,18 @@ namespace TRABAJO_FINAL
             dataGridViewEventos.DataSource = Eventos;
 
         }
+
+       
+        private void btnfiltrar_Click(object sender, EventArgs e)
+        {
+            EEUsuario sel = new EEUsuario();
+            sel = (EEUsuario)comboUsuario.SelectedItem;
+            SERVICIOS.Bitacora.BitacoraActividadTipoEE tipo = new SERVICIOS.Bitacora.BitacoraActividadTipoEE();
+            tipo = (SERVICIOS.Bitacora.BitacoraActividadTipoEE)comboTipo.SelectedItem;
+            DateTime desde = dateTimePicker1.Value;
+            DateTime hasta = dateTimePicker2.Value;
+
+            MostrarDatos(desde, hasta, sel.Id, tipo.Id);
+        }
     }
 }

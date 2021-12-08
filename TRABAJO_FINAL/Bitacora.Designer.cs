@@ -37,6 +37,7 @@
             this.comboUsuario = new System.Windows.Forms.ComboBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
+            this.btnfiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,16 +116,31 @@
             // dataGridViewEventos
             // 
             this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(16, 65);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(19, 116);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
-            this.dataGridViewEventos.Size = new System.Drawing.Size(539, 382);
+            this.dataGridViewEventos.Size = new System.Drawing.Size(586, 382);
             this.dataGridViewEventos.TabIndex = 8;
+            // 
+            // btnfiltrar
+            // 
+            this.btnfiltrar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnfiltrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
+            this.btnfiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnfiltrar.Location = new System.Drawing.Point(72, 74);
+            this.btnfiltrar.Name = "btnfiltrar";
+            this.btnfiltrar.Size = new System.Drawing.Size(84, 36);
+            this.btnfiltrar.TabIndex = 9;
+            this.btnfiltrar.Text = "Filtrar";
+            this.btnfiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfiltrar.UseVisualStyleBackColor = false;
+            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
             // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 461);
+            this.ClientSize = new System.Drawing.Size(616, 505);
+            this.Controls.Add(this.btnfiltrar);
             this.Controls.Add(this.dataGridViewEventos);
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.comboUsuario);
@@ -153,5 +169,6 @@
         private System.Windows.Forms.ComboBox comboUsuario;
         private System.Windows.Forms.ComboBox comboTipo;
         private System.Windows.Forms.DataGridView dataGridViewEventos;
+        private System.Windows.Forms.Button btnfiltrar;
     }
 }
