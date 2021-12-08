@@ -154,6 +154,32 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
-       
+
+        public DataTable CargarGrafico(int num)
+        {
+            Acceso Datos = new Acceso();
+            DataTable ds = new DataTable();
+
+            string query;
+            if (num == 1)
+            {
+                query = "Select p.Nombre_Producto, Count(v.Id_Producto_Det)[Cantidad vendida del producto] from Venta_Detalle v " +
+                        "join Productos p on v.Id_Producto_Det = p.Cod_Producto group by p.Nombre_Producto";
+            }
+            else
+            {
+                query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v " +
+                                        "join Productos p on v.Id_Producto_Det = p.Cod_Producto group by p.Nombre_Producto";
+            }
+
+            
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+            return ds;
+
+
+
+        }
+
     }
 }

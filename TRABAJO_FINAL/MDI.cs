@@ -346,5 +346,12 @@ namespace TRABAJO_FINAL
               
             
         }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformeVentas F5 = new InformeVentas();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

@@ -54,6 +54,7 @@
             this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.versionadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serializaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,8 @@
             // 
             this.ventaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buscarToolStripMenuItem,
-            this.facturarToolStripMenuItem});
+            this.facturarToolStripMenuItem,
+            this.informeToolStripMenuItem});
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(48, 36);
             this.ventaToolStripMenuItem.Text = "Venta";
@@ -271,6 +273,13 @@
             this.serializaciónToolStripMenuItem.Text = "Serialización";
             this.serializaciónToolStripMenuItem.Click += new System.EventHandler(this.serializaciónToolStripMenuItem_Click);
             // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informeToolStripMenuItem.Text = "Informe";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
+            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +326,6 @@
         private System.Windows.Forms.ToolStripMenuItem comprobantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem versionadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serializaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
     }
 }
