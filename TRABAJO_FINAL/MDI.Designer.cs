@@ -53,6 +53,7 @@
             this.perfilesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.versionadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serializaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +174,8 @@
             this.usuariosToolStripMenuItem,
             this.idiomasToolStripMenuItem,
             this.rOLToolStripMenuItem,
-            this.versionadoToolStripMenuItem});
+            this.versionadoToolStripMenuItem,
+            this.serializaciónToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 36);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -262,6 +264,13 @@
             this.versionadoToolStripMenuItem.Text = "Versionado";
             this.versionadoToolStripMenuItem.Click += new System.EventHandler(this.versionadoToolStripMenuItem_Click);
             // 
+            // serializaciónToolStripMenuItem
+            // 
+            this.serializaciónToolStripMenuItem.Name = "serializaciónToolStripMenuItem";
+            this.serializaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serializaciónToolStripMenuItem.Text = "Serialización";
+            this.serializaciónToolStripMenuItem.Click += new System.EventHandler(this.serializaciónToolStripMenuItem_Click);
+            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,5 +316,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprobantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem versionadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serializaciónToolStripMenuItem;
     }
 }

@@ -12,6 +12,8 @@ using EE;
 using BLL;
 
 
+
+
 namespace TRABAJO_FINAL
 {
     public partial class MDI : Form, InterfazIdiomaObserver
@@ -334,6 +336,15 @@ namespace TRABAJO_FINAL
             Versionado F5 = new Versionado();
             F5.MdiParent = this;
             F5.Show();
+        }
+
+        private void serializaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirSerialización F5 = new AbrirSerialización();
+            F5.MdiParent = this;
+            F5.Show();
+              
+            
         }
     }
 }

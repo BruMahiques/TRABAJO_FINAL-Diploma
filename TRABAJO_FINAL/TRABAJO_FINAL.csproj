@@ -59,6 +59,12 @@
     <Compile Include="ABMProductos.Designer.cs">
       <DependentUpon>ABMProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbrirSerialización.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbrirSerialización.Designer.cs">
+      <DependentUpon>AbrirSerialización.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMProductos.resx">
       <DependentUpon>ABMProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbrirSerialización.resx">
+      <DependentUpon>AbrirSerialización.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackUp.resx">
       <DependentUpon>BackUp.cs</DependentUpon>
