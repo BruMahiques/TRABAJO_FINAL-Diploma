@@ -36,6 +36,7 @@ namespace TRABAJO_FINAL
         }
 
         public List<EEProducto> lista3 = new List<EEProducto>();
+        public List<EEProducto> lista4 = new List<EEProducto>();
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
@@ -100,6 +101,35 @@ namespace TRABAJO_FINAL
 
             this.Close();
             bus.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reservas res = new Reservas();
+
+
+
+            res.listaRes = lista4;
+
+            foreach (DataGridViewRow fila in dgvCliente.Rows)
+            {
+                EECliente dt = new EECliente();
+                if (fila.Selected)
+                {
+                    dt.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 0].Value);
+                    dt.Nombre = fila.Cells[index: 2].Value.ToString();
+                    dt.DNI = Convert.ToInt32(fila.Cells[index: 3].Value.ToString());
+                    // dt.Categoria = fila.Cells[index: 3].Value.ToString();
+                    dt.Correo = fila.Cells[index: 5].Value.ToString();
+                    res.Cliente = dt;
+
+
+
+                }
+            }
+
+            this.Close();
+            res.Show();
         }
     }
 }

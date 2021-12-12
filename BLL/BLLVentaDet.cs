@@ -27,9 +27,9 @@ namespace BLL
         {
             Map.Stock_Producto(VentaDet);
         }
-        public DataTable CargarGrafico(int num)
+        public DataTable CargarGrafico(int num,string desde, string hasta)
         {
-            return Map.CargarGrafico(num);
+            return Map.CargarGrafico(num, desde , hasta);
         }
     }
 }

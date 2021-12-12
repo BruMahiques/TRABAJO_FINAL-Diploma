@@ -483,6 +483,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reservado {
+            get {
+                object obj = ResourceManager.GetObject("reservado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salvar {
             get {
                 object obj = ResourceManager.GetObject("salvar", resourceCulture);
@@ -506,6 +516,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap seleccione1 {
             get {
                 object obj = ResourceManager.GetObject("seleccione1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sheets {
+            get {
+                object obj = ResourceManager.GetObject("sheets", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

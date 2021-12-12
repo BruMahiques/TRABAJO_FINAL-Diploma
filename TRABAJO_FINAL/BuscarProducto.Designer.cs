@@ -39,6 +39,7 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Filtrar = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
+            this.btnReserva = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -176,11 +177,24 @@
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
+            // btnReserva
+            // 
+            this.btnReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReserva.BackColor = System.Drawing.Color.Teal;
+            this.btnReserva.Image = global::TRABAJO_FINAL.Properties.Resources.reservado;
+            this.btnReserva.Location = new System.Drawing.Point(741, 98);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(50, 40);
+            this.btnReserva.TabIndex = 74;
+            this.btnReserva.UseVisualStyleBackColor = false;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
             // BuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 544);
+            this.Controls.Add(this.btnReserva);
             this.Controls.Add(this.Filtrar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCargar);
@@ -209,5 +223,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.RadioButton rCant;
         private System.Windows.Forms.Button Filtrar;
+        private System.Windows.Forms.Button btnReserva;
     }
 }

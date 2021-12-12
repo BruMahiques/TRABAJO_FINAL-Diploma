@@ -353,5 +353,19 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reservas F5 = new Reservas();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void reservasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BuscarReserva F5 = new BuscarReserva();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

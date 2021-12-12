@@ -155,24 +155,39 @@ namespace MPP
             return Resultado;
         }
 
-        public DataTable CargarGrafico(int num)
+        public DataTable CargarGrafico(int num, string desde, string hasta)
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
 
             string query;
-            if (num == 1)
+            
+            switch (num)
             {
-                query = "Select p.Nombre_Producto, Count(v.Id_Producto_Det)[Cantidad vendida del producto] from Venta_Detalle v " +
+                case 1:
+                    query = "Select p.Nombre_Producto, Count(v.Id_Producto_Det)[Cantidad vendida del producto] from Venta_Detalle v " +
                         "join Productos p on v.Id_Producto_Det = p.Cod_Producto group by p.Nombre_Producto";
-            }
-            else
-            {
-                query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v " +
+                    break;
+                case 2:
+                    query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v " +
                                         "join Productos p on v.Id_Producto_Det = p.Cod_Producto group by p.Nombre_Producto";
+                    break;
+                case 3:
+                    query = "Select p.Nombre_Producto, Count(v.Id_Producto_Det)[Cantidad vendida del producto] from Venta_Detalle v join Productos p on v.Id_Producto_Det = p.Cod_Producto  " +
+                        "join Venta vent on v.Id_Venta_Det = vent.Id_Venta where vent.Fecha  BETWEEN ('" + desde + "') and ('" + hasta + "') group by p.Nombre_Producto  ";
+                    break;
+                case 4:
+                    query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v join Productos p on v.Id_Producto_Det = p.Cod_Producto  " +
+                        "join Venta vent on v.Id_Venta_Det = vent.Id_Venta where vent.Fecha  BETWEEN ('" + desde + "') and ('" + hasta + "') group by p.Nombre_Producto " ;
+                    break;
+                
+                    
+                default:
+                    query = "Select p.Nombre_Producto, Count(v.Id_Producto_Det)[Cantidad vendida del producto] from Venta_Detalle v " +
+                        "join Productos p on v.Id_Producto_Det = p.Cod_Producto group by p.Nombre_Producto";
+                    break;
             }
 
-            
             ds = Datos.EjecutarCualquierQuerys(query);
 
             return ds;

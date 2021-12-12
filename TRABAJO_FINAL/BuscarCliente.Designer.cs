@@ -31,14 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Filtrar = new System.Windows.Forms.Button();
             this.txtNomRazSocial = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnReserva = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
+            this.Filtrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -81,22 +82,6 @@
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Buscar";
-            // 
-            // Filtrar
-            // 
-            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
-            this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
-            this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Filtrar.Location = new System.Drawing.Point(460, 56);
-            this.Filtrar.Name = "Filtrar";
-            this.Filtrar.Size = new System.Drawing.Size(90, 37);
-            this.Filtrar.TabIndex = 74;
-            this.Filtrar.Tag = "Filtrar";
-            this.Filtrar.Text = "Filtrar";
-            this.Filtrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filtrar.UseVisualStyleBackColor = false;
-            this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
             // txtNomRazSocial
             // 
@@ -158,6 +143,18 @@
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // btnReserva
+            // 
+            this.btnReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReserva.BackColor = System.Drawing.Color.Teal;
+            this.btnReserva.Image = global::TRABAJO_FINAL.Properties.Resources.reservado;
+            this.btnReserva.Location = new System.Drawing.Point(684, 138);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(50, 40);
+            this.btnReserva.TabIndex = 60;
+            this.btnReserva.UseVisualStyleBackColor = false;
+            this.btnReserva.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnVender
             // 
             this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,11 +167,28 @@
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
+            // Filtrar
+            // 
+            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
+            this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
+            this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Filtrar.Location = new System.Drawing.Point(460, 56);
+            this.Filtrar.Name = "Filtrar";
+            this.Filtrar.Size = new System.Drawing.Size(90, 37);
+            this.Filtrar.TabIndex = 74;
+            this.Filtrar.Tag = "Filtrar";
+            this.Filtrar.Text = "Filtrar";
+            this.Filtrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Filtrar.UseVisualStyleBackColor = false;
+            this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
+            // 
             // BuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 537);
+            this.Controls.Add(this.btnReserva);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.panel1);
@@ -203,5 +217,6 @@
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button Filtrar;
+        private System.Windows.Forms.Button btnReserva;
     }
 }

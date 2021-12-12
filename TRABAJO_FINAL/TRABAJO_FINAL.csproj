@@ -101,6 +101,12 @@
     <Compile Include="BuscarProducto.Designer.cs">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarReserva.Designer.cs">
+      <DependentUpon>BuscarReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     <Compile Include="Reporte_Consultas.Designer.cs">
       <DependentUpon>Reporte_Consultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas.Designer.cs">
+      <DependentUpon>Reservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Roles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +211,9 @@
     <EmbeddedResource Include="BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarReserva.resx">
+      <DependentUpon>BuscarReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +250,9 @@
     </Compile>
     <EmbeddedResource Include="Reporte_Consultas.resx">
       <DependentUpon>Reporte_Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas.resx">
+      <DependentUpon>Reservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Roles.resx">
       <DependentUpon>Roles.cs</DependentUpon>
@@ -420,6 +438,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descargar-pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sheets.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

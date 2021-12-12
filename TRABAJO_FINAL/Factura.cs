@@ -32,6 +32,7 @@ namespace TRABAJO_FINAL
         public BLLVenta BLLVenta = new BLLVenta();
         public BLLVentaDet BLLVentaDet = new BLLVentaDet();
 
+        public EEEnum Reservas = new EEEnum(); 
 
 
         private void Factura_Load(object sender, EventArgs e)
@@ -69,7 +70,18 @@ namespace TRABAJO_FINAL
 
             btnGuardar.Enabled = ValidarCampos();
 
-           
+            txtSeña.Enabled = false;
+            txttotalconseña.Enabled = false;
+
+            if(Reservas.Cod_Enum!=0)
+            {
+                int total_con_seña = 0;
+                txtSeña.Text = Reservas.Descripcion;
+                total_con_seña = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtSeña.Text);
+                txttotalconseña.Text = total_con_seña.ToString();
+                DesactivarTodo();
+            }
+
 
         }
 
@@ -136,6 +148,8 @@ namespace TRABAJO_FINAL
                 dgvDetalleBoleta.Rows.Remove(dgvDetalleBoleta.CurrentRow);
                 lbleliminar.Text = "-";
             }
+            btnGuardar.Enabled = ValidarCampos();
+            ArmarTotalyDesc();
         }
 
         private void dgvDetalleBoleta_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -165,7 +179,7 @@ namespace TRABAJO_FINAL
         private void button2_Click(object sender, EventArgs e)
         {
             
-            txtCodUsuario.Text = string.Empty;
+            txtCodUsuario.Text = "-";
             txtNombreCliente.Text = string.Empty;
             txtNumDoc.Text = string.Empty;
             txtCorreo.Text = string.Empty;
@@ -176,7 +190,7 @@ namespace TRABAJO_FINAL
             Clien.Correo = string.Empty;
 
             btnImprimir.Enabled = false;
-
+            btnGuardar.Enabled = ValidarCampos();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -193,6 +207,7 @@ namespace TRABAJO_FINAL
             Clien.DNI = 0;
             Clien.Correo = string.Empty;
             btnImprimir.Enabled = false;
+            btnGuardar.Enabled = false;
         }
 
         private void cboComprobante_SelectedValueChanged(object sender, EventArgs e)
@@ -315,6 +330,12 @@ namespace TRABAJO_FINAL
                             BLLVentaDet.Stock_Producto(Venta_Det);
                         }
                     }
+                    if (Reservas.Cod_Enum != 0)
+                    {
+                        
+                        Mod_Estado_Reserva(Reservas.Cod_Enum);
+                        
+                    }
 
                     btnBuscarCliente.Enabled = false;
                     btnGuardar.Enabled = false;
@@ -404,7 +425,34 @@ namespace TRABAJO_FINAL
           
             return respuesta;
         }
+        private void DesactivarTodo()
+        {
+            txtCorreo.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtNombreCliente.Enabled = false;
+            txtNumDoc.Enabled = false;
+            txtSeña.Enabled = false;
+            txtTotal.Enabled = false;
+            txttotalconseña.Enabled = false;
+            dgvDetalleBoleta.Enabled = false;
+            btnAgregarItem.Enabled = false;
+            btnBuscarCliente.Enabled = false;
+            btnQuitarItem.Enabled = false;
+            cboComprobante.Enabled = false;
+        }
+        void Mod_Estado_Reserva(int cod)
+        {
+            Acceso Datos = new Acceso();
+            DataTable ds = new DataTable();
+            DataSet DS = new DataSet();
 
+            string query = "update Reservas set Estado = 'Facturado'  where Id_Reserva = ('" + cod +"')";
+
+
+            ds = Datos.EjecutarCualquierQuerys(query);
+
+            
+        }
     }
 }
 
