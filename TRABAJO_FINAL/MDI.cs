@@ -62,19 +62,19 @@ namespace TRABAJO_FINAL
                     if (x.Tag != null && Traducciones.ContainsKey(x.Tag.ToString()))
                         x.Text = Traducciones[x.Tag.ToString()].Texto;
 
-                   /* if (idiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomaToolStripMenuItem.Tag.ToString()))
-                        idiomaToolStripMenuItem.Text = Traducciones[idiomaToolStripMenuItem.Tag.ToString()].Texto;
+                    if (buscarToolStripMenuItem.Tag != null && Traducciones.ContainsKey(buscarToolStripMenuItem.Tag.ToString()))
+                        buscarToolStripMenuItem.Text = Traducciones[buscarToolStripMenuItem.Tag.ToString()].Texto;
 
 
-                    if (titulosDeIdiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(titulosDeIdiomaToolStripMenuItem.Tag.ToString()))
-                        titulosDeIdiomaToolStripMenuItem.Text = Traducciones[titulosDeIdiomaToolStripMenuItem.Tag.ToString()].Texto;
+                    if (clienteToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(clienteToolStripMenuItem1.Tag.ToString()))
+                        clienteToolStripMenuItem1.Text = Traducciones[clienteToolStripMenuItem1.Tag.ToString()].Texto;
 
                     
-                    if (traduccionesDeIdiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()))
-                        traduccionesDeIdiomaToolStripMenuItem.Text = Traducciones[traduccionesDeIdiomaToolStripMenuItem.Tag.ToString()].Texto;
-                        */
-                    /*if (idiomas1ToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomas1ToolStripMenuItem.Tag.ToString()))
-                        idiomas1ToolStripMenuItem.Text = Traducciones[idiomas1ToolStripMenuItem.Tag.ToString()].Texto;*/
+                    if (productoToolStripMenuItem.Tag != null && Traducciones.ContainsKey(productoToolStripMenuItem.Tag.ToString()))
+                        productoToolStripMenuItem.Text = Traducciones[productoToolStripMenuItem.Tag.ToString()].Texto;
+                        
+                    if (comprobantesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(comprobantesToolStripMenuItem.Tag.ToString()))
+                        comprobantesToolStripMenuItem.Text = Traducciones[comprobantesToolStripMenuItem.Tag.ToString()].Texto;
 
                     if (BitalStripMenuItem1.Tag != null && Traducciones.ContainsKey(BitalStripMenuItem1.Tag.ToString()))
                         BitalStripMenuItem1.Text = Traducciones[BitalStripMenuItem1.Tag.ToString()].Texto;
@@ -82,18 +82,76 @@ namespace TRABAJO_FINAL
                     if (usuariosToolStripMenuItem.Tag != null && Traducciones.ContainsKey(usuariosToolStripMenuItem.Tag.ToString()))
                         usuariosToolStripMenuItem.Text = Traducciones[usuariosToolStripMenuItem.Tag.ToString()].Texto;
 
-                    /*if (compositeToolStripMenuItem.Tag != null && Traducciones.ContainsKey(compositeToolStripMenuItem.Tag.ToString()))
-                        compositeToolStripMenuItem.Text = Traducciones[compositeToolStripMenuItem.Tag.ToString()].Texto;
+                    if (reservasToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(reservasToolStripMenuItem1.Tag.ToString()))
+                        reservasToolStripMenuItem1.Text = Traducciones[reservasToolStripMenuItem1.Tag.ToString()].Texto;
 
-                    if (perfilesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(perfilesToolStripMenuItem.Tag.ToString()))
-                        perfilesToolStripMenuItem.Text = Traducciones[perfilesToolStripMenuItem.Tag.ToString()].Texto;
+                    if (facturarToolStripMenuItem.Tag != null && Traducciones.ContainsKey(facturarToolStripMenuItem.Tag.ToString()))
+                        facturarToolStripMenuItem.Text = Traducciones[facturarToolStripMenuItem.Tag.ToString()].Texto;
 
-                    if (rolesToolStripMenuItem.Tag != null && Traducciones.ContainsKey(rolesToolStripMenuItem.Tag.ToString()))
-                        rolesToolStripMenuItem.Text = Traducciones[rolesToolStripMenuItem.Tag.ToString()].Texto; */
+                    if (reservasToolStripMenuItem.Tag != null && Traducciones.ContainsKey(reservasToolStripMenuItem.Tag.ToString()))
+                        reservasToolStripMenuItem.Text = Traducciones[reservasToolStripMenuItem.Tag.ToString()].Texto; 
+
+                    if (informeToolStripMenuItem.Tag != null && Traducciones.ContainsKey(informeToolStripMenuItem.Tag.ToString()))
+                        informeToolStripMenuItem.Text = Traducciones[informeToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (versionadoToolStripMenuItem.Tag != null && Traducciones.ContainsKey(versionadoToolStripMenuItem.Tag.ToString()))
+                        versionadoToolStripMenuItem.Text = Traducciones[versionadoToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (serializaciónToolStripMenuItem.Tag != null && Traducciones.ContainsKey(serializaciónToolStripMenuItem.Tag.ToString()))
+                        serializaciónToolStripMenuItem.Text = Traducciones[serializaciónToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (ayudaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(ayudaToolStripMenuItem.Tag.ToString()))
+                        ayudaToolStripMenuItem.Text = Traducciones[ayudaToolStripMenuItem.Tag.ToString()].Texto;
+
+                    
+                    if (ventaToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(ventaToolStripMenuItem1.Tag.ToString()))
+                        ventaToolStripMenuItem1.Text = Traducciones[ventaToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (adminToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(adminToolStripMenuItem1.Tag.ToString()))
+                        adminToolStripMenuItem1.Text = Traducciones[adminToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (aBMToolStripMenuItem.Tag != null && Traducciones.ContainsKey(aBMToolStripMenuItem.Tag.ToString()))
+                        aBMToolStripMenuItem.Text = Traducciones[aBMToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (clienteToolStripMenuItem.Tag != null && Traducciones.ContainsKey(clienteToolStripMenuItem.Tag.ToString()))
+                        clienteToolStripMenuItem.Text = Traducciones[clienteToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (productosToolStripMenuItem.Tag != null && Traducciones.ContainsKey(productosToolStripMenuItem.Tag.ToString()))
+                        productosToolStripMenuItem.Text = Traducciones[productosToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (idiomasToolStripMenuItem.Tag != null && Traducciones.ContainsKey(idiomasToolStripMenuItem.Tag.ToString()))
+                        idiomasToolStripMenuItem.Text = Traducciones[idiomasToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (idiomaToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(idiomaToolStripMenuItem1.Tag.ToString()))
+                        idiomaToolStripMenuItem1.Text = Traducciones[idiomaToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (titulosDeIdiomaToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(titulosDeIdiomaToolStripMenuItem1.Tag.ToString()))
+                        titulosDeIdiomaToolStripMenuItem1.Text = Traducciones[titulosDeIdiomaToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (traduccionesDeIdiomaToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(traduccionesDeIdiomaToolStripMenuItem1.Tag.ToString()))
+                        traduccionesDeIdiomaToolStripMenuItem1.Text = Traducciones[traduccionesDeIdiomaToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (rOLToolStripMenuItem.Tag != null && Traducciones.ContainsKey(rOLToolStripMenuItem.Tag.ToString()))
+                        rOLToolStripMenuItem.Text = Traducciones[rOLToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (perfileToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(perfileToolStripMenuItem1.Tag.ToString()))
+                        perfileToolStripMenuItem1.Text = Traducciones[perfileToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (rolesToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(rolesToolStripMenuItem1.Tag.ToString()))
+                        rolesToolStripMenuItem1.Text = Traducciones[rolesToolStripMenuItem1.Tag.ToString()].Texto;
+
+                    if (seleccionasIdiomaToolStripMenuItem.Tag != null && Traducciones.ContainsKey(seleccionasIdiomaToolStripMenuItem.Tag.ToString()))
+                        seleccionasIdiomaToolStripMenuItem.Text = Traducciones[seleccionasIdiomaToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (menúToolStripMenuItem.Tag != null && Traducciones.ContainsKey(menúToolStripMenuItem.Tag.ToString()))
+                        menúToolStripMenuItem.Text = Traducciones[menúToolStripMenuItem.Tag.ToString()].Texto;
+
+                    if (aBMayudaToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(aBMayudaToolStripMenuItem1.Tag.ToString()))
+                        aBMayudaToolStripMenuItem1.Text = Traducciones[aBMayudaToolStripMenuItem1.Tag.ToString()].Texto;
 
                     if (salirToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(salirToolStripMenuItem1.Tag.ToString()))
                         salirToolStripMenuItem1.Text = Traducciones[salirToolStripMenuItem1.Tag.ToString()].Texto;
-                   
+
 
                 }
 
@@ -113,7 +171,7 @@ namespace TRABAJO_FINAL
 
             if (!Singleton.Instancia.Estalogueado())
             {
-                foreach (var item in seleccionaIdiomaToolStripMenuItem.DropDownItems)
+                foreach (var item in seleccionasIdiomaToolStripMenuItem.DropDownItems)
                 {
 
                     var i = ((EEIdioma)((ToolStripMenuItem)item).Tag);
@@ -125,7 +183,7 @@ namespace TRABAJO_FINAL
             }
             else
             {
-                foreach (var item in seleccionaIdiomaToolStripMenuItem.DropDownItems)
+                foreach (var item in seleccionasIdiomaToolStripMenuItem.DropDownItems)
                 {
 
                     ((ToolStripMenuItem)item).Enabled = true;
@@ -202,7 +260,7 @@ namespace TRABAJO_FINAL
                 var t = new ToolStripMenuItem();
                 t.Text = item.Idioma;
                 t.Tag = item;
-                this.seleccionaIdiomaToolStripMenuItem.DropDownItems.Add(t);
+                this.seleccionasIdiomaToolStripMenuItem.DropDownItems.Add(t);
                 t.Click += seleccionaIdiomaToolStripMenuItem_Click;
 
             }
@@ -362,6 +420,13 @@ namespace TRABAJO_FINAL
         }
 
         private void reservasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BuscarReserva F5 = new BuscarReserva();
+            F5.MdiParent = this;
+            F5.Show();
+        }
+
+        private void menúToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BuscarReserva F5 = new BuscarReserva();
             F5.MdiParent = this;
