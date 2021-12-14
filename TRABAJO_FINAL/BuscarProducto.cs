@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EE;
 using BLL;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class BuscarProducto : Form
+    public partial class BuscarProducto : Form, InterfazIdiomaObserver
     {
         public BuscarProducto()
         {
             InitializeComponent();
+            Traducir();
         }
 
         public List<EEProducto> lista2 = new List<EEProducto>();
@@ -30,7 +32,53 @@ namespace TRABAJO_FINAL
             rbNombreProd.Checked = true;
 
         }
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
 
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (groupBox1.Tag != null && Traducciones.ContainsKey(groupBox1.Tag.ToString()))
+                    groupBox1.Text = Traducciones[groupBox1.Tag.ToString()].Texto;
+
+                if (rbNombreProd.Tag != null && Traducciones.ContainsKey(rbNombreProd.Tag.ToString()))
+                    rbNombreProd.Text = Traducciones[rbNombreProd.Tag.ToString()].Texto;
+
+                if (rbCategoria.Tag != null && Traducciones.ContainsKey(rbCategoria.Tag.ToString()))
+                    rbCategoria.Text = Traducciones[rbCategoria.Tag.ToString()].Texto;
+
+                if (Filtrar.Tag != null && Traducciones.ContainsKey(Filtrar.Tag.ToString()))
+                    Filtrar.Text = Traducciones[Filtrar.Tag.ToString()].Texto;
+
+                if (btnCargar.Tag != null && Traducciones.ContainsKey(btnCargar.Tag.ToString()))
+                    btnCargar.Text = Traducciones[btnCargar.Tag.ToString()].Texto;
+
+                if (btnSalir.Tag != null && Traducciones.ContainsKey(btnSalir.Tag.ToString()))
+                    btnSalir.Text = Traducciones[btnSalir.Tag.ToString()].Texto;
+
+                if (rbPrecio.Tag != null && Traducciones.ContainsKey(rbPrecio.Tag.ToString()))
+                    rbPrecio.Text = Traducciones[rbPrecio.Tag.ToString()].Texto;
+
+                if (rCant.Tag != null && Traducciones.ContainsKey(rCant.Tag.ToString()))
+                    rCant.Text = Traducciones[rCant.Tag.ToString()].Texto;
+
+                
+            }
+
+        }
 
         BLLProducto BLLProducto = new BLLProducto();
 

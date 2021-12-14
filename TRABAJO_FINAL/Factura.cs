@@ -10,19 +10,101 @@ using System.Windows.Forms;
 using EE;
 using BLL;
 using Datos;
-
+using SERVICIOS;
 
 
 namespace TRABAJO_FINAL
 {
-    public partial class Factura : Form
+    public partial class Factura : Form, InterfazIdiomaObserver
     {
         public Factura()
         {
             InitializeComponent();
-
+            Traducir();
             
 
+
+        }
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (groupBox1.Tag != null && Traducciones.ContainsKey(groupBox1.Tag.ToString()))
+                    groupBox1.Text = Traducciones[groupBox1.Tag.ToString()].Texto;
+
+                if (label4.Tag != null && Traducciones.ContainsKey(label4.Tag.ToString()))
+                    label4.Text = Traducciones[label4.Tag.ToString()].Texto;
+
+                if (label5.Tag != null && Traducciones.ContainsKey(label5.Tag.ToString()))
+                    label5.Text = Traducciones[label5.Tag.ToString()].Texto;
+
+                if (label7.Tag != null && Traducciones.ContainsKey(label7.Tag.ToString()))
+                    label7.Text = Traducciones[label7.Tag.ToString()].Texto;
+
+                if (label10.Tag != null && Traducciones.ContainsKey(label10.Tag.ToString()))
+                    label10.Text = Traducciones[label10.Tag.ToString()].Texto;
+
+                if (label12.Tag != null && Traducciones.ContainsKey(label12.Tag.ToString()))
+                    label12.Text = Traducciones[label12.Tag.ToString()].Texto;
+
+                if (label13.Tag != null && Traducciones.ContainsKey(label13.Tag.ToString()))
+                    label13.Text = Traducciones[label13.Tag.ToString()].Texto;
+
+                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
+                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+
+                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
+                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+
+                if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
+                    label6.Text = Traducciones[label6.Tag.ToString()].Texto;
+
+                if (label8.Tag != null && Traducciones.ContainsKey(label8.Tag.ToString()))
+                    label8.Text = Traducciones[label8.Tag.ToString()].Texto;
+
+                if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                    label1.Text = Traducciones[label1.Tag.ToString()].Texto;
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
+                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+                if (label14.Tag != null && Traducciones.ContainsKey(label14.Tag.ToString()))
+                    label14.Text = Traducciones[label14.Tag.ToString()].Texto;
+
+                if (label19.Tag != null && Traducciones.ContainsKey(label19.Tag.ToString()))
+                    label19.Text = Traducciones[label19.Tag.ToString()].Texto;
+
+                if (label17.Tag != null && Traducciones.ContainsKey(label17.Tag.ToString()))
+                    label17.Text = Traducciones[label17.Tag.ToString()].Texto;
+
+                if (Seña.Tag != null && Traducciones.ContainsKey(Seña.Tag.ToString()))
+                    Seña.Text = Traducciones[Seña.Tag.ToString()].Texto;
+
+                if (lblNumdesc.Tag != null && Traducciones.ContainsKey(lblNumdesc.Tag.ToString()))
+                    lblNumdesc.Text = Traducciones[lblNumdesc.Tag.ToString()].Texto;
+
+                if (groupBoxReserva.Tag != null && Traducciones.ContainsKey(groupBoxReserva.Tag.ToString()))
+                    groupBoxReserva.Text = Traducciones[groupBoxReserva.Tag.ToString()].Texto;
+                                
+            }
 
         }
 

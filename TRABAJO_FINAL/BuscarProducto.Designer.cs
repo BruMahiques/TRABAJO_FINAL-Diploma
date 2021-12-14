@@ -53,6 +53,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 40);
             this.btnSalir.TabIndex = 56;
+            this.btnSalir.Tag = "Salir";
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -67,6 +68,7 @@
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(80, 40);
             this.btnCargar.TabIndex = 55;
+            this.btnCargar.Tag = "Actualizar";
             this.btnCargar.Text = "Actualizar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -83,6 +85,7 @@
             this.groupBox1.Size = new System.Drawing.Size(491, 99);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Buscar";
             this.groupBox1.Text = "Buscar por";
             // 
             // rCant
@@ -93,6 +96,7 @@
             this.rCant.Size = new System.Drawing.Size(131, 17);
             this.rCant.TabIndex = 4;
             this.rCant.TabStop = true;
+            this.rCant.Tag = "Cantidad de jugadores";
             this.rCant.Text = "Cantidad de jugadores";
             this.rCant.UseVisualStyleBackColor = true;
             // 
@@ -104,6 +108,7 @@
             this.rbPrecio.Size = new System.Drawing.Size(55, 17);
             this.rbPrecio.TabIndex = 3;
             this.rbPrecio.TabStop = true;
+            this.rbPrecio.Tag = "Precio";
             this.rbPrecio.Text = "Precio";
             this.rbPrecio.UseVisualStyleBackColor = true;
             // 
@@ -115,6 +120,7 @@
             this.rbCategoria.Size = new System.Drawing.Size(70, 17);
             this.rbCategoria.TabIndex = 2;
             this.rbCategoria.TabStop = true;
+            this.rbCategoria.Tag = "Categoria";
             this.rbCategoria.Text = "Categoria";
             this.rbCategoria.UseVisualStyleBackColor = true;
             // 
@@ -126,6 +132,7 @@
             this.rbNombreProd.Size = new System.Drawing.Size(62, 17);
             this.rbNombreProd.TabIndex = 1;
             this.rbNombreProd.TabStop = true;
+            this.rbNombreProd.Tag = "Nombre";
             this.rbNombreProd.Text = "Nombre";
             this.rbNombreProd.UseVisualStyleBackColor = true;
             // 

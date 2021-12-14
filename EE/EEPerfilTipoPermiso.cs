@@ -11,17 +11,16 @@ namespace EE
         PermisoA, // ABM Usuarios
         PermisoB, // Gestión de Perfiles de Acceso
         PermisoC, // Asignar Perfiles a Usuarios
-        PermisoD, // Proceso 1
-        PermisoE, // Proceso 2
-        PermisoF, // Proceso 3
-        PermisoG, // Visualizar Ventas
-        PermisoH, // Puede Anular Venta
+        PermisoD, // Facturar
+        PermisoE, // Reservar
+        PermisoF, // Informe
+        PermisoG, // ABM Clientes
+        PermisoH, // Buscar
         PermisoJ, // Gestión de Idioma y Traducciones
-        PermisoK, // Gestión de Clientes ABM
-        PermisoL, // Gestion de Productos ABM
-        PermisoM, // Visualiza Reservas
-        PermisoN, // Puede hacer movimientos de stock
-        PermisoO, // Gestion de Reservas
+        PermisoK, // ABM Productos
+        PermisoL, // Ayuda
+        PermisoN, // Versionado
+        PermisoO, // Serializacion
         PermisoP, // Visualiza Bitacora
         PermisoQ, // Gestion de Backup
         Ninguno,

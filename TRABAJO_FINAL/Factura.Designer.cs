@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBoxReserva = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Seña = new System.Windows.Forms.Label();
+            this.txttotalconseña = new System.Windows.Forms.TextBox();
+            this.txtSeña = new System.Windows.Forms.TextBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.lbleliminar = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -74,16 +79,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBoxReserva = new System.Windows.Forms.GroupBox();
-            this.txtSeña = new System.Windows.Forms.TextBox();
-            this.txttotalconseña = new System.Windows.Forms.TextBox();
-            this.Seña = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.groupBoxReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.gbCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBoxReserva.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,6 +107,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 292);
             this.panel1.TabIndex = 13;
+            // 
+            // groupBoxReserva
+            // 
+            this.groupBoxReserva.Controls.Add(this.label8);
+            this.groupBoxReserva.Controls.Add(this.Seña);
+            this.groupBoxReserva.Controls.Add(this.txttotalconseña);
+            this.groupBoxReserva.Controls.Add(this.txtSeña);
+            this.groupBoxReserva.Location = new System.Drawing.Point(249, 215);
+            this.groupBoxReserva.Name = "groupBoxReserva";
+            this.groupBoxReserva.Size = new System.Drawing.Size(173, 70);
+            this.groupBoxReserva.TabIndex = 54;
+            this.groupBoxReserva.TabStop = false;
+            this.groupBoxReserva.Tag = "Reserva";
+            this.groupBoxReserva.Text = "Reserva";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Tag = "Total a pagar";
+            this.label8.Text = "Total a pagar :";
+            // 
+            // Seña
+            // 
+            this.Seña.AutoSize = true;
+            this.Seña.Location = new System.Drawing.Point(42, 25);
+            this.Seña.Name = "Seña";
+            this.Seña.Size = new System.Drawing.Size(38, 13);
+            this.Seña.TabIndex = 2;
+            this.Seña.Tag = "Seña";
+            this.Seña.Text = "Seña :";
+            // 
+            // txttotalconseña
+            // 
+            this.txttotalconseña.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalconseña.Location = new System.Drawing.Point(80, 46);
+            this.txttotalconseña.Multiline = true;
+            this.txttotalconseña.Name = "txttotalconseña";
+            this.txttotalconseña.Size = new System.Drawing.Size(87, 24);
+            this.txttotalconseña.TabIndex = 1;
+            // 
+            // txtSeña
+            // 
+            this.txtSeña.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeña.Location = new System.Drawing.Point(80, 19);
+            this.txtSeña.Multiline = true;
+            this.txtSeña.Name = "txtSeña";
+            this.txtSeña.Size = new System.Drawing.Size(87, 24);
+            this.txtSeña.TabIndex = 0;
             // 
             // txtdesc
             // 
@@ -194,6 +246,7 @@
             this.lblNumdesc.Name = "lblNumdesc";
             this.lblNumdesc.Size = new System.Drawing.Size(72, 25);
             this.lblNumdesc.TabIndex = 15;
+            this.lblNumdesc.Tag = "Descuento";
             this.lblNumdesc.Text = "Descuento";
             this.lblNumdesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -205,6 +258,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 15);
             this.label10.TabIndex = 10;
+            this.label10.Tag = "Total $";
             this.label10.Text = "Total $ :";
             // 
             // txtTotal
@@ -318,6 +372,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 15);
             this.label3.TabIndex = 26;
+            this.label3.Tag = "Tipo Comprobante";
             this.label3.Text = "Tip. Comprobante";
             // 
             // cboComprobante
@@ -351,6 +406,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 15);
             this.label1.TabIndex = 23;
+            this.label1.Tag = "Direccion de facturacion";
             this.label1.Text = "Direccion de facturacion";
             // 
             // txtDireccion
@@ -370,6 +426,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 15);
             this.label7.TabIndex = 21;
+            this.label7.Tag = "Forma de pago";
             this.label7.Text = "Forma de pago";
             // 
             // cboTipoPago
@@ -389,9 +446,10 @@
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(30, 97);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(45, 15);
+            this.label19.Size = new System.Drawing.Size(39, 15);
             this.label19.TabIndex = 18;
-            this.label19.Text = "Correo";
+            this.label19.Tag = "Correo";
+            this.label19.Text = "Email";
             // 
             // txtCorreo
             // 
@@ -410,6 +468,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 15);
             this.label17.TabIndex = 16;
+            this.label17.Tag = "Fecha emision";
             this.label17.Text = "Fecha emisión";
             // 
             // dtpFechaEmision
@@ -431,6 +490,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 15);
             this.label15.TabIndex = 12;
+            this.label15.Tag = "Tipo Doc";
             this.label15.Text = "Tip. Doc";
             // 
             // cboTipDoc
@@ -452,6 +512,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 15);
             this.label14.TabIndex = 10;
+            this.label14.Tag = "N°Documento";
             this.label14.Text = "Nº Documento";
             // 
             // txtNumDoc
@@ -471,6 +532,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 15);
             this.label13.TabIndex = 8;
+            this.label13.Tag = "Nombre/Razon Social";
             this.label13.Text = "Nombre / Razón social";
             // 
             // txtNombreCliente
@@ -490,6 +552,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 15);
             this.label12.TabIndex = 6;
+            this.label12.Tag = "Codigo";
             this.label12.Text = "Código";
             // 
             // btnBuscarCliente
@@ -588,55 +651,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "CUIT";
             // 
-            // groupBoxReserva
-            // 
-            this.groupBoxReserva.Controls.Add(this.label8);
-            this.groupBoxReserva.Controls.Add(this.Seña);
-            this.groupBoxReserva.Controls.Add(this.txttotalconseña);
-            this.groupBoxReserva.Controls.Add(this.txtSeña);
-            this.groupBoxReserva.Location = new System.Drawing.Point(249, 215);
-            this.groupBoxReserva.Name = "groupBoxReserva";
-            this.groupBoxReserva.Size = new System.Drawing.Size(173, 70);
-            this.groupBoxReserva.TabIndex = 54;
-            this.groupBoxReserva.TabStop = false;
-            this.groupBoxReserva.Text = "Reserva";
-            // 
-            // txtSeña
-            // 
-            this.txtSeña.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeña.Location = new System.Drawing.Point(80, 19);
-            this.txtSeña.Multiline = true;
-            this.txtSeña.Name = "txtSeña";
-            this.txtSeña.Size = new System.Drawing.Size(87, 24);
-            this.txtSeña.TabIndex = 0;
-            // 
-            // txttotalconseña
-            // 
-            this.txttotalconseña.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalconseña.Location = new System.Drawing.Point(80, 46);
-            this.txttotalconseña.Multiline = true;
-            this.txttotalconseña.Name = "txttotalconseña";
-            this.txttotalconseña.Size = new System.Drawing.Size(87, 24);
-            this.txttotalconseña.TabIndex = 1;
-            // 
-            // Seña
-            // 
-            this.Seña.AutoSize = true;
-            this.Seña.Location = new System.Drawing.Point(42, 25);
-            this.Seña.Name = "Seña";
-            this.Seña.Size = new System.Drawing.Size(38, 13);
-            this.Seña.TabIndex = 2;
-            this.Seña.Text = "Seña :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Total a pagar :";
-            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,13 +665,13 @@
             this.Load += new System.EventHandler(this.Factura_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBoxReserva.ResumeLayout(false);
+            this.groupBoxReserva.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).EndInit();
             this.gbCliente.ResumeLayout(false);
             this.gbCliente.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBoxReserva.ResumeLayout(false);
-            this.groupBoxReserva.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

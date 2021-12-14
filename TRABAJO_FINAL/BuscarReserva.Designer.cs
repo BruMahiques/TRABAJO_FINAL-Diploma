@@ -61,6 +61,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 103;
+            this.label3.Tag = "Reservas";
             this.label3.Text = "Reserva";
             // 
             // txtComprobante
@@ -86,6 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(601, 95);
             this.groupBox1.TabIndex = 101;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Buscar";
             this.groupBox1.Text = "Buscar por";
             // 
             // rbcliente
@@ -96,6 +98,7 @@
             this.rbcliente.Size = new System.Drawing.Size(97, 17);
             this.rbcliente.TabIndex = 5;
             this.rbcliente.TabStop = true;
+            this.rbcliente.Tag = "Nombre Cliente";
             this.rbcliente.Text = "Nombre Cliente";
             this.rbcliente.UseVisualStyleBackColor = true;
             // 
@@ -107,6 +110,7 @@
             this.rbEstado.Size = new System.Drawing.Size(58, 17);
             this.rbEstado.TabIndex = 4;
             this.rbEstado.TabStop = true;
+            this.rbEstado.Tag = "Estado";
             this.rbEstado.Text = "Estado";
             this.rbEstado.UseVisualStyleBackColor = true;
             // 
@@ -118,6 +122,7 @@
             this.rbNDoc.Size = new System.Drawing.Size(130, 17);
             this.rbNDoc.TabIndex = 3;
             this.rbNDoc.TabStop = true;
+            this.rbNDoc.Tag = "N°Documento";
             this.rbNDoc.Text = "N° Documento Cliente";
             this.rbNDoc.UseVisualStyleBackColor = true;
             // 
@@ -129,6 +134,7 @@
             this.rbComprobante.Size = new System.Drawing.Size(88, 17);
             this.rbComprobante.TabIndex = 2;
             this.rbComprobante.TabStop = true;
+            this.rbComprobante.Tag = "Comprobantes";
             this.rbComprobante.Text = "Comprobante";
             this.rbComprobante.UseVisualStyleBackColor = true;
             // 
@@ -140,6 +146,7 @@
             this.rbIdReserva.Size = new System.Drawing.Size(77, 17);
             this.rbIdReserva.TabIndex = 1;
             this.rbIdReserva.TabStop = true;
+            this.rbIdReserva.Tag = "Id Reserva";
             this.rbIdReserva.Text = "Id Reserva";
             this.rbIdReserva.UseVisualStyleBackColor = true;
             // 
@@ -160,6 +167,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 15);
             this.label8.TabIndex = 100;
+            this.label8.Tag = "Hasta";
             this.label8.Text = "Hasta";
             // 
             // label6
@@ -170,6 +178,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 99;
+            this.label6.Tag = "Desde";
             this.label6.Text = "Desde";
             // 
             // dateTimeHasta
@@ -193,6 +202,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 95;
+            this.label2.Tag = "Items";
             this.label2.Text = "Items";
             // 
             // label1
@@ -202,6 +212,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 94;
+            this.label1.Tag = "Reservas";
             this.label1.Text = "Reserva";
             // 
             // dgvItems
@@ -231,7 +242,7 @@
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(134, 49);
             this.btnFacturar.TabIndex = 106;
-            this.btnFacturar.Tag = "Filtrar";
+            this.btnFacturar.Tag = "Facturar y Entregar";
             this.btnFacturar.Text = "Facturar y Entregar";
             this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacturar.UseVisualStyleBackColor = false;
@@ -247,7 +258,7 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(93, 37);
             this.btnSeleccionar.TabIndex = 104;
-            this.btnSeleccionar.Tag = "Filtrar";
+            this.btnSeleccionar.Tag = "Seleccionar";
             this.btnSeleccionar.Text = "Seleecionar";
             this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -279,7 +290,7 @@
             this.btnEntrega.Name = "btnEntrega";
             this.btnEntrega.Size = new System.Drawing.Size(93, 49);
             this.btnEntrega.TabIndex = 107;
-            this.btnEntrega.Tag = "Filtrar";
+            this.btnEntrega.Tag = "Entregado";
             this.btnEntrega.Text = "Entregado";
             this.btnEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrega.UseVisualStyleBackColor = false;

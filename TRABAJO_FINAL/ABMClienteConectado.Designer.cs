@@ -192,6 +192,7 @@
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(90, 37);
             this.btnEliminarP.TabIndex = 73;
+            this.btnEliminarP.Tag = "Borrar";
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarP.UseVisualStyleBackColor = true;
@@ -206,6 +207,7 @@
             this.btnNuevoP.Name = "btnNuevoP";
             this.btnNuevoP.Size = new System.Drawing.Size(90, 37);
             this.btnNuevoP.TabIndex = 72;
+            this.btnNuevoP.Tag = "Nuevo";
             this.btnNuevoP.Text = "Nuevo";
             this.btnNuevoP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoP.UseVisualStyleBackColor = true;
@@ -220,6 +222,7 @@
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(90, 37);
             this.btnEditarP.TabIndex = 71;
+            this.btnEditarP.Tag = "Editar";
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditarP.UseVisualStyleBackColor = true;

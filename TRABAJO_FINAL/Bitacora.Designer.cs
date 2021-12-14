@@ -130,6 +130,7 @@
             this.btnfiltrar.Name = "btnfiltrar";
             this.btnfiltrar.Size = new System.Drawing.Size(84, 36);
             this.btnfiltrar.TabIndex = 9;
+            this.btnfiltrar.Tag = "Filtrar";
             this.btnfiltrar.Text = "Filtrar";
             this.btnfiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnfiltrar.UseVisualStyleBackColor = false;

@@ -13,20 +13,56 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using EE;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class InformeVentas : Form
+    public partial class InformeVentas : Form, InterfazIdiomaObserver
     {
         public InformeVentas()
         {
             InitializeComponent();
+            Traducir();
         }
 
         BLLVentaDet BLLVentaDet = new BLLVentaDet();
         private void InformeVentas_Load(object sender, EventArgs e)
         {
             CargarInformeVentas();
+        }
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (Filtrar.Tag != null && Traducciones.ContainsKey(Filtrar.Tag.ToString()))
+                    Filtrar.Text = Traducciones[Filtrar.Tag.ToString()].Texto;
+
+                if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
+                    label6.Text = Traducciones[label6.Tag.ToString()].Texto;
+
+                if (label8.Tag != null && Traducciones.ContainsKey(label8.Tag.ToString()))
+                    label8.Text = Traducciones[label8.Tag.ToString()].Texto;
+
+                if (btnCargarDatos.Tag != null && Traducciones.ContainsKey(btnCargarDatos.Tag.ToString()))
+                    btnCargarDatos.Text = Traducciones[btnCargarDatos.Tag.ToString()].Texto;
+                
+            }
+
         }
 
         public void CargarInformeVentas()

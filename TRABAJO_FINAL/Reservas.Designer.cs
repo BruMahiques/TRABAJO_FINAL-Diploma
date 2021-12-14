@@ -178,6 +178,7 @@
             this.lblNumdesc.Name = "lblNumdesc";
             this.lblNumdesc.Size = new System.Drawing.Size(72, 25);
             this.lblNumdesc.TabIndex = 15;
+            this.lblNumdesc.Tag = "Seña";
             this.lblNumdesc.Text = "Seña";
             this.lblNumdesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -189,6 +190,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 15);
             this.label10.TabIndex = 10;
+            this.label10.Tag = "Total $";
             this.label10.Text = "Total $ :";
             // 
             // txtTotal
@@ -307,6 +309,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 15);
             this.label7.TabIndex = 21;
+            this.label7.Tag = "Forma de pago";
             this.label7.Text = "Forma de pago";
             // 
             // cboTipoPago
@@ -328,6 +331,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 15);
             this.label19.TabIndex = 18;
+            this.label19.Tag = "Email";
             this.label19.Text = "Correo";
             // 
             // txtCorreo
@@ -347,6 +351,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 15);
             this.label17.TabIndex = 16;
+            this.label17.Tag = "Fecha emision";
             this.label17.Text = "Fecha emisión";
             // 
             // dtpFechaEmision
@@ -368,6 +373,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 15);
             this.label15.TabIndex = 12;
+            this.label15.Tag = "Tipo Doc";
             this.label15.Text = "Tip. Doc";
             // 
             // cboTipDoc
@@ -389,6 +395,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 15);
             this.label14.TabIndex = 10;
+            this.label14.Tag = "N°Documento";
             this.label14.Text = "Nº Documento";
             // 
             // txtNumDoc
@@ -406,9 +413,10 @@
             this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(30, 55);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 15);
+            this.label13.Size = new System.Drawing.Size(133, 15);
             this.label13.TabIndex = 8;
-            this.label13.Text = "Nombre / Razón social";
+            this.label13.Tag = "Nombre/Razon Social";
+            this.label13.Text = "Nombre / Razón Social";
             // 
             // txtNombreCliente
             // 
@@ -427,6 +435,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 15);
             this.label12.TabIndex = 6;
+            this.label12.Tag = "Codigo";
             this.label12.Text = "Código";
             // 
             // btnBuscarCliente

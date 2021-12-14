@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label26 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -56,14 +56,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
-            // label26
+            // label8
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 100);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
-            this.label26.TabIndex = 75;
-            this.label26.Text = "Categoria:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.TabIndex = 75;
+            this.label8.Tag = "Categoria";
+            this.label8.Text = "Categoria:";
             // 
             // dgvProductos
             // 
@@ -87,15 +88,16 @@
             this.txtPrecioVenta.TabIndex = 48;
             this.txtPrecioVenta.Text = "0,00";
             // 
-            // label16
+            // label9
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(232, 183);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 13);
-            this.label16.TabIndex = 64;
-            this.label16.Text = "Precio Venta s/:";
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(232, 183);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 64;
+            this.label9.Tag = "Precio Venta";
+            this.label9.Text = "Precio Venta :";
             // 
             // txtStock
             // 
@@ -110,9 +112,10 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 183);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 58;
-            this.label7.Text = "Precio Compra s/:";
+            this.label7.Tag = "Precio Compra";
+            this.label7.Text = "Precio Compra :";
             // 
             // txtNombre
             // 
@@ -148,6 +151,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 55;
+            this.label6.Tag = "Duracion";
             this.label6.Text = "Duracion:";
             // 
             // label5
@@ -157,6 +161,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 52;
+            this.label5.Tag = "Stock";
             this.label5.Text = "Stock:";
             // 
             // label2
@@ -166,6 +171,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 49;
+            this.label2.Tag = "Producto";
             this.label2.Text = "Producto:";
             // 
             // txtCodigoP
@@ -186,6 +192,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 43;
+            this.label3.Tag = "Codigo";
             this.label3.Text = "Codigo:";
             // 
             // textEdad
@@ -204,6 +211,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 77;
+            this.label1.Tag = "Edad";
             this.label1.Text = "Edad:";
             // 
             // textCant
@@ -222,6 +230,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 79;
+            this.label4.Tag = "Cantidad de jugadores";
             this.label4.Text = "Cant. de jugadores:";
             // 
             // textCategoria
@@ -242,6 +251,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 22);
             this.button2.TabIndex = 82;
+            this.button2.Tag = "Limpiar codigo";
             this.button2.Text = "Limpiar Codigo";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
@@ -256,6 +266,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 37);
             this.button1.TabIndex = 80;
+            this.button1.Tag = "Limpiar";
             this.button1.Text = "Limpiar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
@@ -270,6 +281,7 @@
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(90, 37);
             this.btnEliminarP.TabIndex = 70;
+            this.btnEliminarP.Tag = "Borrar";
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarP.UseVisualStyleBackColor = true;
@@ -284,6 +296,7 @@
             this.btnSalirP.Name = "btnSalirP";
             this.btnSalirP.Size = new System.Drawing.Size(90, 37);
             this.btnSalirP.TabIndex = 68;
+            this.btnSalirP.Tag = "Salir";
             this.btnSalirP.Text = "Salir";
             this.btnSalirP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalirP.UseVisualStyleBackColor = true;
@@ -298,6 +311,7 @@
             this.btnNuevoP.Name = "btnNuevoP";
             this.btnNuevoP.Size = new System.Drawing.Size(90, 37);
             this.btnNuevoP.TabIndex = 67;
+            this.btnNuevoP.Tag = "Nuevo";
             this.btnNuevoP.Text = "Nuevo";
             this.btnNuevoP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoP.UseVisualStyleBackColor = true;
@@ -312,6 +326,7 @@
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(90, 37);
             this.btnEditarP.TabIndex = 66;
+            this.btnEditarP.Tag = "Editar";
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditarP.UseVisualStyleBackColor = true;
@@ -329,14 +344,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textEdad);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnSalirP);
             this.Controls.Add(this.btnNuevoP);
             this.Controls.Add(this.btnEditarP);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.txtPrecioVenta);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNombre);
@@ -358,14 +373,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEliminarP;
         private System.Windows.Forms.Button btnSalirP;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEditarP;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.TextBox txtPrecioVenta;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNombre;

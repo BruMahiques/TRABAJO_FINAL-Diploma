@@ -1,6 +1,6 @@
 ﻿namespace TRABAJO_FINAL
 {
-    partial class btnEntregado
+    partial class BuscarComprobante
     {
         /// <summary>
         /// Required designer variable.
@@ -79,6 +79,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 2;
+            this.label1.Tag = "Comprobantes";
             this.label1.Text = "Comprobante";
             // 
             // label2
@@ -88,6 +89,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 3;
+            this.label2.Tag = "Items";
             this.label2.Text = "Items";
             // 
             // dateTimeDesde
@@ -112,6 +114,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 83;
+            this.label6.Tag = "Desde";
             this.label6.Text = "Desde";
             // 
             // label8
@@ -122,6 +125,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 15);
             this.label8.TabIndex = 84;
+            this.label8.Tag = "Hasta";
             this.label8.Text = "Hasta";
             // 
             // txtBusqComprobante
@@ -146,6 +150,7 @@
             this.groupBox1.Size = new System.Drawing.Size(601, 95);
             this.groupBox1.TabIndex = 85;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Buscar";
             this.groupBox1.Text = "Buscar por";
             // 
             // rbcliente
@@ -156,6 +161,7 @@
             this.rbcliente.Size = new System.Drawing.Size(97, 17);
             this.rbcliente.TabIndex = 5;
             this.rbcliente.TabStop = true;
+            this.rbcliente.Tag = "Nombre Cliente";
             this.rbcliente.Text = "Nombre Cliente";
             this.rbcliente.UseVisualStyleBackColor = true;
             // 
@@ -167,6 +173,7 @@
             this.rbEstado.Size = new System.Drawing.Size(58, 17);
             this.rbEstado.TabIndex = 4;
             this.rbEstado.TabStop = true;
+            this.rbEstado.Tag = "Estado";
             this.rbEstado.Text = "Estado";
             this.rbEstado.UseVisualStyleBackColor = true;
             // 
@@ -178,6 +185,7 @@
             this.rbNDoc.Size = new System.Drawing.Size(130, 17);
             this.rbNDoc.TabIndex = 3;
             this.rbNDoc.TabStop = true;
+            this.rbNDoc.Tag = "N°Documento";
             this.rbNDoc.Text = "N° Documento Cliente";
             this.rbNDoc.UseVisualStyleBackColor = true;
             // 
@@ -189,6 +197,7 @@
             this.rbComprobante.Size = new System.Drawing.Size(88, 17);
             this.rbComprobante.TabIndex = 2;
             this.rbComprobante.TabStop = true;
+            this.rbComprobante.Tag = "Comprobante";
             this.rbComprobante.Text = "Comprobante";
             this.rbComprobante.UseVisualStyleBackColor = true;
             // 
@@ -200,6 +209,7 @@
             this.rbIdVenta.Size = new System.Drawing.Size(65, 17);
             this.rbIdVenta.TabIndex = 1;
             this.rbIdVenta.TabStop = true;
+            this.rbIdVenta.Tag = "Id Venta";
             this.rbIdVenta.Text = "Id Venta";
             this.rbIdVenta.UseVisualStyleBackColor = true;
             // 
@@ -219,6 +229,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 87;
+            this.label3.Tag = "Comprobantes";
             this.label3.Text = "Comprobante";
             // 
             // btnCancelado
@@ -231,7 +242,7 @@
             this.btnCancelado.Name = "btnCancelado";
             this.btnCancelado.Size = new System.Drawing.Size(93, 49);
             this.btnCancelado.TabIndex = 91;
-            this.btnCancelado.Tag = "Filtrar";
+            this.btnCancelado.Tag = "Cancelado";
             this.btnCancelado.Text = "Cancelado";
             this.btnCancelado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelado.UseVisualStyleBackColor = false;
@@ -247,7 +258,7 @@
             this.btnEmitido.Name = "btnEmitido";
             this.btnEmitido.Size = new System.Drawing.Size(93, 49);
             this.btnEmitido.TabIndex = 90;
-            this.btnEmitido.Tag = "Filtrar";
+            this.btnEmitido.Tag = "Emitido";
             this.btnEmitido.Text = "Emitido";
             this.btnEmitido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmitido.UseVisualStyleBackColor = false;
@@ -263,7 +274,7 @@
             this.btnEntrega.Name = "btnEntrega";
             this.btnEntrega.Size = new System.Drawing.Size(93, 49);
             this.btnEntrega.TabIndex = 89;
-            this.btnEntrega.Tag = "Filtrar";
+            this.btnEntrega.Tag = "Entregado";
             this.btnEntrega.Text = "Entregado";
             this.btnEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrega.UseVisualStyleBackColor = false;
@@ -279,7 +290,7 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(93, 37);
             this.btnSeleccionar.TabIndex = 88;
-            this.btnSeleccionar.Tag = "Filtrar";
+            this.btnSeleccionar.Tag = "Seleccionar";
             this.btnSeleccionar.Text = "Seleecionar";
             this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -301,7 +312,7 @@
             this.Filtrar.UseVisualStyleBackColor = false;
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
-            // btnEntregado
+            // BuscarComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,7 +333,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.dgvComprobante);
-            this.Name = "btnEntregado";
+            this.Name = "BuscarComprobante";
             this.Text = "BuscarComprobante";
             this.Load += new System.EventHandler(this.BuscarComprobante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).EndInit();

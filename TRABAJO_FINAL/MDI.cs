@@ -79,8 +79,8 @@ namespace TRABAJO_FINAL
                     if (BitalStripMenuItem1.Tag != null && Traducciones.ContainsKey(BitalStripMenuItem1.Tag.ToString()))
                         BitalStripMenuItem1.Text = Traducciones[BitalStripMenuItem1.Tag.ToString()].Texto;
 
-                    if (usuariosToolStripMenuItem.Tag != null && Traducciones.ContainsKey(usuariosToolStripMenuItem.Tag.ToString()))
-                        usuariosToolStripMenuItem.Text = Traducciones[usuariosToolStripMenuItem.Tag.ToString()].Texto;
+                    if (usuariosabmToolStripMenuItem.Tag != null && Traducciones.ContainsKey(usuariosabmToolStripMenuItem.Tag.ToString()))
+                        usuariosabmToolStripMenuItem.Text = Traducciones[usuariosabmToolStripMenuItem.Tag.ToString()].Texto;
 
                     if (reservasToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(reservasToolStripMenuItem1.Tag.ToString()))
                         reservasToolStripMenuItem1.Text = Traducciones[reservasToolStripMenuItem1.Tag.ToString()].Texto;
@@ -240,11 +240,31 @@ namespace TRABAJO_FINAL
         public void ValidarPermisos() // Habilitar menu según permisos de usuario logueado
 
         {
-            
-          //  this.adminIdiomaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Gestión de Idiomas y Traduciones
-           // this.aBMProductosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // ABM Productos
-           // this.compositeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a Usuarios
-            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Gestion de Backup
+
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoB); // Admin
+            /*this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Idioma
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a usuarios
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoN); // Versionado
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoP); // Bitacora
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Back Up
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoA); // ABM Usuario
+            this.adminToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoO); // Serializacion*/
+
+            this.usuariosabmToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoA); // ABM Usuario
+            this.rolesToolStripMenuItem1.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoB); //  Gestion perfil usuario
+            this.perfileToolStripMenuItem1.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoC); // Asignar Perfiles a usuarios
+            this.facturarToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoD); // Facturar
+            this.reservasToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoE); // Reservar
+            this.informeToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoF); // Informe
+            this.clienteToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoG); // ABM Cliente
+            this.buscarToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoH); // Buscar
+            this.idiomasToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoJ); // Idioma
+            this.productosToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoK); // ABM Productos
+            this.ayudaToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoL); // Ayuda
+            this.versionadoToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoN); // Versionado
+            this.serializaciónToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoO); // Serializacion
+            this.BitalStripMenuItem1.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoP); // Bitacora
+            this.backUpToolStripMenuItem.Enabled = Singleton.Instancia.IsInRole(EEPerfilTipoPermiso.PermisoQ); // Back Up
 
 
 
@@ -384,7 +404,7 @@ namespace TRABAJO_FINAL
 
         private void comprobantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnEntregado F5 = new btnEntregado();
+            BuscarComprobante F5 = new BuscarComprobante();
             F5.MdiParent = this;
             F5.Show();
         }
@@ -428,7 +448,7 @@ namespace TRABAJO_FINAL
 
         private void menúToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarReserva F5 = new BuscarReserva();
+            AyudaMenu F5 = new AyudaMenu();
             F5.MdiParent = this;
             F5.Show();
         }

@@ -134,7 +134,7 @@ namespace MPP
 
                 foreach (DataRow Item in DS.Tables[0].Rows)
                 {
-                    var IdPermiso = Convert.ToInt32(Item["Cod_Usuario"]);
+                    var IdPermiso = Convert.ToInt32(Item["Cod_Permiso"]);
                     var DescPermiso = Convert.ToString(Item["Descripcion"]);
                     var Permiso = string.Empty;
 
@@ -157,7 +157,7 @@ namespace MPP
                     {
                         EEPerfilFamilia Familia = new EEPerfilFamilia();
                         Familia.Permiso = (EEPerfilTipoPermiso)Enum.Parse(typeof(EEPerfilTipoPermiso), "Ninguno"); // Se hace esto porque al instanciar la familia asigna un permiso enum automáticamente
-                        Familia.Id = IdPermiso;
+                        Familia.Id = IdPermiso;                        
                         Familia.Descripcion = DescPermiso;
 
                         var Arbol = ObtenerTodo(Familia);

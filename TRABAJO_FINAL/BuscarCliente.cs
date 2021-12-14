@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EE;
 using BLL;
-
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class BuscarCliente : Form
+    public partial class BuscarCliente : Form, InterfazIdiomaObserver
     {
         public BuscarCliente()
         {
             InitializeComponent();
+            Traducir();
         }
 
         private void BuscarCliente_Load(object sender, EventArgs e)
@@ -37,6 +38,51 @@ namespace TRABAJO_FINAL
 
         public List<EEProducto> lista3 = new List<EEProducto>();
         public List<EEProducto> lista4 = new List<EEProducto>();
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (groupBox4.Tag != null && Traducciones.ContainsKey(groupBox4.Tag.ToString()))
+                    groupBox4.Text = Traducciones[groupBox4.Tag.ToString()].Texto;
+
+                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
+                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (Filtrar.Tag != null && Traducciones.ContainsKey(Filtrar.Tag.ToString()))
+                    Filtrar.Text = Traducciones[Filtrar.Tag.ToString()].Texto;
+
+                if (btnCargar.Tag != null && Traducciones.ContainsKey(btnCargar.Tag.ToString()))
+                    btnCargar.Text = Traducciones[btnCargar.Tag.ToString()].Texto;
+
+                if (btnSalir.Tag != null && Traducciones.ContainsKey(btnSalir.Tag.ToString()))
+                    btnSalir.Text = Traducciones[btnSalir.Tag.ToString()].Texto;
+
+                
+
+
+
+
+            }
+
+        }
 
         private void Filtrar_Click(object sender, EventArgs e)
         {

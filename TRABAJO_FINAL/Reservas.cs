@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using EE;
 using BLL;
 using Datos;
+using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
@@ -18,6 +19,7 @@ namespace TRABAJO_FINAL
         public Reservas()
         {
             InitializeComponent();
+            Traducir();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -26,6 +28,64 @@ namespace TRABAJO_FINAL
             buscliente.lista4 = listaRes;
             this.Close();
             buscliente.Show();
+        }
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+                if (groupBox1.Tag != null && Traducciones.ContainsKey(groupBox1.Tag.ToString()))
+                    groupBox1.Text = Traducciones[groupBox1.Tag.ToString()].Texto;
+                              
+                if (label7.Tag != null && Traducciones.ContainsKey(label7.Tag.ToString()))
+                    label7.Text = Traducciones[label7.Tag.ToString()].Texto;
+
+                if (label10.Tag != null && Traducciones.ContainsKey(label10.Tag.ToString()))
+                    label10.Text = Traducciones[label10.Tag.ToString()].Texto;
+
+                if (label12.Tag != null && Traducciones.ContainsKey(label12.Tag.ToString()))
+                    label12.Text = Traducciones[label12.Tag.ToString()].Texto;
+
+                if (label13.Tag != null && Traducciones.ContainsKey(label13.Tag.ToString()))
+                    label13.Text = Traducciones[label13.Tag.ToString()].Texto;
+
+                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
+                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+
+                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
+                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+                                
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (label14.Tag != null && Traducciones.ContainsKey(label14.Tag.ToString()))
+                    label14.Text = Traducciones[label14.Tag.ToString()].Texto;
+
+                if (label19.Tag != null && Traducciones.ContainsKey(label19.Tag.ToString()))
+                    label19.Text = Traducciones[label19.Tag.ToString()].Texto;
+
+                if (label17.Tag != null && Traducciones.ContainsKey(label17.Tag.ToString()))
+                    label17.Text = Traducciones[label17.Tag.ToString()].Texto;
+                             
+                if (lblNumdesc.Tag != null && Traducciones.ContainsKey(lblNumdesc.Tag.ToString()))
+                    lblNumdesc.Text = Traducciones[lblNumdesc.Tag.ToString()].Texto;
+                               
+            }
+
         }
         private void Reservas_Load(object sender, EventArgs e)
         {

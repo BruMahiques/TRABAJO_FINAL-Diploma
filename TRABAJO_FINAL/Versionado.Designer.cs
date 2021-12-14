@@ -70,6 +70,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 15);
             this.label8.TabIndex = 88;
+            this.label8.Tag = "Hasta";
             this.label8.Text = "Hasta";
             // 
             // label6
@@ -80,6 +81,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 87;
+            this.label6.Tag = "Desde";
             this.label6.Text = "Desde";
             // 
             // dateTimeHastaH
@@ -128,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(516, 707);
+            this.label4.Location = new System.Drawing.Point(518, 707);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 97;
@@ -138,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(363, 708);
+            this.label3.Location = new System.Drawing.Point(362, 708);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 96;
@@ -183,7 +185,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(398, 705);
+            this.textBox3.Location = new System.Drawing.Point(409, 705);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -244,6 +246,7 @@
             this.groupBox1.Size = new System.Drawing.Size(601, 95);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Buscar";
             this.groupBox1.Text = "Buscar por";
             // 
             // rbDNI
@@ -254,6 +257,7 @@
             this.rbDNI.Size = new System.Drawing.Size(44, 17);
             this.rbDNI.TabIndex = 5;
             this.rbDNI.TabStop = true;
+            this.rbDNI.Tag = "DNI";
             this.rbDNI.Text = "DNI";
             this.rbDNI.UseVisualStyleBackColor = true;
             // 
@@ -265,6 +269,7 @@
             this.rbCorreo.Size = new System.Drawing.Size(56, 17);
             this.rbCorreo.TabIndex = 4;
             this.rbCorreo.TabStop = true;
+            this.rbCorreo.Tag = "Email";
             this.rbCorreo.Text = "Correo";
             this.rbCorreo.UseVisualStyleBackColor = true;
             // 
@@ -276,6 +281,7 @@
             this.rbApellido.Size = new System.Drawing.Size(62, 17);
             this.rbApellido.TabIndex = 3;
             this.rbApellido.TabStop = true;
+            this.rbApellido.Tag = "Apellido";
             this.rbApellido.Text = "Apellido";
             this.rbApellido.UseVisualStyleBackColor = true;
             // 
@@ -287,6 +293,7 @@
             this.rbNombre.Size = new System.Drawing.Size(62, 17);
             this.rbNombre.TabIndex = 2;
             this.rbNombre.TabStop = true;
+            this.rbNombre.Tag = "Nombre";
             this.rbNombre.Text = "Nombre";
             this.rbNombre.UseVisualStyleBackColor = true;
             // 
@@ -298,6 +305,7 @@
             this.rbCodigoDelCliente.Size = new System.Drawing.Size(109, 17);
             this.rbCodigoDelCliente.TabIndex = 1;
             this.rbCodigoDelCliente.TabStop = true;
+            this.rbCodigoDelCliente.Tag = "Cod_Cliente";
             this.rbCodigoDelCliente.Text = "Codigo del cliente";
             this.rbCodigoDelCliente.UseVisualStyleBackColor = true;
             // 
@@ -308,6 +316,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 13);
             this.label9.TabIndex = 104;
+            this.label9.Tag = "Historial de cambios";
             this.label9.Text = "Historial de cambios";
             // 
             // label10
@@ -317,6 +326,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 105;
+            this.label10.Tag = "Clientes";
             this.label10.Text = "Clientes";
             // 
             // Recuperar
@@ -329,7 +339,7 @@
             this.Recuperar.Name = "Recuperar";
             this.Recuperar.Size = new System.Drawing.Size(90, 37);
             this.Recuperar.TabIndex = 107;
-            this.Recuperar.Tag = "Filtrar";
+            this.Recuperar.Tag = "Recuperar";
             this.Recuperar.Text = "Recuperar";
             this.Recuperar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Recuperar.UseVisualStyleBackColor = false;

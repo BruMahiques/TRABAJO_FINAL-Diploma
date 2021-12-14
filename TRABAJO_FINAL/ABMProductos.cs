@@ -53,33 +53,52 @@ namespace TRABAJO_FINAL
                 if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
                     this.Text = Traducciones[this.Tag.ToString()].Texto;
 
-                /*if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
+                if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
                     button2.Text = Traducciones[button2.Tag.ToString()].Texto;
 
-                if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
-                    button3.Text = Traducciones[button3.Tag.ToString()].Texto;
+                if (btnNuevoP.Tag != null && Traducciones.ContainsKey(btnNuevoP.Tag.ToString()))
+                    btnNuevoP.Text = Traducciones[btnNuevoP.Tag.ToString()].Texto;
 
                 if (button1.Tag != null && Traducciones.ContainsKey(button1.Tag.ToString()))
-                    button1.Text = Traducciones[button1.Tag.ToString()].Texto;*/
+                    button1.Text = Traducciones[button1.Tag.ToString()].Texto;
+
+                if (btnEditarP.Tag != null && Traducciones.ContainsKey(btnEditarP.Tag.ToString()))
+                    btnEditarP.Text = Traducciones[btnEditarP.Tag.ToString()].Texto;
+
+                if (btnEliminarP.Tag != null && Traducciones.ContainsKey(btnEliminarP.Tag.ToString()))
+                    btnEliminarP.Text = Traducciones[btnEliminarP.Tag.ToString()].Texto;
+
+                if (btnSalirP.Tag != null && Traducciones.ContainsKey(btnSalirP.Tag.ToString()))
+                    btnSalirP.Text = Traducciones[btnSalirP.Tag.ToString()].Texto;
 
                 if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
                     label1.Text = Traducciones[label1.Tag.ToString()].Texto;
 
                 if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
                     label2.Text = Traducciones[label2.Tag.ToString()].Texto;
-
-          
-
+                          
                 if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
                     label3.Text = Traducciones[label3.Tag.ToString()].Texto;
-
-
+                
                 if (label4.Tag != null && Traducciones.ContainsKey(label4.Tag.ToString()))
                     label4.Text = Traducciones[label4.Tag.ToString()].Texto;
 
                 if (label5.Tag != null && Traducciones.ContainsKey(label5.Tag.ToString()))
                     label5.Text = Traducciones[label5.Tag.ToString()].Texto;
 
+                if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
+                    label6.Text = Traducciones[label6.Tag.ToString()].Texto;
+
+                if (label8.Tag != null && Traducciones.ContainsKey(label8.Tag.ToString()))
+                    label8.Text = Traducciones[label8.Tag.ToString()].Texto;
+
+                if (label7.Tag != null && Traducciones.ContainsKey(label7.Tag.ToString()))
+                    label7.Text = Traducciones[label7.Tag.ToString()].Texto;
+
+                if (label9.Tag != null && Traducciones.ContainsKey(label9.Tag.ToString()))
+                    label9.Text = Traducciones[label9.Tag.ToString()].Texto;
+
+               
 
 
             }

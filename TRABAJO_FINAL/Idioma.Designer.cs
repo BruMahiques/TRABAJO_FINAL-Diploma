@@ -165,10 +165,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 221);
+            this.label5.Location = new System.Drawing.Point(36, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 12;
+            this.label5.Tag = "Crear Idioma";
             this.label5.Text = "Crear Idioma";
             // 
             // label7

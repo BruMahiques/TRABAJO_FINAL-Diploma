@@ -86,6 +86,9 @@ namespace TRABAJO_FINAL
                     if (checkBoxDefault.Tag != null && Traducciones.ContainsKey(checkBoxDefault.Tag.ToString()))
                         checkBoxDefault.Text = Traducciones[checkBoxDefault.Tag.ToString()].Texto;
 
+                    if (label5.Tag != null && Traducciones.ContainsKey(label5.Tag.ToString()))
+                        label5.Text = Traducciones[label5.Tag.ToString()].Texto;
+
                 }
 
             }

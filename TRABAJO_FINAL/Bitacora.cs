@@ -47,9 +47,7 @@ namespace TRABAJO_FINAL
 
                 foreach (Control x in this.Controls) // Todos los controles
 
-                {
-
-                   
+                {                   
 
                     if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
                         label1.Text = Traducciones[label1.Tag.ToString()].Texto;
@@ -63,6 +61,8 @@ namespace TRABAJO_FINAL
                     if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
                         label3.Text = Traducciones[label3.Tag.ToString()].Texto;
 
+                    if (btnfiltrar.Tag != null && Traducciones.ContainsKey(btnfiltrar.Tag.ToString()))
+                        btnfiltrar.Text = Traducciones[btnfiltrar.Tag.ToString()].Texto;
 
                 }
 
