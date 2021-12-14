@@ -13,7 +13,7 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class AyudaVenta : Form
+    public partial class AyudaVenta : Form, InterfazIdiomaObserver
     {
         public AyudaVenta()
         {

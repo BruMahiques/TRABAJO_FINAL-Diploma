@@ -466,5 +466,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void adminToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AyudaAdmin F5 = new AyudaAdmin();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

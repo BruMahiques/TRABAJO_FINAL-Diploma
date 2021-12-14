@@ -230,14 +230,14 @@
             // backUpToolStripMenuItem
             // 
             this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
-            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.backUpToolStripMenuItem.Text = "Back up";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
             // BitalStripMenuItem1
             // 
             this.BitalStripMenuItem1.Name = "BitalStripMenuItem1";
-            this.BitalStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.BitalStripMenuItem1.Size = new System.Drawing.Size(139, 22);
             this.BitalStripMenuItem1.Tag = "Bitacora";
             this.BitalStripMenuItem1.Text = "Bitacora";
             this.BitalStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
@@ -245,7 +245,7 @@
             // usuariosabmToolStripMenuItem
             // 
             this.usuariosabmToolStripMenuItem.Name = "usuariosabmToolStripMenuItem";
-            this.usuariosabmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosabmToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.usuariosabmToolStripMenuItem.Tag = "Usuarios";
             this.usuariosabmToolStripMenuItem.Text = "Usuarios";
             this.usuariosabmToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
@@ -257,7 +257,7 @@
             this.titulosDeIdiomaToolStripMenuItem1,
             this.traduccionesDeIdiomaToolStripMenuItem1});
             this.idiomasToolStripMenuItem.Name = "idiomasToolStripMenuItem";
-            this.idiomasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.idiomasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.idiomasToolStripMenuItem.Tag = "Idiomas";
             this.idiomasToolStripMenuItem.Text = "Idiomas";
             // 
@@ -291,7 +291,7 @@
             this.perfileToolStripMenuItem1,
             this.rolesToolStripMenuItem1});
             this.rOLToolStripMenuItem.Name = "rOLToolStripMenuItem";
-            this.rOLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rOLToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.rOLToolStripMenuItem.Tag = "Rol";
             this.rOLToolStripMenuItem.Text = "Rol";
             // 
@@ -314,7 +314,7 @@
             // versionadoToolStripMenuItem
             // 
             this.versionadoToolStripMenuItem.Name = "versionadoToolStripMenuItem";
-            this.versionadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.versionadoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.versionadoToolStripMenuItem.Tag = "Versionado";
             this.versionadoToolStripMenuItem.Text = "Versionado";
             this.versionadoToolStripMenuItem.Click += new System.EventHandler(this.versionadoToolStripMenuItem_Click);
@@ -322,7 +322,7 @@
             // serializaciónToolStripMenuItem
             // 
             this.serializaciónToolStripMenuItem.Name = "serializaciónToolStripMenuItem";
-            this.serializaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serializaciónToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.serializaciónToolStripMenuItem.Tag = "Serializacion";
             this.serializaciónToolStripMenuItem.Text = "Serialización";
             this.serializaciónToolStripMenuItem.Click += new System.EventHandler(this.serializaciónToolStripMenuItem_Click);
@@ -369,6 +369,7 @@
             this.adminToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.adminToolStripMenuItem1.Tag = "Admin";
             this.adminToolStripMenuItem1.Text = "Admin";
+            this.adminToolStripMenuItem1.Click += new System.EventHandler(this.adminToolStripMenuItem1_Click);
             // 
             // MDI
             // 

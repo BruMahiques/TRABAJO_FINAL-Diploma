@@ -77,6 +77,12 @@
     <Compile Include="AyudaABM.Designer.cs">
       <DependentUpon>AyudaABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="AyudaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaAdmin.Designer.cs">
+      <DependentUpon>AyudaAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AyudaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AyudaABM.resx">
       <DependentUpon>AyudaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyudaAdmin.resx">
+      <DependentUpon>AyudaAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AyudaMenu.resx">
       <DependentUpon>AyudaMenu.cs</DependentUpon>
