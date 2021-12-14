@@ -153,6 +153,26 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackUpfoto {
+            get {
+                object obj = ResourceManager.GetObject("BackUpfoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bitacora {
+            get {
+                object obj = ResourceManager.GetObject("Bitacora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap borrar {
             get {
                 object obj = ResourceManager.GetObject("borrar", resourceCulture);
@@ -246,16 +266,6 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap BuscarReservas {
             get {
                 object obj = ResourceManager.GetObject("BuscarReservas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap carrito_de_compras__1_ {
-            get {
-                object obj = ResourceManager.GetObject("carrito-de-compras (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -496,16 +506,6 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap limpiar_deslizar {
             get {
                 object obj = ResourceManager.GetObject("limpiar-deslizar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lupa {
-            get {
-                object obj = ResourceManager.GetObject("lupa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

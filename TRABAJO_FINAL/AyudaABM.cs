@@ -13,7 +13,7 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class AyudaABM : Form
+    public partial class AyudaABM : Form, InterfazIdiomaObserver
     {
         public AyudaABM()
         {
