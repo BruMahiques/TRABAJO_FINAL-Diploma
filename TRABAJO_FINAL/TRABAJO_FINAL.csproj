@@ -71,6 +71,12 @@
     <Compile Include="AbrirSerialización.Designer.cs">
       <DependentUpon>AbrirSerialización.cs</DependentUpon>
     </Compile>
+    <Compile Include="AyudaABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaABM.Designer.cs">
+      <DependentUpon>AyudaABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="AyudaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbrirSerialización.resx">
       <DependentUpon>AbrirSerialización.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyudaABM.resx">
+      <DependentUpon>AyudaABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AyudaMenu.resx">
       <DependentUpon>AyudaMenu.cs</DependentUpon>
@@ -444,6 +453,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sheets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ABMCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ABMProducto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

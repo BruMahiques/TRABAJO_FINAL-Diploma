@@ -342,7 +342,7 @@
             // menúToolStripMenuItem
             // 
             this.menúToolStripMenuItem.Name = "menúToolStripMenuItem";
-            this.menúToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.menúToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menúToolStripMenuItem.Tag = "Menu";
             this.menúToolStripMenuItem.Text = "Menú";
             this.menúToolStripMenuItem.Click += new System.EventHandler(this.menúToolStripMenuItem_Click);
@@ -350,21 +350,22 @@
             // aBMayudaToolStripMenuItem1
             // 
             this.aBMayudaToolStripMenuItem1.Name = "aBMayudaToolStripMenuItem1";
-            this.aBMayudaToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.aBMayudaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aBMayudaToolStripMenuItem1.Tag = "ABM";
             this.aBMayudaToolStripMenuItem1.Text = "ABM";
+            this.aBMayudaToolStripMenuItem1.Click += new System.EventHandler(this.aBMayudaToolStripMenuItem1_Click);
             // 
             // ventaToolStripMenuItem1
             // 
             this.ventaToolStripMenuItem1.Name = "ventaToolStripMenuItem1";
-            this.ventaToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.ventaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ventaToolStripMenuItem1.Tag = "Venta";
             this.ventaToolStripMenuItem1.Text = "Venta";
             // 
             // adminToolStripMenuItem1
             // 
             this.adminToolStripMenuItem1.Name = "adminToolStripMenuItem1";
-            this.adminToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.adminToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.adminToolStripMenuItem1.Tag = "Admin";
             this.adminToolStripMenuItem1.Text = "Admin";
             // 

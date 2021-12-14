@@ -452,5 +452,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void aBMayudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AyudaABM F5 = new AyudaABM();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

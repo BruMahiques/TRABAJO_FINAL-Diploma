@@ -13,17 +13,17 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class AyudaMenu : Form, InterfazIdiomaObserver
+    public partial class AyudaABM : Form
     {
-        public AyudaMenu()
+        public AyudaABM()
         {
             InitializeComponent();
             Traducir();
             pictureBox1.Visible = true;
             pictureBox2.Visible = false;
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
         }
+
+
         public void UpdateLanguage(EEIdioma idioma)
         {
             Traducir();
@@ -55,14 +55,6 @@ namespace TRABAJO_FINAL
 
                     if (button2.Tag != null && Traducciones.ContainsKey(button2.Tag.ToString()))
                         button2.Text = Traducciones[button2.Tag.ToString()].Texto;
-
-                    if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
-                        button3.Text = Traducciones[button3.Tag.ToString()].Texto;
-
-                    if (button3.Tag != null && Traducciones.ContainsKey(button3.Tag.ToString()))
-                        button3.Text = Traducciones[button3.Tag.ToString()].Texto;
-
-
                 }
 
 
@@ -74,32 +66,12 @@ namespace TRABAJO_FINAL
         {
             pictureBox1.Visible = true;
             pictureBox2.Visible = false;
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Visible = false;
-            pictureBox2.Visible = false;
-            pictureBox3.Visible = true;
-            pictureBox4.Visible = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Visible = false;
-            pictureBox2.Visible = false;
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = true;
         }
     }
 }
