@@ -19,6 +19,17 @@ namespace TRABAJO_FINAL
         {
             InitializeComponent();
             Traducir();
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+          
         }
 
         public void UpdateLanguage(EEIdioma idioma)
@@ -95,7 +106,145 @@ namespace TRABAJO_FINAL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = true;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = true;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = true;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = true;
+            pictureBox10.Visible = false;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = true;
         }
     }
 }

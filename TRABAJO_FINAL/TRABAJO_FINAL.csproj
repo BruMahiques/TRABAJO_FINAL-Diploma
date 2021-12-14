@@ -511,5 +511,29 @@
   <ItemGroup>
     <None Include="Resources\Bitacora.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuariosABM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IdiomaFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IdiomaTitulorho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IdiomaTraduccionfoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PermisosUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Versionado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Serializacion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

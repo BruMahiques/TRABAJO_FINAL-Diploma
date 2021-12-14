@@ -443,6 +443,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IdiomaFoto {
+            get {
+                object obj = ResourceManager.GetObject("IdiomaFoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap idiomas__1_ {
             get {
                 object obj = ResourceManager.GetObject("idiomas (1)", resourceCulture);
@@ -456,6 +466,26 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap idiomas__3_ {
             get {
                 object obj = ResourceManager.GetObject("idiomas (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IdiomaTitulorho {
+            get {
+                object obj = ResourceManager.GetObject("IdiomaTitulorho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IdiomaTraduccionfoto {
+            get {
+                object obj = ResourceManager.GetObject("IdiomaTraduccionfoto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,6 +633,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PermisosUsuario {
+            get {
+                object obj = ResourceManager.GetObject("PermisosUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reservado {
             get {
                 object obj = ResourceManager.GetObject("reservado", resourceCulture);
@@ -616,6 +656,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap Reservas {
             get {
                 object obj = ResourceManager.GetObject("Reservas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Roles {
+            get {
+                object obj = ResourceManager.GetObject("Roles", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -646,6 +696,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap seleccione1 {
             get {
                 object obj = ResourceManager.GetObject("seleccione1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Serializacion {
+            get {
+                object obj = ResourceManager.GetObject("Serializacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,6 +746,26 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap usuario {
             get {
                 object obj = ResourceManager.GetObject("usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UsuariosABM {
+            get {
+                object obj = ResourceManager.GetObject("UsuariosABM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Versionado {
+            get {
+                object obj = ResourceManager.GetObject("Versionado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
