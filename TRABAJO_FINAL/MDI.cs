@@ -459,5 +459,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void ventaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AyudaVenta F5 = new AyudaVenta();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

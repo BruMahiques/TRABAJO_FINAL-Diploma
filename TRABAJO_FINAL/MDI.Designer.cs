@@ -361,6 +361,7 @@
             this.ventaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ventaToolStripMenuItem1.Tag = "Venta";
             this.ventaToolStripMenuItem1.Text = "Venta";
+            this.ventaToolStripMenuItem1.Click += new System.EventHandler(this.ventaToolStripMenuItem1_Click);
             // 
             // adminToolStripMenuItem1
             // 

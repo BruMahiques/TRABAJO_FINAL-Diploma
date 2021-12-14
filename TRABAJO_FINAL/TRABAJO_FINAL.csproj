@@ -83,6 +83,12 @@
     <Compile Include="AyudaMenu.Designer.cs">
       <DependentUpon>AyudaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AyudaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaVenta.Designer.cs">
+      <DependentUpon>AyudaVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AyudaMenu.resx">
       <DependentUpon>AyudaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyudaVenta.resx">
+      <DependentUpon>AyudaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackUp.resx">
       <DependentUpon>BackUp.cs</DependentUpon>
@@ -471,6 +480,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ABMProducto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarProductos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarComprobante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarReservas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reservas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformePDF.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

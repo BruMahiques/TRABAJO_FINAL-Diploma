@@ -213,6 +213,46 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BuscarCliente {
+            get {
+                object obj = ResourceManager.GetObject("BuscarCliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuscarComprobante {
+            get {
+                object obj = ResourceManager.GetObject("BuscarComprobante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuscarProductos {
+            get {
+                object obj = ResourceManager.GetObject("BuscarProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuscarReservas {
+            get {
+                object obj = ResourceManager.GetObject("BuscarReservas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carrito_de_compras__1_ {
             get {
                 object obj = ResourceManager.GetObject("carrito-de-compras (1)", resourceCulture);
@@ -353,6 +393,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Factura {
+            get {
+                object obj = ResourceManager.GetObject("Factura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filtrar {
             get {
                 object obj = ResourceManager.GetObject("filtrar", resourceCulture);
@@ -406,6 +456,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap impresora {
             get {
                 object obj = ResourceManager.GetObject("impresora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InformePDF {
+            get {
+                object obj = ResourceManager.GetObject("InformePDF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -546,6 +606,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap reservado {
             get {
                 object obj = ResourceManager.GetObject("reservado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reservas {
+            get {
+                object obj = ResourceManager.GetObject("Reservas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
