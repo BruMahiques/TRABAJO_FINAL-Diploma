@@ -200,7 +200,8 @@
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.groupBox4);
             this.Name = "BuscarCliente";
-            this.Text = "BuscarCliente";
+            this.Tag = "Buscar Cliente";
+            this.Text = "Buscar Cliente";
             this.Load += new System.EventHandler(this.BuscarCliente_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();

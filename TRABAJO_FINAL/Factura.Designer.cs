@@ -661,6 +661,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Factura";
+            this.Tag = "Facturar";
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);
             this.panel1.ResumeLayout(false);

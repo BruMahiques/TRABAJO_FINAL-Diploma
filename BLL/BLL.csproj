@@ -50,7 +50,6 @@
     <Compile Include="BLLReservas.cs" />
     <Compile Include="BLLCliente.cs" />
     <Compile Include="BLLProducto.cs" />
-    <Compile Include="BLLReportes.cs" />
     <Compile Include="BLLUsuario.cs" />
     <Compile Include="BLLVenta.cs" />
     <Compile Include="BLLVentaDet.cs" />

@@ -390,6 +390,7 @@
             this.Controls.Add(this.dateTimeHastaH);
             this.Controls.Add(this.dateTimeDesdeH);
             this.Name = "Versionado";
+            this.Tag = "Versionado";
             this.Text = "Versionado";
             this.Load += new System.EventHandler(this.Versionado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();

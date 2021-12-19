@@ -13,7 +13,7 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class BuscarComprobante : Form
+    public partial class BuscarComprobante : Form, InterfazIdiomaObserver
     {
         public BuscarComprobante()
         {
@@ -28,9 +28,16 @@ namespace TRABAJO_FINAL
             btnEmitido.Enabled = false;
             btnEntrega.Enabled = false;
             btnCancelado.Enabled = false;
+            Singleton.Instancia.SuscribirObs(this);
+            
 
 
         }
+        private void BuscarComprobante_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
+
 
         BLLVenta BLLVenta = new BLLVenta();
         BLLVentaDet BLLVentaDet = new BLLVentaDet();

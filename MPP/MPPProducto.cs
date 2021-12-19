@@ -131,5 +131,78 @@ namespace MPP
             return num;
 
         }
+
+        public List<EEProducto> ListarProductos2()
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            List<EEProducto> LProducto = new List<EEProducto>();
+
+            ds = Datos.Leer("SP_Producto_Listar", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    
+                    var producto = MapearProducto(fila);
+                    LProducto.Add(producto);
+
+                }
+            }
+
+
+
+            return LProducto;
+
+        }
+
+        public EEProducto BuscarID(int id)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            EEProducto producto = null;
+
+            ds = Datos.Leer("Select * From Producto Where Cod_Producto="+id, null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    producto = MapearProducto(fila);
+
+                }
+                
+            }
+
+
+
+            return producto;
+
+        }
+
+        private EEProducto MapearProducto(DataRow fila)
+        {
+
+
+            var Producto = new EEProducto
+            {
+
+                 Cod_Producto = Convert.ToInt32(fila["Cod_Producto"]),
+                 Nombre_Producto = fila["Nombre_Producto"].ToString(),
+                 Duracion = fila["Duracion"].ToString(),
+                 Edad_Producto = fila["Edad_Producto"].ToString(),
+                 Precio_Compra = Convert.ToDouble(fila["Precio_Compra"]),
+                 Precio_Venta = Convert.ToDouble(fila["Precio_Venta"]),
+                 Categoria = fila["Categoria"].ToString(),
+                 Stock = Convert.ToInt32(fila["Stock"]),
+                 Cant_Jugadores = fila["Cant_Jugadores"].ToString()
+
+            };
+
+            return Producto;
+        }
     }
 }

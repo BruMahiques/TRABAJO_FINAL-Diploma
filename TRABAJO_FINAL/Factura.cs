@@ -164,8 +164,15 @@ namespace TRABAJO_FINAL
                 DesactivarTodo();
             }
 
+            Singleton.Instancia.SuscribirObs(this);
 
         }
+
+        private void Factura_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
+
 
         private void ContarItems()
         {
@@ -386,12 +393,12 @@ namespace TRABAJO_FINAL
                 {
                     EEVenta Venta = new EEVenta();
                     Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                    Venta.Id_TipoDePago = Convert.ToInt32(cboTipoPago.Text.Substring(0,1));
-                    Venta.Id_TipoDeDoc = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
-                    Venta.Id_TipoDeComprobante = Convert.ToInt32(cboComprobante.Text.Substring(0, 1));
+                    Venta.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0,1));
+                    Venta.TipoDeDoc.Id = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
+                    Venta.TipoDeComprobante.Id = Convert.ToInt32(cboComprobante.Text.Substring(0, 1));
                     Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value); 
                     Venta.Estado = "Emitido";
-                    Venta.Id_Cliente_Venta = Convert.ToInt32(txtCodUsuario.Text);
+                    Venta.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
                     Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
 
                     BLLVenta.Alta_Venta(Venta);
@@ -401,13 +408,13 @@ namespace TRABAJO_FINAL
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
                         EEVentaDet Venta_Det = new EEVentaDet();
-                        Venta_Det.Id_Producto_Det = Convert.ToInt32(r.Cells[0].Value);
-                        Venta_Det.Id_Venta_Det = Convert.ToInt32(lblCorrelativo.Text);
-                        Venta_Det.Precio_Prod_Det = Convert.ToInt32(r.Cells[2].Value);
-                        Venta_Det.Cantidad_Det = Convert.ToInt32(r.Cells[3].Value);
-                        Venta_Det.Total_Det = Convert.ToInt32(r.Cells[4].Value);
+                        Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
+                        Venta_Det.Venta.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
+                        Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
+                        Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
+                        Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
-                        if (Venta.Id_TipoDeComprobante == 1) //Solo si es factura que reste el stock
+                        if (Venta.TipoDeComprobante.Id == 1) //Solo si es factura que reste el stock
                         {
                             BLLVentaDet.Stock_Producto(Venta_Det);
                         }
@@ -478,11 +485,11 @@ namespace TRABAJO_FINAL
                 string query = "select Stock from Productos where Cod_Producto = " + r.Cells[0].Value + " ";
                                           
                 EEVentaDet Venta_Det = new EEVentaDet();
-                Venta_Det.Id_Producto_Det = Convert.ToInt32(r.Cells[0].Value);
-                Venta_Det.Id_Venta_Det = Convert.ToInt32(lblCorrelativo.Text);
-                Venta_Det.Precio_Prod_Det = Convert.ToInt32(r.Cells[2].Value);
-                Venta_Det.Cantidad_Det = Convert.ToInt32(r.Cells[3].Value);
-                Venta_Det.Total_Det = Convert.ToInt32(r.Cells[4].Value);
+                Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
+                Venta_Det.Venta.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
+                Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
+                Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
+                Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
 
                 dt = Datos.EjecutarCualquierQuerys(query);
 
@@ -491,7 +498,7 @@ namespace TRABAJO_FINAL
                 foreach (DataRow Item in DS.Tables[0].Rows)
                 {
 
-                    if (Convert.ToInt32(Item[0].ToString().Trim()) < Venta_Det.Cantidad_Det )
+                    if (Convert.ToInt32(Item[0].ToString().Trim()) < Venta_Det.Cantidad )
                     {
                         respuesta = false;
                         MessageBox.Show("La cantidad que se ingreso en el producto "+ r.Cells[1].Value + " , es mayor al stock que se tiene del mismo. El stock que queda del producto es de: "+ Item[0].ToString().Trim() );

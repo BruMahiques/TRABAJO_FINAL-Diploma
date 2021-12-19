@@ -14,9 +14,9 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class ABMClienteConectado : Form, InterfazIdiomaObserver
+    public partial class Clientes : Form, InterfazIdiomaObserver
     {
-        public ABMClienteConectado()
+        public Clientes()
         {
             InitializeComponent();
             Traducir();
@@ -153,11 +153,15 @@ namespace TRABAJO_FINAL
         private void ABMClienteConectado_Load(object sender, EventArgs e)
         {
             ObtenerClientes();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void ABMClienteConectado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
 
-      
 
-        
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -101,5 +101,14 @@ namespace TRABAJO_FINAL
             pictureBox3.Visible = false;
             pictureBox4.Visible = true;
         }
+
+        private void AyudaMenu_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void AyudaMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
     }
 }

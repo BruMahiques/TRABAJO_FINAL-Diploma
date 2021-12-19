@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace EE
 {
-    public class EEVentaDet
+    public class EEReservasDet
     {
-        public EEVenta Venta { get; set; }
+        public EEReservas Reserva { get; set; }
 
         public EEProducto Producto { get; set; }
-        
-       public int Cantidad { get; set; }
+
+        public int Cantidad { get; set; }
 
         public float Sub_total { get; set; }
     }

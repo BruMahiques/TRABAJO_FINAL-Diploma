@@ -27,6 +27,11 @@ namespace TRABAJO_FINAL
             ObtenerClientes();
             ObtenerClientesVersionado();
             Recuperar.Enabled = false;
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void Versionado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
         BLLCliente BLLCliente = new BLLCliente();
         private void ObtenerClientes()

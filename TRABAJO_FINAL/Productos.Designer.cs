@@ -1,6 +1,6 @@
 ﻿namespace TRABAJO_FINAL
 {
-    partial class ABMProductos
+    partial class Productos
     {
         /// <summary>
         /// Required designer variable.
@@ -332,7 +332,7 @@
             this.btnEditarP.UseVisualStyleBackColor = true;
             this.btnEditarP.Click += new System.EventHandler(this.btnEditarP_Click);
             // 
-            // ABMProductos
+            // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -362,8 +362,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigoP);
             this.Controls.Add(this.label3);
-            this.Name = "ABMProductos";
-            this.Text = "ABMProductos";
+            this.Name = "Productos";
+            this.Tag = "ABM Productos";
+            this.Text = "ABM Producto";
             this.Load += new System.EventHandler(this.ABMProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);

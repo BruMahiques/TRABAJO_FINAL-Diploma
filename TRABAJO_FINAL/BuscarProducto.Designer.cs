@@ -209,7 +209,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvProductos);
             this.Name = "BuscarProducto";
-            this.Text = "BuscarProducto";
+            this.Tag = "Buscar Producto";
+            this.Text = "Buscar Producto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BuscarProducto_FormClosing);
             this.Load += new System.EventHandler(this.BuscarProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

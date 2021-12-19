@@ -209,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Idioma";
+            this.Tag = "Idioma";
             this.Text = "Idioma";
             this.Load += new System.EventHandler(this.Idioma_Load);
             this.ResumeLayout(false);

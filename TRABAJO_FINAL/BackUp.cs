@@ -144,7 +144,12 @@ namespace TRABAJO_FINAL
         {
             
             CargarBackups();
-            
+            Singleton.Instancia.SuscribirObs(this);
+
+        }
+        private void BackUp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
     }
 }

@@ -48,7 +48,6 @@
     <Compile Include="MPPReservas.cs" />
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
-    <Compile Include="MPPReportes.cs" />
     <Compile Include="MPPTraductor.cs" />
     <Compile Include="MPPUsuario.cs" />
     <Compile Include="MPPVenta.cs" />

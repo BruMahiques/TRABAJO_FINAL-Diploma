@@ -118,6 +118,11 @@ namespace TRABAJO_FINAL
         private void IdiomaTitulos_Load(object sender, EventArgs e)
         {
             CargarGrid();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void IdiomaTitulos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
         public void CargarGrid()
 

@@ -312,7 +312,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "AyudaAdmin";
-            this.Text = "AyudaAdmin";
+            this.Tag = "Ayuda Admin";
+            this.Text = "Ayuda Admin";
+            this.Load += new System.EventHandler(this.AyudaAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

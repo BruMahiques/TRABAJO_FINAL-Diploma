@@ -139,5 +139,14 @@ namespace TRABAJO_FINAL
 
             MostrarDatos(desde, hasta, sel.Id, tipo.Id);
         }
+
+        private void Bitacora_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void BackUp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
     }
 }

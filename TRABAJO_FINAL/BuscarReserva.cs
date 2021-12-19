@@ -31,6 +31,11 @@ namespace TRABAJO_FINAL
             ObtenerComprobante();
             btnFacturar.Enabled = false;
             btnEntrega.Enabled = false;
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void BuscarReserva_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
 
         public void UpdateLanguage(EEIdioma idioma)

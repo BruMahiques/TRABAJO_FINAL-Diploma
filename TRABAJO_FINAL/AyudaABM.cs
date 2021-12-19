@@ -73,5 +73,14 @@ namespace TRABAJO_FINAL
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
         }
+
+        private void AyudaABM_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void AyudaABM_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
     }
 }

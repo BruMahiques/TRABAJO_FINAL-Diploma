@@ -147,6 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "IdiomaTraducciones";
+            this.Tag = "Traducciones de Idioma";
             this.Text = "IdiomaTraducciones";
             this.Load += new System.EventHandler(this.IdiomaTraducciones_Load);
             this.ResumeLayout(false);

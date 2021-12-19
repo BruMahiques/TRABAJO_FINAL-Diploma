@@ -257,6 +257,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "Roles";
+            this.Tag = "Roles";
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.Roles_Load);
             this.ResumeLayout(false);

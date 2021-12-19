@@ -24,6 +24,11 @@ namespace TRABAJO_FINAL
         private void BuscarCliente_Load(object sender, EventArgs e)
         {
             ObtenerClientes();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void BuscarCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
 
         BLLCliente BLLCliente = new BLLCliente();

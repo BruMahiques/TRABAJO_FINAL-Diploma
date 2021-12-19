@@ -318,7 +318,8 @@
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.dgvReserva);
             this.Name = "BuscarReserva";
-            this.Text = "BuscarReserva";
+            this.Tag = "Buscar Reserva";
+            this.Text = "Buscar Reserva";
             this.Load += new System.EventHandler(this.BuscarReserva_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

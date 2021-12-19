@@ -14,7 +14,7 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class Reservas : Form
+    public partial class Reservas : Form, InterfazIdiomaObserver
     {
         public Reservas()
         {
@@ -83,7 +83,10 @@ namespace TRABAJO_FINAL
                              
                 if (lblNumdesc.Tag != null && Traducciones.ContainsKey(lblNumdesc.Tag.ToString()))
                     lblNumdesc.Text = Traducciones[lblNumdesc.Tag.ToString()].Texto;
-                               
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
             }
 
         }
@@ -120,7 +123,13 @@ namespace TRABAJO_FINAL
             btnImprimir.Enabled = false;
 
             btnGuardar.Enabled = ValidarCampos();
-            
+
+            Singleton.Instancia.SuscribirObs(this);
+
+        }
+        private void Reservas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
 
         public List<EEProducto> listaRes = new List<EEProducto>();
@@ -259,11 +268,11 @@ namespace TRABAJO_FINAL
                 
                 EEReservas Reserva = new EEReservas();
                 Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                Reserva.Id_TipoDePago = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
-                Reserva.Id_TipoDeDoc = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
+                Reserva.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
+                Reserva.TipoDeDoc.Id = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
                 Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
                 Reserva.Estado = "Reservado";
-                Reserva.Id_Cliente_Reserva = Convert.ToInt32(txtCodUsuario.Text);
+                Reserva.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
                 Reserva.Seña = Convert.ToInt32(txtseña.Text);
                 Reserva.Total = Convert.ToInt32(txtTotal.Text);
 
@@ -274,11 +283,11 @@ namespace TRABAJO_FINAL
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
                         EEVentaDet Venta_Det = new EEVentaDet();
-                        Venta_Det.Id_Producto_Det = Convert.ToInt32(r.Cells[0].Value);
-                        Venta_Det.Id_Venta_Det = Convert.ToInt32(lblCorrelativo.Text);
-                        Venta_Det.Precio_Prod_Det = Convert.ToInt32(r.Cells[2].Value);
-                        Venta_Det.Cantidad_Det = Convert.ToInt32(r.Cells[3].Value);
-                        Venta_Det.Total_Det = Convert.ToInt32(r.Cells[4].Value);
+                        Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
+                        Venta_Det.Venta.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
+                        Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
+                        Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
+                        Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
                         BLLReservas.Alta_Reserva_Det(Venta_Det);
                         
                     }

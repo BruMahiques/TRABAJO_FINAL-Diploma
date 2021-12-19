@@ -246,5 +246,14 @@ namespace TRABAJO_FINAL
             pictureBox9.Visible = false;
             pictureBox10.Visible = true;
         }
+
+        private void AyudaAdmin_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void AyudaAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
     }
 }

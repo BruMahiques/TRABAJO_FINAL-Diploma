@@ -102,6 +102,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Name = "BackUp";
+            this.Tag = "BackUp";
             this.Text = "BackUp";
             this.Load += new System.EventHandler(this.BackUp_Load);
             this.ResumeLayout(false);

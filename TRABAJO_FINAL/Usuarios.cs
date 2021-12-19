@@ -13,7 +13,7 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class Usuarios : Form
+    public partial class Usuarios : Form, InterfazIdiomaObserver
     {
         public Usuarios()
         {
@@ -210,6 +210,11 @@ namespace TRABAJO_FINAL
             List<EEIdioma> Idiomas = new List<EEIdioma>();
             Idiomas = BLLIdiomaTraductor.ObtenerIdiomas();
             comboIdioma.DataSource = Idiomas;
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
     }
 }

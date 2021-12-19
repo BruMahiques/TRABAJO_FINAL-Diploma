@@ -225,7 +225,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "AyudaVenta";
-            this.Text = "AyudaVenta";
+            this.Tag = "Ayuda Venta";
+            this.Text = "Ayuda Venta";
+            this.Load += new System.EventHandler(this.AyudaVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

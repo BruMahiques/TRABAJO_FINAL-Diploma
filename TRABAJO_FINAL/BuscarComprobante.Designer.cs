@@ -334,7 +334,8 @@
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.dgvComprobante);
             this.Name = "BuscarComprobante";
-            this.Text = "BuscarComprobante";
+            this.Tag = "Buscar Comprobante";
+            this.Text = "Buscar Comprobante";
             this.Load += new System.EventHandler(this.BuscarComprobante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

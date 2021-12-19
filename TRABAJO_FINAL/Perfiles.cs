@@ -37,7 +37,11 @@ namespace TRABAJO_FINAL
 
         private void Perfiles_Load(object sender, EventArgs e)
         {
-
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void Perfiles_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
         public void UpdateLanguage(EEIdioma idioma)
         {

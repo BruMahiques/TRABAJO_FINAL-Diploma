@@ -11,17 +11,45 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using SERVICIOS;
+using EE;
+using BLL;
 
 
 namespace TRABAJO_FINAL
 {
-    public partial class AbrirSerialización : Form
+    public partial class Serialización : Form, InterfazIdiomaObserver
     {
-        public AbrirSerialización()
+        public Serialización()
         {
             InitializeComponent();
+            Traducir();
         }
         private SERVICIOS.Bitacora.BitacoraBLL bllBit = new SERVICIOS.Bitacora.BitacoraBLL();
+
+        public void UpdateLanguage(EEIdioma idioma)
+        {
+            Traducir();
+        }
+        private void Traducir()
+
+        {
+            EEIdioma Idioma = null;
+
+            if (Singleton.Instancia.Estalogueado()) Idioma = Singleton.Instancia.Usuario.Idioma;
+
+            var Traducciones = BLLIdiomaTraductor.ObtenerTraducciones(Idioma);
+
+            if (Traducciones != null) // Al crear un idioma nuevo y utilizarlo no habrá traducciones, por lo tanto es necesario consultar si es null
+            {
+
+                if (this.Tag != null && Traducciones.ContainsKey(this.Tag.ToString()))  // Título del form
+                    this.Text = Traducciones[this.Tag.ToString()].Texto;
+
+              
+
+            }
+
+        }
 
         private void AbrirSerialización_Load(object sender, EventArgs e)
         {
@@ -45,6 +73,12 @@ namespace TRABAJO_FINAL
                 dgvSerializacion.DataSource = EventosEliminados;
 
             }
+            Traducir();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void AbrirSerialización_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
     }
 }

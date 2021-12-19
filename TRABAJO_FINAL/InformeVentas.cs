@@ -29,6 +29,11 @@ namespace TRABAJO_FINAL
         private void InformeVentas_Load(object sender, EventArgs e)
         {
             CargarInformeVentas();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void InformeVentas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
         public void UpdateLanguage(EEIdioma idioma)
         {

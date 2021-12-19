@@ -14,9 +14,9 @@ using SERVICIOS;
 
 namespace TRABAJO_FINAL
 {
-    public partial class ABMProductos : Form, InterfazIdiomaObserver
+    public partial class Productos : Form, InterfazIdiomaObserver
     {
-        public ABMProductos()
+        public Productos()
         {
             InitializeComponent();
             Traducir();
@@ -133,6 +133,19 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("No escribio un numero real en Precio Compra", "ERROR");
                 return respuesta9;
             }
+
+            double Precio_Compra2 = Convert.ToDouble(txtPrecioCompra.Text);
+            double Precio_Venta2 = Convert.ToDouble(txtPrecioVenta.Text);
+            bool respuesta10 = false;
+            
+            if (Precio_Compra2 >= Precio_Venta2)
+            {
+
+                MessageBox.Show("El Precio de compra no puede ser mayor al de la venta", "ERROR");
+                return respuesta10;
+            }
+
+
 
             return respuesta;
 
@@ -258,6 +271,11 @@ namespace TRABAJO_FINAL
         private void ABMProductos_Load(object sender, EventArgs e)
         {
             ObtenerProductos();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void ABMProductos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)

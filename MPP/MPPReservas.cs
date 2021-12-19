@@ -24,11 +24,11 @@ namespace MPP
 
            
             Hdatos.Add("@Cod_Comprobante", Reserva.Cod_Comprobante);
-            Hdatos.Add("@Id_TipoDePago", Reserva.Id_TipoDePago);
-            Hdatos.Add("@Id_TipoDeDoc", Reserva.Id_TipoDeDoc);
+            Hdatos.Add("@Id_TipoDePago", Reserva.TipoDePago.Id);
+            Hdatos.Add("@Id_TipoDeDoc", Reserva.TipoDeDoc.Id);
             Hdatos.Add("@Fecha", Reserva.Fecha);
             Hdatos.Add("@Estado", Reserva.Estado);
-            Hdatos.Add("@Id_Cliente_Reserva", Reserva.Id_Cliente_Reserva);
+            Hdatos.Add("@Id_Cliente_Reserva", Reserva.Cliente.Cod_Cliente);
             Hdatos.Add("@Seña", Reserva.Seña);
             Hdatos.Add("@Total", Reserva.Total);
 
@@ -45,11 +45,11 @@ namespace MPP
 
 
 
-            Hdatos.Add("@Id_Producto_Det", EEVentaDet.Id_Producto_Det);
-            Hdatos.Add("@Id_Reserva_Det", EEVentaDet.Id_Venta_Det);
-            Hdatos.Add("@Precio_Prod_Det", EEVentaDet.Precio_Prod_Det);
-            Hdatos.Add("@Cantidad_Det", EEVentaDet.Cantidad_Det);
-            Hdatos.Add("@Total_Det", EEVentaDet.Total_Det);
+            Hdatos.Add("@Id_Producto_Det", EEVentaDet.Producto.Cod_Producto);
+            Hdatos.Add("@Id_Reserva_Det", EEVentaDet.Venta.Id_Venta);
+            Hdatos.Add("@Precio_Prod_Det", EEVentaDet.Producto.Precio_Venta);
+            Hdatos.Add("@Cantidad_Det", EEVentaDet.Cantidad);
+            Hdatos.Add("@Total_Det", EEVentaDet.Sub_total);
 
 
             Resultado = Datos.Escribir(consulta, Hdatos);

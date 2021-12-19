@@ -169,6 +169,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "IdiomaTitulos";
+            this.Tag = "Titulos de Idioma";
             this.Text = "IdiomaTItulos";
             this.Load += new System.EventHandler(this.IdiomaTitulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitulos)).EndInit();

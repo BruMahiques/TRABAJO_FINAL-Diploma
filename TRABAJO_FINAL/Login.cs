@@ -26,7 +26,7 @@ namespace TRABAJO_FINAL
         {
             InitializeComponent();
             Traducir();
-            textBox1.Text = "Bru@gmail.com";
+            textBox1.Text = "";
         }
 
         public void UpdateLanguage(EEIdioma idioma)

@@ -52,6 +52,10 @@
     <Compile Include="EEReservas.cs" />
     <Compile Include="EECliente.cs" />
     <Compile Include="EEProducto.cs" />
+    <Compile Include="EEReservasDet.cs" />
+    <Compile Include="EETipoDeComprobante.cs" />
+    <Compile Include="EETipoDeDoc.cs" />
+    <Compile Include="EETipoDePago.cs" />
     <Compile Include="EEUsuario.cs" />
     <Compile Include="EEIdiomaTitulo.cs" />
     <Compile Include="EEEnum.cs" />

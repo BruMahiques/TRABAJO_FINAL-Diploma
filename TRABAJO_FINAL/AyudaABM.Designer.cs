@@ -86,7 +86,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AyudaABM";
-            this.Text = "AyudaABM";
+            this.Tag = "Ayuda ABM";
+            this.Text = "Ayuda ABM";
+            this.Load += new System.EventHandler(this.AyudaABM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

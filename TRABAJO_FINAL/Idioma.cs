@@ -156,6 +156,11 @@ namespace TRABAJO_FINAL
         private void Idioma_Load(object sender, EventArgs e)
         {
             ObtenerIdiomas();
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void Idioma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
         }
         public void ObtenerIdiomas()
         {

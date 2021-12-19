@@ -1,6 +1,6 @@
 ﻿namespace TRABAJO_FINAL
 {
-    partial class ABMClienteConectado
+    partial class Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -228,7 +228,7 @@
             this.btnEditarP.UseVisualStyleBackColor = true;
             this.btnEditarP.Click += new System.EventHandler(this.btnEditarP_Click);
             // 
-            // ABMClienteConectado
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,8 +251,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ABMClienteConectado";
-            this.Text = "ABMClienteConectado";
+            this.Name = "Clientes";
+            this.Tag = "ABM Cliente";
+            this.Text = "ABM Cliente";
             this.Load += new System.EventHandler(this.ABMClienteConectado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

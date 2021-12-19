@@ -136,7 +136,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "AyudaMenu";
-            this.Text = "AyudaMenu";
+            this.Tag = "Ayuda Menu";
+            this.Text = "Ayuda Menu";
+            this.Load += new System.EventHandler(this.AyudaMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -53,23 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMClienteConectado.cs">
+    <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMClienteConectado.Designer.cs">
-      <DependentUpon>ABMClienteConectado.cs</DependentUpon>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMProductos.cs">
+    <Compile Include="Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMProductos.Designer.cs">
-      <DependentUpon>ABMProductos.cs</DependentUpon>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbrirSerialización.cs">
+    <Compile Include="Serialización.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbrirSerialización.Designer.cs">
-      <DependentUpon>AbrirSerialización.cs</DependentUpon>
+    <Compile Include="Serialización.Designer.cs">
+      <DependentUpon>Serialización.cs</DependentUpon>
     </Compile>
     <Compile Include="AyudaABM.cs">
       <SubType>Form</SubType>
@@ -210,14 +210,14 @@
     <Compile Include="Versionado.Designer.cs">
       <DependentUpon>Versionado.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ABMClienteConectado.resx">
-      <DependentUpon>ABMClienteConectado.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMProductos.resx">
-      <DependentUpon>ABMProductos.cs</DependentUpon>
+    <EmbeddedResource Include="Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbrirSerialización.resx">
-      <DependentUpon>AbrirSerialización.cs</DependentUpon>
+    <EmbeddedResource Include="Serialización.resx">
+      <DependentUpon>Serialización.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AyudaABM.resx">
       <DependentUpon>AyudaABM.cs</DependentUpon>

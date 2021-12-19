@@ -208,6 +208,8 @@ namespace TRABAJO_FINAL
             Singleton.Instancia.SuscribirObs(this);
             IntegridadDB();
             this.FormClosed += new FormClosedEventHandler(Cerrarform);
+
+            
         }
 
         private void Cerrarform(object sender, EventArgs e)
@@ -312,14 +314,14 @@ namespace TRABAJO_FINAL
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABMClienteConectado F1 = new ABMClienteConectado();
+            Clientes F1 = new Clientes();
             F1.MdiParent = this;
             F1.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABMProductos F1 = new ABMProductos();
+            Productos F1 = new Productos();
             F1.MdiParent = this;
             F1.Show();
         }
@@ -365,6 +367,7 @@ namespace TRABAJO_FINAL
             Singleton.Instancia.CambiarIdioma((EEIdioma)((ToolStripMenuItem)sender).Tag);
 
             MarcarIdioma();
+            
         }
 
         private void perfilesToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -418,7 +421,7 @@ namespace TRABAJO_FINAL
 
         private void serializaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirSerialización F5 = new AbrirSerialización();
+            Serialización F5 = new Serialización();
             F5.MdiParent = this;
             F5.Show();
               

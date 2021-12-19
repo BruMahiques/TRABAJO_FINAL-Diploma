@@ -497,6 +497,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 28;
+            this.label2.Tag = "Reservas";
             this.label2.Text = "Reservas";
             // 
             // Reservas
@@ -510,6 +511,7 @@
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.groupBox1);
             this.Name = "Reservas";
+            this.Tag = "Reservas";
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.Reservas_Load);
             this.panel1.ResumeLayout(false);

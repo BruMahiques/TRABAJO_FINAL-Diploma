@@ -1,6 +1,6 @@
 ﻿namespace TRABAJO_FINAL
 {
-    partial class AbrirSerialización
+    partial class Serialización
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,15 @@
             this.dgvSerializacion.Size = new System.Drawing.Size(622, 350);
             this.dgvSerializacion.TabIndex = 0;
             // 
-            // AbrirSerialización
+            // Serialización
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvSerializacion);
-            this.Name = "AbrirSerialización";
-            this.Text = "AbrirSerialización";
+            this.Name = "Serialización";
+            this.Tag = "Serializacion";
+            this.Text = "Serialización";
             this.Load += new System.EventHandler(this.AbrirSerialización_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerializacion)).EndInit();
             this.ResumeLayout(false);

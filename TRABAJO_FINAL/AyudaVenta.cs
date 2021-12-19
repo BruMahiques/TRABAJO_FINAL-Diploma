@@ -166,5 +166,14 @@ namespace TRABAJO_FINAL
             pictureBox6.Visible = false;
             pictureBox7.Visible = true;
         }
+
+        private void AyudaVenta_Load(object sender, EventArgs e)
+        {
+            Singleton.Instancia.SuscribirObs(this);
+        }
+        private void AyudaVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Singleton.Instancia.DesuscribirObs(this);
+        }
     }
 }

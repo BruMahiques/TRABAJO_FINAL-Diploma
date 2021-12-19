@@ -152,7 +152,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Bitacora";
+            this.Tag = "Bitacora";
             this.Text = "Bitacora";
+            this.Load += new System.EventHandler(this.Bitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
