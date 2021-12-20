@@ -150,6 +150,8 @@
             this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(23, 144);
             this.dgvProductos.Name = "dgvProductos";
@@ -158,7 +160,6 @@
             // 
             // Filtrar
             // 
-            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
             this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,6 +212,7 @@
             this.Name = "BuscarProducto";
             this.Tag = "Buscar Producto";
             this.Text = "Buscar Producto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BuscarProducto_FormClosing);
             this.Load += new System.EventHandler(this.BuscarProducto_Load);
             this.groupBox1.ResumeLayout(false);

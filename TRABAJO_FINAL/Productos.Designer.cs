@@ -71,6 +71,8 @@
             this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(20, 248);
             this.dgvProductos.Name = "dgvProductos";
@@ -244,7 +246,7 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Image = global::TRABAJO_FINAL.Properties.Resources.limpiar_deslizar;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(941, 10);
@@ -259,7 +261,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Image = global::TRABAJO_FINAL.Properties.Resources.limpiar;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(587, 170);
@@ -274,7 +276,7 @@
             // 
             // btnEliminarP
             // 
-            this.btnEliminarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarP.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar;
             this.btnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarP.Location = new System.Drawing.Point(973, 142);
@@ -289,7 +291,7 @@
             // 
             // btnSalirP
             // 
-            this.btnSalirP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalirP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalirP.Image = global::TRABAJO_FINAL.Properties.Resources.cerrar_sesion;
             this.btnSalirP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalirP.Location = new System.Drawing.Point(973, 185);
@@ -304,7 +306,7 @@
             // 
             // btnNuevoP
             // 
-            this.btnNuevoP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoP.Image = global::TRABAJO_FINAL.Properties.Resources.agregar_archivo;
             this.btnNuevoP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoP.Location = new System.Drawing.Point(973, 53);
@@ -319,7 +321,7 @@
             // 
             // btnEditarP
             // 
-            this.btnEditarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditarP.Image = global::TRABAJO_FINAL.Properties.Resources.editar;
             this.btnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarP.Location = new System.Drawing.Point(973, 96);
@@ -365,6 +367,7 @@
             this.Name = "Productos";
             this.Tag = "ABM Productos";
             this.Text = "ABM Producto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ABMProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);

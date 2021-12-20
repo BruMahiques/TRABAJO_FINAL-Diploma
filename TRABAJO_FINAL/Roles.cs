@@ -286,6 +286,9 @@ namespace TRABAJO_FINAL
         {
             Singleton.Instancia.SuscribirObs(this);
             CargarCombos();
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void Roles_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -29,7 +29,10 @@ namespace TRABAJO_FINAL
             btnEntrega.Enabled = false;
             btnCancelado.Enabled = false;
             Singleton.Instancia.SuscribirObs(this);
-            
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
+
 
 
         }

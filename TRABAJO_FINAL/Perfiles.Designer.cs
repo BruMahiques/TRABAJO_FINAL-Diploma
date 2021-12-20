@@ -191,6 +191,7 @@
             this.Name = "Perfiles";
             this.Tag = "Perfiles";
             this.Text = "Perfiles";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Perfiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -209,14 +209,22 @@
             // 
             // dgvclientes
             // 
+            this.dgvclientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvclientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvclientes.Location = new System.Drawing.Point(36, 29);
             this.dgvclientes.Name = "dgvclientes";
-            this.dgvclientes.Size = new System.Drawing.Size(655, 245);
+            this.dgvclientes.Size = new System.Drawing.Size(955, 245);
             this.dgvclientes.TabIndex = 101;
             // 
             // dgvCambios
             // 
+            this.dgvCambios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCambios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCambios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCambios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCambios.Location = new System.Drawing.Point(33, 449);
             this.dgvCambios.Name = "dgvCambios";
@@ -331,7 +339,6 @@
             // 
             // Recuperar
             // 
-            this.Recuperar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Recuperar.BackColor = System.Drawing.Color.LightGreen;
             this.Recuperar.Image = global::TRABAJO_FINAL.Properties.Resources.database_management;
             this.Recuperar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -347,7 +354,6 @@
             // 
             // Filtrar
             // 
-            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
             this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -392,6 +398,7 @@
             this.Name = "Versionado";
             this.Tag = "Versionado";
             this.Text = "Versionado";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Versionado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCambios)).EndInit();

@@ -13,6 +13,7 @@ namespace MPP
     public class MPPVenta
     {
         
+
         public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
@@ -196,20 +197,20 @@ namespace MPP
 
         }
 
-        public EEProducto BuscarID(int id)
+        public EEVenta BuscarID(int id)
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
 
-            EEProducto producto = null;
+            EEVenta venta = null;
 
-            ds = Datos.Leer("Select * From Producto Where Cod_Producto=" + id, null);
+            ds = Datos.Leer("Select * From Venta Where Id_Venta=" + id, null);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow fila in ds.Tables[0].Rows)
                 {
-                    producto = MapearProducto(fila);
+                    venta = MapearVenta(fila);
 
                 }
 
@@ -217,27 +218,31 @@ namespace MPP
 
 
 
-            return producto;
+            return venta;
 
         }
 
         private EEVenta MapearVenta(DataRow fila)
         {
 
-            MPPProducto MPPProducto = new MPPProducto();
+            var MPPCliente = new MPPCliente();
+            var MPPTipoDePago = new MPPTipoDePago();
+            var MPPTipoDeDoc = new MPPTipoDeDoc();
+            var MPPTipoDeComprobante = new MPPTipoDeComprobante();
+
 
             var Venta = new EEVenta
             {
-                Cliente = MPPProducto.BuscarID(Convert.ToInt32(fila["Cod_Producto"]),
-                Id_Venta = Convert.ToInt32(fila["Cod_Producto"]),
-                Cod_Comprobante = fila["Nombre_Producto"].ToString(),
-                TipoDePago = fila["Duracion"].ToString(),
-                TipoDeDoc = fila["Edad_Producto"].ToString(),
-                TipoDeComprobante = Convert.ToDouble(fila["Precio_Compra"]),
+
+                Id_Venta = Convert.ToInt32(fila["Id_Venta"]),
+                Cod_Comprobante = fila["Cod_Comprobante"].ToString(),
+                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"]),
+                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"]),
+                TipoDeComprobante = MPPTipoDeComprobante.BuscarID(Convert.ToInt32(fila["Id_TipoDeComprobante"]),
                 Fecha = Convert.ToDouble(fila["Precio_Venta"]),
                 Estado = fila["Categoria"].ToString(),
-                
-                Total_Venta = fila["Cant_Jugadores"].ToString()
+                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"]),
+                Total_Venta = fila["Cant_Jugadores"].ToString() 
 
             };
 

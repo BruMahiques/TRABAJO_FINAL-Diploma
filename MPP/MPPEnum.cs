@@ -52,6 +52,52 @@ namespace MPP
             {
                 return null;
             }
+            /* 
+            public EEEnum BuscarID(int id)
+            {
+                Acceso Datos = new Acceso();
+                DataSet ds = new DataSet();
+
+                EEEnum cliente = null;
+
+                ds = Datos.Leer("Select * From Cliente Where Cod_Cliente=" + id, null);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow fila in ds.Tables[0].Rows)
+                    {
+                        cliente = MapearCliente(fila);
+
+                    }
+
+                }
+
+
+
+                return cliente;
+
+            }
+
+            private EEEnum MapearCliente(DataRow fila)
+            {
+
+
+                var Cliente = new EEEnum
+                {
+                    
+                    Cod_Cliente = Convert.ToInt32(fila["Cod_Cliente"]),
+                    Apellido = fila["Apellido"].ToString(),
+                    Nombre = fila["Nombre"].ToString(),
+                    DNI = Convert.ToInt32(fila["DNI"].ToString()),
+                    FechaNac = Convert.ToDateTime(fila["FechaNac"]),
+                    Correo = fila["Correo"].ToString()
+                    
+
+                };
+
+                return Cliente;
+            }
+            */
 
         }
     }

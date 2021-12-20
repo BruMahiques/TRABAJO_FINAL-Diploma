@@ -149,6 +149,7 @@
             this.Name = "IdiomaTraducciones";
             this.Tag = "Traducciones de Idioma";
             this.Text = "IdiomaTraducciones";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.IdiomaTraducciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

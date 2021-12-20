@@ -104,6 +104,7 @@
             this.Name = "BackUp";
             this.Tag = "BackUp";
             this.Text = "BackUp";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BackUp_Load);
             this.ResumeLayout(false);
 

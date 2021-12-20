@@ -211,6 +211,7 @@
             this.Name = "Idioma";
             this.Tag = "Idioma";
             this.Text = "Idioma";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Idioma_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

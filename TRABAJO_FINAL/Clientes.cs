@@ -154,6 +154,9 @@ namespace TRABAJO_FINAL
         {
             ObtenerClientes();
             Singleton.Instancia.SuscribirObs(this);
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void ABMClienteConectado_FormClosing(object sender, FormClosingEventArgs e)
         {

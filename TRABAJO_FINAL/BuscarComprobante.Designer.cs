@@ -57,6 +57,11 @@
             // 
             // dgvComprobante
             // 
+            this.dgvComprobante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvComprobante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvComprobante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvComprobante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComprobante.Location = new System.Drawing.Point(18, 182);
             this.dgvComprobante.Name = "dgvComprobante";
@@ -66,6 +71,9 @@
             // 
             // dgvItems
             // 
+            this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Location = new System.Drawing.Point(18, 336);
             this.dgvItems.Name = "dgvItems";
@@ -84,6 +92,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 320);
             this.label2.Name = "label2";
@@ -215,6 +224,7 @@
             // 
             // txtComprobante
             // 
+            this.txtComprobante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtComprobante.Location = new System.Drawing.Point(629, 367);
             this.txtComprobante.Name = "txtComprobante";
             this.txtComprobante.ReadOnly = true;
@@ -224,6 +234,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(626, 351);
             this.label3.Name = "label3";
@@ -234,7 +245,7 @@
             // 
             // btnCancelado
             // 
-            this.btnCancelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancelado.Image = global::TRABAJO_FINAL.Properties.Resources.error;
             this.btnCancelado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -250,7 +261,7 @@
             // 
             // btnEmitido
             // 
-            this.btnEmitido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmitido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEmitido.BackColor = System.Drawing.Color.Plum;
             this.btnEmitido.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
             this.btnEmitido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +277,7 @@
             // 
             // btnEntrega
             // 
-            this.btnEntrega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEntrega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEntrega.BackColor = System.Drawing.Color.Gold;
             this.btnEntrega.Image = global::TRABAJO_FINAL.Properties.Resources.paquete;
             this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,7 +293,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSeleccionar.BackColor = System.Drawing.Color.LightGreen;
             this.btnSeleccionar.Image = global::TRABAJO_FINAL.Properties.Resources.seleccione;
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -298,7 +309,6 @@
             // 
             // Filtrar
             // 
-            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
             this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -336,6 +346,7 @@
             this.Name = "BuscarComprobante";
             this.Tag = "Buscar Comprobante";
             this.Text = "Buscar Comprobante";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BuscarComprobante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

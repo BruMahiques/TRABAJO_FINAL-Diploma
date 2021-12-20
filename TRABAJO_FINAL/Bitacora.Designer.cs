@@ -115,6 +115,8 @@
             // 
             // dataGridViewEventos
             // 
+            this.dataGridViewEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEventos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEventos.Location = new System.Drawing.Point(19, 116);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
@@ -154,6 +156,7 @@
             this.Name = "Bitacora";
             this.Tag = "Bitacora";
             this.Text = "Bitacora";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Bitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             this.ResumeLayout(false);

@@ -143,6 +143,10 @@ namespace TRABAJO_FINAL
         private void Bitacora_Load(object sender, EventArgs e)
         {
             Singleton.Instancia.SuscribirObs(this);
+
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void BackUp_FormClosing(object sender, FormClosingEventArgs e)
         {

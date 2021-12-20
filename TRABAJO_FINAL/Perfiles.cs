@@ -38,6 +38,10 @@ namespace TRABAJO_FINAL
         private void Perfiles_Load(object sender, EventArgs e)
         {
             Singleton.Instancia.SuscribirObs(this);
+
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void Perfiles_FormClosing(object sender, FormClosingEventArgs e)
         {

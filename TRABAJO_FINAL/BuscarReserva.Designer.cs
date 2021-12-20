@@ -217,6 +217,8 @@
             // 
             // dgvItems
             // 
+            this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Location = new System.Drawing.Point(33, 342);
             this.dgvItems.Name = "dgvItems";
@@ -225,6 +227,10 @@
             // 
             // dgvReserva
             // 
+            this.dgvReserva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReserva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReserva.Location = new System.Drawing.Point(33, 188);
             this.dgvReserva.Name = "dgvReserva";
@@ -234,7 +240,6 @@
             // 
             // btnFacturar
             // 
-            this.btnFacturar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFacturar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnFacturar.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
             this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -250,7 +255,6 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSeleccionar.BackColor = System.Drawing.Color.LightGreen;
             this.btnSeleccionar.Image = global::TRABAJO_FINAL.Properties.Resources.seleccione;
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +270,6 @@
             // 
             // Filtrar
             // 
-            this.Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtrar.BackColor = System.Drawing.Color.PowderBlue;
             this.Filtrar.Image = global::TRABAJO_FINAL.Properties.Resources.filtrar;
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,7 +285,6 @@
             // 
             // btnEntrega
             // 
-            this.btnEntrega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEntrega.BackColor = System.Drawing.Color.Gold;
             this.btnEntrega.Image = global::TRABAJO_FINAL.Properties.Resources.paquete;
             this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -320,6 +322,7 @@
             this.Name = "BuscarReserva";
             this.Tag = "Buscar Reserva";
             this.Text = "Buscar Reserva";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BuscarReserva_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

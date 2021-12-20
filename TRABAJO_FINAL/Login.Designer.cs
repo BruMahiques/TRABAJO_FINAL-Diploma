@@ -135,6 +135,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(493, 30);
             this.label4.TabIndex = 25;
+            this.label4.Tag = "Ingresar al sistema";
             this.label4.Text = "INGRESAR AL SISTEMA";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -153,6 +154,7 @@
             this.Controls.Add(this.Usu);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
             this.Name = "InicioSesion";
             this.Tag = "InicioSesion";
             this.Text = "Inicio de Sesion";

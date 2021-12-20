@@ -32,6 +32,10 @@ namespace TRABAJO_FINAL
             comboTitulo.DataSource = BLLTitulo.ObtenerEtiquetas();
             comboIdioma.DataSource = BLLIdiomaTraductor.ObtenerIdiomas();
             Singleton.Instancia.SuscribirObs(this);
+
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void IdiomaTraducciones_FormClosing(object sender, FormClosingEventArgs e)
         {

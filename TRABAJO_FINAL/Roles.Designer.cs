@@ -259,6 +259,7 @@
             this.Name = "Roles";
             this.Tag = "Roles";
             this.Text = "Roles";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Roles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -51,46 +51,51 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(321, 31);
+            this.dataGridView1.Location = new System.Drawing.Point(320, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(625, 403);
+            this.dataGridView1.Size = new System.Drawing.Size(716, 403);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBox1
             // 
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Location = new System.Drawing.Point(90, 40);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(99, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(90, 80);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(99, 20);
             this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(90, 131);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(99, 20);
             this.textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(90, 240);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(99, 20);
             this.textBox4.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(28, 197);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // label1
@@ -135,6 +140,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(28, 246);
             this.label5.Name = "label5";
@@ -145,6 +153,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(28, 294);
             this.label6.Name = "label6";
@@ -158,7 +169,7 @@
             this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(90, 319);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(99, 20);
             this.textBox5.TabIndex = 12;
             this.textBox5.Text = "(..)";
             // 
@@ -174,7 +185,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(25, 345);
+            this.button4.Location = new System.Drawing.Point(25, 356);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 17;
@@ -185,10 +196,9 @@
             // 
             // btnEliminarP
             // 
-            this.btnEliminarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarP.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar;
             this.btnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminarP.Location = new System.Drawing.Point(208, 398);
+            this.btnEliminarP.Location = new System.Drawing.Point(207, 410);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(90, 37);
             this.btnEliminarP.TabIndex = 73;
@@ -200,10 +210,9 @@
             // 
             // btnNuevoP
             // 
-            this.btnNuevoP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoP.Image = global::TRABAJO_FINAL.Properties.Resources.agregar_archivo;
             this.btnNuevoP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoP.Location = new System.Drawing.Point(16, 397);
+            this.btnNuevoP.Location = new System.Drawing.Point(15, 409);
             this.btnNuevoP.Name = "btnNuevoP";
             this.btnNuevoP.Size = new System.Drawing.Size(90, 37);
             this.btnNuevoP.TabIndex = 72;
@@ -215,10 +224,9 @@
             // 
             // btnEditarP
             // 
-            this.btnEditarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditarP.Image = global::TRABAJO_FINAL.Properties.Resources.editar;
             this.btnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditarP.Location = new System.Drawing.Point(112, 398);
+            this.btnEditarP.Location = new System.Drawing.Point(111, 410);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(90, 37);
             this.btnEditarP.TabIndex = 71;
@@ -232,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 447);
+            this.ClientSize = new System.Drawing.Size(1048, 459);
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnNuevoP);
             this.Controls.Add(this.btnEditarP);
@@ -254,6 +262,7 @@
             this.Name = "Clientes";
             this.Tag = "ABM Cliente";
             this.Text = "ABM Cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ABMClienteConectado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

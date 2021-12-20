@@ -34,6 +34,8 @@
             // 
             // dgvSerializacion
             // 
+            this.dgvSerializacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSerializacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSerializacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSerializacion.Location = new System.Drawing.Point(80, 53);
             this.dgvSerializacion.Name = "dgvSerializacion";
@@ -49,6 +51,7 @@
             this.Name = "Serialización";
             this.Tag = "Serializacion";
             this.Text = "Serialización";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AbrirSerialización_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerializacion)).EndInit();
             this.ResumeLayout(false);

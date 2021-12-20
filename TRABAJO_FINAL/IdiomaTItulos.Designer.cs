@@ -171,6 +171,7 @@
             this.Name = "IdiomaTitulos";
             this.Tag = "Titulos de Idioma";
             this.Text = "IdiomaTItulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.IdiomaTitulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitulos)).EndInit();
             this.ResumeLayout(false);

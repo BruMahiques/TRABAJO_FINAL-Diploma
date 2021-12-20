@@ -30,6 +30,10 @@ namespace TRABAJO_FINAL
         {
             CargarInformeVentas();
             Singleton.Instancia.SuscribirObs(this);
+            Singleton.Instancia.SuscribirObs(this);
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void InformeVentas_FormClosing(object sender, FormClosingEventArgs e)
         {

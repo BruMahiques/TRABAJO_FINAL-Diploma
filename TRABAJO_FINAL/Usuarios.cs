@@ -211,6 +211,10 @@ namespace TRABAJO_FINAL
             Idiomas = BLLIdiomaTraductor.ObtenerIdiomas();
             comboIdioma.DataSource = Idiomas;
             Singleton.Instancia.SuscribirObs(this);
+
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
         {

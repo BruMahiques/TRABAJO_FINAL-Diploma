@@ -157,6 +157,10 @@ namespace TRABAJO_FINAL
         {
             ObtenerIdiomas();
             Singleton.Instancia.SuscribirObs(this);
+
+            var bounds = Screen.FromControl(this).Bounds;
+            this.Width = bounds.Width - 5;
+            this.Height = bounds.Height - 110;
         }
         private void Idioma_FormClosing(object sender, FormClosingEventArgs e)
         {

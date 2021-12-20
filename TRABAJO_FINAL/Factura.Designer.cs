@@ -586,6 +586,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 25);
             this.label2.TabIndex = 10;
+            this.label2.Tag = "Juegos de mesa modernos";
             this.label2.Text = "Juegos de mesa modernos";
             // 
             // groupBox1

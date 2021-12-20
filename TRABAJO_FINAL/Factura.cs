@@ -166,6 +166,8 @@ namespace TRABAJO_FINAL
 
             Singleton.Instancia.SuscribirObs(this);
 
+           
+
         }
 
         private void Factura_FormClosing(object sender, FormClosingEventArgs e)
