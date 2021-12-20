@@ -10,11 +10,11 @@ using System.Data;
 
 namespace MPP
 {
-    public class MPPReservas
+    public class MPPReserva
     {
         Acceso data = new Acceso();
 
-        public bool Alta_Reserva(EEReservas Reserva)
+        public bool Alta_Reserva(EEReserva Reserva)
         {
             Acceso Datos = new Acceso();
             Hashtable Hdatos = new Hashtable();
@@ -126,6 +126,64 @@ namespace MPP
 
 
 
+        }
+        public EEReserva BuscarID(int id)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            EEReserva reserva = null;
+
+            ds = Datos.Leer("Select * From Reservas Where Id_Reserva=" + id, null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    reserva = MapearReserva(fila);
+
+                }
+
+            }
+
+
+
+            return reserva;
+
+        }
+
+        private EEReserva MapearReserva(DataRow fila)
+        {
+
+            var MPPCliente = new MPPCliente();
+            var MPPTipoDePago = new MPPTipoDePago();
+            var MPPTipoDeDoc = new MPPTipoDeDoc();
+            
+            var LDetalle = new List<EEReservaDet>();
+            var MPPReservaDet = new MPPReservaDet();
+
+
+            var Reserva = new EEReserva
+            {
+
+                Id_Reserva = Convert.ToInt32(fila["Id_Reserva"]),
+                Cod_Comprobante = fila["Cod_Comprobante"].ToString(),
+
+                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"])),
+                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"])),
+                
+
+                LDetalle = MPPReservaDet.ListarVentaDet(Convert.ToInt32(fila["Id_Reserva"])),
+
+
+                Fecha = Convert.ToDateTime(fila["Fecha"]),
+                Estado = fila["Estado"].ToString(),
+                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"])),
+                Total = Convert.ToSingle(fila["Total_Venta"])
+
+            };
+
+            return Reserva;
         }
     }
 }

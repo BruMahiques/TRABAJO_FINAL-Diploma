@@ -49,10 +49,10 @@
     <Compile Include="EEPerfilFamilia.cs" />
     <Compile Include="EEPerfilPatente.cs" />
     <Compile Include="EEPerfilTipoPermiso.cs" />
-    <Compile Include="EEReservas.cs" />
+    <Compile Include="EEReserva.cs" />
     <Compile Include="EECliente.cs" />
     <Compile Include="EEProducto.cs" />
-    <Compile Include="EEReservasDet.cs" />
+    <Compile Include="EEReservaDet.cs" />
     <Compile Include="EETipoDeComprobante.cs" />
     <Compile Include="EETipoDeDoc.cs" />
     <Compile Include="EETipoDePago.cs" />

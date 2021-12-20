@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EE
 {
-    public class EEReservasDet
+    public class EEReservaDet
     {
-        public EEReservas Reserva { get; set; }
+        public EEReserva Reserva { get; set; }
 
         public EEProducto Producto { get; set; }
 

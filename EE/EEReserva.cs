@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EE
 {
-    public class EEReservas
+    public class EEReserva
     {
         public int Id_Reserva { get; set; }
 
@@ -15,7 +15,7 @@ namespace EE
 
         public EETipoDeDoc TipoDeDoc { get; set; }
 
-        List<EEVentaDet> Detalle { get; set; }
+        public List<EEReservaDet> LDetalle { get; set; }
 
         public DateTime Fecha { get; set; }
         public string Estado { get; set; }
@@ -24,6 +24,6 @@ namespace EE
         public float Total { get; set; }
 
 
-        public EEReservas() { }
+        public EEReserva() { }
     }
 }

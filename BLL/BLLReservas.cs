@@ -11,10 +11,10 @@ namespace BLL
 {
     public class BLLReservas
     {
-        MPPReservas Map = new MPPReservas();
+        MPPReserva Map = new MPPReserva();
        
 
-        public void Alta_Reserva(EEReservas Reserva)
+        public void Alta_Reserva(EEReserva Reserva)
         {
             Map.Alta_Reserva(Reserva);
         }

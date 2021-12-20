@@ -8,54 +8,53 @@ using EE;
 using System.Collections;
 using System.Data;
 
-
 namespace MPP
 {
-    public class MPPVentaDet
+    public class MPPReservaDet
     {
-        public List<EEVentaDet> ListarVentaDet(int id)
+        public List<EEReservaDet> ListarVentaDet(int id)
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
 
-            List<EEVentaDet> LVentaDet = new List<EEVentaDet>();
-            var VentaDet = new EEVentaDet();
+            List<EEReservaDet> LReservaDet = new List<EEReservaDet>();
+            var ReservaDet = new EEReservaDet();
 
-            ds = Datos.Leer("Select * From Venta_Detalle Where Id_Venta="+id, null);
+            ds = Datos.Leer("Select * From Reservas_Detalle Where Id_Reserva=" + id, null);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow fila in ds.Tables[0].Rows)
                 {
-                    VentaDet = MapearVentaDet(fila);
-                    LVentaDet.Add(VentaDet);
+                    ReservaDet = MapearReservaDet(fila);
+                    LReservaDet.Add(ReservaDet);
                 }
             }
 
-            return LVentaDet;
+            return LReservaDet;
 
         }
-                
-        private EEVentaDet MapearVentaDet(DataRow fila)
+
+        private EEReservaDet MapearReservaDet(DataRow fila)
         {
 
             MPPProducto MPPProducto = new MPPProducto();
-            MPPVenta MPPVenta = new MPPVenta();
+            MPPReserva MPPReserva = new MPPReserva();
 
 
 
 
-            var VentaDet = new EEVentaDet
+            var ReservaDet = new EEReservaDet
             {
 
-                Venta = MPPVenta.BuscarID(Convert.ToInt32(fila["Id_Venta"])),
+                Reserva = MPPReserva.BuscarID(Convert.ToInt32(fila["Id_Reserva"])),
                 Producto = MPPProducto.BuscarID(Convert.ToInt32(fila["Cod_Producto"])),
                 Cantidad = Convert.ToInt32(fila["Cantidad"]),
                 Sub_total = Convert.ToSingle(fila["Sub_total"])
 
             };
 
-            return VentaDet;
+            return ReservaDet;
         }
     }
 }

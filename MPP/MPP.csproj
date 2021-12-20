@@ -45,9 +45,10 @@
     <Compile Include="MPPPerfilComponente.cs" />
     <Compile Include="MPPPerfilFamilia.cs" />
     <Compile Include="MPPPerfilPatente.cs" />
-    <Compile Include="MPPReservas.cs" />
+    <Compile Include="MPPReserva.cs" />
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
+    <Compile Include="MPPReservaDet.cs" />
     <Compile Include="MPPTipoDeComprobante.cs" />
     <Compile Include="MPPTipoDeDoc.cs" />
     <Compile Include="MPPTipoDePago.cs" />

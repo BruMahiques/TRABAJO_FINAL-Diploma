@@ -266,7 +266,7 @@ namespace TRABAJO_FINAL
             try
             {
                 
-                EEReservas Reserva = new EEReservas();
+                EEReserva Reserva = new EEReserva();
                 Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
                 Reserva.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
                 Reserva.TipoDeDoc.Id = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));

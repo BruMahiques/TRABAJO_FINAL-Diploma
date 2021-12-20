@@ -11,12 +11,14 @@ namespace EE
         public int Id_Venta { get; set; }
 
         public string Cod_Comprobante { get; set; }
-        public EETipoDePago TipoDePago { get; set; }
 
         public EETipoDeDoc TipoDeDoc { get; set; }
+        public EETipoDePago TipoDePago { get; set; }
+
+        
         public EETipoDeComprobante TipoDeComprobante { get; set; }
 
-        List<EEVentaDet> Detalle { get; set; }
+        public List<EEVentaDet> LDetalle { get; set; }
 
         public DateTime Fecha { get; set; }
         public string Estado { get; set; }

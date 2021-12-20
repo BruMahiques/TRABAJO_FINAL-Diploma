@@ -229,6 +229,8 @@ namespace MPP
             var MPPTipoDePago = new MPPTipoDePago();
             var MPPTipoDeDoc = new MPPTipoDeDoc();
             var MPPTipoDeComprobante = new MPPTipoDeComprobante();
+            var LDetalle  =  new List<EEVentaDet>();
+            var MPPVentaDet = new MPPVentaDet();
 
 
             var Venta = new EEVenta
@@ -236,13 +238,18 @@ namespace MPP
 
                 Id_Venta = Convert.ToInt32(fila["Id_Venta"]),
                 Cod_Comprobante = fila["Cod_Comprobante"].ToString(),
-                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"]),
-                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"]),
-                TipoDeComprobante = MPPTipoDeComprobante.BuscarID(Convert.ToInt32(fila["Id_TipoDeComprobante"]),
-                Fecha = Convert.ToDouble(fila["Precio_Venta"]),
-                Estado = fila["Categoria"].ToString(),
-                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"]),
-                Total_Venta = fila["Cant_Jugadores"].ToString() 
+
+                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"])),
+                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"])),
+                TipoDeComprobante = MPPTipoDeComprobante.BuscarID(Convert.ToInt32(fila["Id_TipoDeComprobante"])),
+
+                LDetalle = MPPVentaDet.ListarVentaDet(Convert.ToInt32(fila["Id_Venta"])),
+
+
+                Fecha = Convert.ToDateTime(fila["Fecha"]),
+                Estado = fila["Estado"].ToString(),
+                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"])),
+                Total_Venta = Convert.ToSingle(fila["Total_Venta"])
 
             };
 

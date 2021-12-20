@@ -12,6 +12,29 @@ namespace MPP
 {
     public class MPPTipoDeDoc
     {
+        public List<EETipoDeDoc> ListarTipoDeDoc()
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            List<EETipoDeDoc> LTipoDeDoc = new List<EETipoDeDoc>();
+            var EETipoDeDoc = new EETipoDeDoc();
+
+            ds = Datos.Leer("Select * From Tipo_De_Doc", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    EETipoDeDoc = MapearTipoDeDoc(fila);
+                    LTipoDeDoc.Add(EETipoDeDoc);
+
+                }
+            }
+
+            return LTipoDeDoc;
+
+        }
         public EETipoDeDoc BuscarID(int id)
         {
             Acceso Datos = new Acceso();
@@ -41,17 +64,17 @@ namespace MPP
         {
 
 
-            var TipoDeDeDoc = new EETipoDeDoc
+            var TipoDeDoc = new EETipoDeDoc
             {
 
-                Id = Convert.ToInt32(fila["Id_TipoDeDeDoc"]),
+                Id = Convert.ToInt32(fila["Id_TipoDeDoc"]),
                 Descripcion = fila["Descripcion"].ToString()
 
 
 
             };
 
-            return TipoDeDeDoc;
+            return TipoDeDoc;
         }
     }
 }

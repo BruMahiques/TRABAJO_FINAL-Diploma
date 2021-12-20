@@ -12,6 +12,29 @@ namespace MPP
 {
     public class MPPTipoDePago
     {
+        public List<EETipoDePago> ListarTipoDePago()
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            List<EETipoDePago> LTipoDePago = new List<EETipoDePago>();
+            var EETipoDePago = new EETipoDePago();
+
+            ds = Datos.Leer("Select * From Tipo_De_Pago", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    EETipoDePago = MapearTipoDePago(fila);
+                    LTipoDePago.Add(EETipoDePago);
+
+                }
+            }
+
+            return LTipoDePago;
+
+        }
         public EETipoDePago BuscarID(int id)
         {
             Acceso Datos = new Acceso();
