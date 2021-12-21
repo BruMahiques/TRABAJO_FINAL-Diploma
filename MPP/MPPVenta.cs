@@ -14,7 +14,7 @@ namespace MPP
     {
         
 
-        public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+     /*   public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
@@ -60,11 +60,11 @@ namespace MPP
             ds = Datos.EjecutarCualquierQuerys(query);
 
             return ds;
-        }
+        } */
 
 
             
-        public DataTable ListarVentaDet(string Id_Venta)
+       /* public DataTable ListarVentaDet(string Id_Venta)
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
@@ -82,7 +82,7 @@ namespace MPP
 
 
 
-        }
+        }*/
 
         public bool Alta_Venta(EEVenta EEVenta)
         {
@@ -105,7 +105,7 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
-        public bool Mod_Estado(EEVenta EEVenta)
+        /*public bool Mod_Estado(EEVenta EEVenta)
         {
             Acceso Datos = new Acceso();
             Hashtable Hdatos = new Hashtable();
@@ -119,26 +119,8 @@ namespace MPP
 
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
-        }
-        public bool Alta_Venta_Det(EEVentaDet EEVentaDet)
-        {
-            Acceso Datos = new Acceso();
-            Hashtable Hdatos = new Hashtable();
-            bool Resultado;
-            string consulta = "SP_VentaDet_Alta";
-
-
-            
-            Hdatos.Add("@Id_Producto_Det", EEVentaDet.Producto.Cod_Producto);
-            Hdatos.Add("@Id_Venta_Det", EEVentaDet.Venta.Id_Venta);
-            Hdatos.Add("@Precio_Prod_Det", EEVentaDet.Producto.Precio_Venta);
-            Hdatos.Add("@Cantidad_Det", EEVentaDet.Cantidad);
-            Hdatos.Add("@Total_Det", EEVentaDet.Sub_total);
-            
-
-            Resultado = Datos.Escribir(consulta, Hdatos);
-            return Resultado;
-        }
+        }*/
+        /*
 
         public bool Stock_Producto(EEVentaDet EEVentaDet)
         {
@@ -155,7 +137,8 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
-
+        */
+        /*
         public DataTable CargarGrafico(int num, string desde, string hasta)
         {
             Acceso Datos = new Acceso();
@@ -196,15 +179,41 @@ namespace MPP
 
 
         }
+        */
+        public List<EEVenta> ListarVenta()
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+
+            List<EEVenta> LVenta = new List<EEVenta>();
+            var Venta = new EEVenta();
+
+            ds = Datos.Leer("SP_Listar_Ventas", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    Venta = MapearVenta(fila);
+                    LVenta.Add(Venta);
+                }
+            }
+
+            return LVenta;
+
+        }
 
         public EEVenta BuscarID(int id)
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             EEVenta venta = null;
 
-            ds = Datos.Leer("Select * From Venta Where Id_Venta=" + id, null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Venta Where Id_Venta=" + id);
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -248,7 +257,7 @@ namespace MPP
 
                 Fecha = Convert.ToDateTime(fila["Fecha"]),
                 Estado = fila["Estado"].ToString(),
-                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"])),
+                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Id_Cliente_Venta"])),
                 Total_Venta = Convert.ToSingle(fila["Total_Venta"])
 
             };

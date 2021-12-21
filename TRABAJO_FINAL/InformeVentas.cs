@@ -79,7 +79,7 @@ namespace TRABAJO_FINAL
             DataTable Informe1;
             DataTable Informe2;
 
-            Informe1 = BLLVentaDet.CargarGrafico(1, null, null);
+         /*   Informe1 = BLLVentaDet.CargarGrafico(1, null, null);
 
             chart1.Titles.Add("Productos Vendidos");
 
@@ -102,7 +102,7 @@ namespace TRABAJO_FINAL
                 series.Label = row["Total"].ToString();
             }
             dgvInforme2.DataSource = Informe2;
-
+            */
             
         }
 
@@ -246,33 +246,33 @@ namespace TRABAJO_FINAL
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
 
-            Informe1 = BLLVentaDet.CargarGrafico(3, desde, hasta);
+            /*  Informe1 = BLLVentaDet.CargarGrafico(3, desde, hasta);
 
-            //chart1.Titles.Add("Productos Vendidos");
+             //chart1.Titles.Add("Productos Vendidos");
 
-            foreach (DataRow row in Informe1.Rows)
-            {
-                Series series = chart1.Series.Add(row["Nombre_Producto"].ToString());
-                series.Points.Add(Convert.ToInt32(row["Cantidad vendida del producto"].ToString()));
-                series.Label = row["Nombre_Producto"].ToString();
-            }
-            dgvInforme1.DataSource = Informe1;
+             foreach (DataRow row in Informe1.Rows)
+             {
+                 Series series = chart1.Series.Add(row["Nombre_Producto"].ToString());
+                 series.Points.Add(Convert.ToInt32(row["Cantidad vendida del producto"].ToString()));
+                 series.Label = row["Nombre_Producto"].ToString();
+             }
+             dgvInforme1.DataSource = Informe1;
 
             Informe2 = BLLVentaDet.CargarGrafico(4, desde, hasta);
 
-            //chart2.Titles.Add("Ganancias por Producto");
+             //chart2.Titles.Add("Ganancias por Producto");
 
-            foreach (DataRow row in Informe2.Rows)
-            {
-                Series series = chart2.Series.Add(row["Nombre_Producto"].ToString());
-                series.Points.Add(Convert.ToInt32(row["Total"].ToString()));
-                series.Label = row["Total"].ToString();
-            }
-            dgvInforme2.DataSource = Informe2;
-            btnCargarDatos.Enabled = true;
-            
+             foreach (DataRow row in Informe2.Rows)
+             {
+                 Series series = chart2.Series.Add(row["Nombre_Producto"].ToString());
+                 series.Points.Add(Convert.ToInt32(row["Total"].ToString()));
+                 series.Label = row["Total"].ToString();
+             }
+             dgvInforme2.DataSource = Informe2;
+             btnCargarDatos.Enabled = true;
+             */
         }
 
-       
+
     }
 }

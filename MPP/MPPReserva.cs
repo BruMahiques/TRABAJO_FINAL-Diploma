@@ -36,26 +36,7 @@ namespace MPP
             return Resultado;
         }
         
-        public bool Alta_Reserva_Det(EEVentaDet EEVentaDet)
-        {
-            Acceso Datos = new Acceso();
-            Hashtable Hdatos = new Hashtable();
-            bool Resultado;
-            string consulta = "SP_ReservaDet_Alta";
-
-
-
-            Hdatos.Add("@Id_Producto_Det", EEVentaDet.Producto.Cod_Producto);
-            Hdatos.Add("@Id_Reserva_Det", EEVentaDet.Venta.Id_Venta);
-            Hdatos.Add("@Precio_Prod_Det", EEVentaDet.Producto.Precio_Venta);
-            Hdatos.Add("@Cantidad_Det", EEVentaDet.Cantidad);
-            Hdatos.Add("@Total_Det", EEVentaDet.Sub_total);
-
-
-            Resultado = Datos.Escribir(consulta, Hdatos);
-            return Resultado;
-        }
-        
+        /*
             public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
@@ -108,6 +89,8 @@ namespace MPP
 
             return ds;
         }
+        */
+        /*
         public DataTable ListarResDet(string codigo)
         {
             Acceso Datos = new Acceso();
@@ -127,14 +110,41 @@ namespace MPP
 
 
         }
-        public EEReserva BuscarID(int id)
+        */
+        public List<EEReserva> ListarReserva()
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
 
+            List<EEReserva> LReserva = new List<EEReserva>();
+            var Reserva = new EEReserva();
+
+            ds = Datos.Leer("SP_Listar_Reservas", null);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    Reserva = MapearReserva(fila);
+                    LReserva.Add(Reserva);
+                }
+            }
+
+            return LReserva;
+
+        }
+
+        public EEReserva BuscarID(int id)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
             EEReserva reserva = null;
 
-            ds = Datos.Leer("Select * From Reservas Where Id_Reserva=" + id, null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Reservas Where Id_Reserva=" + id);
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -178,8 +188,9 @@ namespace MPP
 
                 Fecha = Convert.ToDateTime(fila["Fecha"]),
                 Estado = fila["Estado"].ToString(),
-                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Cod_Cliente"])),
-                Total = Convert.ToSingle(fila["Total_Venta"])
+                Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Id_Cliente_Reserva"])),
+                Seña = Convert.ToInt32(fila["Seña"]),
+                Total = Convert.ToSingle(fila["Total"])
 
             };
 

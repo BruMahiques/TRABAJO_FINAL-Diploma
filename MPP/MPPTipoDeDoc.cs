@@ -39,10 +39,13 @@ namespace MPP
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             EETipoDeDoc TipoDeDoc = null;
 
-            ds = Datos.Leer("Select * From Tipo_De_Doc Where Id_TipoDeDoc=" + id, null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Tipo_De_Doc Where Id_TipoDeDoc=" + id);
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {

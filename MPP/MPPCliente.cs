@@ -230,10 +230,14 @@ namespace MPP
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             EECliente cliente = null;
 
-            ds = Datos.Leer("Select * From Cliente Where Cod_Cliente=" + id, null);
+
+            dt = Datos.EjecutarCualquierQuerys("Select * From Cliente Where Cod_Cliente=" + id);
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {

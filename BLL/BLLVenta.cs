@@ -18,7 +18,17 @@ namespace BLL
             Map.Alta_Venta(Venta);
         }
 
-        public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+        public List<EEVenta> ListarVenta()
+       {
+            return Map.ListarVenta();
+        }
+
+        public EEVenta BuscarID(int id)
+        {
+            return Map.BuscarID(id);
+        }
+
+       /* public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
             return Map.ListarVentasFiltrado(textbox,desde,hasta, num);
         }
@@ -26,6 +36,6 @@ namespace BLL
         public void Mod_Estado(EEVenta EEVenta)
         {
             Map.Mod_Estado(EEVenta);
-        }
+        }*/
     }
 }

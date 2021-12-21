@@ -24,6 +24,7 @@ namespace TRABAJO_FINAL
         private void BuscarCliente_Load(object sender, EventArgs e)
         {
             ObtenerClientes();
+
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
             this.Width = bounds.Width - 5;

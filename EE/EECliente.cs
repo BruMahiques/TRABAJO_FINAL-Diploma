@@ -18,5 +18,10 @@ namespace EE
         public string Correo { get; set; }
 
         public EECliente() { }
+
+        public override string ToString()
+        {
+            return Apellido + "-" + Nombre;
+        }
     }
 }

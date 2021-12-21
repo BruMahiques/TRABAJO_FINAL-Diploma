@@ -24,7 +24,10 @@ namespace EE
         public string Cant_Jugadores { get; set; }
 
         public EEProducto() { }
+        public override string ToString()
+        {
+            return Nombre_Producto;
+        }
 
-        
     }
 }

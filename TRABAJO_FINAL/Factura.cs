@@ -411,14 +411,14 @@ namespace TRABAJO_FINAL
                     {
                         EEVentaDet Venta_Det = new EEVentaDet();
                         Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
-                        Venta_Det.Venta.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
+                        Venta_Det.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
                         Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
                         Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                         Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
                         if (Venta.TipoDeComprobante.Id == 1) //Solo si es factura que reste el stock
                         {
-                            BLLVentaDet.Stock_Producto(Venta_Det);
+                          //  BLLVentaDet.Stock_Producto(Venta_Det);
                         }
                     }
                     if (Reservas.Cod_Enum != 0)
@@ -488,7 +488,7 @@ namespace TRABAJO_FINAL
                                           
                 EEVentaDet Venta_Det = new EEVentaDet();
                 Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
-                Venta_Det.Venta.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
+                Venta_Det.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
                 Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
                 Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                 Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);

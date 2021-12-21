@@ -16,10 +16,13 @@ namespace MPP
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             EETipoDeComprobante TipoDeComprobante = null;
 
-            ds = Datos.Leer("Select * From Tipo_De_Comprobante Where Id_TipoDeComprobante=" + id, null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Tipo_De_Comprobante Where Id_TipoDeComprobante=" + id);
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {

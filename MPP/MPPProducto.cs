@@ -162,10 +162,14 @@ namespace MPP
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             EEProducto producto = null;
 
-            ds = Datos.Leer("Select * From Producto Where Cod_Producto="+id, null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Productos Where Cod_Producto="+id);
+
+            ds.Tables.Add(dt);
+
 
             if (ds.Tables[0].Rows.Count > 0)
             {

@@ -31,6 +31,7 @@ namespace TRABAJO_FINAL
             ObtenerComprobante();
             btnFacturar.Enabled = false;
             btnEntrega.Enabled = false;
+
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
             this.Width = bounds.Width - 5;
@@ -112,11 +113,12 @@ namespace TRABAJO_FINAL
 
         private void ObtenerComprobante()
         {
-            DataTable Reservas;
+            
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
 
-            Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 7);
+            List<EEReserva> Reservas = BLLReservas.ListarReserva();
+
             dgvReserva.DataSource = null;
             dgvReserva.DataSource = Reservas;
         }
@@ -132,33 +134,33 @@ namespace TRABAJO_FINAL
 
             if (rbIdReserva.Checked == true)
             {
-                Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
+               // Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
 
             }
             else
             {
                 if (rbComprobante.Checked == true)
                 {
-                    Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
+                 //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
 
                 }
                 else
                 {
                     if (rbNDoc.Checked == true)
                     {
-                        Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
+                     //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
 
                     }
                     else
                     {
                         if (rbcliente.Checked == true)
                         {
-                            Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
+                         //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
 
                         }
                         else
                         {
-                            Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
+                           //Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
 
                         }
 
@@ -166,7 +168,7 @@ namespace TRABAJO_FINAL
                 }
             }
             dgvReserva.DataSource = null;
-            dgvReserva.DataSource = Reservas;
+           // dgvReserva.DataSource = Reservas;
 
         }
 
@@ -184,13 +186,13 @@ namespace TRABAJO_FINAL
                 string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
                 string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
 
-                items = BLLReservas.ListarResDet(txtComprobante.Text);
+             //   items = BLLReservas.ListarResDet(txtComprobante.Text);
 
                 dgvItems.DataSource = null;
-                dgvItems.DataSource = items;
-                Reservas = BLLReservas.ListarReservasFiltrado(txtComprobante.Text, desde, hasta, 6);
+              //  dgvItems.DataSource = items;
+               // Reservas = BLLReservas.ListarReservasFiltrado(txtComprobante.Text, desde, hasta, 6);
                 dgvReserva.DataSource = null;
-                dgvReserva.DataSource = Reservas;
+              //  dgvReserva.DataSource = Reservas;
 
                 foreach (DataGridViewRow fila in dgvReserva.Rows) // Para saber el estado
                 {

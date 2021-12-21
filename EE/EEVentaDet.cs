@@ -8,7 +8,7 @@ namespace EE
 {
     public class EEVentaDet
     {
-        public EEVenta Venta { get; set; }
+        public int Id_Venta { get; set; }
 
         public EEProducto Producto { get; set; }
         

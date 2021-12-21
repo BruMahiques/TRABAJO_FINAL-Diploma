@@ -28,6 +28,7 @@ namespace TRABAJO_FINAL
             btnEmitido.Enabled = false;
             btnEntrega.Enabled = false;
             btnCancelado.Enabled = false;
+
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
             this.Width = bounds.Width - 5;
@@ -115,11 +116,16 @@ namespace TRABAJO_FINAL
 
         private void ObtenerComprobante()
         {
-            DataTable comprobantes;
+            
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
+           
+            List<EEVenta> comprobantes = BLLVenta.ListarVenta();
 
-            comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 6);
+                
+            
+
+            //comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 6);
             dgvComprobante.DataSource = null;
             dgvComprobante.DataSource = comprobantes;
         }
@@ -135,33 +141,33 @@ namespace TRABAJO_FINAL
 
             if (rbIdVenta.Checked == true)
             {
-                comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
+               // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
 
             }
             else
             {
                 if (rbComprobante.Checked == true)
                 {
-                    comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
+                   // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
 
                 }
                 else
                 {
                     if (rbNDoc.Checked == true)
                     {
-                        comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
+                       // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
 
                     }
                     else
                     {
                         if (rbcliente.Checked == true)
                         {
-                            comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
+                           // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
 
                         }
                         else
                         {
-                            comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
+                          //  comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
 
                         }
 
@@ -169,7 +175,7 @@ namespace TRABAJO_FINAL
                 }
             }
             dgvComprobante.DataSource = null;
-            dgvComprobante.DataSource = comprobantes;
+           // dgvComprobante.DataSource = comprobantes;
 
 
         }
@@ -182,9 +188,9 @@ namespace TRABAJO_FINAL
 
             if (txtComprobante.Text != "-")
             { 
-            DataTable items;
+            List<EEVentaDet> items;
 
-            items = BLLVentaDet.ListarVentaDet(txtComprobante.Text);
+            items = BLLVenta.BuscarID(Convert.ToInt32(txtComprobante.Text)).LDetalle;
 
             dgvItems.DataSource = null;
             dgvItems.DataSource = items;
@@ -234,7 +240,7 @@ namespace TRABAJO_FINAL
                     Venta.Id_Venta = Convert.ToInt32(txtComprobante.Text);
                     Venta.Estado = Estado;
 
-                    BLLVenta.Mod_Estado(Venta);
+                   // BLLVenta.Mod_Estado(Venta);
 
                     ObtenerComprobante();
                     btnEmitido.Enabled = false;

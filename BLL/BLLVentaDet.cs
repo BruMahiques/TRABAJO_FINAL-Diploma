@@ -11,13 +11,17 @@ namespace BLL
 {
     public class BLLVentaDet
     {
-        MPPVenta Map = new MPPVenta();
+        MPPVentaDet Map = new MPPVentaDet();
 
         public void Alta_Venta_Det(EEVentaDet VentaDet)
         {
             Map.Alta_Venta_Det(VentaDet);
         }
-
+        public List<EEVentaDet> ListarVentaDet(int id)
+        {
+            return Map.ListarVentaDet(id);
+        }
+        /*
         public DataTable ListarVentaDet(string Id_Venta)
         {
             return Map.ListarVentaDet(Id_Venta);
@@ -31,5 +35,6 @@ namespace BLL
         {
             return Map.CargarGrafico(num, desde , hasta);
         }
+        */
     }
 }

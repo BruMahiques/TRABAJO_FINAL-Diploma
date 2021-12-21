@@ -8,7 +8,7 @@ namespace EE
 {
     public class EEReservaDet
     {
-        public EEReserva Reserva { get; set; }
+        public int Id_Reserva { get; set; }
 
         public EEProducto Producto { get; set; }
 

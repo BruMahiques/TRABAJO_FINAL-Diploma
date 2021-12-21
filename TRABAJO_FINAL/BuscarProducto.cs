@@ -33,6 +33,7 @@ namespace TRABAJO_FINAL
         private void BuscarProducto_Load(object sender, EventArgs e)
         {
             ObtenerProductos();
+
             rbNombreProd.Checked = true;
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;

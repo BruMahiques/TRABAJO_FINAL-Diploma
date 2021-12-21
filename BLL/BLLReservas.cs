@@ -18,17 +18,24 @@ namespace BLL
         {
             Map.Alta_Reserva(Reserva);
         }
-        public void Alta_Reserva_Det(EEVentaDet EEVentaDet)
+        public List<EEReserva> ListarReserva()
         {
-            Map.Alta_Reserva_Det(EEVentaDet);
+            return Map.ListarReserva();
         }
-        public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
+        public EEReserva BuscarID(int id)
         {
-            return Map.ListarReservasFiltrado(textbox, desde, hasta, num);
+            return Map.BuscarID(id);
         }
-        public DataTable ListarResDet(string codigo)
-        {
-            return Map.ListarResDet(codigo);
-        }
+
+        /*
+         public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
+         {
+             return Map.ListarReservasFiltrado(textbox, desde, hasta, num);
+         }
+         public DataTable ListarResDet(string codigo)
+         {
+             return Map.ListarResDet(codigo);
+         }
+         */
     }
 }
