@@ -25,7 +25,6 @@ namespace MPP
            
             Hdatos.Add("@Cod_Comprobante", Reserva.Cod_Comprobante);
             Hdatos.Add("@Id_TipoDePago", Reserva.TipoDePago.Id);
-            Hdatos.Add("@Id_TipoDeDoc", Reserva.TipoDeDoc.Id);
             Hdatos.Add("@Fecha", Reserva.Fecha);
             Hdatos.Add("@Estado", Reserva.Estado);
             Hdatos.Add("@Id_Cliente_Reserva", Reserva.Cliente.Cod_Cliente);
@@ -36,8 +35,8 @@ namespace MPP
             return Resultado;
         }
         
-        /*
-            public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
+        
+          /*  public List<EEReserva> ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
@@ -88,29 +87,74 @@ namespace MPP
             ds = Datos.EjecutarCualquierQuerys(query);
 
             return ds;
-        }
-        */
-        /*
-        public DataTable ListarResDet(string codigo)
+        }*/
+        public List<EEReserva> ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
+            List<EEReserva> LReserva = new List<EEReserva>();
+            EEReserva Reserva = null;
             string query;
 
-            query = "Select  p.Cod_Producto as Codigo, p.Nombre_Producto as Producto, r.Precio_Prod_Det as Precio_Unitario, r.Cantidad_Det as Cantidad, r.Total_Det as Total " +
-                    " From Reservas_Detalle r join Productos p on r.Id_Producto_Det = p.Cod_Producto where r.Id_reserva_det = " + codigo;
+            switch (num)
+            {
+                case 1:
+                    query = "Select  * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where r.Id_Reserva like('" + textbox + "') and r.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 2:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where r.Cod_Comprobante like('%" + textbox + "%') and r.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 3:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where cli.DNI like('" + textbox + "%') and r.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 4:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where cli.Nombre like('" + textbox + "%') and r.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 5:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where r.Estado like('" + textbox + "%') and r.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 6:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente where r.Id_Reserva like('" + textbox + "')";
+                    break;
+                default:
+                    query = "Select * " +
+                        "From Reservas r join Tipo_De_Pago p on r.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Doc d on r.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on r.Id_Cliente_Reserva = cli.Cod_Cliente";
+                    break;
+            }
 
+            dt = Datos.EjecutarCualquierQuerys(query);
 
+            ds.Tables.Add(dt);
 
-            ds = Datos.EjecutarCualquierQuerys(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    Reserva = MapearReserva(fila);
+                    LReserva.Add(Reserva);
+                }
+            }
 
-            return ds;
-
-
+            return LReserva;
 
         }
-        */
+
+
         public List<EEReserva> ListarReserva()
         {
             Acceso Datos = new Acceso();
@@ -166,9 +210,7 @@ namespace MPP
         {
 
             var MPPCliente = new MPPCliente();
-            var MPPTipoDePago = new MPPTipoDePago();
-            var MPPTipoDeDoc = new MPPTipoDeDoc();
-            
+            var MPPTipoDePago = new MPPTipoDePago();                       
             var LDetalle = new List<EEReservaDet>();
             var MPPReservaDet = new MPPReservaDet();
 
@@ -177,14 +219,10 @@ namespace MPP
             {
 
                 Id_Reserva = Convert.ToInt32(fila["Id_Reserva"]),
-                Cod_Comprobante = fila["Cod_Comprobante"].ToString(),
-
-                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"])),
-                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"])),
-                
+                Cod_Comprobante = fila["Cod_Comprobante"].ToString(),                           
+                TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"])),               
 
                 LDetalle = MPPReservaDet.ListarVentaDet(Convert.ToInt32(fila["Id_Reserva"])),
-
 
                 Fecha = Convert.ToDateTime(fila["Fecha"]),
                 Estado = fila["Estado"].ToString(),

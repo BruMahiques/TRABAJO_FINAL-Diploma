@@ -263,20 +263,21 @@ namespace TRABAJO_FINAL
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             btnImprimir.Enabled = true;
-            try
+            if (Convert.ToSingle(txtseña.Text) < Convert.ToSingle(txtTotal))
             {
-                
-                EEReserva Reserva = new EEReserva();
-                Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                Reserva.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
-                Reserva.TipoDeDoc.Id = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
-                Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
-                Reserva.Estado = "Reservado";
-                Reserva.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
-                Reserva.Seña = Convert.ToInt32(txtseña.Text);
-                Reserva.Total = Convert.ToInt32(txtTotal.Text);
+                try
+                {
 
-                BLLReservas.Alta_Reserva(Reserva);
+                    EEReserva Reserva = new EEReserva();
+                    Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
+                    Reserva.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
+                    Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
+                    Reserva.Estado = "Reservado";
+                    Reserva.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
+                    Reserva.Seña = Convert.ToInt32(txtseña.Text);
+                    Reserva.Total = Convert.ToInt32(txtTotal.Text);
+
+                    BLLReservas.Alta_Reserva(Reserva);
 
 
 
@@ -288,8 +289,8 @@ namespace TRABAJO_FINAL
                         Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
                         Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                         Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
-                       // BLLReservas.Alta_Reserva_Det(Venta_Det);
-                        
+                        // BLLReservas.Alta_Reserva_Det(Venta_Det);
+
                     }
 
                     btnBuscarCliente.Enabled = false;
@@ -299,14 +300,19 @@ namespace TRABAJO_FINAL
                     btnAnular.Enabled = false;
                     dgvDetalleBoleta.ReadOnly = true;
 
-                
-               
 
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Debe introducir una seña");
+                    return;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Debe introducir una seña");
-                return;
+                MessageBox.Show("La seña no puede superar el total");
             }
         }
         void ObtenerNumeroComprobante()

@@ -153,6 +153,7 @@ namespace TRABAJO_FINAL
         private void ABMClienteConectado_Load(object sender, EventArgs e)
         {
             ObtenerClientes();
+
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
             this.Width = bounds.Width - 5;
@@ -198,6 +199,7 @@ namespace TRABAJO_FINAL
                     Cliente.DNI = Convert.ToInt32(textBox3.Text);
                     Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
                     Cliente.Correo = textBox4.Text;
+                    Cliente.Saldo = 0;
 
                     BLLCliente.ALta_Mod_Cliente(Cliente);
 

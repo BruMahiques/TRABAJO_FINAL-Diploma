@@ -396,8 +396,6 @@ namespace TRABAJO_FINAL
                     EEVenta Venta = new EEVenta();
                     Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
                     Venta.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0,1));
-                    Venta.TipoDeDoc.Id = Convert.ToInt32(cboTipDoc.Text.Substring(0, 1));
-                    Venta.TipoDeComprobante.Id = Convert.ToInt32(cboComprobante.Text.Substring(0, 1));
                     Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value); 
                     Venta.Estado = "Emitido";
                     Venta.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
@@ -416,10 +414,7 @@ namespace TRABAJO_FINAL
                         Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                         Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
-                        if (Venta.TipoDeComprobante.Id == 1) //Solo si es factura que reste el stock
-                        {
-                          //  BLLVentaDet.Stock_Producto(Venta_Det);
-                        }
+                       
                     }
                     if (Reservas.Cod_Enum != 0)
                     {

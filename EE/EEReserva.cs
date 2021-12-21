@@ -11,9 +11,7 @@ namespace EE
         public int Id_Reserva { get; set; }
 
         public string Cod_Comprobante { get; set; }
-         public EETipoDePago TipoDePago { get; set; }
-
-        public EETipoDeDoc TipoDeDoc { get; set; }
+        public EETipoDePago TipoDePago { get; set; }
 
         public List<EEReservaDet> LDetalle { get; set; }
 

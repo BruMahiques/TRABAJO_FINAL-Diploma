@@ -27,15 +27,19 @@ namespace BLL
         {
             return Map.BuscarID(id);
         }
-
-       /* public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+        public List<EEVenta> ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
-            return Map.ListarVentasFiltrado(textbox,desde,hasta, num);
+            return Map.ListarVentasFiltrado(textbox, desde, hasta, num);
         }
-        
-        public void Mod_Estado(EEVenta EEVenta)
-        {
-            Map.Mod_Estado(EEVenta);
-        }*/
+
+        /* public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+         {
+             return Map.ListarVentasFiltrado(textbox,desde,hasta, num);
+         }
+
+         public void Mod_Estado(EEVenta EEVenta)
+         {
+             Map.Mod_Estado(EEVenta);
+         }*/
     }
 }

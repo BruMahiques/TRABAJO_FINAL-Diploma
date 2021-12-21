@@ -125,7 +125,7 @@ namespace TRABAJO_FINAL
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
-            DataTable Reservas;
+            List<EEReserva> Reservas;
 
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
@@ -134,33 +134,33 @@ namespace TRABAJO_FINAL
 
             if (rbIdReserva.Checked == true)
             {
-               // Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
+                Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
 
             }
             else
             {
                 if (rbComprobante.Checked == true)
                 {
-                 //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
+                    Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
 
                 }
                 else
                 {
                     if (rbNDoc.Checked == true)
                     {
-                     //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
+                        Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
 
                     }
                     else
                     {
                         if (rbcliente.Checked == true)
                         {
-                         //   Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
+                            Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
 
                         }
                         else
                         {
-                           //Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
+                           Reservas = BLLReservas.ListarReservasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
 
                         }
 
@@ -168,7 +168,7 @@ namespace TRABAJO_FINAL
                 }
             }
             dgvReserva.DataSource = null;
-           // dgvReserva.DataSource = Reservas;
+            dgvReserva.DataSource = Reservas;
 
         }
 
@@ -180,19 +180,12 @@ namespace TRABAJO_FINAL
 
             if (txtComprobante.Text != "-")
             {
-                DataTable items;
-                DataTable Reservas;
+                List<EEReservaDet> items;
 
-                string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
-                string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
-
-             //   items = BLLReservas.ListarResDet(txtComprobante.Text);
+                items = BLLReservas.BuscarID(Convert.ToInt32(txtComprobante.Text)).LDetalle;
 
                 dgvItems.DataSource = null;
-              //  dgvItems.DataSource = items;
-               // Reservas = BLLReservas.ListarReservasFiltrado(txtComprobante.Text, desde, hasta, 6);
-                dgvReserva.DataSource = null;
-              //  dgvReserva.DataSource = Reservas;
+                dgvItems.DataSource = items;
 
                 foreach (DataGridViewRow fila in dgvReserva.Rows) // Para saber el estado
                 {
@@ -272,7 +265,7 @@ namespace TRABAJO_FINAL
                     {
                         dt.Cod_Producto = Convert.ToInt32(fila.Cells[index: 0].Value);
                         dt.Nombre_Producto = fila.Cells[index: 1].Value.ToString();
-                        dt.Precio_Venta = Convert.ToDouble(fila.Cells[index: 4].Value.ToString());
+                        dt.Precio_Venta = Convert.ToSingle(fila.Cells[index: 4].Value.ToString());
                         dt.Stock = 1;//Convert.ToInt32(fila.Cells[index: 7].Value);
                         bus.lista.Add(dt);
 

@@ -67,8 +67,8 @@ namespace MPP
                     EEProducto.Nombre_Producto = fila["Nombre_Producto"].ToString();
                     EEProducto.Duracion = fila["Duracion"].ToString();
                     EEProducto.Edad_Producto = fila["Edad_Producto"].ToString();
-                    EEProducto.Precio_Compra = Convert.ToDouble(fila["Precio_Compra"]);
-                    EEProducto.Precio_Venta = Convert.ToDouble(fila["Precio_Venta"]);
+                    EEProducto.Precio_Compra = Convert.ToSingle(fila["Precio_Compra"]);
+                    EEProducto.Precio_Venta = Convert.ToSingle(fila["Precio_Venta"]);
                     EEProducto.Categoria = fila["Categoria"].ToString();
                     EEProducto.Stock = Convert.ToInt32(fila["Stock"]);
                     EEProducto.Cant_Jugadores = fila["Cant_Jugadores"].ToString();
@@ -82,10 +82,14 @@ namespace MPP
 
         }
 
-        public DataTable ListarProductosFiltrado(string textbox, int num)
+        public List<EEProducto> ListarProductosFiltrado(string textbox, int num)
         {
             Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+
+            EEProducto producto = new EEProducto();
+            List<EEProducto> LProductos = new List<EEProducto>();
 
             string query;
 
@@ -105,12 +109,22 @@ namespace MPP
                     break;
             }
 
-            
-
-            ds = Datos.EjecutarCualquierQuerys(query);
 
 
-            return ds;
+            dt = Datos.EjecutarCualquierQuerys(query);
+            ds.Tables.Add(dt);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    producto = MapearProducto(fila);
+                    LProductos.Add(producto);
+                }
+            }
+
+            return LProductos;
+
 
         }
         public int ExisteProductoEnComprobante(EEProducto EEProducto)
@@ -198,8 +212,8 @@ namespace MPP
                  Nombre_Producto = fila["Nombre_Producto"].ToString(),
                  Duracion = fila["Duracion"].ToString(),
                  Edad_Producto = fila["Edad_Producto"].ToString(),
-                 Precio_Compra = Convert.ToDouble(fila["Precio_Compra"]),
-                 Precio_Venta = Convert.ToDouble(fila["Precio_Venta"]),
+                 Precio_Compra = Convert.ToSingle(fila["Precio_Compra"]),
+                 Precio_Venta = Convert.ToSingle(fila["Precio_Venta"]),
                  Categoria = fila["Categoria"].ToString(),
                  Stock = Convert.ToInt32(fila["Stock"]),
                  Cant_Jugadores = fila["Cant_Jugadores"].ToString()

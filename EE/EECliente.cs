@@ -17,6 +17,8 @@ namespace EE
         public DateTime FechaNac { get; set; }
         public string Correo { get; set; }
 
+        public float Saldo { get; set; }
+
         public EECliente() { }
 
         public override string ToString()

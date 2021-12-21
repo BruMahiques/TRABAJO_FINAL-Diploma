@@ -28,7 +28,7 @@ namespace BLL
             return Map.ListarProductos();
         }
 
-        public DataTable ListarProductosFiltrado(string textbox, int num)
+        public List<EEProducto> ListarProductosFiltrado(string textbox, int num)
         {
             return Map.ListarProductosFiltrado(textbox, num);
         }

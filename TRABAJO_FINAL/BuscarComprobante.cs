@@ -116,23 +116,15 @@ namespace TRABAJO_FINAL
 
         private void ObtenerComprobante()
         {
-            
-            string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
-            string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
-           
+                           
             List<EEVenta> comprobantes = BLLVenta.ListarVenta();
-
-                
-            
-
-            //comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 6);
             dgvComprobante.DataSource = null;
             dgvComprobante.DataSource = comprobantes;
         }
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
-            DataTable comprobantes;
+            List<EEVenta> comprobantes;
 
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
@@ -141,41 +133,42 @@ namespace TRABAJO_FINAL
 
             if (rbIdVenta.Checked == true)
             {
-               // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
+                comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 1);
+               
 
             }
             else
             {
                 if (rbComprobante.Checked == true)
                 {
-                   // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
+                    comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 2);
 
                 }
                 else
                 {
                     if (rbNDoc.Checked == true)
                     {
-                       // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
+                        comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
 
                     }
                     else
                     {
                         if (rbcliente.Checked == true)
                         {
-                           // comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
+                            comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
 
                         }
                         else
                         {
-                          //  comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
-
+                            comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 5);
+                        
                         }
 
                     }
                 }
             }
             dgvComprobante.DataSource = null;
-           // dgvComprobante.DataSource = comprobantes;
+            dgvComprobante.DataSource = comprobantes;
 
 
         }

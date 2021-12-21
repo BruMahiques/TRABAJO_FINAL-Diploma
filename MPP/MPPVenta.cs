@@ -13,76 +13,7 @@ namespace MPP
     public class MPPVenta
     {
         
-
-     /*   public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
-        {
-            Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
-
-            string query;
-
-            switch (num)
-            {
-                case 1:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Id_Venta like('" + textbox + "') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
-                    break;
-                case 2:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Cod_Comprobante like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
-                    break;
-                case 3:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.DNI like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
-                    break;
-                case 4:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.Nombre like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
-                    break;
-                case 5:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Estado like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
-                    break;
-                default:
-                    query = "Select  v.Id_Venta as ID,v.Cod_Comprobante, p.Descripcion as Pago ,c.Descripcion as Comprobante, d.Descripcion as Doc, cli.DNI as Numero, v.Fecha, v.Estado, v.Id_Cliente_Venta as [Cliente ID], cli.Nombre , v.Total_Venta as Total " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
-                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente";
-                    break;
-            }
-
             
-
-            ds = Datos.EjecutarCualquierQuerys(query);
-
-            return ds;
-        } */
-
-
-            
-       /* public DataTable ListarVentaDet(string Id_Venta)
-        {
-            Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
-
-            string query;
-
-            query = "Select  p.Cod_Producto as Codigo, p.Nombre_Producto as Producto, v.Precio_Prod_Det as Precio_Unitario, v.Cantidad_Det as Cantidad, v.Total_Det as Total " +
-                    "From Venta_Detalle v join Productos p on v.Id_Producto_Det = p.Cod_Producto where v.Id_Venta_Det = " + Id_Venta;
-
-
-
-            ds = Datos.EjecutarCualquierQuerys(query);
-
-            return ds;
-
-
-
-        }*/
 
         public bool Alta_Venta(EEVenta EEVenta)
         {
@@ -95,8 +26,6 @@ namespace MPP
             //Hdatos.Add("@Id_Venta", EEVenta.Id_Venta);
             Hdatos.Add("@Cod_Comprobante", EEVenta.Cod_Comprobante);
             Hdatos.Add("@Id_TipoDePago", EEVenta.TipoDePago.Id);
-            Hdatos.Add("@Id_TipoDeDoc", EEVenta.TipoDeDoc.Id);
-            Hdatos.Add("@Id_TipoDeComprobante", EEVenta.TipoDeComprobante.Id);
             Hdatos.Add("@Fecha", EEVenta.Fecha);
             Hdatos.Add("@Estado", EEVenta.Estado);
             Hdatos.Add("@Id_Cliente_Venta", EEVenta.Cliente.Cod_Cliente);
@@ -180,6 +109,66 @@ namespace MPP
 
         }
         */
+        public List<EEVenta> ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            List<EEVenta> LVenta = new List<EEVenta>();
+            var Venta = new EEVenta();
+            string query;
+
+            switch (num)
+            {
+                case 1:
+                    query = "Select  * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Id_Venta like('" + textbox + "') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 2:
+                    query = "Select * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Cod_Comprobante like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 3:
+                    query = "Select  * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.DNI like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 4:
+                    query = "Select  * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.Nombre like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                case 5:
+                    query = "Select  * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Estado like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
+                    break;
+                default:
+                    query = "Select  * " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente";
+                    break;
+            }
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            ds.Tables.Add(dt);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    Venta = MapearVenta(fila);
+                    LVenta.Add(Venta);
+                }
+            }
+
+            return LVenta;
+
+        }
         public List<EEVenta> ListarVenta()
         {
             Acceso Datos = new Acceso();
@@ -236,8 +225,6 @@ namespace MPP
 
             var MPPCliente = new MPPCliente();
             var MPPTipoDePago = new MPPTipoDePago();
-            var MPPTipoDeDoc = new MPPTipoDeDoc();
-            var MPPTipoDeComprobante = new MPPTipoDeComprobante();
             var LDetalle  =  new List<EEVentaDet>();
             var MPPVentaDet = new MPPVentaDet();
 
@@ -247,14 +234,10 @@ namespace MPP
 
                 Id_Venta = Convert.ToInt32(fila["Id_Venta"]),
                 Cod_Comprobante = fila["Cod_Comprobante"].ToString(),
-
-                TipoDeDoc = MPPTipoDeDoc.BuscarID(Convert.ToInt32(fila["Id_TipoDeDoc"])),
                 TipoDePago = MPPTipoDePago.BuscarID(Convert.ToInt32(fila["Id_TipoDePago"])),
-                TipoDeComprobante = MPPTipoDeComprobante.BuscarID(Convert.ToInt32(fila["Id_TipoDeComprobante"])),
-
+                
                 LDetalle = MPPVentaDet.ListarVentaDet(Convert.ToInt32(fila["Id_Venta"])),
-
-
+                
                 Fecha = Convert.ToDateTime(fila["Fecha"]),
                 Estado = fila["Estado"].ToString(),
                 Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Id_Cliente_Venta"])),

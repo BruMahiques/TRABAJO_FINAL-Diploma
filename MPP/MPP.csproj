@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MPPEnum.cs" />
     <Compile Include="MPPPerfilComponente.cs" />
     <Compile Include="MPPPerfilFamilia.cs" />
     <Compile Include="MPPPerfilPatente.cs" />
@@ -49,8 +48,6 @@
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
     <Compile Include="MPPReservaDet.cs" />
-    <Compile Include="MPPTipoDeComprobante.cs" />
-    <Compile Include="MPPTipoDeDoc.cs" />
     <Compile Include="MPPTipoDePago.cs" />
     <Compile Include="MPPTraductor.cs" />
     <Compile Include="MPPUsuario.cs" />

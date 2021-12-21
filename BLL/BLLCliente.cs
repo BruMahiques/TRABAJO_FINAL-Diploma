@@ -32,7 +32,7 @@ namespace BLL
             return Map.ListarClienteVersionado();
         }
 
-        public DataTable ListarClientesFiltrado(string textbox, string textbox2, int num)
+        public List<EECliente> ListarClientesFiltrado(string textbox, string textbox2, int num)
         {
             return Map.ListarClientesFiltrado(textbox, textbox2, num);
         }

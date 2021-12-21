@@ -26,7 +26,11 @@ namespace BLL
         {
             return Map.BuscarID(id);
         }
-
+        
+        public List<EEReserva> ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
+        {
+            return Map.ListarReservasFiltrado(textbox, desde, hasta, num);
+        }
         /*
          public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
          {

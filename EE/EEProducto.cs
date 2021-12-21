@@ -14,9 +14,9 @@ namespace EE
         public string Duracion { get; set; }
 
         public string Edad_Producto { get; set; }
-        public double Precio_Compra { get; set; }
+        public float Precio_Compra { get; set; }
 
-        public double Precio_Venta { get; set; }
+        public float Precio_Venta { get; set; }
 
         public string Categoria { get; set; }
                                

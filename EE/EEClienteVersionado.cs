@@ -16,6 +16,7 @@ namespace EE
         public int DNI { get; set; }
         public DateTime FechaNac { get; set; }
         public string Correo { get; set; }
+        public float Saldo { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
 

@@ -35,6 +35,7 @@ namespace TRABAJO_FINAL
             ObtenerProductos();
 
             rbNombreProd.Checked = true;
+
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
             this.Width = bounds.Width - 5;
@@ -115,7 +116,7 @@ namespace TRABAJO_FINAL
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
-            DataTable productos;
+            List<EEProducto> productos;
 
             if (rbNombreProd.Checked == true)
             {
@@ -212,8 +213,14 @@ namespace TRABAJO_FINAL
                     {
                         dt.Cod_Producto = Convert.ToInt32(fila.Cells[index: 0].Value);
                         dt.Nombre_Producto = fila.Cells[index: 1].Value.ToString();
-                        dt.Precio_Venta = Convert.ToDouble(fila.Cells[index: 5].Value.ToString());
-                        dt.Stock = 1;//Convert.ToInt32(fila.Cells[index: 7].Value);
+                        dt.Duracion = fila.Cells[index: 2].Value.ToString();
+                        dt.Edad_Producto = fila.Cells[index: 3].Value.ToString();
+                        dt.Precio_Compra = Convert.ToSingle(fila.Cells[index: 4].Value.ToString());
+                        dt.Precio_Venta = Convert.ToSingle(fila.Cells[index: 5].Value.ToString());
+                        dt.Categoria = fila.Cells[index: 6].Value.ToString(); 
+                        dt.Stock = 1;
+                        dt.Cant_Jugadores = fila.Cells[index: 8].Value.ToString(); ;
+
                         bus.lista.Add(dt);
 
 
@@ -271,8 +278,14 @@ namespace TRABAJO_FINAL
                     {
                         dt.Cod_Producto = Convert.ToInt32(fila.Cells[index: 0].Value);
                         dt.Nombre_Producto = fila.Cells[index: 1].Value.ToString();
-                        dt.Precio_Venta = Convert.ToDouble(fila.Cells[index: 5].Value.ToString());
-                        dt.Stock = 1;//Convert.ToInt32(fila.Cells[index: 7].Value);
+                        dt.Duracion = fila.Cells[index: 2].Value.ToString();
+                        dt.Edad_Producto = fila.Cells[index: 3].Value.ToString();
+                        dt.Precio_Compra = Convert.ToSingle(fila.Cells[index: 4].Value.ToString());
+                        dt.Precio_Venta = Convert.ToSingle(fila.Cells[index: 5].Value.ToString());
+                        dt.Categoria = fila.Cells[index: 6].Value.ToString();
+                        dt.Stock = 1;
+                        dt.Cant_Jugadores = fila.Cells[index: 8].Value.ToString(); ;
+
                         res.listaRes.Add(dt);
 
 

@@ -107,18 +107,25 @@ namespace TRABAJO_FINAL
 
         private bool ValidarCampos()
         {
-
-            string Stock = txtStock.Text;
-            bool respuesta = Regex.IsMatch(Stock, "^([0-9]+$)");
+            string Nombre = txtNombre.Text;
+            bool respuesta = Regex.IsMatch(Nombre, "^([a-zA-Z]+$)");
             if (respuesta == false)
             {
-                MessageBox.Show("No escribio solo números en Stock", "ERROR");
+                MessageBox.Show("No escribio solo letras en Nombre", "ERROR");
                 return respuesta;
+            }
+
+            string Stock = txtStock.Text;
+            bool respuesta1 = Regex.IsMatch(Stock, "^([0-9]+$)");
+            if (respuesta1 == false)
+            {
+                MessageBox.Show("No escribio solo números en Stock", "ERROR");
+                return respuesta1;
             }
             
             string Precio_Venta = txtPrecioVenta.Text;
             bool respuesta8 = false;
-            respuesta8 = Regex.IsMatch(Precio_Venta, "^[0-9]+([,][0-9]+)?$");
+            respuesta8 = Regex.IsMatch(Precio_Venta, "^[0-9]+([.][0-9]+)?$");
             if (respuesta8 == false)
             {
                 MessageBox.Show("No escribio un numero real en Precio Venta", "ERROR");
@@ -127,15 +134,15 @@ namespace TRABAJO_FINAL
 
             string Precio_Compra = txtPrecioCompra.Text;
             bool respuesta9 = false;
-            respuesta9 = Regex.IsMatch(Precio_Compra, "^[0-9]+([,][0-9]+)?$");
+            respuesta9 = Regex.IsMatch(Precio_Compra, "^[0-9]+([.][0-9]+)?$");
             if (respuesta9 == false)
             {
                 MessageBox.Show("No escribio un numero real en Precio Compra", "ERROR");
                 return respuesta9;
             }
 
-            double Precio_Compra2 = Convert.ToDouble(txtPrecioCompra.Text);
-            double Precio_Venta2 = Convert.ToDouble(txtPrecioVenta.Text);
+            double Precio_Compra2 = Convert.ToSingle(txtPrecioCompra.Text);
+            double Precio_Venta2 = Convert.ToSingle(txtPrecioVenta.Text);
             bool respuesta10 = false;
             
             if (Precio_Compra2 >= Precio_Venta2)
@@ -165,8 +172,8 @@ namespace TRABAJO_FINAL
                     Producto.Categoria = textCategoria.Text;
                     Producto.Edad_Producto = textEdad.Text.ToString();
                     Producto.Cant_Jugadores = textCant.Text.ToString();
-                    Producto.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
-                    Producto.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+                    Producto.Precio_Compra = Convert.ToSingle(txtPrecioCompra.Text);
+                    Producto.Precio_Venta = Convert.ToSingle(txtPrecioVenta.Text);
                     Producto.Stock = Convert.ToInt32(txtStock.Text);
 
                     BLLProducto.ALta_Mod_Producto(Producto);
@@ -202,8 +209,8 @@ namespace TRABAJO_FINAL
                     Producto.Categoria = textCategoria.Text;
                     Producto.Edad_Producto = textEdad.Text.ToString();
                     Producto.Cant_Jugadores = textCant.Text.ToString();
-                    Producto.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
-                    Producto.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+                    Producto.Precio_Compra = Convert.ToSingle(txtPrecioCompra.Text);
+                    Producto.Precio_Venta = Convert.ToSingle(txtPrecioVenta.Text);
                     Producto.Stock = Convert.ToInt32(txtStock.Text);
 
                     BLLProducto.BAjaProducto(Producto);
@@ -244,8 +251,8 @@ namespace TRABAJO_FINAL
                     Producto.Categoria = textCategoria.Text;
                     Producto.Edad_Producto = textEdad.Text.ToString();
                     Producto.Cant_Jugadores = textCant.Text.ToString();
-                    Producto.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
-                    Producto.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+                    Producto.Precio_Compra = Convert.ToSingle(txtPrecioCompra.Text);
+                    Producto.Precio_Venta = Convert.ToSingle(txtPrecioVenta.Text);
                     Producto.Stock = Convert.ToInt32(txtStock.Text);
 
                     BLLProducto.ALta_Mod_Producto(Producto);

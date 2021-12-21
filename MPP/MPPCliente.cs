@@ -30,6 +30,7 @@ namespace MPP
             Hdatos.Add("@DNI", EECliente.DNI);
             Hdatos.Add("@FechaNac", EECliente.FechaNac);
             Hdatos.Add("@Correo", EECliente.Correo);
+            Hdatos.Add("@Saldo", EECliente.Saldo);
 
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
@@ -94,6 +95,7 @@ namespace MPP
                     EEClienteVersionado.DNI = Convert.ToInt32(fila["DNI"]);
                     EEClienteVersionado.FechaNac = Convert.ToDateTime(fila["FechaNac"]);
                     EEClienteVersionado.Correo = fila["Correo"].ToString();
+                    EEClienteVersionado.Saldo = Convert.ToSingle(fila["Saldo"]);
                     EEClienteVersionado.Start = Convert.ToDateTime(fila["SysStartTime"]);
                     EEClienteVersionado.End = Convert.ToDateTime(fila["SysEndTime"]);
                     LClientes.Add(EEClienteVersionado);
@@ -105,10 +107,14 @@ namespace MPP
 
         }
 
-        public DataTable ListarClientesFiltrado(string textbox, string textbox2, int num)
+        public List<EECliente> ListarClientesFiltrado(string textbox, string textbox2, int num)
         {
             Acceso Datos = new Acceso();
             DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+
+            EECliente Cliente = new EECliente();
+            List<EECliente> LCliente = new List<EECliente>();
 
             string query;
 
@@ -126,12 +132,20 @@ namespace MPP
                     break;
             }
 
-            // ds = Datos.EjecutarCualquierQuerys("SELECT * FROM Productos where Nombre_Producto like ('" + textbox + "%')");
-
+            
             dt = Datos.EjecutarCualquierQuerys(query);
+            ds.Tables.Add(dt);
 
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    Cliente = MapearCliente(fila);
+                    LCliente.Add(Cliente);
+                }
+            }
 
-            return dt;
+            return LCliente;
 
         }
 
@@ -267,8 +281,9 @@ namespace MPP
                 Nombre = fila["Nombre"].ToString(),
                 DNI = Convert.ToInt32(fila["DNI"].ToString()),
                 FechaNac = Convert.ToDateTime(fila["FechaNac"]),
-                Correo = fila["Correo"].ToString()
-                
+                Correo = fila["Correo"].ToString(),
+                Saldo = Convert.ToSingle(fila["Saldo"].ToString()),
+
 
             };
 
