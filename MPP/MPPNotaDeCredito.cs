@@ -24,7 +24,7 @@ namespace MPP
             Hdatos.Add("@Cod_Comprobante", EENotaDeCredito.Cod_Comprobante);
             Hdatos.Add("@Fecha", EENotaDeCredito.Fecha);
             Hdatos.Add("@Estado", EENotaDeCredito.Estado);
-            Hdatos.Add("@Id_Cliente_Venta", EENotaDeCredito.Cliente.Cod_Cliente);
+            Hdatos.Add("@Id_Cliente", EENotaDeCredito.Cliente.Cod_Cliente);
             Hdatos.Add("@Total", EENotaDeCredito.Total);
 
             Resultado = Datos.Escribir(consulta, Hdatos);

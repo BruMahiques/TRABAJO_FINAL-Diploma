@@ -226,12 +226,12 @@ namespace TRABAJO_FINAL
                         stock = ObtenerStockProducto(Convert.ToInt32(var1));
 
                          if (stock == 0)
-                            {
-                        string Codigo = var1 ;
-                        string nombre = filas.Cells[index: 1].Value.ToString();
-                        condicional = 1;
+                         {
+                          string Codigo = var1 ;
+                          string nombre = filas.Cells[index: 1].Value.ToString();
+                          condicional = 1;
 
-                        MessageBox.Show("El producto " + nombre + " aún no tiene stock , código: " + Codigo);
+                          MessageBox.Show("El producto " + nombre + " aún no tiene stock , código: " + Codigo);
                          }
                     }
                 

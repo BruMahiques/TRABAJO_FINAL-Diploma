@@ -23,7 +23,7 @@ namespace MPP
 
             Hdatos.Add("@Id_Producto", EEReciboDet.Producto.Cod_Producto);
             Hdatos.Add("@Id_Recibo", EEReciboDet.Id_Recibo);
-            Hdatos.Add("@Cantidad_Nota", EEReciboDet.Cantidad);
+            Hdatos.Add("@Cantidad_Recibo", EEReciboDet.Cantidad);
             Hdatos.Add("@Sub_Total", EEReciboDet.Sub_total);
 
 

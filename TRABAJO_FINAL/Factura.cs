@@ -333,9 +333,12 @@ namespace TRABAJO_FINAL
                     
                 }
 
-            
-            
-           var suma = Convert.ToInt32(Codigo.Descripcion.ToString()) + 1;
+            if (Codigo.Descripcion is null)
+            {
+                Codigo.Descripcion = "0";
+            }
+
+            var suma = Convert.ToInt32(Codigo.Descripcion.ToString()) + 1;
             
 
 

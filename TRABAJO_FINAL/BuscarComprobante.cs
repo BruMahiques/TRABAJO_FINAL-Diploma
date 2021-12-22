@@ -214,9 +214,27 @@ namespace TRABAJO_FINAL
 
         private void btnEntrega_Click(object sender, EventArgs e)
         {
-            Recibo F5 = new Recibo();
-            F5.MdiParent = this;
-            F5.Show();
+            Recibo bus = new Recibo();
+            EERecibo recibos = new EERecibo();
+            EEVenta Venta = new EEVenta();
+            BLLVenta bllventa = new BLLVenta();
+            EECliente cliente = new EECliente();
+            BLLCliente bllcliente = new BLLCliente();
+
+
+            Venta = bllventa.BuscarID(Convert.ToInt32(txtComprobante.Text));
+            cliente = bllcliente.BuscarID(Venta.Cliente.Cod_Cliente);
+
+            recibos.Venta = Venta;
+            
+
+
+            bus.recibo = recibos;
+            
+
+            this.Close();
+            bus.Show();
+
         }
 
         private void btnCancelado_Click(object sender, EventArgs e)

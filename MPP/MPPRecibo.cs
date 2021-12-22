@@ -53,6 +53,15 @@ namespace MPP
 
         }
 
+        public void CambiarEstadoVenta(int id)
+        {
+           Acceso Datos = new Acceso();
+           
+           Datos.EjecutarCualquierQuerys("update Venta  set  Estado = '"+ "Entregado" +"' where Id_Venta = " + id);
+                
+
+        }
+
         public EERecibo BuscarID(int id)
         {
             Acceso Datos = new Acceso();
