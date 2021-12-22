@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="BLLIdiomaTitulo.cs" />
     <Compile Include="BLLIdiomaTraductor.cs" />
+    <Compile Include="BLLNotaDeCredito.cs" />
+    <Compile Include="BLLNotaDeCreditoDet.cs" />
     <Compile Include="BLLPerfilComponente.cs" />
     <Compile Include="BLLPerfilFamila.cs" />
     <Compile Include="BLLPerfilPatente.cs" />
+    <Compile Include="BLLRecibo.cs" />
+    <Compile Include="BLLReciboDet.cs" />
     <Compile Include="BLLReservas.cs" />
     <Compile Include="BLLCliente.cs" />
     <Compile Include="BLLProducto.cs" />

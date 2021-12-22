@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPPNotaDeCreditoDet.cs" />
+    <Compile Include="MPPNotaDeCredito.cs" />
     <Compile Include="MPPPerfilComponente.cs" />
     <Compile Include="MPPPerfilFamilia.cs" />
     <Compile Include="MPPPerfilPatente.cs" />
+    <Compile Include="MPPRecibo.cs" />
+    <Compile Include="MPPReciboDet.cs" />
     <Compile Include="MPPReserva.cs" />
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />

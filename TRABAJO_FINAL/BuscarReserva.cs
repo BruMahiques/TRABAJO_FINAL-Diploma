@@ -24,6 +24,7 @@ namespace TRABAJO_FINAL
 
         BLLReservas BLLReservas = new BLLReservas();
         BLLVentaDet BLLVentaDet = new BLLVentaDet();
+        BLLProducto bLLProducto = new BLLProducto();
 
         private void BuscarReserva_Load(object sender, EventArgs e)
         {
@@ -237,16 +238,16 @@ namespace TRABAJO_FINAL
             {
                 if (Convert.ToInt32(fila.Cells[index: 7].Value) != 0)
                 {
-                    EECliente dt = new EECliente();
+                    EECliente cliente = new EECliente();
 
-                    dt.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 7].Value);
-                    dt.Nombre = fila.Cells[index: 8].Value.ToString();
-                    dt.DNI = Convert.ToInt32(fila.Cells[index: 4].Value.ToString());
+                   /* cliente.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 7].Value);
+                    cliente.Nombre = fila.Cells[index: 8].Value.ToString();
+                    cliente.DNI = Convert.ToInt32(fila.Cells[index: 4].Value.ToString());
                     // dt.Categoria = fila.Cells[index: 3].Value.ToString();
                     dt.Correo = fila.Cells[index: 9].Value.ToString();
                     bus.Reservas.Descripcion = fila.Cells[index: 10].Value.ToString();
                     bus.Clien = dt;
-
+                    */
                 }
 
 
@@ -273,7 +274,7 @@ namespace TRABAJO_FINAL
                     }
                 }
 
-                bus.Reservas.Cod_Enum = Convert.ToInt32(txtComprobante.Text);
+              //  bus.Reservas.Cod_Enum = Convert.ToInt32(txtComprobante.Text);
                 
                 
 
@@ -284,32 +285,14 @@ namespace TRABAJO_FINAL
         }
         int ObtenerStockProducto(int cod)
         {
-            Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
-            DataSet DS = new DataSet();
+            EEProducto producto = new EEProducto();
 
-            string query = "select Stock from Productos where Cod_Producto = ('" + cod + "') ";
+            producto = bLLProducto.BuscarID(cod);
 
-
-            ds = Datos.EjecutarCualquierQuerys(query);
-
-            DS.Tables.Add(ds);
-
-            int stock=1;
-
-            foreach (DataRow Item in DS.Tables[0].Rows)
-            {
-                EEEnum Comprobante = new EEEnum();
-                Comprobante.Cod_Enum = Convert.ToInt32(Item[0].ToString().Trim());
-                stock = Comprobante.Cod_Enum;
-            }
+            
 
 
-
-
-
-
-            return stock;
+            return producto.Stock;
         }
 
         private void btnEntrega_Click(object sender, EventArgs e)

@@ -37,5 +37,10 @@ namespace BLL
             return Map.ExisteProductoEnComprobante(producto);
         }
 
+        public EEProducto BuscarID(int cod)
+        {
+            return Map.BuscarID(cod);
+        }
+
     }
 }

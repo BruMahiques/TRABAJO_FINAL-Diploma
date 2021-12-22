@@ -63,11 +63,7 @@ namespace TRABAJO_FINAL
                 if (label13.Tag != null && Traducciones.ContainsKey(label13.Tag.ToString()))
                     label13.Text = Traducciones[label13.Tag.ToString()].Texto;
 
-                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
-                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
-
-                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
-                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
+                
                                 
                 if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
                     label2.Text = Traducciones[label2.Tag.ToString()].Texto;
@@ -112,13 +108,12 @@ namespace TRABAJO_FINAL
 
             ArmarTotalyDesc();
             
-            ObtenerEnum(1, cboTipoPago);
-            ObtenerEnum(3, cboTipDoc);
+            
             /*
             label6.Text = cboComprobante.Text.Substring(2);
             lblSerie.Text = "000" + cboComprobante.Text.Substring(0, 2);
             */
-            ObtenerNumeroComprobante();
+            //ObtenerNumeroComprobante();
             
             btnImprimir.Enabled = false;
 
@@ -134,7 +129,7 @@ namespace TRABAJO_FINAL
 
         public List<EEProducto> listaRes = new List<EEProducto>();
         public EECliente Cliente = new EECliente();
-        public List<EEEnum> Enum;
+        
         public BLLReservas BLLReservas = new BLLReservas();
         public BLLVentaDet BLLVentaDet = new BLLVentaDet();
 
@@ -164,13 +159,7 @@ namespace TRABAJO_FINAL
             buspro.Show();
 
         }
-        public void ObtenerEnum(int constante, ComboBox combo)
-        {
-            Enum = new List<EEEnum>();
-            Enum = BLLEnum.ObtenerEnum(constante);
-
-            combo.DataSource = Enum;
-        }
+        
         private bool ValidarCampos()
         {
             bool respuesta;
@@ -315,7 +304,7 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("La seña no puede superar el total");
             }
         }
-        void ObtenerNumeroComprobante()
+       /* void ObtenerNumeroComprobante()
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
@@ -347,6 +336,6 @@ namespace TRABAJO_FINAL
             lblCorrelativo.Text = suma.ToString();
 
 
-        }
+        }*/
     }
 }

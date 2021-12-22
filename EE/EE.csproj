@@ -45,10 +45,14 @@
     <Compile Include="EEClienteVersionado.cs" />
     <Compile Include="EEIdioma.cs" />
     <Compile Include="EEIdiomaTraduccion.cs" />
+    <Compile Include="EENotaDeCredito.cs" />
+    <Compile Include="EENotaDeCreditoDet.cs" />
     <Compile Include="EEPerfilComponente.cs" />
     <Compile Include="EEPerfilFamilia.cs" />
     <Compile Include="EEPerfilPatente.cs" />
     <Compile Include="EEPerfilTipoPermiso.cs" />
+    <Compile Include="EERecibo.cs" />
+    <Compile Include="EEReciboDet.cs" />
     <Compile Include="EEReserva.cs" />
     <Compile Include="EECliente.cs" />
     <Compile Include="EEProducto.cs" />

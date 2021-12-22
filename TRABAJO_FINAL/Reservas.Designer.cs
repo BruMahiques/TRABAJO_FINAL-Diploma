@@ -54,8 +54,6 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dtpFechaEmision = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cboTipDoc = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -273,8 +271,6 @@
             this.gbCliente.Controls.Add(this.txtCorreo);
             this.gbCliente.Controls.Add(this.label17);
             this.gbCliente.Controls.Add(this.dtpFechaEmision);
-            this.gbCliente.Controls.Add(this.label15);
-            this.gbCliente.Controls.Add(this.cboTipDoc);
             this.gbCliente.Controls.Add(this.label14);
             this.gbCliente.Controls.Add(this.txtNumDoc);
             this.gbCliente.Controls.Add(this.label13);
@@ -365,33 +361,11 @@
             this.dtpFechaEmision.Size = new System.Drawing.Size(107, 20);
             this.dtpFechaEmision.TabIndex = 15;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(236, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 15);
-            this.label15.TabIndex = 12;
-            this.label15.Tag = "Tipo Doc";
-            this.label15.Text = "Tip. Doc";
-            // 
-            // cboTipDoc
-            // 
-            this.cboTipDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipDoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipDoc.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cboTipDoc.FormattingEnabled = true;
-            this.cboTipDoc.Location = new System.Drawing.Point(239, 71);
-            this.cboTipDoc.Name = "cboTipDoc";
-            this.cboTipDoc.Size = new System.Drawing.Size(109, 23);
-            this.cboTipDoc.TabIndex = 11;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(351, 55);
+            this.label14.Location = new System.Drawing.Point(242, 56);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 15);
             this.label14.TabIndex = 10;
@@ -401,10 +375,10 @@
             // txtNumDoc
             // 
             this.txtNumDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumDoc.Location = new System.Drawing.Point(353, 72);
+            this.txtNumDoc.Location = new System.Drawing.Point(242, 73);
             this.txtNumDoc.MaxLength = 15;
             this.txtNumDoc.Name = "txtNumDoc";
-            this.txtNumDoc.Size = new System.Drawing.Size(123, 21);
+            this.txtNumDoc.Size = new System.Drawing.Size(234, 21);
             this.txtNumDoc.TabIndex = 9;
             // 
             // label13
@@ -553,8 +527,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DateTimePicker dtpFechaEmision;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cboTipDoc;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNumDoc;
         private System.Windows.Forms.Label label13;

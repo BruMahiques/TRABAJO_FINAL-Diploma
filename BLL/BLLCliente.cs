@@ -55,6 +55,9 @@ namespace BLL
             Map.RecuperarClientePerdido(EECliente);
         }
 
-
+        public EECliente BuscarID(int cod)
+        {
+            return Map.BuscarID(cod);
+        }
     }
 }

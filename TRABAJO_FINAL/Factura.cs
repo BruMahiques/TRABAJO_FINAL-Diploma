@@ -110,11 +110,11 @@ namespace TRABAJO_FINAL
 
         public List<EEProducto> lista = new List<EEProducto>();
         public EECliente Clien = new EECliente();
-        public List<EEEnum> Enum;
+      
         public BLLVenta BLLVenta = new BLLVenta();
         public BLLVentaDet BLLVentaDet = new BLLVentaDet();
 
-        public EEEnum Reservas = new EEEnum(); 
+        
 
 
         private void Factura_Load(object sender, EventArgs e)
@@ -139,14 +139,11 @@ namespace TRABAJO_FINAL
 
             ArmarTotalyDesc();
 
-            ObtenerEnum(1, cboTipoPago);
-            ObtenerEnum(2, cboComprobante);
-            ObtenerEnum(3, cboTipDoc);
-
+            
             label6.Text = cboComprobante.Text.Substring(2);
             lblSerie.Text = "000" + cboComprobante.Text.Substring(0, 2);
 
-            ObtenerNumeroComprobante();
+          //  ObtenerNumeroComprobante();
 
             btnImprimir.Enabled = false;
 
@@ -155,7 +152,7 @@ namespace TRABAJO_FINAL
             txtSeña.Enabled = false;
             txttotalconseña.Enabled = false;
 
-            if(Reservas.Cod_Enum!=0)
+           /* if(Reservas.Cod_Enum!=0)
             {
                 int total_con_seña = 0;
                 txtSeña.Text = Reservas.Descripcion;
@@ -163,7 +160,7 @@ namespace TRABAJO_FINAL
                 txttotalconseña.Text = total_con_seña.ToString();
                 DesactivarTodo();
             }
-
+            */
             Singleton.Instancia.SuscribirObs(this);
 
            
@@ -194,13 +191,7 @@ namespace TRABAJO_FINAL
             }
         }
 
-        public void ObtenerEnum(int constante , ComboBox combo)
-        {
-            Enum = new List<EEEnum>();
-            Enum = BLLEnum.ObtenerEnum(constante);
-
-            combo.DataSource = Enum;
-        }
+       
         private void CargarSerie_correlativo()
         {
            
@@ -322,7 +313,7 @@ namespace TRABAJO_FINAL
             ArmarTotalyDesc();
 
         }
-        void ObtenerNumeroComprobante()
+     /*   void ObtenerNumeroComprobante()
         {
             Acceso Datos = new Acceso();
             DataTable ds = new DataTable();
@@ -354,7 +345,7 @@ namespace TRABAJO_FINAL
             lblCorrelativo.Text = suma.ToString();
 
            
-        }
+        }*/
 
         void ArmarTotalyDesc()
         {
