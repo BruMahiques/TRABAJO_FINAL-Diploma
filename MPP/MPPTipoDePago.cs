@@ -16,11 +16,14 @@ namespace MPP
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             List<EETipoDePago> LTipoDePago = new List<EETipoDePago>();
             var EETipoDePago = new EETipoDePago();
 
-            ds = Datos.Leer("Select * From Tipo_De_Pago", null);
+            dt = Datos.EjecutarCualquierQuerys("Select * From Tipo_De_Pago");
+
+            ds.Tables.Add(dt);
 
             if (ds.Tables[0].Rows.Count > 0)
             {

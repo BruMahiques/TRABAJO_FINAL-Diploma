@@ -188,15 +188,15 @@ namespace TRABAJO_FINAL
                 dgvItems.DataSource = null;
                 dgvItems.DataSource = items;
 
-                foreach (DataGridViewRow fila in dgvReserva.Rows) // Para saber el estado
+               /* foreach (DataGridViewRow fila in dgvReserva.Rows) // Para saber el estado
                 {
-                    if (Convert.ToInt32(fila.Cells[index: 7].Value) != 0 && fila.Cells[index: 6].Value.ToString() != "Reservado")
+                    if (Convert.ToInt32(fila.Cells[index: 6].Value) != 0 && fila.Cells[index: 5].Value.ToString() == "Reservado")
                     {
                         btnFacturar.Enabled = false;
                         btnEntrega.Enabled = true;
                        
                     }
-                }
+                }*/
             }
         }
 

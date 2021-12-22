@@ -238,10 +238,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(626, 351);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 87;
-            this.label3.Tag = "Comprobantes";
-            this.label3.Text = "Comprobante";
+            this.label3.Tag = "Venta";
+            this.label3.Text = "Venta";
             // 
             // btnCancelado
             // 

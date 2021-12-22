@@ -107,20 +107,20 @@ namespace TRABAJO_FINAL
 
         private bool ValidarCampos()
         {
-            string Nombre = txtNombre.Text;
+            /*string Nombre = txtNombre.Text;
             bool respuesta = Regex.IsMatch(Nombre, "^([a-zA-Z]+$)");
             if (respuesta == false)
             {
                 MessageBox.Show("No escribio solo letras en Nombre", "ERROR");
                 return respuesta;
-            }
+            }*/
 
             string Stock = txtStock.Text;
-            bool respuesta1 = Regex.IsMatch(Stock, "^([0-9]+$)");
-            if (respuesta1 == false)
+            bool respuesta = Regex.IsMatch(Stock, "^([0-9]+$)");
+            if (respuesta == false)
             {
                 MessageBox.Show("No escribio solo números en Stock", "ERROR");
-                return respuesta1;
+                return respuesta;
             }
             
             string Precio_Venta = txtPrecioVenta.Text;

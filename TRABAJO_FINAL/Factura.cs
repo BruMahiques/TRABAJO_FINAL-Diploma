@@ -65,12 +65,7 @@ namespace TRABAJO_FINAL
                 if (label13.Tag != null && Traducciones.ContainsKey(label13.Tag.ToString()))
                     label13.Text = Traducciones[label13.Tag.ToString()].Texto;
 
-                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
-                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
-
-                if (label15.Tag != null && Traducciones.ContainsKey(label15.Tag.ToString()))
-                    label15.Text = Traducciones[label15.Tag.ToString()].Texto;
-
+                
                 if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
                     label6.Text = Traducciones[label6.Tag.ToString()].Texto;
 
@@ -83,9 +78,7 @@ namespace TRABAJO_FINAL
                 if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
                     label2.Text = Traducciones[label2.Tag.ToString()].Texto;
 
-                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
-                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
-
+               
                 if (label14.Tag != null && Traducciones.ContainsKey(label14.Tag.ToString()))
                     label14.Text = Traducciones[label14.Tag.ToString()].Texto;
 
@@ -114,7 +107,12 @@ namespace TRABAJO_FINAL
         public BLLVenta BLLVenta = new BLLVenta();
         public BLLVentaDet BLLVentaDet = new BLLVentaDet();
 
-        
+        public BLLTipoDePago BLLTipoDePago = new BLLTipoDePago();
+        public BLLProducto bllProducto = new BLLProducto();
+
+
+
+
 
 
         private void Factura_Load(object sender, EventArgs e)
@@ -123,6 +121,8 @@ namespace TRABAJO_FINAL
             txtNombreCliente.Text = Clien.Nombre;
             txtNumDoc.Text = Clien.DNI.ToString();
             txtCorreo.Text = Clien.Correo;
+            txtsaldo.Text = Clien.Saldo.ToString() ;
+
 
             foreach (var dato in lista)
             {
@@ -137,13 +137,14 @@ namespace TRABAJO_FINAL
                 }
             }
 
-            ArmarTotalyDesc();
+            if (btnGuardar.Enabled == true)
+            {
+                ArmarTotalyDesc();
+            }
 
-            
-            label6.Text = cboComprobante.Text.Substring(2);
-            lblSerie.Text = "000" + cboComprobante.Text.Substring(0, 2);
 
-          //  ObtenerNumeroComprobante();
+
+            lblCorrelativo.Text = ObtenerNumeroComprobante();
 
             btnImprimir.Enabled = false;
 
@@ -151,6 +152,7 @@ namespace TRABAJO_FINAL
 
             txtSeña.Enabled = false;
             txttotalconseña.Enabled = false;
+            cboTipoPago.DataSource = BLLTipoDePago.ListarTipoDePago();
 
            /* if(Reservas.Cod_Enum!=0)
             {
@@ -272,7 +274,7 @@ namespace TRABAJO_FINAL
             Clien.Correo = string.Empty;
 
             btnImprimir.Enabled = false;
-            btnGuardar.Enabled = ValidarCampos();
+            btnGuardar.Enabled = false;
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -292,11 +294,7 @@ namespace TRABAJO_FINAL
             btnGuardar.Enabled = false;
         }
 
-        private void cboComprobante_SelectedValueChanged(object sender, EventArgs e)
-        {
-            label6.Text = cboComprobante.Text.Substring(2);
-            lblSerie.Text= "000"+cboComprobante.Text.Substring(0,2);
-        }
+        
 
         private void txtdesc_Enter(object sender, EventArgs e)
         {
@@ -313,39 +311,39 @@ namespace TRABAJO_FINAL
             ArmarTotalyDesc();
 
         }
-     /*   void ObtenerNumeroComprobante()
+        string ObtenerNumeroComprobante()
         {
             Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
+            DataTable dt = new DataTable();
             DataSet DS = new DataSet();
 
-            string query = "select TOP 1 Cod_Comprobante from Venta order by Id_Venta DESC";
+            string query = "select TOP 1 Id_Venta from Venta order by Id_Venta DESC";
             
+            dt = Datos.EjecutarCualquierQuerys(query);
 
-            ds = Datos.EjecutarCualquierQuerys(query);
-
-            DS.Tables.Add(ds);
-
+            DS.Tables.Add(dt);
+            EETipoDePago Codigo = new EETipoDePago();
           
                 foreach (DataRow Item in DS.Tables[0].Rows)
                 {
-                    EEEnum Comprobante = new EEEnum();
-                    Comprobante.Descripcion = Item[0].ToString().Trim();
-                    query = Comprobante.Descripcion;
+
+                    Codigo.Descripcion = Item[0].ToString().Trim();
+                    
                 }
 
-            query= query.Substring(5);
-            int suma;
-            suma = Convert.ToInt32(query) + 1;
+            
+            
+           var suma = Convert.ToInt32(Codigo.Descripcion.ToString()) + 1;
             
 
 
 
 
-            lblCorrelativo.Text = suma.ToString();
+            
+            return suma.ToString();
 
-           
-        }*/
+
+        }
 
         void ArmarTotalyDesc()
         {
@@ -354,14 +352,22 @@ namespace TRABAJO_FINAL
 
             foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
             {
-                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Cantidad"].Value);
-                total += Convert.ToDouble(row.Cells["Total"].Value);
+                row.Cells["Subtotal"].Value = Convert.ToSingle(row.Cells["Precio"].Value) * Convert.ToSingle(row.Cells["Cantidad"].Value);
+                total += Convert.ToSingle(row.Cells["Subtotal"].Value);
 
             }
             if (txtdesc.Text != "-")
             {
-                total = total - (total * Convert.ToDouble(txtdesc.Text)) / 100;
+                total = total - (total * Convert.ToSingle(txtdesc.Text)) / 100;
             }
+            total = total - Convert.ToSingle(txtsaldo.Text);
+
+            if (total<0)
+            {
+                btnGuardar.Enabled = false;
+                MessageBox.Show("Por favor utilice todo su saldo, no puede quedar saldo a favor nuevamente");
+            }
+
             txtTotal.Text = total.ToString();
         }
 
@@ -382,37 +388,44 @@ namespace TRABAJO_FINAL
             btnImprimir.Enabled = true;
             try
             {
-                if (ValidarStock())
+                if (ValidarStockYCodigo())
                 {
+
                     EEVenta Venta = new EEVenta();
-                    Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                    Venta.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0,1));
-                    Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value); 
-                    Venta.Estado = "Emitido";
-                    Venta.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
-                    Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
-
-                    BLLVenta.Alta_Venta(Venta);
-
-                    
+                    BLLCliente bLLCliente = new BLLCliente();
+                    BLLTipoDePago bLLTipoDePago = new BLLTipoDePago();
+                    List<EEVentaDet> Ldetalle = new List<EEVentaDet>();
 
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
                         EEVentaDet Venta_Det = new EEVentaDet();
-                        Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
+                        Venta_Det.Producto = bllProducto.BuscarID(Convert.ToInt32(r.Cells[0].Value));
                         Venta_Det.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
-                        Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
                         Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                         Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
+                        Ldetalle.Add(Venta_Det);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
-                       
+                        Venta_Det.Producto.Stock = Venta_Det.Producto.Stock-1;
+                        bllProducto.ALta_Mod_Producto(Venta_Det.Producto);
                     }
-                    if (Reservas.Cod_Enum != 0)
+                    Venta.LDetalle = Ldetalle;
+                    
+                    Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
+                    Venta.TipoDePago = bLLTipoDePago.BuscarID(Convert.ToInt32(cboTipoPago.Text.Substring(0, 1)));
+                    Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
+                    Venta.Estado = "Emitido";
+                    Venta.Cliente = bLLCliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
+                    Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
+
+                    BLLVenta.Alta_Venta(Venta);
+                    /*if (Reservas.Cod_Enum != 0)
                     {
                         
                         Mod_Estado_Reserva(Reservas.Cod_Enum);
                         
-                    }
+                    }*/
+
+                   
 
                     btnBuscarCliente.Enabled = false;
                     btnGuardar.Enabled = false;
@@ -424,7 +437,7 @@ namespace TRABAJO_FINAL
                 }
                 else
                 {
-                    MessageBox.Show("Editar la cantidad solicitada de los juegos indicados");
+                  //  MessageBox.Show("Editar la cantidad solicitada de los juegos indicados");
                     return;
                 }
 
@@ -458,7 +471,7 @@ namespace TRABAJO_FINAL
         }
 
         
-        private bool ValidarStock()
+        private bool ValidarStockYCodigo()
         {
             Acceso Datos = new Acceso();
             
@@ -470,14 +483,16 @@ namespace TRABAJO_FINAL
                 DataTable dt = new DataTable();
                 DataSet DS = new DataSet();
 
-                string query = "select Stock from Productos where Cod_Producto = " + r.Cells[0].Value + " ";
-                                          
+
+                
+
                 EEVentaDet Venta_Det = new EEVentaDet();
-                Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
+                Venta_Det.Producto = bllProducto.BuscarID(Convert.ToInt32(r.Cells[0].Value));
                 Venta_Det.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
-                Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
                 Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
                 Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
+
+                string query = "select Stock from Productos where Cod_Producto = " + Venta_Det.Producto.Cod_Producto + " ";
 
                 dt = Datos.EjecutarCualquierQuerys(query);
 
@@ -497,9 +512,29 @@ namespace TRABAJO_FINAL
 
 
             }
-           
+            if (Convert.ToInt32(ObtenerNumeroComprobante()) != Convert.ToInt32(lblCorrelativo.Text))
+            {
+                respuesta = false;
+                MessageBox.Show("El numero de comprobante ya ha sido emitido anteriormente , porfavor crear una nueva factura ");
 
-          
+            }
+            if (txtdesc.Text != "-")
+            {
+                if (Convert.ToSingle(txtdesc.Text) > 50)
+                {
+                    respuesta = false;
+                    MessageBox.Show("No se puede hacer un descuento mayor al 50%");
+
+                }
+                if (Convert.ToSingle(txtdesc.Text) < 0)
+                {
+                    respuesta = false;
+                    MessageBox.Show("Puso un número negativo en el descuento");
+
+                }
+
+            }
+
             return respuesta;
         }
         private void DesactivarTodo()
@@ -515,7 +550,7 @@ namespace TRABAJO_FINAL
             btnAgregarItem.Enabled = false;
             btnBuscarCliente.Enabled = false;
             btnQuitarItem.Enabled = false;
-            cboComprobante.Enabled = false;
+            
         }
         void Mod_Estado_Reserva(int cod)
         {

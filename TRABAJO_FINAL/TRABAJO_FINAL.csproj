@@ -59,11 +59,23 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotaDeCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaDeCredito.Designer.cs">
+      <DependentUpon>NotaDeCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recibo.Designer.cs">
+      <DependentUpon>Recibo.cs</DependentUpon>
     </Compile>
     <Compile Include="Serialización.cs">
       <SubType>Form</SubType>
@@ -213,8 +225,14 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotaDeCredito.resx">
+      <DependentUpon>NotaDeCredito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recibo.resx">
+      <DependentUpon>Recibo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Serialización.resx">
       <DependentUpon>Serialización.cs</DependentUpon>

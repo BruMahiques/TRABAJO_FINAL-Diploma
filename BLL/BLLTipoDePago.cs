@@ -17,7 +17,11 @@ namespace BLL
         {
            return Map.BuscarID(id);
         }
+        public List<EETipoDePago> ListarTipoDePago()
+        {
+            return Map.ListarTipoDePago();
+        }
 
-        
+
     }
 }
