@@ -214,7 +214,9 @@ namespace TRABAJO_FINAL
 
         private void btnEntrega_Click(object sender, EventArgs e)
         {
-            Cambiar_estado("Entregado");
+            Recibo F5 = new Recibo();
+            F5.MdiParent = this;
+            F5.Show();
         }
 
         private void btnCancelado_Click(object sender, EventArgs e)

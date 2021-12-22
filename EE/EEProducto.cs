@@ -26,7 +26,7 @@ namespace EE
         public EEProducto() { }
         public override string ToString()
         {
-            return Nombre_Producto;
+            return Cod_Producto + "-" + Nombre_Producto;
         }
 
     }

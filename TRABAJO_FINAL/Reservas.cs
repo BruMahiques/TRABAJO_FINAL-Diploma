@@ -93,6 +93,9 @@ namespace TRABAJO_FINAL
             txtNumDoc.Text = Cliente.DNI.ToString();
             txtCorreo.Text = Cliente.Correo;
 
+            
+            
+
             foreach (var dato in listaRes)
             {
                 dgvDetalleBoleta.Rows.Add(dato.Cod_Producto, dato.Nombre_Producto, dato.Precio_Venta, dato.Stock);
@@ -107,17 +110,16 @@ namespace TRABAJO_FINAL
             }
 
             ArmarTotalyDesc();
+
+
             
-            
-            /*
-            label6.Text = cboComprobante.Text.Substring(2);
-            lblSerie.Text = "000" + cboComprobante.Text.Substring(0, 2);
-            */
-            //ObtenerNumeroComprobante();
+            lblCorrelativo.Text = ObtenerNumeroComprobante();
             
             btnImprimir.Enabled = false;
 
             btnGuardar.Enabled = ValidarCampos();
+
+            cboTipoPago.DataSource = BLLTipoDePago.ListarTipoDePago();
 
             Singleton.Instancia.SuscribirObs(this);
 
@@ -129,9 +131,12 @@ namespace TRABAJO_FINAL
 
         public List<EEProducto> listaRes = new List<EEProducto>();
         public EECliente Cliente = new EECliente();
-        
+
+        public BLLCliente bllcliente = new BLLCliente();
+        public BLLProducto BLLProducto = new BLLProducto();
         public BLLReservas BLLReservas = new BLLReservas();
-        public BLLVentaDet BLLVentaDet = new BLLVentaDet();
+        public BLLReservasDet BLLReservasDet = new BLLReservasDet();
+        public BLLTipoDePago BLLTipoDePago = new BLLTipoDePago();
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -148,6 +153,7 @@ namespace TRABAJO_FINAL
 
             btnImprimir.Enabled = false;
             btnGuardar.Enabled = ValidarCampos();
+            btnGuardar.Enabled = false;
         }
 
         private void btnAgregarItem_Click(object sender, EventArgs e)
@@ -208,8 +214,8 @@ namespace TRABAJO_FINAL
 
             foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
             {
-                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Cantidad"].Value);
-                total += Convert.ToDouble(row.Cells["Total"].Value);
+                row.Cells["Subtotal"].Value = Convert.ToSingle(row.Cells["Precio"].Value) * Convert.ToSingle(row.Cells["Cantidad"].Value);
+                total += Convert.ToSingle(row.Cells["Subtotal"].Value);
 
             }
             
@@ -252,90 +258,123 @@ namespace TRABAJO_FINAL
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             btnImprimir.Enabled = true;
-            if (Convert.ToSingle(txtseña.Text) < Convert.ToSingle(txtTotal))
+            if (txtseña.Text != "-" && Convert.ToSingle(txtseña.Text) > 0)
             {
-                try
+                if (Convert.ToSingle(txtseña.Text) < Convert.ToSingle(txtTotal.Text))
                 {
-
-                    EEReserva Reserva = new EEReserva();
-                    Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                    Reserva.TipoDePago.Id = Convert.ToInt32(cboTipoPago.Text.Substring(0, 1));
-                    Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
-                    Reserva.Estado = "Reservado";
-                    Reserva.Cliente.Cod_Cliente = Convert.ToInt32(txtCodUsuario.Text);
-                    Reserva.Seña = Convert.ToInt32(txtseña.Text);
-                    Reserva.Total = Convert.ToInt32(txtTotal.Text);
-
-                    BLLReservas.Alta_Reserva(Reserva);
-
-
-
-                    foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
+                    if (Validar())
                     {
-                        EEVentaDet Venta_Det = new EEVentaDet();
-                        Venta_Det.Producto.Cod_Producto = Convert.ToInt32(r.Cells[0].Value);
-                        Venta_Det.Id_Venta = Convert.ToInt32(lblCorrelativo.Text);
-                        Venta_Det.Producto.Precio_Venta = Convert.ToInt32(r.Cells[2].Value);
-                        Venta_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
-                        Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
-                        // BLLReservas.Alta_Reserva_Det(Venta_Det);
+                        try
+                        {
 
+                            EEReserva Reserva = new EEReserva();
+                            BLLTipoDePago blltipodepago = new BLLTipoDePago();
+                            List<EEReservaDet> Ldetalle = new List<EEReservaDet>();
+
+                            Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
+                            Reserva.TipoDePago = blltipodepago.BuscarID(Convert.ToInt32(cboTipoPago.Text.Substring(0, 1)));
+                            Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
+                            Reserva.Estado = "Reservado";
+                            Reserva.Cliente = bllcliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
+                            Reserva.Seña = Convert.ToInt32(txtseña.Text);
+                            Reserva.Total = Convert.ToInt32(txtTotal.Text);
+                            BLLReservas.Alta_Reserva(Reserva);
+
+
+
+                            foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
+                            {
+
+                                EEReservaDet Reserva_Det = new EEReservaDet();
+                                Reserva_Det.Producto = BLLProducto.BuscarID(Convert.ToInt32(r.Cells[0].Value));
+                                Reserva_Det.Id_Reserva = Convert.ToInt32(lblCorrelativo.Text);
+                                Reserva_Det.Cantidad = Convert.ToInt32(r.Cells[3].Value);
+                                Reserva_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
+                                Ldetalle.Add(Reserva_Det);
+                                BLLReservasDet.ALta_Reserva_Det(Reserva_Det);
+
+
+                            }
+
+                            Reserva.LDetalle = Ldetalle;
+
+
+
+
+                            btnBuscarCliente.Enabled = false;
+                            btnGuardar.Enabled = false;
+                            btnAgregarItem.Enabled = false;
+                            btnQuitarItem.Enabled = false;
+                            btnAnular.Enabled = false;
+                            dgvDetalleBoleta.ReadOnly = true;
+
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Debe introducir una seña");
+                            return;
+                        }
                     }
-
-                    btnBuscarCliente.Enabled = false;
-                    btnGuardar.Enabled = false;
-                    btnAgregarItem.Enabled = false;
-                    btnQuitarItem.Enabled = false;
-                    btnAnular.Enabled = false;
-                    dgvDetalleBoleta.ReadOnly = true;
-
-
-
-
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Debe introducir una seña");
-                    return;
+                    MessageBox.Show("La seña no puede superar el total");
                 }
             }
             else
             {
-                MessageBox.Show("La seña no puede superar el total");
+                MessageBox.Show("Debe introducir una seña");
             }
         }
-       /* void ObtenerNumeroComprobante()
+        string ObtenerNumeroComprobante()
         {
             Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
+            DataTable dt = new DataTable();
             DataSet DS = new DataSet();
 
-            string query = "select TOP 1 Cod_Comprobante from Reservas order by Id_Reserva DESC";
+            string query = "select TOP 1 Id_Reserva from Reservas order by Id_Reserva DESC";
 
 
-            ds = Datos.EjecutarCualquierQuerys(query);
 
-            DS.Tables.Add(ds);
+            dt = Datos.EjecutarCualquierQuerys(query);
 
+            DS.Tables.Add(dt);
+            EETipoDePago Codigo = new EETipoDePago();
 
             foreach (DataRow Item in DS.Tables[0].Rows)
             {
-                EEEnum Comprobante = new EEEnum();
-                Comprobante.Descripcion = Item[0].ToString().Trim();
-                query = Comprobante.Descripcion;
+
+                Codigo.Descripcion = Item[0].ToString().Trim();
+
             }
 
-            query = query.Substring(2);
-            int suma;
-            suma = Convert.ToInt32(query) + 1;
+
+
+            var suma = Convert.ToInt32(Codigo.Descripcion.ToString()) + 1;
 
 
 
 
 
-            lblCorrelativo.Text = suma.ToString();
+
+            return suma.ToString();
 
 
-        }*/
+        }
+        private bool Validar()
+        {
+            bool respuesta = true;
+            if (Convert.ToInt32(ObtenerNumeroComprobante()) != Convert.ToInt32(lblCorrelativo.Text))
+            {
+                respuesta = false;
+                MessageBox.Show("El numero de comprobante ya ha sido emitido anteriormente , porfavor crear una nueva factura ");
+
+            }
+
+            return respuesta;
+        }
     }
 }

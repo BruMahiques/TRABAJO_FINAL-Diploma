@@ -41,11 +41,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvDetalleBoleta = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +60,11 @@
             this.lblCorrelativo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -226,7 +226,7 @@
             this.Producto,
             this.Precio,
             this.Cantidad,
-            this.Total});
+            this.Subtotal});
             this.dgvDetalleBoleta.Location = new System.Drawing.Point(15, 27);
             this.dgvDetalleBoleta.MultiSelect = false;
             this.dgvDetalleBoleta.Name = "dgvDetalleBoleta";
@@ -235,31 +235,6 @@
             this.dgvDetalleBoleta.Size = new System.Drawing.Size(586, 182);
             this.dgvDetalleBoleta.TabIndex = 4;
             this.dgvDetalleBoleta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleBoleta_CellContentClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
             // 
             // gbCliente
             // 
@@ -374,6 +349,7 @@
             // 
             // txtNumDoc
             // 
+            this.txtNumDoc.Enabled = false;
             this.txtNumDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumDoc.Location = new System.Drawing.Point(242, 73);
             this.txtNumDoc.MaxLength = 15;
@@ -474,6 +450,31 @@
             this.label2.Tag = "Reservas";
             this.label2.Text = "Reservas";
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
             // Reservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,11 +515,6 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvDetalleBoleta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.GroupBox gbCliente;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
@@ -538,5 +534,10 @@
         private System.Windows.Forms.Label lblCorrelativo;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
     }
 }

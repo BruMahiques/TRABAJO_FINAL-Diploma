@@ -172,7 +172,7 @@ namespace TRABAJO_FINAL
             dgvReserva.DataSource = Reservas;
 
         }
-
+       
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
            
@@ -181,10 +181,10 @@ namespace TRABAJO_FINAL
 
             if (txtComprobante.Text != "-")
             {
+
                 List<EEReservaDet> items;
-
                 items = BLLReservas.BuscarID(Convert.ToInt32(txtComprobante.Text)).LDetalle;
-
+                
                 dgvItems.DataSource = null;
                 dgvItems.DataSource = items;
 
@@ -216,17 +216,22 @@ namespace TRABAJO_FINAL
                 
                     if (Convert.ToInt32(filas.Cells[index: 0].Value) != 0)
                     {
-                       
-                        int stock;
-                        stock = ObtenerStockProducto(Convert.ToInt32(filas.Cells[index: 0].Value));
+                    string codigo = filas.Cells[index: 1].Value.ToString();
+                    string[] words = codigo.Split('-');
+                    string var1, var2;
+                    var1 = words[0];
+                     var2 = words[1];
+                    
+                    int stock;
+                        stock = ObtenerStockProducto(Convert.ToInt32(var1));
 
                          if (stock == 0)
                             {
-                        string codigo = filas.Cells[index: 0].Value.ToString();
+                        string Codigo = var1 ;
                         string nombre = filas.Cells[index: 1].Value.ToString();
                         condicional = 1;
 
-                        MessageBox.Show("El producto " + nombre + " aún no tiene stock , código: " + codigo);
+                        MessageBox.Show("El producto " + nombre + " aún no tiene stock , código: " + Codigo);
                          }
                     }
                 
@@ -238,16 +243,18 @@ namespace TRABAJO_FINAL
             {
                 if (Convert.ToInt32(fila.Cells[index: 7].Value) != 0)
                 {
+                    EEReserva reserva = new EEReserva();
+                    BLLReservas BLLReservas = new BLLReservas();
+                    reserva = BLLReservas.BuscarID(Convert.ToInt32(fila.Cells[index: 0].Value));
+                    
                     EECliente cliente = new EECliente();
+                    BLLCliente bllCliente = new BLLCliente();
+                    cliente = bllCliente.BuscarID(reserva.Cliente.Cod_Cliente);
 
-                   /* cliente.Cod_Cliente = Convert.ToInt32(fila.Cells[index: 7].Value);
-                    cliente.Nombre = fila.Cells[index: 8].Value.ToString();
-                    cliente.DNI = Convert.ToInt32(fila.Cells[index: 4].Value.ToString());
-                    // dt.Categoria = fila.Cells[index: 3].Value.ToString();
-                    dt.Correo = fila.Cells[index: 9].Value.ToString();
-                    bus.Reservas.Descripcion = fila.Cells[index: 10].Value.ToString();
-                    bus.Clien = dt;
-                    */
+                   
+                   // bus.Reservas.Descripcion = fila.Cells[index: 10].Value.ToString();
+                    bus.Clien = cliente;
+                    
                 }
 
 
@@ -261,22 +268,27 @@ namespace TRABAJO_FINAL
 
                 foreach (DataGridViewRow fila in dgvItems.Rows)
                 {
+
                     EEProducto dt = new EEProducto();
                     if (Convert.ToInt32(fila.Cells[index: 0].Value) != 0)
                     {
-                        dt.Cod_Producto = Convert.ToInt32(fila.Cells[index: 0].Value);
-                        dt.Nombre_Producto = fila.Cells[index: 1].Value.ToString();
-                        dt.Precio_Venta = Convert.ToSingle(fila.Cells[index: 4].Value.ToString());
-                        dt.Stock = 1;//Convert.ToInt32(fila.Cells[index: 7].Value);
+                        string codigo = fila.Cells[index: 1].Value.ToString();
+                        string[] words = codigo.Split('-');
+                        string var1, var2;
+                        var1 = words[0];
+                        var2 = words[1];
+
+                        dt = bLLProducto.BuscarID(Convert.ToInt32(var1));
+                        dt.Stock = 1;
                         bus.lista.Add(dt);
 
 
                     }
                 }
 
-              //  bus.Reservas.Cod_Enum = Convert.ToInt32(txtComprobante.Text);
+                bus.reserva = BLLReservas.BuscarID(Convert.ToInt32(txtComprobante.Text));
                 
-                
+               
 
                 this.Close();
                 bus.Show();
@@ -289,10 +301,10 @@ namespace TRABAJO_FINAL
 
             producto = bLLProducto.BuscarID(cod);
 
-            
+            int stock = producto.Stock;
 
 
-            return producto.Stock;
+            return stock;
         }
 
         private void btnEntrega_Click(object sender, EventArgs e)

@@ -110,6 +110,8 @@ namespace TRABAJO_FINAL
         public BLLTipoDePago BLLTipoDePago = new BLLTipoDePago();
         public BLLProducto bllProducto = new BLLProducto();
 
+        public EEReserva reserva = new EEReserva();
+        
 
 
 
@@ -154,15 +156,15 @@ namespace TRABAJO_FINAL
             txttotalconseña.Enabled = false;
             cboTipoPago.DataSource = BLLTipoDePago.ListarTipoDePago();
 
-           /* if(Reservas.Cod_Enum!=0)
+            if(reserva.Id_Reserva != 0)
             {
                 int total_con_seña = 0;
-                txtSeña.Text = Reservas.Descripcion;
+                txtSeña.Text = reserva.Seña.ToString() ;
                 total_con_seña = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtSeña.Text);
                 txttotalconseña.Text = total_con_seña.ToString();
                 DesactivarTodo();
             }
-            */
+            
             Singleton.Instancia.SuscribirObs(this);
 
            
@@ -396,6 +398,14 @@ namespace TRABAJO_FINAL
                     BLLTipoDePago bLLTipoDePago = new BLLTipoDePago();
                     List<EEVentaDet> Ldetalle = new List<EEVentaDet>();
 
+                    Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
+                    Venta.TipoDePago = bLLTipoDePago.BuscarID(Convert.ToInt32(cboTipoPago.Text.Substring(0, 1)));
+                    Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
+                    Venta.Estado = "Emitido";
+                    Venta.Cliente = bLLCliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
+                    Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
+                    BLLVenta.Alta_Venta(Venta);
+
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
                         EEVentaDet Venta_Det = new EEVentaDet();
@@ -410,14 +420,9 @@ namespace TRABAJO_FINAL
                     }
                     Venta.LDetalle = Ldetalle;
                     
-                    Venta.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
-                    Venta.TipoDePago = bLLTipoDePago.BuscarID(Convert.ToInt32(cboTipoPago.Text.Substring(0, 1)));
-                    Venta.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
-                    Venta.Estado = "Emitido";
-                    Venta.Cliente = bLLCliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
-                    Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
+                    
 
-                    BLLVenta.Alta_Venta(Venta);
+                    
                     /*if (Reservas.Cod_Enum != 0)
                     {
                         
@@ -550,6 +555,7 @@ namespace TRABAJO_FINAL
             btnAgregarItem.Enabled = false;
             btnBuscarCliente.Enabled = false;
             btnQuitarItem.Enabled = false;
+            txtdesc.Enabled = false;
             
         }
         void Mod_Estado_Reserva(int cod)
