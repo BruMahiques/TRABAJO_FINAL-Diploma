@@ -77,6 +77,8 @@ namespace TRABAJO_FINAL
         public EEVenta Venta = new EEVenta();
         BLLCliente bllcliente = new BLLCliente();
         public int condicion = 0;
+        public float TotalAPagar = 0;
+        public EEReserva Reserva = new EEReserva();
         private void Pagos_Load(object sender, EventArgs e)
         {
             cboTipoPago.DataSource = BLLTipoDePago.ListarTipoDePago();
@@ -100,7 +102,20 @@ namespace TRABAJO_FINAL
                 totalfinal = totalfinal - Venta.Cliente.Saldo;
                 total.Text = totalfinal.ToString();
             }
-
+            else
+                {
+                if (condicion == 2)
+                    {
+                    Saldo.Text = Reserva.Cliente.Saldo.ToString();
+                    total.Text = TotalAPagar.ToString();
+                }
+                else
+                    {
+                    Saldo.Text = Venta.Cliente.Saldo.ToString();
+                    total.Text = TotalAPagar.ToString();
+                    }
+                }
+            
             btnEfectivo.Enabled = false;
             btnQR.Enabled = false;
             btnTarjeta.Enabled = false;
@@ -172,14 +187,14 @@ namespace TRABAJO_FINAL
                     {
                         Venta.Cliente.Saldo = Convert.ToSingle(Venta.Cliente.Saldo) - Convert.ToSingle(Saldo.Text);
                         bllcliente.ALta_Mod_Cliente(Venta.Cliente);
-                        Cambiar_estado("Pagado");
+                        
                     }
                     else
                     {
                         var Sal = Math.Abs(Convert.ToSingle(total.Text));
                         Venta.Cliente.Saldo = Sal;
                         bllcliente.ALta_Mod_Cliente(Venta.Cliente);
-                        Cambiar_estado("Pagado");
+                        
                     }
                 }
             }
@@ -191,19 +206,29 @@ namespace TRABAJO_FINAL
             {
                 if (MessageBox.Show("Confirmar que el cliente quiera abonar con su saldo", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    Venta.Cliente.Saldo = (Convert.ToSingle(total.Text) - Convert.ToSingle(total.Text) - Convert.ToSingle(total.Text));
-                    bllcliente.ALta_Mod_Cliente(Venta.Cliente);
-                    Cambiar_estado("Pagado");
-                    MessageBox.Show("El Saldo que le quedó al cliente es de : " + Venta.Cliente.Saldo);
+                    if (condicion == 2)
+                    {
+                        Cambiar_estado_Reserva("Pagada");
+                    }
+                    else
+                    {
+                        Cambiar_estado_Venta("Pagado");
+                        MessageBox.Show("El Saldo que le quedó al cliente es de : " + Venta.Cliente.Saldo);
+                    }
                 }
             }
             else
             {
                 if (MessageBox.Show("Confirmar que el cliente haya abonado en efectivo", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    Cambiar_estado("Pagado");
-
+                    if (condicion == 2)
+                    {
+                        Cambiar_estado_Reserva("Pagada");
+                    }
+                    else
+                    {
+                        Cambiar_estado_Venta("Pagado");
+                    }
 
                 }
             }
@@ -213,13 +238,19 @@ namespace TRABAJO_FINAL
         {
             if (MessageBox.Show("Confirmar que la app haya confirmó el pago", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
-                Cambiar_estado("Pagado");
+                if (condicion == 2)
+                {
+                    Cambiar_estado_Reserva("Pagada");
+                }
+                else
+                {
+                    Cambiar_estado_Venta("Pagado");
+                }
 
 
             }
         }
-        private void Cambiar_estado(string Estado)
+        private void Cambiar_estado_Venta(string Estado)
         {
 
             try
@@ -234,8 +265,37 @@ namespace TRABAJO_FINAL
                 btnTarjeta.Enabled = false;
                 texttarjeta.Enabled = false;
                 textcodigoseguridad.Enabled = false;
+
                 SaldoA0();
                 MessageBox.Show("Venta Pagada Correctamente");
+                cboTipoPago.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error");
+                return;
+            }
+        }
+        private void Cambiar_estado_Reserva(string Estado)
+        {
+
+            try
+            {
+
+                BLLReservas bLLReserva = new BLLReservas();
+                Reserva.Estado = Estado;
+
+                bLLReserva.Mod_Estado(Reserva);
+                btnQR.Enabled = false;
+                btnEfectivo.Enabled = false;
+                btnTarjeta.Enabled = false;
+                texttarjeta.Enabled = false;
+                textcodigoseguridad.Enabled = false;
+
+                SaldoA0();
+                MessageBox.Show("Seña Pagada Correctamente");
+                cboTipoPago.Enabled = false;
 
             }
             catch (Exception ex)
@@ -260,7 +320,14 @@ namespace TRABAJO_FINAL
                     {
                         tarjeta.Saldo = tarjeta.Saldo - Convert.ToSingle(total.Text);
                         blltarjeta.DescontarSaldoTarjeta(tarjeta);
-                        Cambiar_estado("Pagado");
+                        if (condicion == 2)
+                        {
+                            Cambiar_estado_Reserva("Pagada");
+                        }
+                        else
+                        {
+                            Cambiar_estado_Venta("Pagado");
+                        }
                     }
                     else
                     {

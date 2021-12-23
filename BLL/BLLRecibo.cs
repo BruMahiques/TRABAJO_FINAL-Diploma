@@ -31,5 +31,9 @@ namespace BLL
         {
             Map.CambiarEstadoVenta(id);
         }
+        public List<EERecibo> ListarRecibosDeVenta(int id)
+        {
+            return Map.ListarRecibosDeVenta(id);
+        }
     }
 }

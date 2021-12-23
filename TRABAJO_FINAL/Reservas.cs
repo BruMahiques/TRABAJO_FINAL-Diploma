@@ -131,6 +131,7 @@ namespace TRABAJO_FINAL
 
         public List<EEProducto> listaRes = new List<EEProducto>();
         public EECliente Cliente = new EECliente();
+        public EEReserva Reserva = new EEReserva();
 
         public BLLCliente bllcliente = new BLLCliente();
         public BLLProducto BLLProducto = new BLLProducto();
@@ -267,14 +268,14 @@ namespace TRABAJO_FINAL
                         try
                         {
 
-                            EEReserva Reserva = new EEReserva();
+                            
                             BLLTipoDePago blltipodepago = new BLLTipoDePago();
                             List<EEReservaDet> Ldetalle = new List<EEReservaDet>();
 
                             Reserva.Cod_Comprobante = lblSerie.Text + lblCorrelativo.Text;
                             Reserva.TipoDePago = blltipodepago.BuscarID(Convert.ToInt32(cboTipoPago.Text.Substring(0, 1)));
                             Reserva.Fecha = Convert.ToDateTime(dtpFechaEmision.Value);
-                            Reserva.Estado = "Reservado";
+                            Reserva.Estado = "Emitido";
                             Reserva.Cliente = bllcliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
                             Reserva.Seña = Convert.ToInt32(txtseña.Text);
                             Reserva.Total = Convert.ToInt32(txtTotal.Text);
@@ -307,6 +308,7 @@ namespace TRABAJO_FINAL
                             btnQuitarItem.Enabled = false;
                             btnAnular.Enabled = false;
                             dgvDetalleBoleta.ReadOnly = true;
+                            pagar.Enabled = true;
 
 
 
@@ -380,6 +382,16 @@ namespace TRABAJO_FINAL
             }
 
             return respuesta;
+        }
+
+        private void pagar_Click(object sender, EventArgs e)
+        {
+            Pagos buspago = new Pagos();
+            buspago.Reserva = Reserva;
+            buspago.TotalAPagar = Convert.ToSingle(txtseña.Text);
+            buspago.condicion = 2;
+            this.Close();
+            buspago.Show();
         }
     }
 }

@@ -346,5 +346,10 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("El estado de la venta no es emitido");
             }
         }
+
+        private void dgvComprobante_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtComprobante.Text = dgvComprobante.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
     }
 }

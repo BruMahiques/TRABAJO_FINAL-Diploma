@@ -41,6 +41,11 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvDetalleBoleta = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,11 +65,7 @@
             this.lblCorrelativo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pagar);
             this.panel1.Controls.Add(this.txtseña);
             this.panel1.Controls.Add(this.lbleliminar);
             this.panel1.Controls.Add(this.btnImprimir);
@@ -235,6 +237,31 @@
             this.dgvDetalleBoleta.Size = new System.Drawing.Size(586, 182);
             this.dgvDetalleBoleta.TabIndex = 4;
             this.dgvDetalleBoleta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleBoleta_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
             // 
             // gbCliente
             // 
@@ -450,30 +477,16 @@
             this.label2.Tag = "Reservas";
             this.label2.Text = "Reservas";
             // 
-            // Codigo
+            // pagar
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
+            this.pagar.Enabled = false;
+            this.pagar.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
+            this.pagar.Location = new System.Drawing.Point(222, 213);
+            this.pagar.Name = "pagar";
+            this.pagar.Size = new System.Drawing.Size(28, 29);
+            this.pagar.TabIndex = 58;
+            this.pagar.UseVisualStyleBackColor = true;
+            this.pagar.Click += new System.EventHandler(this.pagar_Click);
             // 
             // Reservas
             // 
@@ -539,5 +552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.Button pagar;
     }
 }

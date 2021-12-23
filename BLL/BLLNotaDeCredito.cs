@@ -28,5 +28,10 @@ namespace BLL
         {
             return Map.BuscarID(id);
         }
+        
+        public List<EENotaDeCredito> ListarNotasDeVenta(int id)
+        {
+            return Map.ListarNotasDeVenta(id);
+        }
     }
 }

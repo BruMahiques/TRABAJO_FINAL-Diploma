@@ -31,7 +31,7 @@ namespace TRABAJO_FINAL
             rbIdReserva.Checked = true;
             ObtenerComprobante();
             btnFacturar.Enabled = false;
-            btnEntrega.Enabled = false;
+            
 
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
@@ -71,8 +71,7 @@ namespace TRABAJO_FINAL
                 if (Filtrar.Tag != null && Traducciones.ContainsKey(Filtrar.Tag.ToString()))
                     Filtrar.Text = Traducciones[Filtrar.Tag.ToString()].Texto;
 
-                if (btnEntrega.Tag != null && Traducciones.ContainsKey(btnEntrega.Tag.ToString()))
-                    btnEntrega.Text = Traducciones[btnEntrega.Tag.ToString()].Texto;
+                
 
                 if (btnFacturar.Tag != null && Traducciones.ContainsKey(btnFacturar.Tag.ToString()))
                     btnFacturar.Text = Traducciones[btnFacturar.Tag.ToString()].Texto;
@@ -234,10 +233,31 @@ namespace TRABAJO_FINAL
                           MessageBox.Show("El producto " + nombre + " aún no tiene stock , código: " + Codigo);
                          }
                     }
-                
+
+                   
+
+
 
             }
+
+
+            EEReserva Reserva = new EEReserva();
+            BLLReservas bllreserva = new BLLReservas();
+
+
+
+            Reserva = bllreserva.BuscarID(Convert.ToInt32(txtComprobante.Text));
+
+            if (Reserva.Estado != "Pagada")
+            {
+
+
+
+                condicional = 1;
+                MessageBox.Show("Todavía no se abonó la seña");
+            }
             
+
 
             foreach (DataGridViewRow fila in dgvReserva.Rows)
             {
@@ -307,25 +327,33 @@ namespace TRABAJO_FINAL
             return stock;
         }
 
-        private void btnEntrega_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Mod_Estado_Reserva(Convert.ToInt32(txtComprobante.Text));
-            btnEntrega.Enabled = false;
-            ObtenerComprobante();
-
-        }
-        void Mod_Estado_Reserva(int cod)
-        {
-            Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
-            DataSet DS = new DataSet();
-
-            string query = "update Reservas set Estado = 'Entregado'  where Id_Reserva = ('" + cod + "')";
+            Pagos bus = new Pagos();
+            EEReserva Reserva = new EEReserva();
+            BLLReservas BLLReservas = new BLLReservas();
 
 
-            ds = Datos.EjecutarCualquierQuerys(query);
+
+            Reserva = BLLReservas.BuscarID(Convert.ToInt32(txtComprobante.Text));
+
+            if (Reserva.Estado == "Emitido")
+            {
 
 
+
+
+                bus.Reserva = Reserva;
+                bus.TotalAPagar = Reserva.Seña;
+                bus.condicion = 2;
+
+                this.Close();
+                bus.Show();
+            }
+            else
+            {
+                MessageBox.Show("El estado de la venta no es emitido");
+            }
         }
     }
 }

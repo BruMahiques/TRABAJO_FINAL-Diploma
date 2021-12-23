@@ -31,6 +31,10 @@ namespace BLL
         {
             return Map.ListarReservasFiltrado(textbox, desde, hasta, num);
         }
+        public void Mod_Estado(EEReserva EEReserva)
+        {
+            Map.Mod_Estado(EEReserva);
+        }
         /*
          public DataTable ListarReservasFiltrado(string textbox, string desde, string hasta, int num)
          {

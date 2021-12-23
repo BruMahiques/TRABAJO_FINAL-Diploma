@@ -48,7 +48,7 @@
             this.btnFacturar = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.Filtrar = new System.Windows.Forms.Button();
-            this.btnEntrega = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
@@ -243,12 +243,12 @@
             this.btnFacturar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnFacturar.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
             this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFacturar.Location = new System.Drawing.Point(671, 409);
+            this.btnFacturar.Location = new System.Drawing.Point(782, 408);
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(134, 49);
             this.btnFacturar.TabIndex = 106;
             this.btnFacturar.Tag = "Facturar y Entregar";
-            this.btnFacturar.Text = "Facturar y Entregar";
+            this.btnFacturar.Text = "Facturar y Abonar";
             this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacturar.UseVisualStyleBackColor = false;
             this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
@@ -283,20 +283,20 @@
             this.Filtrar.UseVisualStyleBackColor = false;
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
-            // btnEntrega
+            // button1
             // 
-            this.btnEntrega.BackColor = System.Drawing.Color.Gold;
-            this.btnEntrega.Image = global::TRABAJO_FINAL.Properties.Resources.paquete;
-            this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntrega.Location = new System.Drawing.Point(811, 409);
-            this.btnEntrega.Name = "btnEntrega";
-            this.btnEntrega.Size = new System.Drawing.Size(93, 49);
-            this.btnEntrega.TabIndex = 107;
-            this.btnEntrega.Tag = "Entregado";
-            this.btnEntrega.Text = "Entregado";
-            this.btnEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrega.UseVisualStyleBackColor = false;
-            this.btnEntrega.Click += new System.EventHandler(this.btnEntrega_Click);
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
+            this.button1.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(644, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 49);
+            this.button1.TabIndex = 107;
+            this.button1.Tag = "Pagar Seña";
+            this.button1.Text = "Pagar Seña";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BuscarReserva
             // 
@@ -304,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1208, 655);
-            this.Controls.Add(this.btnEntrega);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label3);
@@ -354,6 +354,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvItems;
         private System.Windows.Forms.DataGridView dgvReserva;
-        private System.Windows.Forms.Button btnEntrega;
+        private System.Windows.Forms.Button button1;
     }
 }

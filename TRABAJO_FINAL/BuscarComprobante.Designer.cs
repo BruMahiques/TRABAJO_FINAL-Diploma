@@ -45,12 +45,12 @@
             this.rbIdVenta = new System.Windows.Forms.RadioButton();
             this.txtComprobante = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnpagar = new System.Windows.Forms.Button();
             this.btnCancelado = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnEntrega = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.Filtrar = new System.Windows.Forms.Button();
-            this.btnpagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,6 +69,7 @@
             this.dgvComprobante.Size = new System.Drawing.Size(1143, 122);
             this.dgvComprobante.TabIndex = 0;
             this.dgvComprobante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComprobante_CellClick_1);
+            this.dgvComprobante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComprobante_CellContentClick);
             // 
             // dgvItems
             // 
@@ -244,6 +245,22 @@
             this.label3.Tag = "Venta";
             this.label3.Text = "Venta";
             // 
+            // btnpagar
+            // 
+            this.btnpagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnpagar.BackColor = System.Drawing.Color.Orange;
+            this.btnpagar.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
+            this.btnpagar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnpagar.Location = new System.Drawing.Point(617, 406);
+            this.btnpagar.Name = "btnpagar";
+            this.btnpagar.Size = new System.Drawing.Size(93, 49);
+            this.btnpagar.TabIndex = 92;
+            this.btnpagar.Tag = "Entregado";
+            this.btnpagar.Text = "Pagar";
+            this.btnpagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpagar.UseVisualStyleBackColor = false;
+            this.btnpagar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnCancelado
             // 
             this.btnCancelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -322,22 +339,6 @@
             this.Filtrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Filtrar.UseVisualStyleBackColor = false;
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
-            // 
-            // btnpagar
-            // 
-            this.btnpagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnpagar.BackColor = System.Drawing.Color.Orange;
-            this.btnpagar.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
-            this.btnpagar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnpagar.Location = new System.Drawing.Point(617, 406);
-            this.btnpagar.Name = "btnpagar";
-            this.btnpagar.Size = new System.Drawing.Size(93, 49);
-            this.btnpagar.TabIndex = 92;
-            this.btnpagar.Tag = "Entregado";
-            this.btnpagar.Text = "Pagar";
-            this.btnpagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpagar.UseVisualStyleBackColor = false;
-            this.btnpagar.Click += new System.EventHandler(this.button1_Click);
             // 
             // BuscarComprobante
             // 

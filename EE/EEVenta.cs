@@ -22,5 +22,10 @@ namespace EE
         public float Total_Venta { get; set; }
 
         public EEVenta() { }
+        public override string ToString()
+        {
+            return Id_Venta  + " / " + Cod_Comprobante;
+        }
+
     }
 }

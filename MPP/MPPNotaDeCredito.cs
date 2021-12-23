@@ -52,6 +52,35 @@ namespace MPP
             return LNotaDeCredito;
 
         }
+        public List<EENotaDeCredito> ListarNotasDeVenta(int id)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            List<EENotaDeCredito> LNotas = new List<EENotaDeCredito>();
+           
+
+            EENotaDeCredito nota = null;
+
+            dt = Datos.EjecutarCualquierQuerys("Select * From Nota_De_Credito Where Id_Venta=" + id);
+
+            ds.Tables.Add(dt);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    nota = MapearNotaCredito(fila);
+                    LNotas.Add(nota);
+
+                }
+
+            }
+
+            return LNotas;
+
+        }
 
         public EENotaDeCredito BuscarID(int id)
         {

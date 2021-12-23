@@ -123,32 +123,32 @@ namespace MPP
             {
                 case 1:
                     query = "Select  * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Id_Venta like('" + textbox + "') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
                     break;
                 case 2:
                     query = "Select * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago  " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Cod_Comprobante like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
                     break;
                 case 3:
                     query = "Select  * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago  " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.DNI like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
                     break;
                 case 4:
                     query = "Select  * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago  " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where cli.Nombre like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
                     break;
                 case 5:
                     query = "Select  * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago  " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente where v.Estado like('" + textbox + "%') and v.Fecha BETWEEN ('" + desde + "') and ('" + hasta + "') ";
                     break;
                 default:
                     query = "Select  * " +
-                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago join Tipo_De_Comprobante c on v.Id_TipoDeComprobante = c.Id_TipoDeComprobante join Tipo_De_Doc d on v.Id_TipoDeDoc = d.Id_TipoDeDoc " +
+                        "From Venta v join Tipo_De_Pago p on v.Id_TipoDePago = p.Id_TipoDePago " +
                         "join Cliente cli on v.Id_Cliente_Venta = cli.Cod_Cliente";
                     break;
             }

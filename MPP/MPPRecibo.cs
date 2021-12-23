@@ -52,6 +52,35 @@ namespace MPP
             return LRecibo;
 
         }
+        public List<EERecibo> ListarRecibosDeVenta(int id)
+        {
+            Acceso Datos = new Acceso();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            List<EERecibo> LRecibo = new List<EERecibo>();
+            
+
+            EERecibo recibo = null;
+
+            dt = Datos.EjecutarCualquierQuerys("Select * From Recibo Where Id_Venta=" + id);
+
+            ds.Tables.Add(dt);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    recibo = MapearRecibo(fila);
+                    LRecibo.Add(recibo);
+
+                }
+
+            }
+            
+            return LRecibo;
+
+        }
 
         public void CambiarEstadoVenta(int id)
         {

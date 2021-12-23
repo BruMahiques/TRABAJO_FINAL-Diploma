@@ -585,7 +585,7 @@ namespace TRABAJO_FINAL
         {
             Pagos buspago = new Pagos();
             buspago.Venta = VentaAPagar;
-           
+            buspago.TotalAPagar = Convert.ToSingle(txttotalconseña.Text);
             this.Close();
             buspago.Show();
         }

@@ -476,5 +476,12 @@ namespace TRABAJO_FINAL
             F5.MdiParent = this;
             F5.Show();
         }
+
+        private void reciboYNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarReciboYNotas F5 = new BuscarReciboYNotas();
+            F5.MdiParent = this;
+            F5.Show();
+        }
     }
 }

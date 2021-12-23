@@ -177,6 +177,21 @@ namespace MPP
             return LReserva;
 
         }
+        public bool Mod_Estado(EEReserva EEReserva)
+        {
+            Acceso Datos = new Acceso();
+            Hashtable Hdatos = new Hashtable();
+            bool Resultado;
+            string consulta = "SP_Reserva_Cambiar_Estado";
+
+
+            Hdatos.Add("@Id_Reserva", EEReserva.Id_Reserva);
+            Hdatos.Add("@Estado", EEReserva.Estado);
+
+
+            Resultado = Datos.Escribir(consulta, Hdatos);
+            return Resultado;
+        }
 
         public EEReserva BuscarID(int id)
         {

@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarReciboYNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarReciboYNotas.Designer.cs">
+      <DependentUpon>BuscarReciboYNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     <Compile Include="Versionado.Designer.cs">
       <DependentUpon>Versionado.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuscarReciboYNotas.resx">
+      <DependentUpon>BuscarReciboYNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
