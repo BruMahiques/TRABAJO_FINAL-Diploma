@@ -12,7 +12,7 @@ namespace MPP
 {
     public class MPPTarjeta
     {
-        public EETarjetas BuscarNumero(int numero,int codigo)
+        public EETarjetas BuscarNumero(Int64 numero,int codigo)
         {
             Acceso Datos = new Acceso();
             DataSet ds = new DataSet();
@@ -40,6 +40,23 @@ namespace MPP
             return tarjeta;
 
         }
+
+        public void DescontarSaldoTarjeta(EETarjetas EEtarjeta)
+        {
+
+            Acceso Datos = new Acceso();
+            DataTable dt = new DataTable();
+
+            string query;
+
+
+            query = "update Tarjetas  set Saldo = " + EEtarjeta.Saldo + "  where Numero = '" + EEtarjeta.Numero + "' ;";
+
+            dt = Datos.EjecutarCualquierQuerys(query);
+
+            
+
+        }
         private EETarjetas MapearTarjeta(DataRow fila)
         {
 
@@ -51,7 +68,7 @@ namespace MPP
 
                 
                 Cliente = MPPCliente.BuscarID(Convert.ToInt32(fila["Id_Cliente"])),
-                Numero = Convert.ToInt32(fila["Numero"]),
+                Numero = (fila["Numero"]).ToString(),
                 Codigo = Convert.ToInt32(fila["Codigo"]),                
                 Saldo = Convert.ToSingle(fila["Saldo"])
 

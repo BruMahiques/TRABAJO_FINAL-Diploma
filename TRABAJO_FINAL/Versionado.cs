@@ -186,6 +186,7 @@ namespace TRABAJO_FINAL
             textBox3.Text = dgvCambios.Rows[e.RowIndex].Cells[3].Value.ToString();
             dateTimePicker1.Text = dgvCambios.Rows[e.RowIndex].Cells[4].Value.ToString();
             textBox4.Text = dgvCambios.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBox5.Text = dgvCambios.Rows[e.RowIndex].Cells[6].Value.ToString();
             Recuperar.Enabled = true;
         }
 
@@ -207,6 +208,7 @@ namespace TRABAJO_FINAL
                             Cliente.DNI = Convert.ToInt32(textBox3.Text);
                             Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
                             Cliente.Correo = textBox4.Text;
+                            Cliente.Saldo = Convert.ToInt32(textBox6.Text);
 
                             BLLCliente.ALta_Mod_Cliente(Cliente);
 

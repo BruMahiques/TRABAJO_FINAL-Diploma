@@ -107,6 +107,19 @@ namespace TRABAJO_FINAL
 
             SeleccionCombo();
 
+            if (Convert.ToSingle(total.Text)<0)
+            {
+                if (cboTipoPago.Text == "1-Efectivo")
+                {
+                    btnEfectivo.Enabled = true;
+                    btnTarjeta.Enabled = false;
+                    btnQR.Enabled = false;
+                    texttarjeta.Enabled = false;
+                    textcodigoseguridad.Enabled = false;
+                    cboTipoPago.Enabled = false;
+                }
+            }
+
             Singleton.Instancia.SuscribirObs(this);
 
         }
@@ -151,21 +164,48 @@ namespace TRABAJO_FINAL
         }
         private void SaldoA0()
         {
-            if (Convert.ToSingle(Saldo.Text) != 0)
+            if (Saldo.Text != "-")
             {
-                Venta.Cliente.Saldo = Convert.ToSingle(Venta.Cliente.Saldo) - Convert.ToSingle(Saldo.Text);
-                bllcliente.ALta_Mod_Cliente(Venta.Cliente);
+                if (Convert.ToSingle(Saldo.Text) != 0)
+                {
+                    if (Convert.ToSingle(total.Text) > 0)
+                    {
+                        Venta.Cliente.Saldo = Convert.ToSingle(Venta.Cliente.Saldo) - Convert.ToSingle(Saldo.Text);
+                        bllcliente.ALta_Mod_Cliente(Venta.Cliente);
+                        Cambiar_estado("Pagado");
+                    }
+                    else
+                    {
+                        var Sal = Math.Abs(Convert.ToSingle(total.Text));
+                        Venta.Cliente.Saldo = Sal;
+                        bllcliente.ALta_Mod_Cliente(Venta.Cliente);
+                        Cambiar_estado("Pagado");
+                    }
+                }
             }
         }
 
         private void btnEfectivo_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirmar que el cliente haya abonado en efectivo", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Convert.ToSingle(total.Text) < 0)
             {
+                if (MessageBox.Show("Confirmar que el cliente quiera abonar con su saldo", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Venta.Cliente.Saldo = (Convert.ToSingle(total.Text) - Convert.ToSingle(total.Text) - Convert.ToSingle(total.Text));
+                    bllcliente.ALta_Mod_Cliente(Venta.Cliente);
+                    Cambiar_estado("Pagado");
+                    MessageBox.Show("El Saldo que le quedó al cliente es de : " + Venta.Cliente.Saldo);
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Confirmar que el cliente haya abonado en efectivo", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
 
-                Cambiar_estado("Pagado");
+                    Cambiar_estado("Pagado");
 
 
+                }
             }
         }
 
@@ -212,14 +252,32 @@ namespace TRABAJO_FINAL
 
             if (ValidarCampos())
             {
-                tarjeta = blltarjeta.BuscarNumero(Convert.ToInt32(texttarjeta.Text), Convert.ToInt32(textcodigoseguridad.Text));
+                tarjeta = blltarjeta.BuscarNumero(Convert.ToInt64(texttarjeta.Text), Convert.ToInt32(textcodigoseguridad.Text));
+
+                if(tarjeta != null)
+                {
+                    if (tarjeta.Saldo >= Convert.ToSingle(total.Text))
+                    {
+                        tarjeta.Saldo = tarjeta.Saldo - Convert.ToSingle(total.Text);
+                        blltarjeta.DescontarSaldoTarjeta(tarjeta);
+                        Cambiar_estado("Pagado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tiene suficiente saldo en la tarjeta", "ERROR");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Los datos de la tarjeta no coinciden", "ERROR");
+                }
             }
 
         }
         private bool ValidarCampos()
         {
             string Numero = texttarjeta.Text;
-            
+             
             bool respuesta3 = Regex.IsMatch(Numero, "^([0-9]+$)");
             if (respuesta3 == false)
             {

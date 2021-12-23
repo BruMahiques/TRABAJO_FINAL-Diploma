@@ -266,7 +266,7 @@
             this.texttarjeta.Enabled = false;
             this.texttarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texttarjeta.Location = new System.Drawing.Point(409, 274);
-            this.texttarjeta.MaxLength = 15;
+            this.texttarjeta.MaxLength = 20;
             this.texttarjeta.Name = "texttarjeta";
             this.texttarjeta.Size = new System.Drawing.Size(234, 21);
             this.texttarjeta.TabIndex = 42;

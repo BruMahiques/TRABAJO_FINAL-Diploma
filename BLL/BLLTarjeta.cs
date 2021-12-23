@@ -14,9 +14,13 @@ namespace BLL
     {
         MPPTarjeta Map = new MPPTarjeta();
 
-        public EETarjetas BuscarNumero(int numero, int codigo)
+        public EETarjetas BuscarNumero(Int64 numero, int codigo)
         {
             return Map.BuscarNumero(numero,codigo);
+        }
+        public void DescontarSaldoTarjeta(EETarjetas EEtarjeta)
+        {
+            Map.DescontarSaldoTarjeta(EEtarjeta);
         }
 
     }

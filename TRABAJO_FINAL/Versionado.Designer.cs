@@ -57,6 +57,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Recuperar = new System.Windows.Forms.Button();
             this.Filtrar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCambios)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -367,11 +369,31 @@
             this.Filtrar.UseVisualStyleBackColor = false;
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(844, 746);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.TabIndex = 108;
+            this.label11.Tag = "Saldo";
+            this.label11.Text = "Saldo:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(891, 743);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 109;
+            // 
             // Versionado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 778);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.Recuperar);
             this.Controls.Add(this.Filtrar);
             this.Controls.Add(this.label10);
@@ -440,5 +462,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Filtrar;
         private System.Windows.Forms.Button Recuperar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
