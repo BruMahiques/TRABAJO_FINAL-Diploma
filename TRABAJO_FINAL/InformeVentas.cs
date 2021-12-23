@@ -79,7 +79,7 @@ namespace TRABAJO_FINAL
             DataTable Informe1;
             DataTable Informe2;
 
-         /*   Informe1 = BLLVentaDet.CargarGrafico(1, null, null);
+            Informe1 = BLLVentaDet.CargarGrafico(1, null, null);
 
             chart1.Titles.Add("Productos Vendidos");
 
@@ -102,7 +102,7 @@ namespace TRABAJO_FINAL
                 series.Label = row["Total"].ToString();
             }
             dgvInforme2.DataSource = Informe2;
-            */
+            
             
         }
 
@@ -246,7 +246,7 @@ namespace TRABAJO_FINAL
             string desde = dateTimeDesde.Value.ToString("yyyy-MM-dd");
             string hasta = dateTimeHasta.Value.ToString("yyyy-MM-dd");
 
-            /*  Informe1 = BLLVentaDet.CargarGrafico(3, desde, hasta);
+              Informe1 = BLLVentaDet.CargarGrafico(3, desde, hasta);
 
              //chart1.Titles.Add("Productos Vendidos");
 
@@ -270,7 +270,7 @@ namespace TRABAJO_FINAL
              }
              dgvInforme2.DataSource = Informe2;
              btnCargarDatos.Enabled = true;
-             */
+             
         }
 
 

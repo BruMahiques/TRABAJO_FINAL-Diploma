@@ -67,48 +67,9 @@ namespace MPP
             return Resultado;
         }
         */
-        /*
-        public DataTable CargarGrafico(int num, string desde, string hasta)
-        {
-            Acceso Datos = new Acceso();
-            DataTable ds = new DataTable();
-
-            string query;
-            
-            switch (num)
-            {
-                case 1:
-                    query = "Select p.Nombre_Producto, Count(v.Id_Producto)[Cantidad vendida del producto] from Venta_Detalle v " +
-                        "join Productos p on v.Id_Producto = p.Cod_Producto group by p.Nombre_Producto";
-                    break;
-                case 2:
-                    query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v " +
-                                        "join Productos p on v.Id_Producto = p.Cod_Producto group by p.Nombre_Producto";
-                    break;
-                case 3:
-                    query = "Select p.Nombre_Producto, Count(v.Id_Producto)[Cantidad vendida del producto] from Venta_Detalle v join Productos p on v.Id_Producto = p.Cod_Producto  " +
-                        "join Venta vent on v.Id_Venta = vent.Id_Venta where vent.Fecha  BETWEEN ('" + desde + "') and ('" + hasta + "') group by p.Nombre_Producto  ";
-                    break;
-                case 4:
-                    query = "Select p.Nombre_Producto, sum(v.Total_Det) - sum(p.Precio_Compra)[Total] from Venta_Detalle v join Productos p on v.Id_Producto = p.Cod_Producto  " +
-                        "join Venta vent on v.Id_Venta = vent.Id_Venta where vent.Fecha  BETWEEN ('" + desde + "') and ('" + hasta + "') group by p.Nombre_Producto " ;
-                    break;
-                
-                    
-                default:
-                    query = "Select p.Nombre_Producto, Count(v.Id_Producto)[Cantidad vendida del producto] from Venta_Detalle v " +
-                        "join Productos p on v.Id_Producto = p.Cod_Producto group by p.Nombre_Producto";
-                    break;
-            }
-
-            ds = Datos.EjecutarCualquierQuerys(query);
-
-            return ds;
-
-
-
-        }
-        */
+        
+       
+        
         public List<EEVenta> ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
         {
             Acceso Datos = new Acceso();

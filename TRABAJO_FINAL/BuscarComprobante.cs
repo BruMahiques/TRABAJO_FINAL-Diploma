@@ -87,8 +87,8 @@ namespace TRABAJO_FINAL
                 if (rbComprobante.Tag != null && Traducciones.ContainsKey(rbComprobante.Tag.ToString()))
                     rbComprobante.Text = Traducciones[rbComprobante.Tag.ToString()].Texto;
 
-                if (rbNDoc.Tag != null && Traducciones.ContainsKey(rbNDoc.Tag.ToString()))
-                    rbNDoc.Text = Traducciones[rbNDoc.Tag.ToString()].Texto;
+                if (rbIdVenta.Tag != null && Traducciones.ContainsKey(rbIdVenta.Tag.ToString()))
+                    rbIdVenta.Text = Traducciones[rbIdVenta.Tag.ToString()].Texto;
 
                 if (rbcliente.Tag != null && Traducciones.ContainsKey(rbcliente.Tag.ToString()))
                     rbcliente.Text = Traducciones[rbcliente.Tag.ToString()].Texto;
@@ -110,7 +110,12 @@ namespace TRABAJO_FINAL
 
                 if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
                     label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+                
+                if (btnpagar.Tag != null && Traducciones.ContainsKey(btnpagar.Tag.ToString()))
+                    btnpagar.Text = Traducciones[btnpagar.Tag.ToString()].Texto;
 
+                if (btnDevolucion.Tag != null && Traducciones.ContainsKey(btnDevolucion.Tag.ToString()))
+                    btnDevolucion.Text = Traducciones[btnDevolucion.Tag.ToString()].Texto;
             }
 
         }
@@ -147,13 +152,6 @@ namespace TRABAJO_FINAL
                 }
                 else
                 {
-                    if (rbNDoc.Checked == true)
-                    {
-                        comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
-
-                    }
-                    else
-                    {
                         if (rbcliente.Checked == true)
                         {
                             comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
@@ -165,7 +163,7 @@ namespace TRABAJO_FINAL
                         
                         }
 
-                    }
+                    
                 }
             }
             dgvComprobante.DataSource = null;
@@ -236,7 +234,7 @@ namespace TRABAJO_FINAL
             }
             else
             {
-                MessageBox.Show("La Venta todavía ni se había pagado");
+                MessageBox.Show("La Venta todavía no se entregó");
             }
         }
 
@@ -266,7 +264,7 @@ namespace TRABAJO_FINAL
             }
             else
             {
-                MessageBox.Show("La Venta ya se entregó");
+                MessageBox.Show("La Venta todavía no se pagó o ya se entregó");
             }
 
         }

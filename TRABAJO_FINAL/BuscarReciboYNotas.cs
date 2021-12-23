@@ -53,14 +53,34 @@ namespace TRABAJO_FINAL
                 if (rbComprobante.Tag != null && Traducciones.ContainsKey(rbComprobante.Tag.ToString()))
                     rbComprobante.Text = Traducciones[rbComprobante.Tag.ToString()].Texto;
 
-                if (rbNDoc.Tag != null && Traducciones.ContainsKey(rbNDoc.Tag.ToString()))
-                    rbNDoc.Text = Traducciones[rbNDoc.Tag.ToString()].Texto;
+                
 
                 if (rbcliente.Tag != null && Traducciones.ContainsKey(rbcliente.Tag.ToString()))
                     rbcliente.Text = Traducciones[rbcliente.Tag.ToString()].Texto;
 
                 if (rbEstado.Tag != null && Traducciones.ContainsKey(rbEstado.Tag.ToString()))
                     rbEstado.Text = Traducciones[rbEstado.Tag.ToString()].Texto;
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
+                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+                if (label9.Tag != null && Traducciones.ContainsKey(label9.Tag.ToString()))
+                    label9.Text = Traducciones[label9.Tag.ToString()].Texto;
+                
+                if (label10.Tag != null && Traducciones.ContainsKey(label10.Tag.ToString()))
+                    label10.Text = Traducciones[label10.Tag.ToString()].Texto;
+
+                if (label4.Tag != null && Traducciones.ContainsKey(label4.Tag.ToString()))
+                    label4.Text = Traducciones[label4.Tag.ToString()].Texto;
+
+                if (label5.Tag != null && Traducciones.ContainsKey(label5.Tag.ToString()))
+                    label5.Text = Traducciones[label5.Tag.ToString()].Texto;
+
+                if (label7.Tag != null && Traducciones.ContainsKey(label7.Tag.ToString()))
+                    label7.Text = Traducciones[label7.Tag.ToString()].Texto;
 
                 if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
                     label6.Text = Traducciones[label6.Tag.ToString()].Texto;
@@ -76,6 +96,15 @@ namespace TRABAJO_FINAL
 
                 if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
                     label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+                if (btnSeleccionar.Tag != null && Traducciones.ContainsKey(btnSeleccionar.Tag.ToString()))
+                    btnSeleccionar.Text = Traducciones[btnSeleccionar.Tag.ToString()].Texto;
+
+                if (button1.Tag != null && Traducciones.ContainsKey(button1.Tag.ToString()))
+                    button1.Text = Traducciones[button1.Tag.ToString()].Texto;
+
+                if (btnselectNota.Tag != null && Traducciones.ContainsKey(btnselectNota.Tag.ToString()))
+                    btnselectNota.Text = Traducciones[btnselectNota.Tag.ToString()].Texto;
 
             }
 
@@ -139,13 +168,7 @@ namespace TRABAJO_FINAL
                 }
                 else
                 {
-                    if (rbNDoc.Checked == true)
-                    {
-                        comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 3);
-
-                    }
-                    else
-                    {
+                    
                         if (rbcliente.Checked == true)
                         {
                             comprobantes = BLLVenta.ListarVentasFiltrado(txtBusqComprobante.Text, desde, hasta, 4);
@@ -157,7 +180,7 @@ namespace TRABAJO_FINAL
 
                         }
 
-                    }
+                    
                 }
             }
             dgvComprobante.DataSource = null;

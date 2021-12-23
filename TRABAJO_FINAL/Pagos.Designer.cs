@@ -203,7 +203,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 37;
-            this.label3.Tag = "A pagar:";
+            this.label3.Tag = "A pagar";
             this.label3.Text = "A pagar";
             // 
             // btnTarjeta
@@ -258,7 +258,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 41;
-            this.label4.Tag = "N° Tarjeta";
+            this.label4.Tag = "N°Tarjeta";
             this.label4.Text = "N° Tarjeta";
             // 
             // texttarjeta

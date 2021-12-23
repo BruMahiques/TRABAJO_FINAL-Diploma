@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbcliente = new System.Windows.Forms.RadioButton();
             this.rbEstado = new System.Windows.Forms.RadioButton();
-            this.rbNDoc = new System.Windows.Forms.RadioButton();
             this.rbComprobante = new System.Windows.Forms.RadioButton();
             this.rbIdVenta = new System.Windows.Forms.RadioButton();
             this.txtBusqComprobante = new System.Windows.Forms.TextBox();
@@ -85,7 +84,6 @@
             // 
             this.groupBox1.Controls.Add(this.rbcliente);
             this.groupBox1.Controls.Add(this.rbEstado);
-            this.groupBox1.Controls.Add(this.rbNDoc);
             this.groupBox1.Controls.Add(this.rbComprobante);
             this.groupBox1.Controls.Add(this.rbIdVenta);
             this.groupBox1.Controls.Add(this.txtBusqComprobante);
@@ -100,7 +98,7 @@
             // rbcliente
             // 
             this.rbcliente.AutoSize = true;
-            this.rbcliente.Location = new System.Drawing.Point(394, 65);
+            this.rbcliente.Location = new System.Drawing.Point(323, 64);
             this.rbcliente.Name = "rbcliente";
             this.rbcliente.Size = new System.Drawing.Size(97, 17);
             this.rbcliente.TabIndex = 5;
@@ -121,27 +119,15 @@
             this.rbEstado.Text = "Estado";
             this.rbEstado.UseVisualStyleBackColor = true;
             // 
-            // rbNDoc
-            // 
-            this.rbNDoc.AutoSize = true;
-            this.rbNDoc.Location = new System.Drawing.Point(243, 65);
-            this.rbNDoc.Name = "rbNDoc";
-            this.rbNDoc.Size = new System.Drawing.Size(130, 17);
-            this.rbNDoc.TabIndex = 3;
-            this.rbNDoc.TabStop = true;
-            this.rbNDoc.Tag = "N°Documento";
-            this.rbNDoc.Text = "N° Documento Cliente";
-            this.rbNDoc.UseVisualStyleBackColor = true;
-            // 
             // rbComprobante
             // 
             this.rbComprobante.AutoSize = true;
-            this.rbComprobante.Location = new System.Drawing.Point(121, 65);
+            this.rbComprobante.Location = new System.Drawing.Point(162, 65);
             this.rbComprobante.Name = "rbComprobante";
             this.rbComprobante.Size = new System.Drawing.Size(88, 17);
             this.rbComprobante.TabIndex = 2;
             this.rbComprobante.TabStop = true;
-            this.rbComprobante.Tag = "Comprobante";
+            this.rbComprobante.Tag = "Comprobantes";
             this.rbComprobante.Text = "Comprobante";
             this.rbComprobante.UseVisualStyleBackColor = true;
             // 
@@ -150,11 +136,11 @@
             this.rbIdVenta.AutoSize = true;
             this.rbIdVenta.Location = new System.Drawing.Point(19, 65);
             this.rbIdVenta.Name = "rbIdVenta";
-            this.rbIdVenta.Size = new System.Drawing.Size(65, 17);
+            this.rbIdVenta.Size = new System.Drawing.Size(53, 17);
             this.rbIdVenta.TabIndex = 1;
             this.rbIdVenta.TabStop = true;
-            this.rbIdVenta.Tag = "Id Venta";
-            this.rbIdVenta.Text = "Id Venta";
+            this.rbIdVenta.Tag = "Venta";
+            this.rbIdVenta.Text = "Venta";
             this.rbIdVenta.UseVisualStyleBackColor = true;
             // 
             // txtBusqComprobante
@@ -235,7 +221,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 94;
-            this.label2.Tag = "Recibos";
+            this.label2.Tag = "Recibo";
             this.label2.Text = "Recibos";
             // 
             // dgvRecibos
@@ -268,10 +254,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(607, 335);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 96;
-            this.label3.Tag = "Notas de Credito";
-            this.label3.Text = "Notas de Credito";
+            this.label3.Tag = "NotaDeCredito";
+            this.label3.Text = "Nota De Credito";
             // 
             // btnSeleccionar
             // 
@@ -369,10 +355,10 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(755, 121);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 104;
-            this.label7.Tag = "Nota de Credito";
-            this.label7.Text = "Nota de Credito";
+            this.label7.Tag = "NotaDeCredito";
+            this.label7.Text = "Nota De Credito";
             // 
             // textNota
             // 
@@ -412,10 +398,10 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(607, 504);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 13);
+            this.label10.Size = new System.Drawing.Size(119, 13);
             this.label10.TabIndex = 109;
-            this.label10.Tag = "Detalle Nota de Credito";
-            this.label10.Text = "Detalle Nota de Credito";
+            this.label10.Tag = "Detalle Nota De Credito";
+            this.label10.Text = "Detalle Nota De Credito";
             // 
             // dataNotasDet
             // 
@@ -459,7 +445,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvComprobante);
             this.Name = "BuscarReciboYNotas";
-            this.Tag = "Buscar Recibos y Notas";
+            this.Tag = "Recibo y Notas";
             this.Text = "Buscar Recibos y Notas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BuscarReciboYNotas_Load);
@@ -481,7 +467,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbcliente;
         private System.Windows.Forms.RadioButton rbEstado;
-        private System.Windows.Forms.RadioButton rbNDoc;
         private System.Windows.Forms.RadioButton rbComprobante;
         private System.Windows.Forms.RadioButton rbIdVenta;
         private System.Windows.Forms.TextBox txtBusqComprobante;

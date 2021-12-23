@@ -54,9 +54,10 @@ namespace TRABAJO_FINAL
                 if (label13.Tag != null && Traducciones.ContainsKey(label13.Tag.ToString()))
                     label13.Text = Traducciones[label13.Tag.ToString()].Texto;
 
+                if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                    label1.Text = Traducciones[label1.Tag.ToString()].Texto;
 
-
-
+                
                 if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
                     label2.Text = Traducciones[label2.Tag.ToString()].Texto;
 
@@ -70,6 +71,8 @@ namespace TRABAJO_FINAL
                 if (label17.Tag != null && Traducciones.ContainsKey(label17.Tag.ToString()))
                     label17.Text = Traducciones[label17.Tag.ToString()].Texto;
 
+                if (label6.Tag != null && Traducciones.ContainsKey(label6.Tag.ToString()))
+                    label6.Text = Traducciones[label6.Tag.ToString()].Texto;
 
 
             }
@@ -260,6 +263,7 @@ namespace TRABAJO_FINAL
                     BLLNotaDeCreditoDet bllNotaDeCreditoDet = new BLLNotaDeCreditoDet();
                     BLLNotaDeCredito bllNotaDeCredito = new BLLNotaDeCredito();
                     List<EENotaDeCreditoDet> ldetallenot = new List<EENotaDeCreditoDet>();
+                    BLLVenta BLLVenta = new BLLVenta();
 
 
                     NotaCredito.Id_NotaDeCredito = Convert.ToInt32(lblCorrelativo.Text);
@@ -270,6 +274,9 @@ namespace TRABAJO_FINAL
                     NotaCredito.Total = Convert.ToInt32(txtTotal.Text);
                     bllNotaDeCredito.Alta_Nota_Credito(NotaCredito);
                     bllCliente.ALta_Mod_Cliente(NotaCredito.Cliente);
+
+                    NotaCredito.Venta.Estado = "Con Devolucion";
+                    BLLVenta.Mod_Estado(NotaCredito.Venta);
 
 
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)

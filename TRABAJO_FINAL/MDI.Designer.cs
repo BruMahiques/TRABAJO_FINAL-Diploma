@@ -377,6 +377,7 @@
             // 
             this.reciboYNotasToolStripMenuItem.Name = "reciboYNotasToolStripMenuItem";
             this.reciboYNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reciboYNotasToolStripMenuItem.Tag = "Recibo y Notas";
             this.reciboYNotasToolStripMenuItem.Text = "Recibo y Notas";
             this.reciboYNotasToolStripMenuItem.Click += new System.EventHandler(this.reciboYNotasToolStripMenuItem_Click);
             // 

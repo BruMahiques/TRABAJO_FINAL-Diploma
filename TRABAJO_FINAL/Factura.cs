@@ -96,7 +96,11 @@ namespace TRABAJO_FINAL
 
                 if (groupBoxReserva.Tag != null && Traducciones.ContainsKey(groupBoxReserva.Tag.ToString()))
                     groupBoxReserva.Text = Traducciones[groupBoxReserva.Tag.ToString()].Texto;
-                                
+                
+                if (label3.Tag != null && Traducciones.ContainsKey(label3.Tag.ToString()))
+                    label3.Text = Traducciones[label3.Tag.ToString()].Texto;
+
+
             }
 
         }

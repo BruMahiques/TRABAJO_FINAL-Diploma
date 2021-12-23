@@ -40,7 +40,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbcliente = new System.Windows.Forms.RadioButton();
             this.rbEstado = new System.Windows.Forms.RadioButton();
-            this.rbNDoc = new System.Windows.Forms.RadioButton();
             this.rbComprobante = new System.Windows.Forms.RadioButton();
             this.rbIdVenta = new System.Windows.Forms.RadioButton();
             this.txtComprobante = new System.Windows.Forms.TextBox();
@@ -152,7 +151,6 @@
             // 
             this.groupBox1.Controls.Add(this.rbcliente);
             this.groupBox1.Controls.Add(this.rbEstado);
-            this.groupBox1.Controls.Add(this.rbNDoc);
             this.groupBox1.Controls.Add(this.rbComprobante);
             this.groupBox1.Controls.Add(this.rbIdVenta);
             this.groupBox1.Controls.Add(this.txtBusqComprobante);
@@ -167,7 +165,7 @@
             // rbcliente
             // 
             this.rbcliente.AutoSize = true;
-            this.rbcliente.Location = new System.Drawing.Point(394, 65);
+            this.rbcliente.Location = new System.Drawing.Point(320, 65);
             this.rbcliente.Name = "rbcliente";
             this.rbcliente.Size = new System.Drawing.Size(97, 17);
             this.rbcliente.TabIndex = 5;
@@ -188,27 +186,15 @@
             this.rbEstado.Text = "Estado";
             this.rbEstado.UseVisualStyleBackColor = true;
             // 
-            // rbNDoc
-            // 
-            this.rbNDoc.AutoSize = true;
-            this.rbNDoc.Location = new System.Drawing.Point(243, 65);
-            this.rbNDoc.Name = "rbNDoc";
-            this.rbNDoc.Size = new System.Drawing.Size(130, 17);
-            this.rbNDoc.TabIndex = 3;
-            this.rbNDoc.TabStop = true;
-            this.rbNDoc.Tag = "N°Documento";
-            this.rbNDoc.Text = "N° Documento Cliente";
-            this.rbNDoc.UseVisualStyleBackColor = true;
-            // 
             // rbComprobante
             // 
             this.rbComprobante.AutoSize = true;
-            this.rbComprobante.Location = new System.Drawing.Point(121, 65);
+            this.rbComprobante.Location = new System.Drawing.Point(162, 65);
             this.rbComprobante.Name = "rbComprobante";
             this.rbComprobante.Size = new System.Drawing.Size(88, 17);
             this.rbComprobante.TabIndex = 2;
             this.rbComprobante.TabStop = true;
-            this.rbComprobante.Tag = "Comprobante";
+            this.rbComprobante.Tag = "Comprobantes";
             this.rbComprobante.Text = "Comprobante";
             this.rbComprobante.UseVisualStyleBackColor = true;
             // 
@@ -217,11 +203,11 @@
             this.rbIdVenta.AutoSize = true;
             this.rbIdVenta.Location = new System.Drawing.Point(19, 65);
             this.rbIdVenta.Name = "rbIdVenta";
-            this.rbIdVenta.Size = new System.Drawing.Size(65, 17);
+            this.rbIdVenta.Size = new System.Drawing.Size(53, 17);
             this.rbIdVenta.TabIndex = 1;
             this.rbIdVenta.TabStop = true;
-            this.rbIdVenta.Tag = "Id Venta";
-            this.rbIdVenta.Text = "Id Venta";
+            this.rbIdVenta.Tag = "Venta";
+            this.rbIdVenta.Text = "Venta";
             this.rbIdVenta.UseVisualStyleBackColor = true;
             // 
             // txtComprobante
@@ -255,7 +241,7 @@
             this.btnpagar.Name = "btnpagar";
             this.btnpagar.Size = new System.Drawing.Size(93, 49);
             this.btnpagar.TabIndex = 92;
-            this.btnpagar.Tag = "Entregado";
+            this.btnpagar.Tag = "Pagar";
             this.btnpagar.Text = "Pagar";
             this.btnpagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnpagar.UseVisualStyleBackColor = false;
@@ -391,7 +377,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbcliente;
         private System.Windows.Forms.RadioButton rbEstado;
-        private System.Windows.Forms.RadioButton rbNDoc;
         private System.Windows.Forms.RadioButton rbComprobante;
         private System.Windows.Forms.RadioButton rbIdVenta;
         private System.Windows.Forms.TextBox txtComprobante;

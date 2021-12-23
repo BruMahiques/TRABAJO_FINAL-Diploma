@@ -30,10 +30,22 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbleliminar = new System.Windows.Forms.Label();
+            this.cod_venta = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnQuitarItem = new System.Windows.Forms.Button();
+            this.btnAgregarItem = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dgvDetalleBoleta = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -48,18 +60,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCorrelativo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnQuitarItem = new System.Windows.Forms.Button();
-            this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cod_venta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -97,6 +97,17 @@
             this.panel1.Size = new System.Drawing.Size(603, 292);
             this.panel1.TabIndex = 31;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Tag = "Venta";
+            this.label1.Text = "Venta";
+            // 
             // lbleliminar
             // 
             this.lbleliminar.AutoSize = true;
@@ -105,6 +116,74 @@
             this.lbleliminar.Size = new System.Drawing.Size(10, 13);
             this.lbleliminar.TabIndex = 25;
             this.lbleliminar.Text = "-";
+            // 
+            // cod_venta
+            // 
+            this.cod_venta.Enabled = false;
+            this.cod_venta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cod_venta.Location = new System.Drawing.Point(15, 231);
+            this.cod_venta.Name = "cod_venta";
+            this.cod_venta.ReadOnly = true;
+            this.cod_venta.Size = new System.Drawing.Size(67, 22);
+            this.cod_venta.TabIndex = 19;
+            this.cod_venta.Text = "-";
+            this.cod_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimir.Enabled = false;
+            this.btnImprimir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
+            this.btnImprimir.Location = new System.Drawing.Point(322, 244);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(51, 40);
+            this.btnImprimir.TabIndex = 24;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
+            this.btnAnular.Location = new System.Drawing.Point(266, 244);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(50, 40);
+            this.btnAnular.TabIndex = 22;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnQuitarItem
+            // 
+            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnQuitarItem.Enabled = false;
+            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
+            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
+            this.btnQuitarItem.Name = "btnQuitarItem";
+            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
+            this.btnQuitarItem.TabIndex = 20;
+            this.btnQuitarItem.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarItem
+            // 
+            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnAgregarItem.Enabled = false;
+            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
+            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
+            this.btnAgregarItem.Name = "btnAgregarItem";
+            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarItem.TabIndex = 19;
+            this.btnAgregarItem.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
+            this.btnGuardar.Location = new System.Drawing.Point(214, 244);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label10
             // 
@@ -152,6 +231,31 @@
             this.dgvDetalleBoleta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleBoleta.Size = new System.Drawing.Size(586, 182);
             this.dgvDetalleBoleta.TabIndex = 4;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
             // 
             // gbCliente
             // 
@@ -310,110 +414,6 @@
             this.lblSerie.TabIndex = 7;
             this.lblSerie.Text = "0003-";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnImprimir.Enabled = false;
-            this.btnImprimir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
-            this.btnImprimir.Location = new System.Drawing.Point(322, 244);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(51, 40);
-            this.btnImprimir.TabIndex = 24;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
-            this.btnAnular.Location = new System.Drawing.Point(266, 244);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(50, 40);
-            this.btnAnular.TabIndex = 22;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnQuitarItem
-            // 
-            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnQuitarItem.Enabled = false;
-            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
-            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
-            this.btnQuitarItem.Name = "btnQuitarItem";
-            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
-            this.btnQuitarItem.TabIndex = 20;
-            this.btnQuitarItem.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregarItem
-            // 
-            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnAgregarItem.Enabled = false;
-            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
-            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
-            this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
-            this.btnAgregarItem.TabIndex = 19;
-            this.btnAgregarItem.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
-            this.btnGuardar.Location = new System.Drawing.Point(214, 244);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
-            this.label1.TabIndex = 20;
-            this.label1.Tag = "Venta";
-            this.label1.Text = "Venta";
-            // 
-            // cod_venta
-            // 
-            this.cod_venta.Enabled = false;
-            this.cod_venta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cod_venta.Location = new System.Drawing.Point(15, 231);
-            this.cod_venta.Name = "cod_venta";
-            this.cod_venta.ReadOnly = true;
-            this.cod_venta.Size = new System.Drawing.Size(67, 22);
-            this.cod_venta.TabIndex = 19;
-            this.cod_venta.Text = "-";
-            this.cod_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Recibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +424,7 @@
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.groupBox1);
             this.Name = "Recibo";
+            this.Tag = "Recibo";
             this.Text = "Recibo";
             this.Load += new System.EventHandler(this.Recibo_Load);
             this.panel1.ResumeLayout(false);

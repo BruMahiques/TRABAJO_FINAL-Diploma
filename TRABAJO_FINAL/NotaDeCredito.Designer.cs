@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbleliminar = new System.Windows.Forms.Label();
+            this.cod_venta = new System.Windows.Forms.TextBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnQuitarItem = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cod_venta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -90,6 +90,17 @@
             this.panel1.Size = new System.Drawing.Size(603, 292);
             this.panel1.TabIndex = 17;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Tag = "Venta";
+            this.label1.Text = "Venta";
+            // 
             // lbleliminar
             // 
             this.lbleliminar.AutoSize = true;
@@ -98,6 +109,18 @@
             this.lbleliminar.Size = new System.Drawing.Size(10, 13);
             this.lbleliminar.TabIndex = 25;
             this.lbleliminar.Text = "-";
+            // 
+            // cod_venta
+            // 
+            this.cod_venta.Enabled = false;
+            this.cod_venta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cod_venta.Location = new System.Drawing.Point(15, 231);
+            this.cod_venta.Name = "cod_venta";
+            this.cod_venta.ReadOnly = true;
+            this.cod_venta.Size = new System.Drawing.Size(67, 22);
+            this.cod_venta.TabIndex = 21;
+            this.cod_venta.Text = "-";
+            this.cod_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnImprimir
             // 
@@ -277,7 +300,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 2;
-            this.label6.Tag = "NOTA DE CREDITO";
+            this.label6.Tag = "NotaDeCredito";
             this.label6.Text = "NOTA DE CREDITO";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -441,29 +464,6 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "B";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
-            this.label1.TabIndex = 22;
-            this.label1.Tag = "Venta";
-            this.label1.Text = "Venta";
-            // 
-            // cod_venta
-            // 
-            this.cod_venta.Enabled = false;
-            this.cod_venta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cod_venta.Location = new System.Drawing.Point(15, 231);
-            this.cod_venta.Name = "cod_venta";
-            this.cod_venta.ReadOnly = true;
-            this.cod_venta.Size = new System.Drawing.Size(67, 22);
-            this.cod_venta.TabIndex = 21;
-            this.cod_venta.Text = "-";
-            this.cod_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // NotaDeCredito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +475,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Name = "NotaDeCredito";
+            this.Tag = "NotaDeCredito";
             this.Text = "NotaDeCredito";
             this.Load += new System.EventHandler(this.NotaDeCredito_Load);
             this.panel1.ResumeLayout(false);

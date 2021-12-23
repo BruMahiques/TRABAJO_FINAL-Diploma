@@ -32,7 +32,7 @@ namespace BLL
             return Map.ListarVentasFiltrado(textbox, desde, hasta, num);
         }
 
-        /* public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
+       /* public DataTable ListarVentasFiltrado(string textbox, string desde, string hasta, int num)
          {
              return Map.ListarVentasFiltrado(textbox,desde,hasta, num);
          }

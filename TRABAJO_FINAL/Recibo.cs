@@ -70,7 +70,16 @@ namespace TRABAJO_FINAL
                 if (label17.Tag != null && Traducciones.ContainsKey(label17.Tag.ToString()))
                     label17.Text = Traducciones[label17.Tag.ToString()].Texto;
 
-               
+
+                if (label2.Tag != null && Traducciones.ContainsKey(label2.Tag.ToString()))
+                    label2.Text = Traducciones[label2.Tag.ToString()].Texto;
+
+
+                if (label1.Tag != null && Traducciones.ContainsKey(label1.Tag.ToString()))
+                    label1.Text = Traducciones[label1.Tag.ToString()].Texto;
+
+
+
 
             }
 
@@ -184,6 +193,7 @@ namespace TRABAJO_FINAL
                 BLLReciboDet bLLReciboDet = new BLLReciboDet();
                 BLLRecibo bllrecibo = new BLLRecibo();
                 List<EEReciboDet> ldetallerec = new List<EEReciboDet>();
+                BLLVenta BLLVenta = new BLLVenta();
 
 
                 recibo.Id_Recibo = Convert.ToInt32(lblCorrelativo.Text);
@@ -193,6 +203,9 @@ namespace TRABAJO_FINAL
 
                 recibo.Total = Convert.ToInt32(txtTotal.Text);
                 bllrecibo.Alta_Recibo(recibo);
+
+                recibo.Venta.Estado = "Entregado";
+                BLLVenta.Mod_Estado(recibo.Venta);
 
                 foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                 {

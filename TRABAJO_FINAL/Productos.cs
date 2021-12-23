@@ -339,6 +339,16 @@ namespace TRABAJO_FINAL
             else
             {
                 respuesta3 = false;
+                
+            }
+            if (BLLProducto.ExisteProductoEnReserva(Producto) == 0)
+            {
+                respuesta3 = true;
+            }
+            else
+            {
+                respuesta3 = false;
+                MessageBox.Show("No se puede eliminar porque el producto ya se encuentra en Reservas emitidas");
             }
 
 

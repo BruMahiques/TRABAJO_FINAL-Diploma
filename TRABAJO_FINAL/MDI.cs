@@ -151,7 +151,9 @@ namespace TRABAJO_FINAL
 
                     if (salirToolStripMenuItem1.Tag != null && Traducciones.ContainsKey(salirToolStripMenuItem1.Tag.ToString()))
                         salirToolStripMenuItem1.Text = Traducciones[salirToolStripMenuItem1.Tag.ToString()].Texto;
-
+                    
+                    if (reciboYNotasToolStripMenuItem.Tag != null && Traducciones.ContainsKey(reciboYNotasToolStripMenuItem.Tag.ToString()))
+                        reciboYNotasToolStripMenuItem.Text = Traducciones[reciboYNotasToolStripMenuItem.Tag.ToString()].Texto;
 
                 }
 
