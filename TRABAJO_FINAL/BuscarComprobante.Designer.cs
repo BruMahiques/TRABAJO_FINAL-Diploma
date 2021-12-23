@@ -50,6 +50,7 @@
             this.btnEntrega = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.Filtrar = new System.Windows.Forms.Button();
+            this.btnpagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -249,7 +250,7 @@
             this.btnCancelado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancelado.Image = global::TRABAJO_FINAL.Properties.Resources.error;
             this.btnCancelado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelado.Location = new System.Drawing.Point(815, 405);
+            this.btnCancelado.Location = new System.Drawing.Point(914, 406);
             this.btnCancelado.Name = "btnCancelado";
             this.btnCancelado.Size = new System.Drawing.Size(93, 49);
             this.btnCancelado.TabIndex = 91;
@@ -265,7 +266,7 @@
             this.btnDevolucion.BackColor = System.Drawing.Color.Plum;
             this.btnDevolucion.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
             this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDevolucion.Location = new System.Drawing.Point(716, 405);
+            this.btnDevolucion.Location = new System.Drawing.Point(815, 406);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(93, 49);
             this.btnDevolucion.TabIndex = 90;
@@ -281,7 +282,7 @@
             this.btnEntrega.BackColor = System.Drawing.Color.Gold;
             this.btnEntrega.Image = global::TRABAJO_FINAL.Properties.Resources.paquete;
             this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntrega.Location = new System.Drawing.Point(617, 405);
+            this.btnEntrega.Location = new System.Drawing.Point(716, 406);
             this.btnEntrega.Name = "btnEntrega";
             this.btnEntrega.Size = new System.Drawing.Size(93, 49);
             this.btnEntrega.TabIndex = 89;
@@ -322,11 +323,28 @@
             this.Filtrar.UseVisualStyleBackColor = false;
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
+            // btnpagar
+            // 
+            this.btnpagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnpagar.BackColor = System.Drawing.Color.Orange;
+            this.btnpagar.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
+            this.btnpagar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnpagar.Location = new System.Drawing.Point(617, 406);
+            this.btnpagar.Name = "btnpagar";
+            this.btnpagar.Size = new System.Drawing.Size(93, 49);
+            this.btnpagar.TabIndex = 92;
+            this.btnpagar.Tag = "Entregado";
+            this.btnpagar.Text = "Pagar";
+            this.btnpagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpagar.UseVisualStyleBackColor = false;
+            this.btnpagar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BuscarComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 675);
+            this.Controls.Add(this.btnpagar);
             this.Controls.Add(this.btnCancelado);
             this.Controls.Add(this.btnDevolucion);
             this.Controls.Add(this.btnEntrega);
@@ -381,5 +399,6 @@
         private System.Windows.Forms.Button btnEntrega;
         private System.Windows.Forms.Button btnDevolucion;
         private System.Windows.Forms.Button btnCancelado;
+        private System.Windows.Forms.Button btnpagar;
     }
 }

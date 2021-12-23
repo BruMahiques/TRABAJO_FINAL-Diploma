@@ -111,8 +111,8 @@ namespace TRABAJO_FINAL
         public BLLProducto bllProducto = new BLLProducto();
 
         public EEReserva reserva = new EEReserva();
-        
 
+        public EEVenta VentaAPagar = new EEVenta();
 
 
 
@@ -406,11 +406,7 @@ namespace TRABAJO_FINAL
                     Venta.Cliente = bLLCliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
                     Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
                     BLLVenta.Alta_Venta(Venta);
-                    if(Convert.ToSingle(txtsaldo.Text)!= 0)
-                    {
-                        Venta.Cliente.Saldo = Convert.ToSingle(Venta.Cliente.Saldo) - Convert.ToSingle(txtsaldo.Text);
-                        bLLCliente.ALta_Mod_Cliente(Venta.Cliente);
-                    }
+                   
 
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
@@ -444,7 +440,8 @@ namespace TRABAJO_FINAL
                     btnQuitarItem.Enabled = false;
                     btnAnular.Enabled = false;
                     dgvDetalleBoleta.ReadOnly = true;
-
+                    pagar.Enabled = true;
+                    VentaAPagar = Venta;
                 }
                 else
                 {
@@ -582,6 +579,15 @@ namespace TRABAJO_FINAL
             ds = Datos.EjecutarCualquierQuerys(query);
 
             
+        }
+
+        private void pagar_Click(object sender, EventArgs e)
+        {
+            Pagos buspago = new Pagos();
+            buspago.Venta = VentaAPagar;
+           
+            this.Close();
+            buspago.Show();
         }
     }
 }

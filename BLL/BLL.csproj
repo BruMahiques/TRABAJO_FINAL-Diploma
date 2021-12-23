@@ -54,6 +54,7 @@
     <Compile Include="BLLCliente.cs" />
     <Compile Include="BLLProducto.cs" />
     <Compile Include="BLLReservasDet.cs" />
+    <Compile Include="BLLTarjeta.cs" />
     <Compile Include="BLLTipoDePago.cs" />
     <Compile Include="BLLUsuario.cs" />
     <Compile Include="BLLVenta.cs" />

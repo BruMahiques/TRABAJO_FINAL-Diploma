@@ -293,6 +293,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap codigo_qr {
+            get {
+                object obj = ResourceManager.GetObject("codigo-qr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contrasena {
             get {
                 object obj = ResourceManager.GetObject("contrasena", resourceCulture);
@@ -336,6 +346,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap descargar_pdf {
             get {
                 object obj = ResourceManager.GetObject("descargar-pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dinero {
+            get {
+                object obj = ResourceManager.GetObject("dinero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,6 +653,16 @@ namespace TRABAJO_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap metodo_de_pago__2_ {
+            get {
+                object obj = ResourceManager.GetObject("metodo-de-pago (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nuevo_documento {
             get {
                 object obj = ResourceManager.GetObject("nuevo-documento", resourceCulture);
@@ -746,6 +776,16 @@ namespace TRABAJO_FINAL.Properties {
         internal static System.Drawing.Bitmap synchronize {
             get {
                 object obj = ResourceManager.GetObject("synchronize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarjeta_de_debito {
+            get {
+                object obj = ResourceManager.GetObject("tarjeta-de-debito", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

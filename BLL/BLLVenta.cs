@@ -36,10 +36,10 @@ namespace BLL
          {
              return Map.ListarVentasFiltrado(textbox,desde,hasta, num);
          }
-
+         */
          public void Mod_Estado(EEVenta EEVenta)
          {
              Map.Mod_Estado(EEVenta);
-         }*/
+         }
     }
 }

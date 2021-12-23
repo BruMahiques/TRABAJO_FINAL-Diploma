@@ -57,6 +57,7 @@
     <Compile Include="EECliente.cs" />
     <Compile Include="EEProducto.cs" />
     <Compile Include="EEReservaDet.cs" />
+    <Compile Include="EETarjetas.cs" />
     <Compile Include="EETipoDePago.cs" />
     <Compile Include="EEUsuario.cs" />
     <Compile Include="EEIdiomaTitulo.cs" />

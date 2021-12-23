@@ -28,6 +28,7 @@ namespace TRABAJO_FINAL
             btnDevolucion.Enabled = false;
             btnEntrega.Enabled = false;
             btnCancelado.Enabled = false;
+            btnpagar.Enabled = false;
 
             Singleton.Instancia.SuscribirObs(this);
             var bounds = Screen.FromControl(this).Bounds;
@@ -178,6 +179,7 @@ namespace TRABAJO_FINAL
             btnDevolucion.Enabled = true;
             btnEntrega.Enabled = true;
             btnCancelado.Enabled = true;
+            btnpagar.Enabled = true;
 
             if (txtComprobante.Text != "-")
             { 
@@ -250,7 +252,7 @@ namespace TRABAJO_FINAL
 
             Venta = bllventa.BuscarID(Convert.ToInt32(txtComprobante.Text));
             cliente = bllcliente.BuscarID(Venta.Cliente.Cod_Cliente);
-            if (Venta.Estado == "Emitido")
+            if (Venta.Estado == "Pagado")
             {
                 recibos.Venta = Venta;
 
@@ -289,10 +291,13 @@ namespace TRABAJO_FINAL
                 if (ValidarCampos())
                 {
                     EEVenta Venta = new EEVenta();
-                    Venta.Id_Venta = Convert.ToInt32(txtComprobante.Text);
+                   
+
+                    Venta= BLLVenta.BuscarID(Convert.ToInt32(txtComprobante.Text));
+                    
                     Venta.Estado = Estado;
 
-                   // BLLVenta.Mod_Estado(Venta);
+                    BLLVenta.Mod_Estado(Venta);
 
                     ObtenerComprobante();
                     btnDevolucion.Enabled = false;
@@ -311,6 +316,34 @@ namespace TRABAJO_FINAL
             {
                 MessageBox.Show("Ha ocurrido un error");
                 return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pagos bus = new Pagos();
+            EEVenta Venta = new EEVenta();
+            BLLVenta bllventa = new BLLVenta();
+            
+
+
+            Venta = bllventa.BuscarID(Convert.ToInt32(txtComprobante.Text));
+           
+            if (Venta.Estado == "Emitido")
+            {
+                
+
+
+               
+                bus.Venta = Venta;
+                bus.condicion = 1;
+
+                this.Close();
+                bus.Show();
+            }
+            else
+            {
+                MessageBox.Show("El estado de la venta no es emitido");
             }
         }
     }

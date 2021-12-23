@@ -36,15 +36,9 @@
             this.txtSeña = new System.Windows.Forms.TextBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.lbleliminar = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnQuitarItem = new System.Windows.Forms.Button();
-            this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.lblNumdesc = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvDetalleBoleta = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +46,6 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCliente = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,7 +59,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -78,6 +70,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtsaldo = new System.Windows.Forms.TextBox();
+            this.pagar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnQuitarItem = new System.Windows.Forms.Button();
+            this.btnAgregarItem = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBoxReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleBoleta)).BeginInit();
@@ -183,61 +184,6 @@
             this.lbleliminar.TabIndex = 25;
             this.lbleliminar.Text = "-";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnImprimir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
-            this.btnImprimir.Location = new System.Drawing.Point(183, 245);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(51, 40);
-            this.btnImprimir.TabIndex = 24;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
-            this.btnAnular.Location = new System.Drawing.Point(127, 245);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(50, 40);
-            this.btnAnular.TabIndex = 22;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnQuitarItem
-            // 
-            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
-            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
-            this.btnQuitarItem.Name = "btnQuitarItem";
-            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
-            this.btnQuitarItem.TabIndex = 20;
-            this.btnQuitarItem.UseVisualStyleBackColor = false;
-            this.btnQuitarItem.Click += new System.EventHandler(this.btnQuitarItem_Click);
-            // 
-            // btnAgregarItem
-            // 
-            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
-            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
-            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
-            this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
-            this.btnAgregarItem.TabIndex = 19;
-            this.btnAgregarItem.UseVisualStyleBackColor = false;
-            this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
-            this.btnGuardar.Location = new System.Drawing.Point(75, 245);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // lblNumdesc
             // 
             this.lblNumdesc.BackColor = System.Drawing.Color.Teal;
@@ -275,18 +221,6 @@
             this.txtTotal.TabIndex = 8;
             this.txtTotal.Text = "-";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = global::TRABAJO_FINAL.Properties.Resources.adicional;
-            this.btnNuevo.Location = new System.Drawing.Point(22, 245);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(51, 40);
-            this.btnNuevo.TabIndex = 3;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // dgvDetalleBoleta
             // 
@@ -363,17 +297,6 @@
             this.gbCliente.Size = new System.Drawing.Size(603, 145);
             this.gbCliente.TabIndex = 12;
             this.gbCliente.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Snow;
-            this.button2.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar_usuario;
-            this.button2.Location = new System.Drawing.Point(526, 62);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 39);
-            this.button2.TabIndex = 24;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -511,17 +434,6 @@
             this.label12.Tag = "Codigo";
             this.label12.Text = "Código";
             // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.LightCyan;
-            this.btnBuscarCliente.Image = global::TRABAJO_FINAL.Properties.Resources.lupa__1_;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(482, 62);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(38, 39);
-            this.btnBuscarCliente.TabIndex = 5;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
             // txtCodUsuario
             // 
             this.txtCodUsuario.Enabled = false;
@@ -645,11 +557,112 @@
             this.txtsaldo.Text = "-";
             this.txtsaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // pagar
+            // 
+            this.pagar.Enabled = false;
+            this.pagar.Image = global::TRABAJO_FINAL.Properties.Resources.metodo_de_pago__2_;
+            this.pagar.Location = new System.Drawing.Point(402, 559);
+            this.pagar.Name = "pagar";
+            this.pagar.Size = new System.Drawing.Size(28, 29);
+            this.pagar.TabIndex = 57;
+            this.pagar.UseVisualStyleBackColor = true;
+            this.pagar.Click += new System.EventHandler(this.pagar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = global::TRABAJO_FINAL.Properties.Resources.impresora;
+            this.btnImprimir.Location = new System.Drawing.Point(183, 245);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(51, 40);
+            this.btnImprimir.TabIndex = 24;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Image = global::TRABAJO_FINAL.Properties.Resources.boton_eliminar__1_;
+            this.btnAnular.Location = new System.Drawing.Point(127, 245);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(50, 40);
+            this.btnAnular.TabIndex = 22;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnQuitarItem
+            // 
+            this.btnQuitarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnQuitarItem.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar__1_;
+            this.btnQuitarItem.Location = new System.Drawing.Point(563, 1);
+            this.btnQuitarItem.Name = "btnQuitarItem";
+            this.btnQuitarItem.Size = new System.Drawing.Size(24, 25);
+            this.btnQuitarItem.TabIndex = 20;
+            this.btnQuitarItem.UseVisualStyleBackColor = false;
+            this.btnQuitarItem.Click += new System.EventHandler(this.btnQuitarItem_Click);
+            // 
+            // btnAgregarItem
+            // 
+            this.btnAgregarItem.BackColor = System.Drawing.Color.Azure;
+            this.btnAgregarItem.Image = global::TRABAJO_FINAL.Properties.Resources.mas__1_;
+            this.btnAgregarItem.Location = new System.Drawing.Point(15, 1);
+            this.btnAgregarItem.Name = "btnAgregarItem";
+            this.btnAgregarItem.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarItem.TabIndex = 19;
+            this.btnAgregarItem.UseVisualStyleBackColor = false;
+            this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = global::TRABAJO_FINAL.Properties.Resources.salvar;
+            this.btnGuardar.Location = new System.Drawing.Point(75, 245);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(50, 40);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = global::TRABAJO_FINAL.Properties.Resources.adicional;
+            this.btnNuevo.Location = new System.Drawing.Point(22, 245);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(51, 40);
+            this.btnNuevo.TabIndex = 3;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Snow;
+            this.button2.Image = global::TRABAJO_FINAL.Properties.Resources.eliminar_usuario;
+            this.button2.Location = new System.Drawing.Point(526, 62);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 39);
+            this.button2.TabIndex = 24;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.LightCyan;
+            this.btnBuscarCliente.Image = global::TRABAJO_FINAL.Properties.Resources.lupa__1_;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(482, 62);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(38, 39);
+            this.btnBuscarCliente.TabIndex = 5;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 574);
+            this.ClientSize = new System.Drawing.Size(630, 589);
+            this.Controls.Add(this.pagar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbCliente);
@@ -725,5 +738,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtsaldo;
+        private System.Windows.Forms.Button pagar;
     }
 }

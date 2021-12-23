@@ -52,6 +52,7 @@
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
     <Compile Include="MPPReservaDet.cs" />
+    <Compile Include="MPPTarjeta.cs" />
     <Compile Include="MPPTipoDePago.cs" />
     <Compile Include="MPPTraductor.cs" />
     <Compile Include="MPPUsuario.cs" />

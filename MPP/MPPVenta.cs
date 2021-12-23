@@ -34,7 +34,7 @@ namespace MPP
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
         }
-        /*public bool Mod_Estado(EEVenta EEVenta)
+        public bool Mod_Estado(EEVenta EEVenta)
         {
             Acceso Datos = new Acceso();
             Hashtable Hdatos = new Hashtable();
@@ -48,7 +48,7 @@ namespace MPP
 
             Resultado = Datos.Escribir(consulta, Hdatos);
             return Resultado;
-        }*/
+        }
         /*
 
         public bool Stock_Producto(EEVentaDet EEVentaDet)
