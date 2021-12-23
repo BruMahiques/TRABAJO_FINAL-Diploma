@@ -46,7 +46,7 @@
             this.txtComprobante = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelado = new System.Windows.Forms.Button();
-            this.btnEmitido = new System.Windows.Forms.Button();
+            this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnEntrega = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.Filtrar = new System.Windows.Forms.Button();
@@ -259,21 +259,21 @@
             this.btnCancelado.UseVisualStyleBackColor = false;
             this.btnCancelado.Click += new System.EventHandler(this.btnCancelado_Click);
             // 
-            // btnEmitido
+            // btnDevolucion
             // 
-            this.btnEmitido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEmitido.BackColor = System.Drawing.Color.Plum;
-            this.btnEmitido.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
-            this.btnEmitido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEmitido.Location = new System.Drawing.Point(615, 405);
-            this.btnEmitido.Name = "btnEmitido";
-            this.btnEmitido.Size = new System.Drawing.Size(93, 49);
-            this.btnEmitido.TabIndex = 90;
-            this.btnEmitido.Tag = "Emitido";
-            this.btnEmitido.Text = "Emitido";
-            this.btnEmitido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmitido.UseVisualStyleBackColor = false;
-            this.btnEmitido.Click += new System.EventHandler(this.btnEmitido_Click);
+            this.btnDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDevolucion.BackColor = System.Drawing.Color.Plum;
+            this.btnDevolucion.Image = global::TRABAJO_FINAL.Properties.Resources.copia_escrita;
+            this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDevolucion.Location = new System.Drawing.Point(716, 405);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(93, 49);
+            this.btnDevolucion.TabIndex = 90;
+            this.btnDevolucion.Tag = "Devolucion";
+            this.btnDevolucion.Text = "Devolucion";
+            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolucion.UseVisualStyleBackColor = false;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnEmitido_Click);
             // 
             // btnEntrega
             // 
@@ -281,7 +281,7 @@
             this.btnEntrega.BackColor = System.Drawing.Color.Gold;
             this.btnEntrega.Image = global::TRABAJO_FINAL.Properties.Resources.paquete;
             this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntrega.Location = new System.Drawing.Point(716, 405);
+            this.btnEntrega.Location = new System.Drawing.Point(617, 405);
             this.btnEntrega.Name = "btnEntrega";
             this.btnEntrega.Size = new System.Drawing.Size(93, 49);
             this.btnEntrega.TabIndex = 89;
@@ -328,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 675);
             this.Controls.Add(this.btnCancelado);
-            this.Controls.Add(this.btnEmitido);
+            this.Controls.Add(this.btnDevolucion);
             this.Controls.Add(this.btnEntrega);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label3);
@@ -379,7 +379,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnEntrega;
-        private System.Windows.Forms.Button btnEmitido;
+        private System.Windows.Forms.Button btnDevolucion;
         private System.Windows.Forms.Button btnCancelado;
     }
 }

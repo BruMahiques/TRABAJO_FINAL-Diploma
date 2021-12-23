@@ -158,9 +158,9 @@ namespace TRABAJO_FINAL
 
             if(reserva.Id_Reserva != 0)
             {
-                int total_con_seña = 0;
+                float total_con_seña = 0;
                 txtSeña.Text = reserva.Seña.ToString() ;
-                total_con_seña = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtSeña.Text);
+                total_con_seña = Convert.ToSingle(txtTotal.Text) - Convert.ToSingle(txtSeña.Text) - Convert.ToSingle(txtsaldo.Text);
                 txttotalconseña.Text = total_con_seña.ToString();
                 DesactivarTodo();
             }
@@ -354,6 +354,7 @@ namespace TRABAJO_FINAL
         {
 
             double total = 0;
+            double total2 = 0;
 
             foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
             {
@@ -365,14 +366,11 @@ namespace TRABAJO_FINAL
             {
                 total = total - (total * Convert.ToSingle(txtdesc.Text)) / 100;
             }
-            total = total - Convert.ToSingle(txtsaldo.Text);
+            total2 = total;
+            total2 = total2 - Convert.ToSingle(txtsaldo.Text);
 
-            if (total<0)
-            {
-                btnGuardar.Enabled = false;
-                MessageBox.Show("Por favor utilice todo su saldo, no puede quedar saldo a favor nuevamente");
-            }
 
+            txttotalconseña.Text = total2.ToString();
             txtTotal.Text = total.ToString();
         }
 
@@ -408,6 +406,11 @@ namespace TRABAJO_FINAL
                     Venta.Cliente = bLLCliente.BuscarID(Convert.ToInt32(txtCodUsuario.Text));
                     Venta.Total_Venta = Convert.ToInt32(txtTotal.Text);
                     BLLVenta.Alta_Venta(Venta);
+                    if(Convert.ToSingle(txtsaldo.Text)!= 0)
+                    {
+                        Venta.Cliente.Saldo = Convert.ToSingle(Venta.Cliente.Saldo) - Convert.ToSingle(txtsaldo.Text);
+                        bLLCliente.ALta_Mod_Cliente(Venta.Cliente);
+                    }
 
                     foreach (DataGridViewRow r in dgvDetalleBoleta.Rows)
                     {
@@ -418,7 +421,7 @@ namespace TRABAJO_FINAL
                         Venta_Det.Sub_total = Convert.ToInt32(r.Cells[4].Value);
                         Ldetalle.Add(Venta_Det);
                         BLLVentaDet.Alta_Venta_Det(Venta_Det);
-                        Venta_Det.Producto.Stock = Venta_Det.Producto.Stock-1;
+                        Venta_Det.Producto.Stock = Venta_Det.Producto.Stock- Convert.ToInt32(r.Cells[3].Value); ;
                         bllProducto.ALta_Mod_Producto(Venta_Det.Producto);
                     }
                     Venta.LDetalle = Ldetalle;
@@ -541,6 +544,12 @@ namespace TRABAJO_FINAL
 
                 }
 
+            }
+
+            if (Convert.ToSingle(txttotalconseña.Text) < 0)
+            {
+                respuesta = false;
+                MessageBox.Show("Por favor utilice todo su saldo, no puede quedar saldo a favor nuevamente");
             }
 
             return respuesta;

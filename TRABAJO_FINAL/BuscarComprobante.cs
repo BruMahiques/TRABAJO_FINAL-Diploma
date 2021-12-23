@@ -25,7 +25,7 @@ namespace TRABAJO_FINAL
         {
             rbIdVenta.Checked = true;
             ObtenerComprobante();
-            btnEmitido.Enabled = false;
+            btnDevolucion.Enabled = false;
             btnEntrega.Enabled = false;
             btnCancelado.Enabled = false;
 
@@ -71,8 +71,8 @@ namespace TRABAJO_FINAL
                 if (btnSeleccionar.Tag != null && Traducciones.ContainsKey(btnSeleccionar.Tag.ToString()))
                     btnSeleccionar.Text = Traducciones[btnSeleccionar.Tag.ToString()].Texto;
 
-                if (btnEmitido.Tag != null && Traducciones.ContainsKey(btnEmitido.Tag.ToString()))
-                    btnEmitido.Text = Traducciones[btnEmitido.Tag.ToString()].Texto;
+                if (btnDevolucion.Tag != null && Traducciones.ContainsKey(btnDevolucion.Tag.ToString()))
+                    btnDevolucion.Text = Traducciones[btnDevolucion.Tag.ToString()].Texto;
 
                 if (Filtrar.Tag != null && Traducciones.ContainsKey(Filtrar.Tag.ToString()))
                     Filtrar.Text = Traducciones[Filtrar.Tag.ToString()].Texto;
@@ -175,7 +175,7 @@ namespace TRABAJO_FINAL
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            btnEmitido.Enabled = true;
+            btnDevolucion.Enabled = true;
             btnEntrega.Enabled = true;
             btnCancelado.Enabled = true;
 
@@ -188,6 +188,7 @@ namespace TRABAJO_FINAL
             dgvItems.DataSource = null;
             dgvItems.DataSource = items;
             }
+
         }
 
         private void dgvComprobante_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -209,7 +210,32 @@ namespace TRABAJO_FINAL
 
         private void btnEmitido_Click(object sender, EventArgs e)
         {
-            Cambiar_estado("Emitido");
+            NotaDeCredito bus = new NotaDeCredito();
+            EENotaDeCredito NotaCre = new EENotaDeCredito();
+            EEVenta Venta = new EEVenta();
+            BLLVenta bllventa = new BLLVenta();
+            EECliente cliente = new EECliente();
+            BLLCliente bllcliente = new BLLCliente();
+
+
+            Venta = bllventa.BuscarID(Convert.ToInt32(txtComprobante.Text));
+            cliente = bllcliente.BuscarID(Venta.Cliente.Cod_Cliente);
+            if (Venta.Estado == "Entregado")
+            {
+                NotaCre.Venta = Venta;
+
+
+
+                bus.NotaCredito = NotaCre;
+
+
+                this.Close();
+                bus.Show();
+            }
+            else
+            {
+                MessageBox.Show("La Venta todavía ni se había pagado");
+            }
         }
 
         private void btnEntrega_Click(object sender, EventArgs e)
@@ -224,22 +250,35 @@ namespace TRABAJO_FINAL
 
             Venta = bllventa.BuscarID(Convert.ToInt32(txtComprobante.Text));
             cliente = bllcliente.BuscarID(Venta.Cliente.Cod_Cliente);
+            if (Venta.Estado == "Emitido")
+            {
+                recibos.Venta = Venta;
 
-            recibos.Venta = Venta;
-            
 
 
-            bus.recibo = recibos;
-            
+                bus.recibo = recibos;
 
-            this.Close();
-            bus.Show();
+
+                this.Close();
+                bus.Show();
+            }
+            else
+            {
+                MessageBox.Show("La Venta ya se entregó");
+            }
 
         }
 
         private void btnCancelado_Click(object sender, EventArgs e)
         {
-            Cambiar_estado("Cancelado");
+            if (MessageBox.Show("Está seguro que desea Cancelar la venta? , no hay vuelta atras", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                Cambiar_estado("Cancelado");
+
+                
+            }
+            
         }
 
         private void Cambiar_estado(string Estado)
@@ -256,7 +295,7 @@ namespace TRABAJO_FINAL
                    // BLLVenta.Mod_Estado(Venta);
 
                     ObtenerComprobante();
-                    btnEmitido.Enabled = false;
+                    btnDevolucion.Enabled = false;
                     btnEntrega.Enabled = false;
                     btnCancelado.Enabled = false;
                     txtComprobante.Text = "-";

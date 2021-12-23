@@ -113,7 +113,7 @@ namespace TRABAJO_FINAL
             Singleton.Instancia.SuscribirObs(this);
 
         }
-        private void Factura_FormClosing(object sender, FormClosingEventArgs e)
+        private void Recibo_FormClosing(object sender, FormClosingEventArgs e)
         {
             Singleton.Instancia.DesuscribirObs(this);
         }

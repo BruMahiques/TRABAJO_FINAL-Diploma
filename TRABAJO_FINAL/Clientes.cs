@@ -175,6 +175,7 @@ namespace TRABAJO_FINAL
             textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -185,6 +186,7 @@ namespace TRABAJO_FINAL
             dateTimePicker1.Text = string.Empty;
             textBox4.Text = string.Empty;
             textBox5.Text = string.Empty;
+            textBox6.Text = string.Empty;
         }
 
         private void btnNuevoP_Click(object sender, EventArgs e)
@@ -272,6 +274,8 @@ namespace TRABAJO_FINAL
                     Cliente.DNI = Convert.ToInt32(textBox3.Text);
                     Cliente.FechaNac = Convert.ToDateTime(dateTimePicker1.Text);
                     Cliente.Correo = textBox4.Text;
+                    Cliente.Saldo = Convert.ToSingle(textBox6.Text);
+
 
                     BLLCliente.ALta_Mod_Cliente(Cliente);
 

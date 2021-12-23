@@ -46,6 +46,8 @@
             this.btnEliminarP = new System.Windows.Forms.Button();
             this.btnNuevoP = new System.Windows.Forms.Button();
             this.btnEditarP = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,11 +238,35 @@
             this.btnEditarP.UseVisualStyleBackColor = true;
             this.btnEditarP.Click += new System.EventHandler(this.btnEditarP_Click);
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(164, 361);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 74;
+            this.label8.Tag = "Saldo";
+            this.label8.Text = "Saldo:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(207, 358);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(99, 20);
+            this.textBox6.TabIndex = 75;
+            this.textBox6.Text = "(..)";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 459);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnNuevoP);
             this.Controls.Add(this.btnEditarP);
@@ -290,5 +316,7 @@
         private System.Windows.Forms.Button btnEliminarP;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEditarP;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

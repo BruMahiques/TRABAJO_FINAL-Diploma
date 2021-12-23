@@ -148,6 +148,7 @@ namespace TRABAJO_FINAL
                     dt.DNI = Convert.ToInt32(fila.Cells[index: 3].Value.ToString());
                     dt.FechaNac = Convert.ToDateTime(fila.Cells[index: 4].Value);
                     dt.Correo = fila.Cells[index: 5].Value.ToString();
+                    dt.Saldo = Convert.ToSingle(fila.Cells[index: 6].Value.ToString());
                     bus.Clien = dt;
                     
 

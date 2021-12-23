@@ -67,6 +67,7 @@ namespace MPP
                     EECliente.DNI = Convert.ToInt32(fila["DNI"]);
                     EECliente.FechaNac = Convert.ToDateTime(fila["FechaNac"]);
                     EECliente.Correo = fila["Correo"].ToString();
+                    EECliente.Saldo = Convert.ToSingle(fila["Saldo"]);
                     LClientes.Add(EECliente);
 
                 }
